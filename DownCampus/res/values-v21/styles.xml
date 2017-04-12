@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:colorPrimary">@color/blue_theme</item>
+        <item name="android:colorPrimaryDark">@color/white_247x3</item>
+        <item name="android:colorAccent">#cccccc</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+    </style>
+</resources>

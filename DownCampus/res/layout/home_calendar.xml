@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.util.TitleBar style="@style/bar_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/prevMonth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/footprint_search_left" />
+
+        <TextView
+            android:id="@+id/currentMonth"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="2014年6月"
+            android:textColor="#177ed6"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/nextMonth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/footprint_search_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#ffffffff" >
+
+        <TextView
+            style="@style/weekName"
+            android:text="日"
+            android:textColor="#177ed6" />
+
+        <TextView
+            style="@style/weekName"
+            android:text="一" />
+
+        <TextView
+            style="@style/weekName"
+            android:text="二" />
+
+        <TextView
+            style="@style/weekName"
+            android:text="三" />
+
+        <TextView
+            style="@style/weekName"
+            android:text="四" />
+
+        <TextView
+            style="@style/weekName"
+            android:text="五" />
+
+        <TextView
+            style="@style/weekName"
+            android:text="六"
+            android:textColor="#177ed6" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ff8091a8" />
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:text="元旦 1月1日~1月3日 1月4日（周日）上班 共3天 \n春节 2月18日(除夕）~2月24日 2月15日（周日）、2月28日（周六）上班 共7天 \n清明节 4月4日~4月6日 4月6日（周一）补休、含周末公休 共3天 \n劳动节 5月1日~5月3日 与5月2日（周六）、5月3日（周日）连休 共3天 \n端午节 6月20日~6月22日 6月22日（周一）补休、含周末公休 共3天 \n中秋节 9月15日~9月17日 含周六 共3天 \n国庆节 10月1日~10月7日 10月10日（周六）上班 共7天 \n测试 12月1日~12月7日" />
+    </ScrollView>
+
+</LinearLayout>

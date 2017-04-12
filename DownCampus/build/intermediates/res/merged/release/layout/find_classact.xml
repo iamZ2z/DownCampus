@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.util.TitleBar style="@style/bar_title"/>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_marginTop="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/upload">
+
+                    <com.util.CircleImageView
+                        android:id="@+id/head"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@drawable/touxiang"/>
+
+                    <Button
+                        android:id="@+id/btn_changehead"
+                        android:layout_width="54dp"
+                        android:layout_height="22dp"
+                        android:layout_alignBottom="@+id/head"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="34dp"
+                        android:layout_marginRight="25dp"
+                        android:background="@drawable/bluebutton"
+                        android:drawableLeft="@drawable/dynamic_icon_cover"
+                        android:text="封面"
+                        android:textColor="#ffffff"
+                        android:textSize="11dp"/>
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/head"
+                        android:layout_toEndOf="@+id/head"
+                        android:text="刘波"
+                        android:textColor="#ffffff"
+                        android:textSize="14dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/head"
+                        android:layout_toEndOf="@+id/head"
+                        android:text="空谈误国，实干兴邦。"
+                        android:textColor="@color/white_247x3"
+                        android:textSize="12dp"/>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_news"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/gray_134x159x169"
+                    android:orientation="horizontal">
+
+                    <com.util.CircleImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/touxiang"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="13dp"
+                        android:text="1条新消息"
+                        android:textColor="#ffffff"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <com.util.view.ScrollListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:divider="@color/white_247x3"
+                    android:dividerHeight="10dp"
+                    android:listSelector="#00000000"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.util.view.FloatImageButton
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="200dp"
+        android:background="#00000000"
+        android:src="@mipmap/suspend_btn_eidt"/>
+
+</RelativeLayout>

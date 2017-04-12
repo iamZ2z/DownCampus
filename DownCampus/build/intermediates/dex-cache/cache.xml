@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\okhttp-3.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\okhttp-3.6.0_7bf9a7046395d25968c629ba38f26af273d8a8ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\7589c0f303d994081f8ba9c907135c46a3d10148\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_235633eb5f0f2bd5c80d0b82b314d17672b6b8ad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\fd9e9d188be1cfdff462c0981892aeacef0c7db7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9b0eec23f47cbd7a3a9df8e6026f39522cabb8e">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_651b7281878cc2e4f79d760be24e6894be204709\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_dd028bc8b9decb9955842708bb05c99504f9943f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\glide-3.7.0_0c590af29c0209c3d2849e7a0456205270b6b313\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da46c538180afbb6f7e09437c32ae2040b10d0f6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8886b3de08ef6064cc5bcb6ea793d641b01eeed9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\902fcdf64f5c7484546c90f7d8be8ee2c1fd6b67\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="dd1da81bab446923f39ec2f4bcf21ad7eeeb7806">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_922e1a133cea5ac076c201ec736a2acb0ac83610\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\54d83727fac9193db95a4735cf45c4330938ccf8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="966da5b6a8bfdef0bfc660e349f8765dde5cb6f3">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d3f04411e316e0ae0bc06a569ef3134174f54edd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\e2df10912ca53550e296300d6945a25ee436baca\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e835a94a72658cc3d65b255917825973c6764960">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_08eedd8868e2c7bcb4d91c5f540281e9ada3807a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\AMap_Location_V3.3.0_20170118.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="299ccce875c1bbd5eb2802923ae89946e22b7ee6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\AMap_Location_V3.3.0_20170118_bc6704fb910d209ebd011dd17e253722260b9250\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c791dfbf18191e004e32d7b06e2eae56d045fcc6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\classes_ad460b448c5f63ba5f1d12007d72da10720f35e5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\hyphenatechat_3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="557556ab85103eecf86cb89380d808e18de146e6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\hyphenatechat_3.3.0_74b891d0139d8d99b2f75914de503860b63ee2b5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\okio-1.11.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\okio-1.11.0_3fce540844bf4fc613b0a7cf594377063964c509\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\2d0394f3ee5e9f0a811dac517eeba8de4c174268\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c1e5809b8776bc5524f46338f3034a9474b0eeb7">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1cb67f7a83089d34f314f097ff5b1fbb850e583e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_03ee87860a263a4d375ea531362d1486a91a3114\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\8b5635b9e61f7b91380f4876e321f5b74bd43299\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c74f0952cfb481882d8cedf4ca9f3c60289a3301">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d94ad5d9b284a3cad5d241d41c8bc067eb30c0e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\picasso-2.5.2_9cdf53084fbeb6040163dce6dd2be3856fda6069\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\3a1f7f10560c84128b8ab2973bae16ce80fc1082\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_609c114fcd51c66c78c9174cf4c0588e88b450e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_da35c37a359eb6b7456dac24894952504701251a\classes.dex" />
+    </item>
+
+</items>

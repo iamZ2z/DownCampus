@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.util.TitleBar style="@style/bar_title"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53.5dp"
+        android:layout_marginTop="50.5dp"
+        android:src="@mipmap/evaluate_img_bg"/>
+
+    <LinearLayout
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:text="选择老师"
+            android:textSize="15dp"/>
+
+        <Spinner
+            android:id="@+id/sp"
+            android:padding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bordblueround"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="提示：选择要评价的老师开始评价"
+        android:textColor="@color/gray_162x3"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/bordbluehomework"
+        android:gravity="center"
+        android:text="开始评价"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="17dp"/>
+</LinearLayout>

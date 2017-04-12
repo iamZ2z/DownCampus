@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.util.TitleBar style="@style/bar_title"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="42dp"
+        android:src="@mipmap/install_logo"/>
+
+    <LinearLayout
+        android:id="@+id/dataclean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/bord2"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清除缓存"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:id="@+id/dataclean_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="250mb"
+            android:textSize="17dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/option_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bord2"
+        android:drawableRight="@drawable/enter"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="新消息提醒"
+        android:textSize="17dp"/>
+
+    <Button
+        android:id="@+id/option_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bord2"
+        android:drawableRight="@drawable/enter"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="使用帮助"
+        android:textSize="17dp"/>
+
+    <Button
+        android:id="@+id/option_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bord2"
+        android:drawableRight="@drawable/enter"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="吐槽产品经理"
+        android:textSize="17dp"/>
+
+    <Button
+        android:id="@+id/option_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bord2"
+        android:drawableRight="@drawable/enter"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="关于"
+        android:textSize="17dp"/>
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/blue_download"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:textColor="@color/white"
+        android:text="退出登录"
+        android:textSize="17dp"/>
+
+</LinearLayout>

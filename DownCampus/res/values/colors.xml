@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_bottom">#b4cdcd</color>
+    <color name="deep_gray">#555555</color>
+    <color name="gray_title">#cccccc</color>
+    <color name="gray_204x3">#cccccc</color>
+    <color name="blue_download">#5EC3ED</color>
+    <color name="blue_99x180x255">#63B4FF</color>
+    <color name="blue_theme">#37b0E9</color>
+    <color name="blue_appendix">#298CBB</color>
+    <color name="red_sign">#DF491B</color>
+    <color name="orange_238x147x40">#EE9328</color>
+    <color name="orange_242x137x12">#EE9328</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_247x3">#F7F7F7</color>
+    <color name="gray_type">#A2A2A2</color>
+    <color name="gray_162x3">#A2A2A2</color>
+    <color name="gray_line">#E6E6E6</color>
+    <color name="gray_230x3">#E6E6E6</color>
+
+    <color name="gray_134x159x169">#869FA9</color>
+
+</resources>

@@ -1,0 +1,431 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:2:1-210:12
+	package
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:3:11-45
+	android:versionName
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:5:11-36
+		INJECTED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml
+		INJECTED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml
+	android:versionCode
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:4:11-34
+		INJECTED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml
+		INJECTED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:7:5-9:40
+MERGED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:23.1.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.isseiaoki:simplecropview:1.1.4] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.isseiaoki\simplecropview\1.1.4\AndroidManifest.xml:8:5-10:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.jaeger.ninegridimageview:library:1.1.0] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.jaeger.ninegridimageview\library\1.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:23.1.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [cn.aigestudio.datepicker:DatePicker:2.2.0] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.aigestudio.datepicker\DatePicker\2.2.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.contrarywind:Android-PickerView:3.2.3] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.contrarywind\Android-PickerView\3.2.3\AndroidManifest.xml:7:5-9:41
+MERGED from [DownCampus:easeui:unspecified] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\DownCampus\easeui\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:multidex:1.0.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
+	android:targetSdkVersion
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:9:9-38
+	android:minSdkVersion
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:8:9-35
+uses-permission#android.permission.INTERNET
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:11:5-66
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:11:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:12:5-78
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:12:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:14:5-80
+MERGED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:14:5-81
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:14:22-78
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:16:5-83
+MERGED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:12:5-84
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:12:5-84
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:16:22-81
+uses-permission#android.permission.CAMERA
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:17:5-64
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:17:22-62
+uses-permission#android.permission.VIBRATE
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:19:5-65
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:19:22-63
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:23:5-24:23
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:23:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:26:5-27:23
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:26:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:29:5-30:23
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:20:5-76
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:29:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:35:5-36:23
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:35:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:38:5-39:23
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:18:5-75
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:38:22-72
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:48:5-70
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:48:22-68
+uses-permission#android.permission.GET_TASKS
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:50:5-67
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:22:5-68
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:50:22-65
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:51:5-67
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:51:22-65
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:52:5-79
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:52:22-77
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:53:5-80
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:53:22-78
+application
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:56:5-208:19
+MERGED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:18:5-34:19
+MERGED from [com.android.support:design:23.1.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.1.0\AndroidManifest.xml:9:5-20
+MERGED from [com.jaeger.ninegridimageview:library:1.1.0] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.jaeger.ninegridimageview\library\1.1.0\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:support-v4:23.1.1] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:60:9-41
+	android:supportsRtl
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:21:9-35
+	android:allowBackup
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:58:9-35
+	android:icon
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:59:9-41
+	android:largeHeap
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:20:9-33
+	android:theme
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:61:9-40
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:57:9-49
+meta-data#com.baidu.lbsapi.API_KEY
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:62:9-64:63
+	android:value
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:64:13-61
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:63:13-52
+meta-data#EASEMOB_APPKEY
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:65:9-67:77
+	android:value
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:67:13-75
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:66:13-42
+meta-data#com.amap.api.v2.apikey
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:69:9-71:63
+	android:value
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:71:13-61
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:70:13-50
+activity#com.logan.actmobilecampus.AdvertisementActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:73:9-81:20
+	android:label
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:75:13-45
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:74:13-75
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:76:13-80:29
+action#android.intent.action.MAIN
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:77:17-68
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:77:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:79:17-76
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:79:27-74
+activity#com.logan.actmobilecampus.AccountActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:82:9-83:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:82:19-75
+activity#com.logan.actmobilecampus.MainActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:84:9-85:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:84:19-72
+activity#com.logan.actmobilecampus.FindPassActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:86:9-87:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:86:19-76
+activity#com.logan.actmobilecampus.CampusCooperationActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:88:9-89:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:88:19-85
+activity#com.logan.actdynamic.CampusNewsActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:90:9-91:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:90:19-73
+activity#com.logan.actdynamic.CampusActActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:92:9-95:20
+	android:windowSoftInputMode
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:94:13-67
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:93:13-66
+activity#com.logan.actdynamic.CampusActDetailActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:96:9-97:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:96:19-78
+activity#com.logan.actdynamic.EnrollActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:98:9-99:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:98:19-69
+activity#com.logan.actdynamic.ClassDynamicActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:100:9-101:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:100:19-75
+activity#com.logan.actdynamic.SendDynamicActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:102:9-103:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:102:19-74
+activity#com.logan.actnews.NewsDetailsActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:104:9-105:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:104:19-71
+activity#com.logan.actnews.NewsChat2Activity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:106:9-108:60
+	android:theme
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:108:13-48
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:107:13-63
+activity#com.logan.actnews.OtherActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:109:9-110:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:109:19-65
+activity#com.easemob.ContactActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:111:9-112:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:111:19-61
+activity#com.logan.acthome.LogManage
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:113:9-114:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:113:19-61
+activity#com.logan.actme.EditDataActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:115:9-116:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:115:19-66
+activity#com.logan.actme.AddressActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:117:9-118:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:117:19-65
+activity#com.logan.actme.DynamicActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:119:9-120:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:119:19-65
+activity#com.logan.actme.ChangePassActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:121:9-122:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:121:19-68
+activity#com.logan.actme.OptionActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:123:9-124:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:123:19-64
+activity#com.logan.actme.option.MessageActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:125:9-126:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:125:19-72
+activity#com.logan.actme.option.HelpActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:127:9-128:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:127:19-69
+activity#com.logan.actme.option.CommentActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:129:9-130:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:129:19-72
+activity#com.logan.actme.option.AboutActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:131:9-132:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:131:19-70
+activity#com.logan.acthome.MySignActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:133:9-134:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:133:19-66
+activity#com.logan.acthome.more.SignActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:135:9-136:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:135:19-69
+activity#com.logan.acthome.more.FootPrint
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:137:9-138:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:137:19-66
+activity#com.logan.acthome.LeaveActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:139:9-140:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:139:19-65
+activity#com.logan.acthome.more.LeaveRecordActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:141:9-142:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:141:19-76
+activity#com.logan.acthome.ClassScheduleActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:143:9-144:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:143:19-73
+activity#com.logan.acthome.WorkRestActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:145:9-146:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:145:19-68
+activity#com.logan.acthome.more.WriteLog
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:147:9-148:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:147:19-65
+activity#com.logan.acthome.CalendarActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:149:9-150:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:149:19-68
+activity#com.logan.acthome.ExamArrange
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:151:9-152:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:151:19-63
+activity#com.logan.acthome.more.ExamArrangeDetail
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:153:9-154:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:153:19-74
+activity#com.logan.acthome.MyScore
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:155:9-156:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:155:19-59
+activity#com.logan.acthome.MySeat
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:157:9-158:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:157:19-58
+activity#com.logan.acthome.CampusPay
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:159:9-160:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:159:19-61
+activity#com.logan.acthome.Homework
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:161:9-162:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:161:19-60
+activity#com.logan.acthome.TeacherRateActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:163:9-73
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:163:19-71
+activity#com.logan.acthome.more.RateContentActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:164:9-165:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:164:19-76
+activity#com.logan.acthome.ClassActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:166:9-167:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:166:19-65
+activity#com.logan.acthome.parentleader.Behavior
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:168:9-169:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:168:19-73
+activity#com.logan.acthome.parentleader.MyApprove
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:170:9-76
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:170:19-74
+activity#com.logan.acthome.parentleader.ApproveDetail
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:171:9-80
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:171:19-78
+activity#com.logan.acthome.parentleader.ApproveSearch
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:172:9-80
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:172:19-78
+activity#com.logan.acthome.parentleader.MeetingManage
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:173:9-174:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:173:19-78
+activity#com.util.circlecrop.CropActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:175:9-176:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:175:19-66
+activity#com.util.view.CropViewActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:177:9-76
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:177:19-64
+activity#com.hyphenate.easeui.ui.EaseShowBigImageActivity
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:179:9-94
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:179:19-82
+service#com.amap.api.location.APSService
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:188:9-76
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:188:18-65
+service#com.hyphenate.chat.EMChatService
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:191:9-193:38
+	android:exported
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:193:13-36
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:192:13-60
+service#com.hyphenate.chat.EMJobService
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:194:9-198:15
+	android:exported
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:196:13-36
+	android:permission
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:197:13-69
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:195:13-59
+receiver#com.hyphenate.chat.EMMonitorReceiver
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:200:9-205:20
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:200:19-70
+intent-filter#android.intent.action.PACKAGE_REMOVED
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:201:13-204:29
+action#android.intent.action.PACKAGE_REMOVED
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:202:17-79
+	android:name
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:202:25-77
+data
+ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:203:17-49
+	android:scheme
+		ADDED from D:\eclipse\DownSpace\DownCampus\AndroidManifest.xml:203:23-47
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:16:5-80
+MERGED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:16:5-80
+	android:name
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:16:22-77
+activity#cn.finalteam.galleryfinal.PhotoSelectActivity
+ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:22:9-25:52
+	android:screenOrientation
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:25:13-49
+	android:configChanges
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:24:13-83
+	android:name
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:23:13-73
+activity#cn.finalteam.galleryfinal.PhotoEditActivity
+ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:26:9-29:52
+	android:screenOrientation
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:29:13-49
+	android:configChanges
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:28:13-83
+	android:name
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:27:13-71
+activity#cn.finalteam.galleryfinal.PhotoPreviewActivity
+ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:30:9-33:52
+	android:screenOrientation
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:33:13-49
+	android:configChanges
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:32:13-83
+	android:name
+		ADDED from [cn.finalteam:galleryfinal:1.4.8.7] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\galleryfinal\1.4.8.7\AndroidManifest.xml:31:13-74
+uses-permission#android.permission.CALL_PHONE
+ADDED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:26:5-69
+	android:name
+		ADDED from [cn.finalteam:toolsfinal:1.1.5] D:\eclipse\DownSpace\DownCampus\build\intermediates\exploded-aar\cn.finalteam\toolsfinal\1.1.5\AndroidManifest.xml:26:22-66

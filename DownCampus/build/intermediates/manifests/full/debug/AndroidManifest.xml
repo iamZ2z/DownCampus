@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobilecampus"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 在SDCard中创建与删除文件权限，换头像用 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 百度地图 -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+
+    <!-- 环信权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/> -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 从SDCard读取数据权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 拨打电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name="com.easemob.ECApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Ss1MwGecqapSMekVPLCHSCg2sSuDBeM4" />
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1182170316115704#com.logan.www.educationsystem" />
+        <!-- 高德地图 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="908e0a89f7519e9729123de9d30f2ed2" />
+
+        <activity
+            android:name="com.logan.actmobilecampus.AdvertisementActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.AccountActivity" >
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.MainActivity" >
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.FindPassActivity" >
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.CampusCooperationActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.CampusNewsActivity" >
+        </activity>
+        <activity
+            android:name="com.logan.actdynamic.CampusActActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.CampusActDetailActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.EnrollActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.ClassDynamicActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.SendDynamicActivity" >
+        </activity>
+        <activity android:name="com.logan.actnews.NewsDetailsActivity" >
+        </activity>
+        <activity
+            android:name="com.easemob.NewsChat2Activity"
+            android:theme="@style/AppBaseTheme" />
+        <activity android:name="com.logan.actnews.OtherActivity" >
+        </activity>
+        <activity android:name="com.easemob.ContactActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.LogManage" >
+        </activity>
+        <activity android:name="com.logan.actme.EditDataActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.AddressActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.DynamicActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.ChangePassActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.OptionActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.MessageActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.HelpActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.CommentActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.AboutActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.MySignActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.SignActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.FootPrint" >
+        </activity>
+        <activity android:name="com.logan.acthome.LeaveActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.LeaveRecordActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.ClassScheduleActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.WorkRestActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.WriteLog" >
+        </activity>
+        <activity android:name="com.logan.acthome.CalendarActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.ExamArrange" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.ExamArrangeDetail" >
+        </activity>
+        <activity android:name="com.logan.acthome.MyScore" >
+        </activity>
+        <activity android:name="com.logan.acthome.MySeat" >
+        </activity>
+        <activity android:name="com.logan.acthome.CampusPay" >
+        </activity>
+        <activity android:name="com.logan.acthome.Homework" >
+        </activity>
+        <activity android:name="com.logan.acthome.TeacherRateActivity" />
+        <activity android:name="com.logan.acthome.more.RateContentActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.ClassActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.parentleader.Behavior" >
+        </activity>
+        <activity android:name="com.logan.acthome.parentleader.MyApprove" />
+        <activity android:name="com.logan.acthome.parentleader.ApproveDetail" />
+        <activity android:name="com.logan.acthome.parentleader.ApproveSearch" />
+        <activity android:name="com.logan.acthome.parentleader.MeetingManage" />
+        <activity android:name="com.logan.acthome.parentleader.SendMeetingActivity" />
+        <activity android:name="com.util.circlecrop.CropActivity" >
+        </activity>
+        <activity android:name="com.util.view.CropViewActivity" />
+        <!-- <activity android:name="com.easemob.ContactListActivity"></activity> -->
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
+
+        <!-- 百度 -->
+        <!--
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+        </service>
+        -->
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!-- 环信 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="cn.finalteam.galleryfinal.PhotoSelectActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.finalteam.galleryfinal.PhotoEditActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.finalteam.galleryfinal.PhotoPreviewActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

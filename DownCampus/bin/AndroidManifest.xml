@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobilecampus"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 在SDCard中创建与删除文件权限，换头像用 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 百度地图 -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Ss1MwGecqapSMekVPLCHSCg2sSuDBeM4" />
+
+        <activity
+            android:name="com.logan.actmobilecampus.AdvertisementActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.AccountActivity"
+                  android:windowSoftInputMode="adjustPan|stateHidden">
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.MainActivity" >
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.FindPassActivity" >
+        </activity>
+        <activity android:name="com.logan.actmobilecampus.CampusCooperationActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.CampusNewsActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.CampusActActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.CampusActDetailActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.EnrollActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.ClassDynamicActivity" >
+        </activity>
+        <activity android:name="com.logan.actdynamic.SendDynamicActivity" >
+        </activity>
+        <activity android:name="com.logan.actnews.NewsDetailsActivity" >
+        </activity>
+        <activity android:name="com.logan.actnews.NewsChatActivity" >
+        </activity>
+        <activity android:name="com.logan.actnews.OtherActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.LogManage" >
+        </activity>
+        <activity android:name="com.logan.actme.EditDataActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.EditData_Camera" >
+        </activity>
+        <activity android:name="com.logan.actme.AddressActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.DynamicActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.OptionActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.MessageActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.HelpActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.CommentActivity" >
+        </activity>
+        <activity android:name="com.logan.actme.option.AboutActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.MySignActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.SignActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.FootPrint" >
+        </activity>
+        <activity android:name="com.logan.acthome.LeaveActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.LeaveRecordActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.ClassScheduleActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.WorkRestActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.WriteLog" >
+        </activity>
+        <activity android:name="com.logan.acthome.CalendarActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.ExamArrange" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.ExamArrangeDetail" >
+        </activity>
+        <activity android:name="com.logan.acthome.MyScore" >
+        </activity>
+        <activity android:name="com.logan.acthome.MySeat" >
+        </activity>
+        <activity android:name="com.logan.acthome.CampusPay" >
+        </activity>
+        <activity android:name="com.logan.acthome.Homework" >
+        </activity>
+        <activity android:name="com.logan.acthome.more.RateContentActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.ClassActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.parentleader.Behavior" >
+        </activity>
+        <activity android:name="com.logan.acthome.parentleader.MyApprove" >
+        </activity>
+        <activity android:name="com.logan.acthome.parentleader.ApproveDetail" >
+        </activity>
+        <activity android:name="com.logan.acthome.parentleader.MeetingManage" >
+        </activity>
+        <activity android:name="com.util.circlecrop.CropActivity" >
+        </activity>
+        
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":remote" >
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,330 @@
+[
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_left.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\slide_out_to_left.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\anim\\push_left_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\push_top_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\head_in.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\head_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_right.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\slide_out_to_right.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\head_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\head_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_out2.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\push_top_out2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_out2.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\push_top_out2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\push_bottom_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\hold.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\hold.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\anim\\push_right_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_slide_out_bottom.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.contrarywind\\Android-PickerView\\3.2.3\\res\\anim\\pickerview_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\anim\\push_right_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_dialog_scale_out.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\anim\\pickerview_dialog_scale_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_right.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\slide_in_from_right.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_dialog_scale_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.contrarywind\\Android-PickerView\\3.2.3\\res\\anim\\pickerview_dialog_scale_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\gf_flip_horizontal_out.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8b5635b9e61f7b91380f4876e321f5b74bd43299\\output\\res\\anim\\gf_flip_horizontal_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_right.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\slide_in_from_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_left.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\slide_in_from_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\voice_from_icon.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\voice_from_icon.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\push_bottom_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\gf_flip_horizontal_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\cn.finalteam\\galleryfinal\\1.4.8.7\\res\\anim\\gf_flip_horizontal_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_in.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\push_bottom_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_out.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\push_top_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\fade_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_dialog_scale_in.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\anim\\pickerview_dialog_scale_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\hold.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\hold.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_in.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\push_top_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_slide_in_bottom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\anim\\pickerview_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_left.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\slide_in_from_left.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\09a79980ac49c2c23ebda09dc9d120a4821217ec\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_in2.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\push_top_in2.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\gf_flip_horizontal_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\cn.finalteam\\galleryfinal\\1.4.8.7\\res\\anim\\gf_flip_horizontal_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\anim\\push_left_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\fade_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\anim\\push_left_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\09a79980ac49c2c23ebda09dc9d120a4821217ec\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\fade_out.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\push_top_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\voice_to_icon.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\voice_to_icon.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_dialog_scale_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.contrarywind\\Android-PickerView\\3.2.3\\res\\anim\\pickerview_dialog_scale_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\head_out.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\head_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\09a79980ac49c2c23ebda09dc9d120a4821217ec\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\voice_from_icon.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\voice_from_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\09a79980ac49c2c23ebda09dc9d120a4821217ec\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_right.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\slide_out_to_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\anim\\push_right_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\gf_flip_horizontal_in.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8b5635b9e61f7b91380f4876e321f5b74bd43299\\output\\res\\anim\\gf_flip_horizontal_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\voice_to_icon.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\voice_to_icon.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\head_in.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\head_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\fade_in.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_left.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\DownCampus\\easeui\\unspecified\\res\\anim\\slide_out_to_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_out.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\push_bottom_out.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_slide_in_bottom.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.contrarywind\\Android-PickerView\\3.2.3\\res\\anim\\pickerview_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\anim\\push_right_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_slide_out_bottom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\anim\\pickerview_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\anim\\push_left_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_in2.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\push_top_in2.xml"
+    }
+]

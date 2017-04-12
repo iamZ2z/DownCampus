@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\release\\menu\\em_context_contact_list.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\menu\\em_context_contact_list.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\release\\menu\\popup_menu3.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\menu\\popup_menu3.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\release\\menu\\popup_menu2.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\menu\\popup_menu2.xml"
+    },
+    {
+        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\release\\menu\\popup_menu.xml",
+        "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\menu\\popup_menu.xml"
+    }
+]

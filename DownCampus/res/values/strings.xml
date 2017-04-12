@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobileCampus</string>
+    <string name="hello_world">Hello world!</string>
+
+    <item name="tag_big" type="id"></item>
+    <item name="tag_normal" type="id"></item>
+
+</resources>

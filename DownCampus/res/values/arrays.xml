@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="role">
+        <item>科任老师</item>
+        <item>校长</item>
+        <item>学生</item>
+        <item>老师</item>
+    </string-array>
+    <string-array name="child_one">
+        <item>张老师</item>
+        <item>李老师</item>
+        <item>吴老师</item>
+        <item>何老师</item>
+        <item>曾老师</item>
+        <item>成老师</item>
+        <item>陶老师</item>
+        <item>沙老师</item>
+        <item>宋老师</item>
+        <item>宋伟老师</item>
+        <item>袁老师</item>
+        <item>gg</item>
+    </string-array>
+    <string-array name="child_two">
+        <item>阿妹老师</item>
+        <item>阿郎老师</item>
+        <item>陈老师</item>
+        <item>周老师</item>
+        <item>曾老师</item>
+        <item>aaa</item>
+        <item>bbb</item>
+        <item>ccc</item>
+        <item>ddd</item>
+    </string-array>
+    <string-array name="depart">
+        <item>同事通讯录</item>
+        <item>家长通讯录</item>
+        <item>学生通讯录</item>
+    </string-array>
+    <string-array name="leave_type">
+        <item>病假</item>
+        <item>事假</item>
+        <item>婚假</item>
+        <item>丧假</item>
+        <item>产假</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="log_type">
+        <item>日报</item>
+        <item>周报</item>
+        <item>月报</item>
+        <item>季报</item>
+        <item>年报</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="teacher">
+        <item>我的签到</item>
+        <item>班级课表</item>
+        <item>作息安排</item>
+        <item>日志管理</item>
+        <item>校园日历</item>
+        <item>我的请假</item>
+    </string-array>
+    <string-array name="teacher_img">
+        <item>@mipmap/home_icon_13</item>
+        <item>@mipmap/home_icon_5</item>
+        <item>@mipmap/home_icon_7</item>
+        <item>@mipmap/home_icon_12</item>
+        <item>@mipmap/home_icon_1</item>
+        <item>@mipmap/home_icon_6</item>
+    </string-array>
+
+
+    <string-array name="student">
+        <item>班级课表</item>
+        <item>作息安排</item>
+        <item>校园日历</item>
+        <item>我的请假</item>
+        <item>考试安排</item>
+        <item>我的成绩</item>
+        <item>我的座位</item>
+        <item>校园缴费</item>
+        <item>我的作业</item>
+        <item>教师评价</item>
+        <item>班级活动</item>
+    </string-array>
+    <string-array name="student_img">
+        <item>@mipmap/home_icon_1</item>
+        <item>@mipmap/home_icon_2</item>
+        <item>@mipmap/home_icon_3</item>
+        <item>@mipmap/home_icon_4</item>
+        <item>@mipmap/home_icon_5</item>
+        <item>@mipmap/home_icon_6</item>
+        <item>@mipmap/home_icon_7</item>
+        <item>@mipmap/home_icon_8</item>
+        <item>@mipmap/home_icon_9</item>
+        <item>@mipmap/home_icon_10</item>
+        <item>@mipmap/home_icon_11</item>
+    </string-array>
+
+    <string-array name="parent">
+        <item>学生表现</item>
+        <item>学生考勤</item>
+        <item>学生作业</item>
+        <item>学生成绩</item>
+        <item>校园日历</item>
+        <item>校园缴费</item>
+        <item>教师评价</item>
+    </string-array>
+    <string-array name="parent_img">
+        <item>@mipmap/home_icon_14</item>
+        <item>@mipmap/home_icon_2</item>
+        <item>@mipmap/home_icon_15</item>
+        <item>@mipmap/home_icon_4</item>
+        <item>@mipmap/home_icon_10</item>
+        <item>@mipmap/home_icon_6</item>
+        <item>@mipmap/home_icon_11</item>
+    </string-array>
+
+
+    <string-array name="leader">
+        <item>　审批　</item>
+        <item>会议管理</item>
+        <item>校园日历</item>
+        <item>作息安排</item>
+    </string-array>
+    <string-array name="leader_img">
+        <item>@mipmap/home_icon_16</item>
+        <item>@mipmap/home_icon_6</item>
+        <item>@mipmap/home_icon_7</item>
+        <item>@mipmap/home_icon_17</item>
+    </string-array>
+
+</resources>
