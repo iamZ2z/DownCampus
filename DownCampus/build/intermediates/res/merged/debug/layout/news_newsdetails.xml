@@ -1,50 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-      <com.util.TitleBar
-        android:id="@+id/title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray_title" />
-    
+    <com.util.TitleBar style="@style/bar_title"/>
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bord"
-        android:paddingRight="2dp" >
+        android:paddingRight="2dp">
     </ListView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
         android:layout_gravity="bottom"
-        android:orientation="horizontal" >
+        android:gravity="bottom"
+        android:orientation="horizontal">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:hint="亲，有什么想问我的吗？　　"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/x150"
+            android:layout_height="@dimen/y150"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/emoji" />
+            android:layout_marginLeft="@dimen/x15"
+            android:src="@drawable/emoji"/>
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/x150"
+            android:layout_height="@dimen/y150"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="5dp"
-            android:src="@mipmap/nav_btn_add" />
+            android:layout_marginLeft="@dimen/x15"
+            android:src="@mipmap/nav_btn_add"/>
     </LinearLayout>
 
 </LinearLayout>

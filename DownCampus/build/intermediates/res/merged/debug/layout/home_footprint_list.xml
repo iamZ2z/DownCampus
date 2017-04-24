@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="70dp"
-              android:layout_marginLeft="15dp"
-              android:layout_marginRight="15dp"
-              android:layout_marginTop="15dp"
+              android:layout_height="@dimen/y210"
+              android:layout_marginLeft="@dimen/x45"
+              android:layout_marginRight="@dimen/x45"
+              android:layout_marginTop="@dimen/y45"
               android:orientation="horizontal">
 
     <ImageView
@@ -15,9 +15,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginTop="@dimen/y15"
+        android:layout_marginBottom="@dimen/y15"
+        android:layout_marginLeft="@dimen/x45"
         android:background="@mipmap/footprint_img_bg1"
         android:orientation="horizontal">
 
@@ -25,7 +25,7 @@
             android:id="@+id/footprint_listdate"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="@dimen/x75"
             android:gravity="center_vertical"
             android:text="3月30日"
             android:textColor="@color/white"
@@ -35,7 +35,7 @@
             android:id="@+id/footprint_listtime"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="@dimen/x45"
             android:gravity="center_vertical"
             android:text="9:00签到"
             android:textColor="@color/white"
@@ -45,7 +45,7 @@
             android:id="@+id/footprint_listsign"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="@dimen/x45"
             android:gravity="center_vertical"
             android:text="正常"
             android:textColor="@color/white"

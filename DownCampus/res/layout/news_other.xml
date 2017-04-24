@@ -19,21 +19,21 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="@dimen/y600"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <com.util.CircleImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_width="@dimen/x192"
+                    android:layout_height="@dimen/y192"
+                    android:layout_marginTop="@dimen/y150"
                     android:src="@drawable/touxiang" />
 
                 <TextView
                     android:id="@+id/other_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="@dimen/y36"
                     android:text="周老师"
                     android:textColor="@color/white"
                     android:textSize="15dp" />
@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/y30"
                     android:text="空谈误国，实干兴邦"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
@@ -49,11 +49,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="@dimen/y129"
                 android:background="@color/white"
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,13 +73,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/y129"
+                android:layout_marginTop="@dimen/y60"
                 android:background="@color/white"
                 android:orientation="horizontal"
-
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -99,13 +98,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:layout_marginTop="20dp"
-
+                android:layout_height="@dimen/y129"
+                android:layout_marginTop="@dimen/y60"
                 android:background="@color/white"
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -125,12 +123,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="@dimen/y129"
                 android:background="@color/white"
-
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -150,12 +147,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="@dimen/y129"
                 android:background="@color/white"
-
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -175,12 +171,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="@dimen/y129"
                 android:background="@color/white"
-
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -200,12 +195,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="@dimen/y129"
                 android:background="@color/white"
-
                 android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -226,13 +220,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/y225"
+                android:layout_marginTop="@dimen/y60"
                 android:background="@drawable/bord2"
                 android:orientation="horizontal"
-                android:paddingBottom="13dp"
-                android:paddingLeft="15dp"
-                android:paddingTop="13dp">
+                android:paddingBottom="@dimen/y39"
+                android:paddingLeft="@dimen/x45"
+                android:paddingTop="@dimen/y39">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -243,20 +237,20 @@
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/x210"
+                    android:layout_height="@dimen/y144"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="12dp"
+                    android:layout_marginLeft="@dimen/y36"
                     android:src="@drawable/upload" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/other_send"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="@dimen/y144"
+                android:layout_marginLeft="@dimen/x60"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_marginTop="@dimen/y30"
                 android:background="@drawable/bordblueradiusmore"
                 android:gravity="center"
                 android:text="发送信息"

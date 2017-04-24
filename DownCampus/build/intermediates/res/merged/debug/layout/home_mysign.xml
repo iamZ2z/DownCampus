@@ -14,8 +14,8 @@
         android:id="@+id/dayofweek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/x105"
+        android:layout_marginTop="@dimen/y60"
         android:background="@android:color/transparent"
         android:text="星期五"
         android:textColor="@color/white"
@@ -25,8 +25,8 @@
         android:id="@+id/dayofyear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/x105"
+        android:layout_marginTop="@dimen/y45"
         android:background="@android:color/transparent"
         android:text="2017-04-05"
         android:textColor="@color/white"
@@ -35,14 +35,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/x45"
+        android:layout_marginRight="@dimen/x45"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="85dp">
+            android:layout_height="@dimen/y120"
+            android:layout_marginTop="@dimen/y255">
 
             <TextView
                 android:id="@+id/tv_nowplace"
@@ -66,16 +66,16 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/y60"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="@dimen/x150"
             android:src="@mipmap/sign_icon_tips"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/y90"
+            android:layout_marginTop="@dimen/y30"
             android:orientation="horizontal">
 
             <TextView
@@ -112,8 +112,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="@dimen/y90"
+            android:layout_marginTop="@dimen/y45"
             android:orientation="horizontal">
 
             <TextView
@@ -151,7 +151,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/y120"
         android:src="@mipmap/sign_btn_default"
         android:text="签到"
         android:textSize="20sp"/>

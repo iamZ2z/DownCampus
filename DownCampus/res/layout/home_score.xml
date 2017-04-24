@@ -15,18 +15,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
+            android:layout_margin="@dimen/x42"
             android:text="学年："/>
 
         <Spinner
             android:id="@+id/sp_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="14dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginRight="@dimen/x42"
+            android:layout_marginTop="@dimen/y42"
             android:background="@drawable/bordblueround"
-            android:padding="14dp"
-            />
+            android:padding="@dimen/x42"            />
     </LinearLayout>
 
     <LinearLayout
@@ -37,15 +36,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
+            android:layout_margin="@dimen/x42"
             android:text="学期："/>
 
         <Spinner
             android:id="@+id/sp_term"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="14dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginRight="@dimen/x42"
+            android:layout_marginTop="@dimen/y42"
             android:background="@drawable/bordblueround"
             android:padding="14dp"            />
     </LinearLayout>
@@ -58,18 +57,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
+            android:layout_margin="@dimen/x42"
             android:text="类型："/>
 
         <Spinner
             android:id="@+id/sp_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="14dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginRight="@dimen/x42"
+            android:layout_marginTop="@dimen/y42"
             android:background="@drawable/bordblueround"
-            android:padding="14dp"
-            />
+            android:padding="@dimen/x42"            />
     </LinearLayout>
 
     <LinearLayout
@@ -80,26 +78,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
+            android:layout_margin="@dimen/x42"
             android:text="名称："/>
 
         <Spinner
             android:id="@+id/sp_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="14dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginRight="@dimen/x42"
+            android:layout_marginTop="@dimen/y42"
             android:background="@drawable/bordblueround"
-            android:padding="14dp"
-            />
+            android:padding="@dimen/x42"            />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="14dp"
-        android:layout_marginTop="40dp"
+        android:layout_margin="@dimen/x42"
+        android:layout_marginTop="@dimen/y120"
         android:background="@drawable/bluebutton"
         android:text="确定"
         android:textColor="@color/white_247x3"/>

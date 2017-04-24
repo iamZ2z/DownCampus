@@ -16,8 +16,8 @@
         android:orientation="horizontal" >
 
         <com.util.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/x240"
+            android:layout_height="@dimen/y240"
             android:src="@drawable/touxiang" />
 
         <LinearLayout
@@ -73,12 +73,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/x60"
         android:orientation="horizontal" >
 
         <com.util.CircleImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/y90"
             android:src="@drawable/touxiang" />
 
         <LinearLayout
@@ -109,18 +109,18 @@
     <TextView
         android:layout_width="1dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="@dimen/x105"
         android:background="@color/gray_title" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/x60"
         android:orientation="horizontal" >
 
         <com.util.CircleImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/y90"
             android:src="@drawable/touxiang" />
 
         <LinearLayout

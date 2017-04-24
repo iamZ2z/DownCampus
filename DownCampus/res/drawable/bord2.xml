@@ -7,8 +7,8 @@
         android:color="@color/gray_204x3" />
 
     <padding
-        android:bottom="14sp"
-        android:top="14sp"
+        android:bottom="@dimen/y42"
+        android:top="@dimen/y42"
         android:left="2dp"
         android:right="2dp" />
 

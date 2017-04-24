@@ -4,19 +4,18 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <com.util.TitleBar
-        style="@style/bar_title"/>
+    <com.util.TitleBar        style="@style/bar_title"/>
 
     <LinearLayout
         android:id="@+id/layout_type"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/y180"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="@dimen/x45"
             android:gravity="center"
             android:text="请假类型"
             android:textSize="15dp"/>
@@ -24,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="@dimen/x60"
             android:drawableRight="@mipmap/screen_icon_down"
             android:gravity="center_vertical|right"
             android:text="筛选"
@@ -34,8 +33,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="@dimen/y3"
+        android:layout_marginBottom="@dimen/y30"
         android:background="@color/gray_230x3"/>
 
     <FrameLayout

@@ -9,11 +9,11 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/y120"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="62dp"
-        android:layout_marginRight="62dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/x186"
+        android:layout_marginRight="@dimen/x186"
+        android:layout_marginTop="@dimen/y30"
         android:background="@color/blue_download"
         android:gravity="center"
         android:text="讲台"
@@ -21,14 +21,14 @@
         android:textSize="15sp"/>
 
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/y30"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/y3"
         android:background="@color/gray_230x3"/>
 
     <com.logan.acthome.more.MySeatView
         android:layout_width="match_parent"
-        android:layout_height="350dp"/>
+        android:layout_height="@dimen/y1050"/>
 
     <TextView
         android:layout_width="wrap_content"

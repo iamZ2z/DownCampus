@@ -25,16 +25,15 @@ public class ECApplication extends Application {
     public final String PREF_USERNAME="username";
     public static String currentUserNick="";
     //服务器头地址
-    final String serverurl="http://192.168.89.173:8080/iccp/api/";
+    //final String serverurl="http://192.168.89.173:8080/iccp/api";
+    final String serverurl="http://lubo.logansoft.com:8080/iccp/api";
     private String token;
+    private String user_id;
 
     @Override
     public void onCreate() {
-        //MultiDex.install(this);
-
         super.onCreate();
         initEasemob();
-
         //applicationContext=this;
         //instance=this;
         //DemoHelper.getInstance().init(applicationContext);
@@ -105,5 +104,13 @@ public class ECApplication extends Application {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 }

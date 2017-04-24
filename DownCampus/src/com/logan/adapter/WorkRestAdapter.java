@@ -72,7 +72,7 @@ public class WorkRestAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public final class ViewHolder {
+    private final class ViewHolder {
         public TextView act;
         public TextView time;
         public TextView leng;

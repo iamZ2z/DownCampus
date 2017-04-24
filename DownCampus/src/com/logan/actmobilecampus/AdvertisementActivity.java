@@ -25,7 +25,7 @@ public class AdvertisementActivity extends Activity {
 						AccountActivity.class));
 				AdvertisementActivity.this.finish();
 			}
-		}, 2000);
+		}, 1);
 
 	}
 }

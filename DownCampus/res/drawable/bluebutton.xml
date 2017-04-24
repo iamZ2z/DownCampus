@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <corners android:radius="5dp" />
+    <corners         android:bottomLeftRadius="@dimen/x15"
+        android:bottomRightRadius="@dimen/x15"
+        android:topLeftRadius="@dimen/y15"
+        android:topRightRadius="@dimen/y15"/>
 
     <size
-        android:height="30dp"
-        android:width="20dp" />
+        android:height="@dimen/y90"
+        android:width="@dimen/x60" />
 
     <gradient
         android:angle="90"
@@ -13,9 +16,9 @@
         android:startColor="#22b8dd" />
 
     <padding
-        android:bottom="5dp"
-        android:left="5dp"
-        android:right="5dp"
-        android:top="5dp" />
+        android:bottom="@dimen/y15"
+        android:left="@dimen/x15"
+        android:right="@dimen/x15"
+        android:top="@dimen/y15" />
 
 </shape>

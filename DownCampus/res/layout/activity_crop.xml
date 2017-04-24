@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <com.util.TitleBar
         style="@style/bar_title"/>
@@ -9,14 +10,12 @@
     <com.isseiaoki.simplecropview.CropImageView
         xmlns:custom="http://schemas.android.com/apk/res-auto"
         android:id="@+id/result_image"
-        android:padding="12dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-
-        custom:scv_handle_size="14dp"
-        custom:scv_touch_padding="8dp"
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:padding="12dp"
+        android:scaleType="fitCenter"
+        custom:scv_handle_size="14dp"
+        custom:scv_touch_padding="8dp"/>
 
 </LinearLayout>

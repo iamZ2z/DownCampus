@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-  <com.util.TitleBar
-        style="@style/bar_title" />
-   
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.util.TitleBar style="@style/bar_title"/>
+
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/y600"
         android:hint="说点什么吧！"
-        android:textSize="20sp" />
+        android:textSize="20sp"/>
 
     <Button
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y30"
         android:drawableLeft="@mipmap/nav_btn_add"
         android:text="添加照片、视频"
-        android:textSize="20sp" />
+        android:textSize="20sp"/>
 
     <EditText
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请留下您的手机号或QQ或邮箱（选填）"
-        android:textSize="20sp" />
+        android:paddingBottom="@dimen/y15"
+        android:paddingTop="@dimen/y15"
+        android:textSize="20sp"/>
 
 </LinearLayout>

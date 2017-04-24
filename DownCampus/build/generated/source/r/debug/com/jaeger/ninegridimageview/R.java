@@ -18,7 +18,7 @@ public final class R {
         public static final int grid = 0x7f0d003f;
     }
     public static final class string {
-        public static final int app_name = 0x7f06015e;
+        public static final int app_name = 0x7f07015e;
     }
     public static final class styleable {
         public static final int[] NineGridImageView = { 0x7f010091, 0x7f010092, 0x7f010093, 0x7f010094 };

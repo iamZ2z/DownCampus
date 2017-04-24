@@ -6,12 +6,12 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="@dimen/y60"
         android:background="@color/blue_theme"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="44dp">
+        android:layout_height="@dimen/y132">
 
         <ImageView
             android:id="@+id/img"
@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="@dimen/x45"
             android:src="@mipmap/nav_btn_address"/>
 
         <TextView

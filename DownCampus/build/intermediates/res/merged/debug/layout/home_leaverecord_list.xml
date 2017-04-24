@@ -11,8 +11,8 @@
 
         <com.util.CircleImageView
             android:id="@+id/iv"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
+            android:layout_width="@dimen/x240"
+            android:layout_height="@dimen/y240" />
 
         <LinearLayout
             android:layout_width="0dp"

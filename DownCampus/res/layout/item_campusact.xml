@@ -6,7 +6,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="10dp" />
+        android:layout_height="@dimen/y30" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         <com.util.RoundImageView
             android:id="@+id/img"
             android:layout_width="match_parent"
-            android:layout_height="195dp"
+            android:layout_height="@dimen/y585"
             android:scaleType="centerCrop" />
 
         <LinearLayout
@@ -30,24 +30,24 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="@dimen/x42"
+                android:layout_marginTop="@dimen/y30"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="@dimen/x42"
+                android:layout_marginTop="@dimen/x30"
                 android:textColor="@color/gray_type"
                 android:textSize="15sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:layout_marginLeft="14dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/x42"
+                android:layout_marginTop="@dimen/y30"
                 android:orientation="horizontal" >
 
                 <ImageView
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/x30"
                     android:scaleType="fitStart"
                     android:src="@drawable/dynamic_icon_place" />
 
@@ -72,14 +72,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="@dimen/x45"
                     android:textColor="@color/gray_type"
                     android:textSize="12sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/x30"
                     android:layout_toLeftOf="@id/data"
                     android:scaleType="fitStart"
                     android:src="@drawable/dynamic_icon_time" />

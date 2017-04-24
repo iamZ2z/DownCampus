@@ -19,6 +19,7 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
+import com.logan.Constant.InterfaceTest;
 import com.logan.fragment.FindFragment;
 import com.logan.fragment.HomeFragment;
 import com.logan.fragment.MeFragment;
@@ -48,7 +49,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     private int ret = 0;
     private String role, token;
 
-    private String url = "http://192.168.89.173:8080/iccp/api/basic/getCurrentSemester.api";
+    //private String url = "http://192.168.89.173:8080/iccp/api/basic/getCurrentSemester.api";
+    private InterfaceTest interfaceTest=new InterfaceTest();
+    private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     }
 
     private void initCurrentSemester() {
+        url=interfaceTest.getServerurl()+interfaceTest.getCurrentterm();
         final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();

@@ -21,14 +21,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/y30"
         android:text="A：400-100-1212"
         android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/y30"
         android:text="Q：为什么我的号码无法登录？"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -36,14 +36,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/y30"
         android:text="A：1、您输入的手机号码或密码有误。2、你所在学校需要数字校园平台服务，方可使用。"
         android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/y30"
         android:text="Q：通讯录是否能自己修改？"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -51,14 +51,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/y30"
         android:text="A：通讯录不可以自己修改，方便所在班级的家长，老师，学生进行沟通联系。"
         android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/y30"
         android:text="Q：通讯录是否能自己修改？"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -66,7 +66,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/y30"
         android:text="A：你好！老师更换手机号码可联系学校管理员，家长或学生更改手机号码直接联系班主任。"
         android:textSize="20sp" />
 

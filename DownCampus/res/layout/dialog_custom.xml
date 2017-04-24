@@ -15,61 +15,58 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_marginRight="49dp"
+            android:layout_marginRight="@dimen/x140"
             android:src="@mipmap/login_btn_close"/>
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@mipmap/login_bg_bounced"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <ImageView
+            android:id="@+id/student"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="61dp"
-            android:orientation="horizontal">
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/x75"
+            android:layout_marginTop="55dp"
+            android:src="@mipmap/login_btn_students"/>
 
-            <ImageView
-                android:id="@+id/student"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="28.5dp"
-                android:src="@mipmap/login_btn_students"/>
-
-            <ImageView
-                android:id="@+id/parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:src="@mipmap/login_btn_parents"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10.5dp"
-            android:orientation="horizontal">
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/student"
+            android:layout_marginEnd="@dimen/x75"
+            android:layout_marginRight="@dimen/x75"
+            android:src="@mipmap/login_btn_parents"/>
 
-            <ImageView
-                android:id="@+id/teacher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="28.5dp"
-                android:src="@mipmap/login_btn_teacher"/>
 
-            <ImageView
-                android:id="@+id/leader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:src="@mipmap/login_btn_leader"/>
+        <ImageView
+            android:id="@+id/teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/student"
+            android:layout_marginLeft="@dimen/x75"
+            android:layout_marginTop="22dp"
+            android:src="@mipmap/login_btn_teacher"/>
 
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/teacher"
+            android:layout_below="@id/parent"
+            android:layout_marginLeft="@dimen/x72"
+            android:layout_marginRight="@dimen/x75"
+            android:src="@mipmap/login_btn_leader"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

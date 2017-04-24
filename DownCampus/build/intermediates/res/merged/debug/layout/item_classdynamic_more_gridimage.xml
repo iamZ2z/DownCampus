@@ -7,8 +7,8 @@
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:layout_width="113dp"
-        android:layout_height="113dp"
+        android:layout_width="@dimen/x339"
+        android:layout_height="@dimen/y339"
         android:layout_gravity="center"
         android:orientation="vertical" >
 
