@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.example.mobilecampus.R;
 import com.logan.adapter.ClassDynamicAdapter;
@@ -41,6 +42,8 @@ public class ClassDynamicActivity extends Activity {
 
     private ClassDynamicAdapter mClassDynamicAdapter;
 
+    @ViewInject(R.id.newnews)
+    private TextView newnews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,12 @@ public class ClassDynamicActivity extends Activity {
     @Event(value = R.id.btn_send)
     private void onSendClick(View v) {
         mIntent = new Intent(this, SendDynamicActivity.class);
+        startActivity(mIntent);
+    }
+
+    @Event(value = R.id.newnews)
+    private void onNewsClick(View v) {
+        mIntent = new Intent(this, DynamicNewsActivity.class);
         startActivity(mIntent);
     }
 

@@ -1,80 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <com.util.TitleBar
-        android:id="@+id/title_bar"
+    <com.util.TitleBar style="@style/bar_title"/>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray_title" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal" >
+        android:layout_marginBottom="@dimen/y60"
+        android:layout_marginTop="@dimen/y45"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x45"
+        android:paddingRight="@dimen/x45">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="7"
             android:text="接收推送信息　"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="17dp"/>
 
-        <ToggleButton
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switchpush"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="" />
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            app:sb_background="@color/gray_162x3"
+            app:sb_checked_color="@color/blue_theme"
+            app:sb_checkline_color="@color/blue_theme"
+            app:sb_effect_duration="300"/>
 
-    <LinearLayout
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal" >
+        android:layout_marginBottom="@dimen/y60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x45"
+        android:paddingRight="@dimen/x45">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="7"
             android:text="新信息声音提示"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="17dp"/>
 
-        <ToggleButton
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switchmusic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_weight="1"
-            android:checked="false"
-            android:text="" />
-    </LinearLayout>
+            app:sb_background="@color/gray_162x3"
+            app:sb_checked_color="@color/blue_theme"
+            app:sb_checkline_color="@color/blue_theme"
+            app:sb_effect_duration="300"/>
 
-    <LinearLayout
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal" >
+        android:layout_marginBottom="@dimen/y60"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x45"
+        android:paddingRight="@dimen/x45">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="7"
             android:text="新信息震动提示"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="17dp"/>
 
-        <ToggleButton
-            android:id="@+id/message_vibrate"
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switchvibrate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_weight="1"
-            android:checked="false"
-            android:text="" />
-    </LinearLayout>
+            app:sb_background="@color/gray_162x3"
+            app:sb_checked_color="@color/blue_theme"
+            app:sb_checkline_color="@color/blue_theme"
+            app:sb_effect_duration="300"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:background="#cccccc"
-        android:drawableLeft="@drawable/ret"
+        android:drawableLeft="@mipmap/nav_btn_back"
         android:text="" />
 
     <TextView

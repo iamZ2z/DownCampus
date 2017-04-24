@@ -56,7 +56,7 @@
     <application
         android:name="com.easemob.ECApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/icon_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <meta-data
@@ -101,6 +101,8 @@
         </activity>
         <activity android:name="com.logan.actdynamic.SendDynamicActivity">
         </activity>
+        <activity android:name="com.logan.actdynamic.DynamicNewsActivity">
+        </activity>
         <activity android:name="com.logan.actnews.NewsDetailsActivity">
         </activity>
         <activity
@@ -108,13 +110,20 @@
             android:theme="@style/AppBaseTheme"></activity>
         <activity android:name="com.logan.actnews.OtherActivity">
         </activity>
-        <activity android:name="com.easemob.ContactActivity">
-        </activity>
-        <activity android:name="com.logan.acthome.LogManage">
+        <activity android:name="com.easemob.ContactActivity"/>
+        <activity android:name="com.easemob.VerificationActivity"/>
+        <activity android:name="com.logan.acthome.studentteacher.LogManage">
         </activity>
         <activity android:name="com.logan.actme.EditDataActivity">
         </activity>
-        <activity android:name="com.logan.actme.AddressActivity">
+        <activity
+            android:name="com.logan.actnews.AddressActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"></activity>
+        <activity android:name="com.logan.actnews.AddContactActivity">
+        </activity>
+        <activity android:name="com.logan.actnews.AddContactDetailActivity">
+        </activity>
+        <activity android:name="com.logan.actnews.GroupManagerActivity">
         </activity>
         <activity android:name="com.logan.actme.DynamicActivity">
         </activity>
@@ -122,7 +131,7 @@
         </activity>
         <activity android:name="com.logan.actme.OptionActivity">
         </activity>
-        <activity android:name="com.logan.actme.option.MessageActivity">
+        <activity android:name="com.logan.actme.option.NewMessageActivity">
         </activity>
         <activity android:name="com.logan.actme.option.HelpActivity">
         </activity>
@@ -130,40 +139,40 @@
         </activity>
         <activity android:name="com.logan.actme.option.AboutActivity">
         </activity>
-        <activity android:name="com.logan.acthome.MySignActivity">
+        <activity android:name="com.logan.acthome.studentteacher.MySignActivity">
         </activity>
         <activity android:name="com.logan.acthome.more.SignActivity">
         </activity>
         <activity android:name="com.logan.acthome.more.FootPrint">
         </activity>
-        <activity android:name="com.logan.acthome.LeaveActivity">
+        <activity android:name="com.logan.acthome.studentteacher.LeaveActivity">
         </activity>
         <activity android:name="com.logan.acthome.more.LeaveRecordActivity">
         </activity>
-        <activity android:name="com.logan.acthome.ClassScheduleActivity">
+        <activity android:name="com.logan.acthome.studentteacher.ClassScheduleActivity">
         </activity>
-        <activity android:name="com.logan.acthome.WorkRestActivity">
+        <activity android:name="com.logan.acthome.studentteacher.WorkRestActivity">
         </activity>
         <activity android:name="com.logan.acthome.more.WriteLog">
         </activity>
-        <activity android:name="com.logan.acthome.CalendarActivity">
+        <activity android:name="com.logan.acthome.studentteacher.CalendarActivity">
         </activity>
-        <activity android:name="com.logan.acthome.ExamArrange">
+        <activity android:name="com.logan.acthome.studentteacher.ExamArrange">
         </activity>
         <activity android:name="com.logan.acthome.more.ExamArrangeDetail">
         </activity>
-        <activity android:name="com.logan.acthome.MyScore">
+        <activity android:name="com.logan.acthome.studentteacher.MyScore">
         </activity>
-        <activity android:name="com.logan.acthome.MySeat">
+        <activity android:name="com.logan.acthome.studentteacher.MySeat">
         </activity>
-        <activity android:name="com.logan.acthome.CampusPay">
+        <activity android:name="com.logan.acthome.studentteacher.CampusPay">
         </activity>
-        <activity android:name="com.logan.acthome.Homework">
+        <activity android:name="com.logan.acthome.studentteacher.Homework">
         </activity>
-        <activity android:name="com.logan.acthome.TeacherRateActivity"/>
+        <activity android:name="com.logan.acthome.studentteacher.TeacherRateActivity"/>
         <activity android:name="com.logan.acthome.more.RateContentActivity">
         </activity>
-        <activity android:name="com.logan.acthome.ClassActivity">
+        <activity android:name="com.logan.acthome.studentteacher.ClassActivity">
         </activity>
         <activity android:name="com.logan.acthome.parentleader.Behavior">
         </activity>

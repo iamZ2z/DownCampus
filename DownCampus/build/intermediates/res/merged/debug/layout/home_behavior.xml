@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/white"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.TitleBar style="@style/bar_title" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,40 +16,42 @@
 
         <com.util.CircleImageView
             android:id="@+id/head"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="14dp"
-            android:src="@drawable/touxiang"/>
+            android:layout_width="@dimen/x150"
+            android:layout_height="@dimen/y150"
+            android:layout_marginTop="@dimen/y42"
+            android:src="@drawable/touxiang" />
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y42"
             android:text="刘波"
             android:textColor="@color/white"
-            android:layout_marginTop="14dp"
-            android:textSize="17dp"/>
+            android:textSize="17dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="@dimen/y210"
             android:gravity="center"
             android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/sp_year"
-                android:popupBackground="@mipmap/spinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="-10dp"/>
+                android:layout_height="@dimen/y84"
+                android:layout_gravity="left"
+                android:layout_marginLeft="@dimen/x150"
+                android:background="@drawable/bordblueround" />
 
             <Spinner
+                android:layout_marginRight="@dimen/x150"
+                android:layout_gravity="right"
                 android:id="@+id/sp_term"
-                android:popupBackground="@mipmap/spinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"/>
+                android:layout_height="@dimen/y84"
+                android:background="@drawable/bordblueround" />
         </LinearLayout>
     </LinearLayout>
 
@@ -59,7 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:background="@color/white"
-        android:dividerHeight="15dp">
-    </ListView>
+        android:dividerHeight="15dp"></ListView>
 
 </LinearLayout>

@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.mobilecampus.R;
-import com.logan.actme.AddressActivity;
 import com.logan.actme.ChangePassActivity;
 import com.logan.actme.DynamicActivity;
 import com.logan.actme.EditDataActivity;

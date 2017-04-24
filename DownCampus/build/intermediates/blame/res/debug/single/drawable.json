@@ -32,6 +32,10 @@
         "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\drawable\\radiobtn_selecter.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\bordgray.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\bordgray.xml"
+    },
+    {
         "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
@@ -126,10 +130,6 @@
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_chatfrom_bg.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\drawable\\ease_chatfrom_bg.xml"
-    },
-    {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\bordbluehomework.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\bordbluehomework.xml"
     },
     {
         "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_mm_listitem_grey.xml",
@@ -340,6 +340,10 @@
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\bordblueround_dash.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\bordblueround_dash.xml"
+    },
+    {
         "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\bordwhite_grayframe.xml",
         "source": "D:\\eclipse\\DownSpace\\DownCampus\\res\\drawable\\bordwhite_grayframe.xml"
     },
@@ -400,6 +404,10 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\drawable\\ease_mm_listitem_grey.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\bordblueall.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\bordblueall.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\shadow_homefragment_grid.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\shadow_homefragment_grid.xml"
     },
@@ -414,6 +422,10 @@
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\7df722955e6a4369c590e08f27830908bf31df80\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\bordredall.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\bordredall.xml"
     },
     {
         "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_btn_blue_selector.xml",

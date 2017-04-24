@@ -7,35 +7,8 @@
         <item>学生</item>
         <item>老师</item>
     </string-array>
-    <string-array name="child_one">
-        <item>张老师</item>
-        <item>李老师</item>
-        <item>吴老师</item>
-        <item>何老师</item>
-        <item>曾老师</item>
-        <item>成老师</item>
-        <item>陶老师</item>
-        <item>沙老师</item>
-        <item>宋老师</item>
-        <item>宋伟老师</item>
-        <item>袁老师</item>
-        <item>gg</item>
-    </string-array>
-    <string-array name="child_two">
-        <item>阿妹老师</item>
-        <item>阿郎老师</item>
-        <item>陈老师</item>
-        <item>周老师</item>
-        <item>曾老师</item>
-        <item>aaa</item>
-        <item>bbb</item>
-        <item>ccc</item>
-        <item>ddd</item>
-    </string-array>
     <string-array name="depart">
-        <item>同事通讯录</item>
-        <item>家长通讯录</item>
-        <item>学生通讯录</item>
+        <item>联系人</item>
     </string-array>
     <string-array name="leave_type">
         <item>病假</item>

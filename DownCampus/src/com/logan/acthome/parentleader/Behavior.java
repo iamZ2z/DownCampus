@@ -61,8 +61,8 @@ public class Behavior extends Activity {
     }
 
     private void sp_Year() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, str_year);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.spinner_bluebord_icon, str_year);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp_year.setAdapter(adapter);
         sp_year.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -82,8 +82,8 @@ public class Behavior extends Activity {
     }
 
     private void sp_Term() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, str_term);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.spinner_bluebord_icon, str_term);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp_term.setAdapter(adapter);
         sp_term.setOnItemSelectedListener(new OnItemSelectedListener() {

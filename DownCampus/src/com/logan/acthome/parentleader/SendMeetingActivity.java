@@ -23,6 +23,9 @@ public class SendMeetingActivity extends Activity{
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
 
+    @ViewInject(R.id.btn_add)
+    private TitleBar btn_add;
+
     private Intent mIntent;
 
     @Override
@@ -38,7 +41,7 @@ public class SendMeetingActivity extends Activity{
             }
         });
         titlebar.setActionTextColor(Color.WHITE);
-        titlebar.addAction(new TitleBar.TextAction("请假记录") {
+        titlebar.addAction(new TitleBar.TextAction("发布") {
             @Override
             public void performAction(View view) {
                 mIntent = new Intent();

@@ -65,7 +65,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.logan.actmobilecampus.AccountActivity"
-                  android:windowSoftInputMode="adjustPan|stateHidden">
+                  android:windowSoftInputMode="stateVisible|adjustResize">
         </activity>
         <activity android:name="com.logan.actmobilecampus.MainActivity" >
         </activity>
@@ -92,19 +92,18 @@
         </activity>
         <activity android:name="com.logan.actnews.OtherActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.LogManage" >
+        <activity android:name="com.logan.acthome.studentteacher.LogManage" >
         </activity>
         <activity android:name="com.logan.actme.EditDataActivity" >
         </activity>
-        <activity android:name="com.logan.actme.EditData_Camera" >
-        </activity>
-        <activity android:name="com.logan.actme.AddressActivity" >
+        <activity android:name="com.logan.actnews.AddressActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity android:name="com.logan.actme.DynamicActivity" >
         </activity>
         <activity android:name="com.logan.actme.OptionActivity" >
         </activity>
-        <activity android:name="com.logan.actme.option.MessageActivity" >
+        <activity android:name="com.logan.actme.option.NewMessageActivity" >
         </activity>
         <activity android:name="com.logan.actme.option.HelpActivity" >
         </activity>
@@ -112,39 +111,39 @@
         </activity>
         <activity android:name="com.logan.actme.option.AboutActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.MySignActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.MySignActivity" >
         </activity>
         <activity android:name="com.logan.acthome.more.SignActivity" >
         </activity>
         <activity android:name="com.logan.acthome.more.FootPrint" >
         </activity>
-        <activity android:name="com.logan.acthome.LeaveActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.LeaveActivity" >
         </activity>
         <activity android:name="com.logan.acthome.more.LeaveRecordActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.ClassScheduleActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.ClassScheduleActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.WorkRestActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.WorkRestActivity" >
         </activity>
         <activity android:name="com.logan.acthome.more.WriteLog" >
         </activity>
-        <activity android:name="com.logan.acthome.CalendarActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.CalendarActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.ExamArrange" >
+        <activity android:name="com.logan.acthome.studentteacher.ExamArrange" >
         </activity>
         <activity android:name="com.logan.acthome.more.ExamArrangeDetail" >
         </activity>
-        <activity android:name="com.logan.acthome.MyScore" >
+        <activity android:name="com.logan.acthome.studentteacher.MyScore" >
         </activity>
-        <activity android:name="com.logan.acthome.MySeat" >
+        <activity android:name="com.logan.acthome.studentteacher.MySeat" >
         </activity>
-        <activity android:name="com.logan.acthome.CampusPay" >
+        <activity android:name="com.logan.acthome.studentteacher.CampusPay" >
         </activity>
-        <activity android:name="com.logan.acthome.Homework" >
+        <activity android:name="com.logan.acthome.studentteacher.Homework" >
         </activity>
         <activity android:name="com.logan.acthome.more.RateContentActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.ClassActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.ClassActivity" >
         </activity>
         <activity android:name="com.logan.acthome.parentleader.Behavior" >
         </activity>

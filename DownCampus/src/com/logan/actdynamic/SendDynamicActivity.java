@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
@@ -42,7 +41,7 @@ import cn.finalteam.galleryfinal.ImageLoader;
 import cn.finalteam.galleryfinal.ThemeConfig;
 import cn.finalteam.galleryfinal.model.PhotoInfo;
 
-@ContentView(R.layout.find_classact2)
+@ContentView(R.layout.find_senddynamic)
 public class SendDynamicActivity extends Activity {
     @ViewInject(R.id.img_add)
     private ImageView img_add;
@@ -112,8 +111,7 @@ public class SendDynamicActivity extends Activity {
     }
 
     private void initGalleryFinal() {
-        ThemeConfig theme2 = new ThemeConfig.Builder().setIconBack(R.drawable.ret).build();
-        ThemeConfig theme = theme2;
+        ThemeConfig theme = new ThemeConfig.Builder().setIconBack(R.mipmap.nav_btn_back).setTitleBarBgColor(Color.rgb(55,176,233)).build();
 
         FunctionConfig.Builder config = new FunctionConfig.Builder();
         config.setMutiSelectMaxSize(9).setEnablePreview(true).setSelected(mPhotoList);
@@ -121,7 +119,7 @@ public class SendDynamicActivity extends Activity {
 
         ImageLoader imageLoader = new UILImageLoader();
         CoreConfig coreConfig = new CoreConfig.Builder(SendDynamicActivity.this, imageLoader,
-                theme).setFunctionConfig(functionConfig).build();
+                theme).setFunctionConfig(functionConfig).setNoAnimcation(true).build();
         GalleryFinal.init(coreConfig);
         GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, functionConfig,
                 mOnHanlderResultCallback);
@@ -185,6 +183,7 @@ public class SendDynamicActivity extends Activity {
         @Override
         public void onHanlderSuccess(int reqeustCode, List<PhotoInfo> resultList) {
             if (resultList != null) {
+                if(reqeustCode==REQUEST_CODE_GALLERY) mPhotoList.clear();
                 mPhotoList.addAll(resultList);
                 grid.setAdapter(mChoosePhotoListAdapter);
                 mChoosePhotoListAdapter.notifyDataSetChanged();

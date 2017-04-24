@@ -10,12 +10,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.easemob.ECApplication;
 import com.example.mobilecampus.R;
+import com.logan.Constant.InterfaceTest;
 import com.logan.actme.option.AboutActivity;
 import com.logan.actme.option.CommentActivity;
 import com.logan.actme.option.HelpActivity;
-import com.logan.actme.option.MessageActivity;
+import com.logan.actme.option.NewMessageActivity;
 import com.logan.actmobilecampus.AccountActivity;
 import com.logan.actmobilecampus.MainActivity;
 import com.util.DataCleanManager;
@@ -49,9 +49,10 @@ public class OptionActivity extends Activity implements OnClickListener {
     @ViewInject(R.id.btn_exit)
     private Button btn_exit;
     private MainActivity mainActivity;
-    private String url = "http://192.168.89.173:8080/iccp/api/ums/userLogout.api";
-    private ECApplication ecApplication;
+    //private String url = "http://192.168.89.173:8080/iccp/api/ums/userLogout.api";
+    private String url="";
     private String token="";
+    private InterfaceTest interfaceTest=new InterfaceTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +66,10 @@ public class OptionActivity extends Activity implements OnClickListener {
         option_about.setOnClickListener(this);
         //btn_exit.setOnClickListener(this);
 
-        final ECApplication ecApplication=(ECApplication)getApplication();
-        token=ecApplication.getToken();
-        Log.e("OptionAcitv的token","token="+token);
+        url=interfaceTest.getServerurl()+interfaceTest.getLoginout();
+        token=interfaceTest.getToken();
+        Log.e("exit的token",token);
+        Log.e("exit的url",url);
     }
 
     private void initView() {
@@ -103,7 +105,7 @@ public class OptionActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.option_message:
-                mIntent = new Intent(this, MessageActivity.class);
+                mIntent = new Intent(this, NewMessageActivity.class);
                 startActivity(mIntent);
                 break;
             case R.id.option_help:
@@ -130,12 +132,11 @@ public class OptionActivity extends Activity implements OnClickListener {
 
     @Event(value = R.id.btn_exit)
     private void onbtn_exitClick(View v) {
-
-        //url = "http://192.168.89.173:8080/iccp/api/ums/userLogout.api";
-        dourl();
+        logouturl();
     }
 
-    private void dourl() {
+    private void logouturl() {
+
         final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();

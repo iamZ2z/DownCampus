@@ -1,6 +1,5 @@
 package com.easemob;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -9,7 +8,6 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.example.mobilecampus.R;
-import com.hyphenate.easeui.EaseConstant;
 import com.util.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -45,6 +43,8 @@ public class ContactActivity extends FragmentActivity{
             @Override
             public void performAction(View view) {
                 //添加好友
+                mIntent=new Intent(ContactActivity.this,VerificationActivity.class);
+                startActivity(mIntent);
             }
         });
 

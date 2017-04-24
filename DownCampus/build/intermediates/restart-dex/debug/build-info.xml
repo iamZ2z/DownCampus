@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1491905487130"
+    timestamp="1493019748223"
     token="-8449966198615224661"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -29,8 +29,11 @@
 
     <build
         build-mode="FULL"
-        timestamp="1491895682338"
+        timestamp="1493000481057"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\outputs\apk\DownCampus-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
@@ -44,16 +47,16 @@
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_5.apk"
@@ -64,42 +67,10 @@
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\outputs\apk\DownCampus-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1491904973943"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1491905487130"
+        timestamp="1493019748223"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\outputs\apk\DownCampus-debug.apk"

@@ -7,14 +7,23 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp" >
+        android:layout_height="@dimen/y150" >
 
         <TextView
             android:id="@+id/exlist_groupname"
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x45"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:id="@+id/exlist_groupicon"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="50dp"
-            android:textSize="26sp" />
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x51"/>
     </RelativeLayout>
 
 </LinearLayout>

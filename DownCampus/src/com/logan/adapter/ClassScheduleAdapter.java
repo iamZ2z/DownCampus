@@ -55,14 +55,14 @@ public class ClassScheduleAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LinearLayout.inflate(mContext, R.layout.adapteritem_classschedule, null);
             viewHolder = new ViewHolder();
-            viewHolder.item = (TextView) convertView.findViewById(item);
+            viewHolder.item = (TextView) convertView.findViewById(R.id.item);
             viewHolder.mon = (TextView) convertView.findViewById(R.id.mon);
-            viewHolder.tue = (TextView) convertView.findViewById(tue);
-            viewHolder.wed = (TextView) convertView.findViewById(wed);
-            viewHolder.thr = (TextView) convertView.findViewById(thr);
-            viewHolder.fri = (TextView) convertView.findViewById(fri);
-            viewHolder.sat = (TextView) convertView.findViewById(sat);
-            viewHolder.sun = (TextView) convertView.findViewById(sun);
+            viewHolder.tue = (TextView) convertView.findViewById(R.id.tue);
+            viewHolder.wed = (TextView) convertView.findViewById(R.id.wed);
+            viewHolder.thr = (TextView) convertView.findViewById(R.id.thr);
+            viewHolder.fri = (TextView) convertView.findViewById(R.id.fri);
+            viewHolder.sat = (TextView) convertView.findViewById(R.id.sat);
+            viewHolder.sun = (TextView) convertView.findViewById(R.id.sun);
             convertView.setTag(viewHolder);
         } else viewHolder = (ViewHolder) convertView.getTag();
 

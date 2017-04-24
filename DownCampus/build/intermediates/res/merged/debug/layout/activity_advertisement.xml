@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:src="@drawable/logo" />
+        android:src="@mipmap/defoult"
+        android:scaleType="matrix"/>
 
 </LinearLayout>

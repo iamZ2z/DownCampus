@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.easemob.ECApplication;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
+import com.logan.Constant.InterfaceTest;
 import com.logan.bean.AccountListBean;
 import com.logan.server.AccountLoginAsyncTask;
 import com.logan.server.AccountLoginListBean;
@@ -37,39 +38,39 @@ import okhttp3.Response;
 public class AccountActivity extends Activity implements OnClickListener {
     @ViewInject(R.id.sp_role)
     private TextView sp_role;
-
     @ViewInject(R.id.findpassword)
     private Button mFindPass;
-
     @ViewInject(R.id.btn_loginmain)
     private Button mLoginmain;
-
     @ViewInject(R.id.campus)
     private Button mCampus;
 
     private Intent mIntent;
-    private String role;
-
+    private String role = "";
     @ViewInject(R.id.et_account)
     private EditText mEditText_account;
     @ViewInject(R.id.et_password)
     private EditText mEditText_password;
 
     private String[] roleItem = new String[4];
-    private ECApplication ecApplication;
-    private String url = "http://192.168.89.173:8080/iccp/api/ums/roles.api";
-    private String urllogin = "http://192.168.89.173:8080/iccp/api/ums/checkUser.api";
+    //无用
+    private String ur = "/ums/roles.api";
+    private String urllogi = "/ums/checkUser.api";
+    private String url;
+    private String urllogin;
     private String token = "";
     private AccountLoginAsyncTask accountLoginAsyncTask;
+    private InterfaceTest interfaceTest=new InterfaceTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
-
+        //final ECApplication ecApplication = (ECApplication) getApplication();
+        url = interfaceTest.getServerurl() + interfaceTest.getLoginrole();
+        urllogin = interfaceTest.getServerurl() + interfaceTest.getLogin();
         dourl();
-
         mFindPass.setOnClickListener(this);
         mLoginmain.setOnClickListener(this);
         mCampus.setOnClickListener(this);
@@ -123,18 +124,24 @@ public class AccountActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.findpassword:
-                mIntent = new Intent(this, FindPassActivity.class);
+                mIntent = new Intent(AccountActivity.this, FindPassActivity.class);
                 startActivity(mIntent);
                 break;
             case R.id.btn_loginmain:
                 if (mEditText_account.getText() != null && mEditText_password.getText() != null
                         || sp_role.getText() != "请选择角色") {
-                    loginurl(mEditText_account.getText().toString(), mEditText_password.getText()
-                            .toString());
-                    /*accountLoginAsyncTask = new AccountLoginAsyncTask(this, urllogin,
-                            mEditText_account.getText().toString(), mEditText_password.getText()
-                            .toString(),role);
-                    accountLoginAsyncTask.execute();*/
+                    if (role.equals(""))
+                        Toast.makeText(AccountActivity.this, "请选择角色", Toast.LENGTH_SHORT).show();
+                    else
+                        loginurl(mEditText_account.getText().toString(), mEditText_password
+                                .getText()
+                                .toString());
+                    /*else {
+                        mIntent = new Intent(AccountActivity.this, MainActivity.class);
+                        mIntent.putExtra("role", role);
+                        mIntent.putExtra("token", token);
+                        startActivity(mIntent);
+                    }*/
                 } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.campus:
@@ -171,8 +178,11 @@ public class AccountActivity extends Activity implements OnClickListener {
                         Log.e("token在mIntent的值", "token为" + token);
 
                         //保存在constant
-                        final ECApplication ecApplication=(ECApplication)getApplication();
-                        ecApplication.setToken(token);
+                        //final ECApplication ecApplication = (ECApplication) getApplication();
+                        interfaceTest.setToken(token);
+
+                        String user_id=accountListBean.getList().get(0).getUser_id();
+                        interfaceTest.setUser_id(user_id);
 
                         startActivity(mIntent);
                     }
@@ -187,7 +197,6 @@ public class AccountActivity extends Activity implements OnClickListener {
         final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
-
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -195,7 +204,7 @@ public class AccountActivity extends Activity implements OnClickListener {
                     Response response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
-                        Log.e("result", "请求数据:" + str);
+                        Log.e("ururururururr的result", "请求数据:" + str);
                         Gson gson = new Gson();
                         AccountListBean accountListBean = gson.fromJson(str, AccountListBean.class);
                         for (int i = 0; i < accountListBean.getList().size(); i++) {

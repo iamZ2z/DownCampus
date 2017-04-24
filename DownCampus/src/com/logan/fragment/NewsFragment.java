@@ -13,9 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.easemob.ContactActivity;
 import com.easemob.ConversationListFragment;
 import com.example.mobilecampus.R;
+import com.logan.actnews.AddressActivity;
 
 @ContentView(R.layout.fragment_tab2)
 public class NewsFragment extends Fragment {
@@ -65,7 +65,7 @@ public class NewsFragment extends Fragment {
 
     @Event(R.id.img)
     private void OnImgClick(View v) {
-        mIntent = new Intent(getActivity(), ContactActivity.class);
+        mIntent = new Intent(getActivity(), AddressActivity.class);
         startActivity(mIntent);
     }
 

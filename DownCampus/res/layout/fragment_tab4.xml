@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_marginTop="20dp"
-              android:gravity="center_horizontal"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/y60"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,140 +14,153 @@
         android:orientation="vertical">
 
         <TextView
-            android:background="@android:color/transparent"
             android:layout_width="match_parent"
-            android:layout_height="44dp"/>
+            android:layout_height="@dimen/y132"
+            android:background="@android:color/transparent" />
 
         <com.util.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/touxiang"/>
+            android:layout_width="@dimen/x240"
+            android:layout_height="@dimen/y240"
+            android:src="@drawable/touxiang" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="刘波"
             android:textColor="@color/white"
-            android:textSize="18dp"/>
+            android:textSize="18dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="空谈误国，实干兴邦"
             android:textColor="@color/white"
-            android:textSize="13dp"/>
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/btn_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="@dimen/y120"
+            android:layout_marginRight="@dimen/y45"
             android:gravity="right"
             android:text="编辑资料>>"
             android:textColor="@color/white"
-            android:textSize="15dp"/>
+            android:textSize="15dp" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/gray_204x3"/>
+        android:layout_height="@dimen/y3"
+        android:layout_marginTop="@dimen/y90"
+        android:background="@color/gray_204x3" />
 
     <LinearLayout
         android:id="@+id/text_dynamic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="13dp"
-        android:paddingTop="13dp">
+        android:paddingBottom="@dimen/y39"
+        android:paddingTop="@dimen/y39">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:src="@mipmap/my_icon_dry"/>
+            android:layout_marginLeft="@dimen/x39"
+            android:src="@mipmap/my_icon_dry" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
+            android:layout_marginLeft="@dimen/x51"
             android:text="我的动态"
             android:textColor="#000000"
-            android:textSize="17dp"/>
+            android:textSize="17dp" />
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:background="@color/gray_204x3"/>
+        android:layout_height="@dimen/y3"
+        android:layout_marginLeft="@dimen/x39"
+        android:layout_marginRight="@dimen/x39"
+        android:background="@color/gray_204x3" />
 
     <LinearLayout
         android:id="@+id/tv_changepass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="13dp"
-        android:paddingTop="13dp">
+        android:paddingBottom="@dimen/y39"
+        android:paddingTop="@dimen/y39">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:src="@mipmap/my_icon_password"/>
+            android:layout_marginLeft="@dimen/x39"
+            android:src="@mipmap/my_icon_password" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
+            android:layout_marginLeft="@dimen/x51"
             android:text="更改密码"
             android:textColor="#000000"
-            android:textSize="17dp"/>
+            android:textSize="17dp" />
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray_204x3"/>
+        android:layout_height="@dimen/y3"
+        android:background="@color/gray_204x3" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/gray_204x3"/>
+        android:layout_height="@dimen/y3"
+        android:layout_marginTop="@dimen/y90"
+        android:background="@color/gray_204x3" />
 
     <LinearLayout
         android:id="@+id/text_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="13dp"
-        android:paddingTop="13dp">
+        android:paddingBottom="@dimen/y39"
+        android:paddingTop="@dimen/y39">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:src="@mipmap/my_icon_install"/>
+            android:layout_marginLeft="@dimen/x39"
+            android:src="@mipmap/my_icon_install" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
+            android:layout_marginLeft="@dimen/x51"
             android:text="设置"
             android:textColor="#000000"
-            android:textSize="17dp"/>/>
+            android:textSize="17dp" />/>
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray_204x3"/>
+        android:layout_height="@dimen/y3"
+        android:background="@color/gray_204x3" />
+
+    <Button
+        android:id="@+id/btn_changerole"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y108"
+        android:layout_marginLeft="@dimen/x90"
+        android:layout_marginRight="@dimen/x90"
+        android:layout_marginTop="@dimen/y60"
+        android:background="@drawable/bordblueradiusmore"
+        android:text="角色切换"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:visibility="gone" />
 
 </LinearLayout>
