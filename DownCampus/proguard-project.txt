@@ -25,3 +25,13 @@
     -keep class com.amap.api.location.**{*;}
     -keep class com.amap.api.fence.**{*;}
     -keep class com.autonavi.aps.amapapi.model.**{*;}
+
+
+-dontoptimize
+-dontpreverify
+
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** { *; }
+
+-dontwarn cn.jiguang.**
+-keep class cn.jiguang.** { *; }

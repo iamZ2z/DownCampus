@@ -11,15 +11,15 @@
 
         <com.util.CircleImageView
             android:id="@+id/head"
-            android:layout_width="@dimen/x90"
-            android:layout_height="@dimen/y90"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/touxiang" />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -31,7 +31,7 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/time"
+                android:id="@+id/leavetime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2017-03-10"
@@ -53,7 +53,7 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y66"
+        android:layout_marginTop="22dp"
         android:text="内容"
         android:textSize="14dp" />
 
@@ -62,11 +62,11 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:layout_gravity="right"
-        android:layout_marginTop="@dimen/y60"
+        android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/dynamic_icon_comment"
         android:text="评论"
         android:textColor="@color/gray_162x3"
-        android:layout_marginBottom="@dimen/y60"
+        android:layout_marginBottom="20dp"
         android:textSize="14dp" />
 
     <!--<ListView

@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.mobilecampus.R;
+import com.logan.constant.InterfaceTest;
 import com.util.TitleBar;
 
 @ContentView(R.layout.find_campusnews)
@@ -29,9 +30,11 @@ public class CampusNewsActivity extends Activity implements OnItemClickListener 
 	private SimpleAdapter mAdapter;
 	private List<HashMap<String, Object>> mHashmap;
 	private HashMap<String, Object> mMap;
-
 	@ViewInject(R.id.title_bar)
 	private TitleBar titlebar;
+
+	private InterfaceTest interfaceTest;
+	private List<? extends Map<String, ?>> data;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -77,7 +77,7 @@ public class ClassDynamicAdapter extends BaseAdapter {
                     viewHolderOne=new ViewHolderOne();
                     viewHolderOne.head=(ImageView)convertView.findViewById(R.id.head);
                     viewHolderOne.title=(TextView) convertView.findViewById(R.id.title);
-                    viewHolderOne.time= (TextView) convertView.findViewById(R.id.time);
+                    viewHolderOne.time= (TextView) convertView.findViewById(R.id.leavetime);
                     viewHolderOne.upload=(ImageView)convertView.findViewById(R.id.upload);
                     viewHolderOne.content= (TextView) convertView.findViewById(R.id.content);
                     convertView.setTag(viewHolderOne);
@@ -87,7 +87,7 @@ public class ClassDynamicAdapter extends BaseAdapter {
                     viewHolderMore= new ViewHolderMore();
                     viewHolderMore.head=(ImageView)convertView.findViewById(R.id.head);
                     viewHolderMore.title=(TextView) convertView.findViewById(R.id.title);
-                    viewHolderMore.time= (TextView) convertView.findViewById(R.id.time);
+                    viewHolderMore.time= (TextView) convertView.findViewById(R.id.leavetime);
                     viewHolderMore.grid=(GridView)convertView.findViewById(R.id.upload2);
                     viewHolderMore.content= (TextView) convertView.findViewById(R.id.content);
                     convertView.setTag(viewHolderMore);

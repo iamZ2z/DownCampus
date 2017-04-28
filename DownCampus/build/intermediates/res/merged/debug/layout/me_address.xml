@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <com.util.TitleBar style="@style/bar_title"/>
-
-    <com.logan.widgets.ClearEditText
-        android:id="@+id/filter_edit"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/y132"
-        android:layout_marginLeft="@dimen/x45"
-        android:layout_marginRight="@dimen/x45"
-        android:layout_marginTop="@dimen/y30"
-        android:background="@drawable/bordgray"
-        android:drawableLeft="@mipmap/message_icon_search"
-        android:drawablePadding="@dimen/x15"
-        android:hint="搜索联系人"
-        android:paddingLeft="@dimen/x15"
-        android:textColor="@color/deep_gray"
-        android:textSize="15dp"/>
-
-    <TextView
-        android:id="@+id/no_search_result_tv"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/x45"
-        android:text="未搜索到结果"
-        android:visibility="gone"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ExpandableListView
-        android:id="@+id/my_expand_lv"
+        <com.util.TitleBar style="@style/bar_title"/>
+
+        <com.logan.widgets.ClearEditText
+            android:id="@+id/filter_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordgray"
+            android:drawableLeft="@mipmap/message_icon_search"
+            android:drawablePadding="5dp"
+            android:hint="搜索联系人"
+            android:paddingLeft="5dp"
+            android:textColor="@color/deep_gray"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/no_search_result_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="未搜索到结果"
+            android:visibility="gone"/>
+
+        <ExpandableListView
+            android:id="@+id/my_expand_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/loadingimg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:src="@mipmap/loadingimg"/>
 
-</LinearLayout>
+</RelativeLayout>

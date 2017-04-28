@@ -10,7 +10,7 @@
         <TextView
             android:id="@+id/top_item"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y192"
+            android:layout_height="64dp"
             android:background="@color/blue_theme"
             android:fitsSystemWindows="true"
             android:gravity="center"
@@ -22,7 +22,7 @@
         <LinearLayout
             android:id="@+id/ll_bottom_tab"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y142"
+            android:layout_height="44dp"
             android:layout_alignParentBottom="true"
             android:baselineAligned="true"
             android:gravity="center_vertical"
@@ -137,8 +137,7 @@
             android:id="@+id/content_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-        </LinearLayout>
+            android:orientation="vertical"/>
     </RelativeLayout>
 
 </FrameLayout>

@@ -12,7 +12,7 @@
         android:background="@mipmap/login_bg_img"
         android:scaleType="matrix"/>
 
-    <com.util.percent.PercentRelativeLayout
+    <android.support.percent.PercentRelativeLayout
         android:id="@+id/kpanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,9 +25,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_marginLeft="3dp"
-            android:layout_centerInParent="true"
             android:background="@drawable/spinner_account"
             android:paddingLeft="30dp"
             android:text="请选择角色"
@@ -49,10 +49,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/sp_line"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/y40"
             android:drawableLeft="@mipmap/login_icon_account_pressed"
             android:hint="请输入帐号或手机号"
-            app:layout_widthPercent="70%"/>
+            app:layout_widthPercent="70%"
+            app:layout_marginTopPercent="4%"/>
 
         <EditText
             android:id="@+id/et_password"
@@ -61,11 +61,11 @@
             android:layout_below="@id/et_account"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/y40"
             android:drawableLeft="@mipmap/login_icon_password_pressed"
             android:hint="请输入密码"
             android:inputType="textPassword"
-            app:layout_widthPercent="70%"/>
+            app:layout_widthPercent="70%"
+            app:layout_marginTopPercent="4%"/>
 
         <Button
             android:id="@+id/btn_loginmain"
@@ -74,50 +74,45 @@
             android:layout_below="@id/et_password"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/y50"
             android:background="@mipmap/login_btn_login_default"
             android:gravity="center"
             android:text="登录"
             android:textColor="@color/white"
-            app:layout_widthPercent="70%"/>
+            app:layout_widthPercent="70%"
+            app:layout_marginTopPercent="5%"/>
 
-
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="1dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_widthPercent="70%">
+            app:layout_marginBottomPercent="2.1%"
+            android:background="@color/blue_theme"/>
 
-            <Button
-                android:id="@+id/campus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="@dimen/x14"
-                android:background="@null"
-                android:text="学校合作"
-                android:textColor="@color/blue_theme"
-                android:textSize="16dp"/>
+        <Button
+            android:id="@+id/campus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@id/line"
+            android:background="@null"
+            android:text="学校合作"
+            android:textColor="@color/blue_theme"
+            android:textSize="16dp"
+            app:layout_marginRightPercent="5%"/>
 
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:background="@color/blue_theme"/>
+        <Button
+            android:id="@+id/findpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@id/line"
+            android:background="@null"
+            android:text="忘记密码"
+            android:textColor="@color/blue_theme"
+            android:textSize="16dp"
+            app:layout_marginLeftPercent="5%"/>
 
-            <Button
-                android:id="@+id/findpassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/x14"
-                android:background="@null"
-                android:text="忘记密码"
-                android:textColor="@color/blue_theme"
-                android:textSize="16dp"/>
-
-        </LinearLayout>
-    </com.util.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
 </RelativeLayout>

@@ -6,19 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.easemob.ECApplication;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.Constant.InterfaceTest;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMPushConfigs;
+import com.hyphenate.exceptions.HyphenateException;
 import com.logan.bean.AccountListBean;
-import com.logan.server.AccountLoginAsyncTask;
+import com.logan.constant.InterfaceTest;
 import com.logan.server.AccountLoginListBean;
 import com.logan.widgets.CustomDialog;
 
@@ -35,7 +35,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 @ContentView(R.layout.activity_account)
-public class AccountActivity extends Activity implements OnClickListener {
+public class AccountActivity extends Activity {
     @ViewInject(R.id.sp_role)
     private TextView sp_role;
     @ViewInject(R.id.findpassword)
@@ -51,29 +51,37 @@ public class AccountActivity extends Activity implements OnClickListener {
     private EditText mEditText_account;
     @ViewInject(R.id.et_password)
     private EditText mEditText_password;
-
     private String[] roleItem = new String[4];
     //无用
-    private String ur = "/ums/roles.api";
-    private String urllogi = "/ums/checkUser.api";
-    private String url;
-    private String urllogin;
     private String token = "";
-    private AccountLoginAsyncTask accountLoginAsyncTask;
-    private InterfaceTest interfaceTest=new InterfaceTest();
+    private InterfaceTest interfaceTest = new InterfaceTest();
+
+    EMPushConfigs emPushConfigs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
-        //final ECApplication ecApplication = (ECApplication) getApplication();
-        url = interfaceTest.getServerurl() + interfaceTest.getLoginrole();
-        urllogin = interfaceTest.getServerurl() + interfaceTest.getLogin();
         dourl();
-        mFindPass.setOnClickListener(this);
-        mLoginmain.setOnClickListener(this);
-        mCampus.setOnClickListener(this);
+
+        try {
+            EMClient.getInstance().pushManager().enableOfflinePush();
+            emPushConfigs = EMClient.getInstance().pushManager().getPushConfigs();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        emPushConfigs = EMClient.getInstance().pushManager()
+                                .getPushConfigsFromServer();
+                    } catch (HyphenateException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+        } catch (HyphenateException e) {
+        }
+
     }
 
     @Event(value = R.id.sp_role)
@@ -120,7 +128,30 @@ public class AccountActivity extends Activity implements OnClickListener {
         builder.create().show();
     }
 
-    @Override
+    @Event(value = R.id.findpassword)
+    private void onfindpasswordClick(View v) {
+        startActivity(new Intent(AccountActivity.this, FindPassActivity.class));
+    }
+
+    @Event(value = R.id.btn_loginmain)
+    private void onloginmainClick(View v) {
+        if (mEditText_account.getText() != null && mEditText_password.getText() != null
+                || sp_role.getText() != "请选择角色") {
+            if (role.equals(""))
+                Toast.makeText(AccountActivity.this, "请选择角色", Toast.LENGTH_SHORT).show();
+            else loginurl(mEditText_account.getText().toString(), mEditText_password
+                    .getText()
+                    .toString());
+        } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Event(value = R.id.campus)
+    private void oncampusClick(View v) {
+        startActivity(new Intent(AccountActivity.this, CampusCooperationActivity.class));
+    }
+
+    /*@Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.findpassword:
@@ -136,12 +167,12 @@ public class AccountActivity extends Activity implements OnClickListener {
                         loginurl(mEditText_account.getText().toString(), mEditText_password
                                 .getText()
                                 .toString());
-                    /*else {
+                    *//*else {
                         mIntent = new Intent(AccountActivity.this, MainActivity.class);
                         mIntent.putExtra("role", role);
                         mIntent.putExtra("token", token);
                         startActivity(mIntent);
-                    }*/
+                    }*//*
                 } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.campus:
@@ -151,14 +182,21 @@ public class AccountActivity extends Activity implements OnClickListener {
             default:
                 break;
         }
-    }
+    }*/
 
     private void loginurl(String user, String pass) {
+        String urllogin = interfaceTest.getServerurl() + interfaceTest.getLogin();
         final OkHttpClient client = new OkHttpClient();
         //user pass写死
-        FormBody formBody = new FormBody.Builder().add("roleCode",
+        /*FormBody formBody = new FormBody.Builder().add("roleCode",
                 "4028882d5a5937ad015a594ff8bb0001").add("loginId", "zhoudd").add("password",
-                "zhoudd").build();
+                "zhoudd").build();*/
+        /*FormBody formBody = new FormBody.Builder().add("roleCode",
+                "4028882d5a5937ad015a5952e6250002").add("loginId", "1008601").add("password",
+                "123456").build();*/
+        FormBody formBody = new FormBody.Builder().add("roleCode",
+                "4028d9225aabdabb015aabed33340007").add("loginId", "2017001").add("password",
+                "123456").build();
         final Request request = new Request.Builder().url(urllogin).post(formBody).build();
         new Thread(new Runnable() {
             @Override
@@ -177,11 +215,13 @@ public class AccountActivity extends Activity implements OnClickListener {
                         mIntent.putExtra("token", token);
                         Log.e("token在mIntent的值", "token为" + token);
 
-                        //保存在constant
-                        //final ECApplication ecApplication = (ECApplication) getApplication();
-                        interfaceTest.setToken(token);
+                        if (role.equals("学生"))
+                            interfaceTest.setStudentId(accountListBean.getList().get(0)
+                                    .getUser_id());
 
-                        String user_id=accountListBean.getList().get(0).getUser_id();
+                        interfaceTest.setToken(token);
+                        interfaceTest.setRole(role);
+                        String user_id = accountListBean.getList().get(0).getUser_id();
                         interfaceTest.setUser_id(user_id);
 
                         startActivity(mIntent);
@@ -194,6 +234,8 @@ public class AccountActivity extends Activity implements OnClickListener {
     }
 
     private void dourl() {
+        String url = interfaceTest.getServerurl() + interfaceTest.getLoginrole();
+
         final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().build();
         final Request request = new Request.Builder().url(url).post(formBody).build();

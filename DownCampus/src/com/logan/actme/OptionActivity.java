@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.mobilecampus.R;
-import com.logan.Constant.InterfaceTest;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.easeui.controller.EaseUI;
+import com.hyphenate.easeui.model.EaseNotifier;
+import com.logan.constant.InterfaceTest;
 import com.logan.actme.option.AboutActivity;
 import com.logan.actme.option.CommentActivity;
 import com.logan.actme.option.HelpActivity;
@@ -48,7 +51,6 @@ public class OptionActivity extends Activity implements OnClickListener {
 
     @ViewInject(R.id.btn_exit)
     private Button btn_exit;
-    private MainActivity mainActivity;
     //private String url = "http://192.168.89.173:8080/iccp/api/ums/userLogout.api";
     private String url="";
     private String token="";
@@ -64,12 +66,15 @@ public class OptionActivity extends Activity implements OnClickListener {
         option_help.setOnClickListener(this);
         option_rate.setOnClickListener(this);
         option_about.setOnClickListener(this);
-        //btn_exit.setOnClickListener(this);
 
         url=interfaceTest.getServerurl()+interfaceTest.getLoginout();
         token=interfaceTest.getToken();
         Log.e("exit的token",token);
         Log.e("exit的url",url);
+
+
+        EaseUI easeUI=EaseUI.getInstance();
+        easeUI.getNotifier();
     }
 
     private void initView() {
@@ -119,11 +124,6 @@ public class OptionActivity extends Activity implements OnClickListener {
             case R.id.option_about:
                 mIntent = new Intent(this, AboutActivity.class);
                 startActivity(mIntent);
-                break;
-            case R.id.btn_edit:
-                /*mIntent = new Intent(this, AccountActivity.class);
-                mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(mIntent);*/
                 break;
             default:
                 break;

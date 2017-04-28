@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/y60"
+    android:layout_marginTop="20dp"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -15,12 +15,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y132"
+            android:layout_height="44dp"
             android:background="@android:color/transparent" />
 
         <com.util.CircleImageView
-            android:layout_width="@dimen/x240"
-            android:layout_height="@dimen/y240"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/touxiang" />
 
         <TextView
@@ -41,8 +41,8 @@
             android:id="@+id/btn_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/y120"
-            android:layout_marginRight="@dimen/y45"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="15dp"
             android:gravity="right"
             android:text="编辑资料>>"
             android:textColor="@color/white"
@@ -51,8 +51,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y3"
-        android:layout_marginTop="@dimen/y90"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
         android:background="@color/gray_204x3" />
 
     <LinearLayout
@@ -60,19 +60,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/y39"
-        android:paddingTop="@dimen/y39">
+        android:paddingBottom="13dp"
+        android:paddingTop="13dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x39"
+            android:layout_marginLeft="13dp"
             android:src="@mipmap/my_icon_dry" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x51"
+            android:layout_marginLeft="17dp"
             android:text="我的动态"
             android:textColor="#000000"
             android:textSize="17dp" />
@@ -81,9 +81,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y3"
-        android:layout_marginLeft="@dimen/x39"
-        android:layout_marginRight="@dimen/x39"
+        android:layout_height="1dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
         android:background="@color/gray_204x3" />
 
     <LinearLayout
@@ -91,19 +91,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/y39"
-        android:paddingTop="@dimen/y39">
+        android:paddingBottom="13dp"
+        android:paddingTop="13dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x39"
+            android:layout_marginLeft="13dp"
             android:src="@mipmap/my_icon_password" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x51"
+            android:layout_marginLeft="17dp"
             android:text="更改密码"
             android:textColor="#000000"
             android:textSize="17dp" />
@@ -112,13 +112,13 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y3"
+        android:layout_height="1dp"
         android:background="@color/gray_204x3" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y3"
-        android:layout_marginTop="@dimen/y90"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
         android:background="@color/gray_204x3" />
 
     <LinearLayout
@@ -126,19 +126,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/y39"
-        android:paddingTop="@dimen/y39">
+        android:paddingBottom="13dp"
+        android:paddingTop="13dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x39"
+            android:layout_marginLeft="13dp"
             android:src="@mipmap/my_icon_install" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x51"
+            android:layout_marginLeft="17dp"
             android:text="设置"
             android:textColor="#000000"
             android:textSize="17dp" />/>
@@ -147,16 +147,16 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y3"
+        android:layout_height="1dp"
         android:background="@color/gray_204x3" />
 
     <Button
         android:id="@+id/btn_changerole"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y108"
-        android:layout_marginLeft="@dimen/x90"
-        android:layout_marginRight="@dimen/x90"
-        android:layout_marginTop="@dimen/y60"
+        android:layout_height="36dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bordblueradiusmore"
         android:text="角色切换"
         android:textColor="@color/white"

@@ -8,9 +8,9 @@
     <com.util.TitleBar style="@style/bar_title"/>
 
     <LinearLayout
-        android:layout_margin="@dimen/x45"
+        android:layout_margin="15dp"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y189">
+        android:layout_height="63dp">
 
         <TextView
             android:textSize="15dp"
@@ -24,7 +24,7 @@
             android:id="@+id/schedule_sp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/y30"
+            android:layout_marginBottom="10dp"
             android:layout_weight="3"
             android:background="@drawable/bordblueround"/>
     </LinearLayout>

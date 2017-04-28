@@ -1,10 +1,6 @@
 [
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\09a79980ac49c2c23ebda09dc9d120a4821217ec\\output\\res\\layout-sw600dp\\design_layout_snackbar.xml"
-    },
-    {
-        "merged": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
-        "source": "D:\\eclipse\\DownSpace\\DownCampus\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout-sw600dp\\design_layout_snackbar.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     }
 ]

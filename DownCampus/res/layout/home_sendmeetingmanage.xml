@@ -10,39 +10,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/x45"
-        android:paddingRight="@dimen/x45">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_marginTop="10dp"
             android:text="会议主题"
             android:textSize="15dp" />
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y132"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bordblueround" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_marginTop="10dp"
             android:text="会议内容"
             android:textSize="15dp" />
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="@dimen/y840"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_height="280dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bordblueround" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_marginTop="10dp"
             android:text="提示：会议时间，会议内容，会议地点可以在会议内容里详细说明"
             android:textColor="@color/gray_162x3"
             android:textSize="12dp" />
@@ -50,7 +50,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -61,18 +61,21 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:layout_width="@dimen/x600"
-                android:layout_height="@dimen/y96"
-                android:layout_marginLeft="@dimen/x45"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
                 android:background="@drawable/bordblueround_dash" />
 
             <ImageView
                 android:id="@+id/btn_add"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/x24"
+                android:layout_marginLeft="8dp"
                 android:src="@mipmap/report_btn_add" />
 
         </LinearLayout>
+
+
     </LinearLayout>
+
 </LinearLayout>

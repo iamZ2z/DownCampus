@@ -22,13 +22,8 @@ import static android.content.ContentValues.TAG;
 public class ECApplication extends Application {
     public static Context applicationContext;
     private static ECApplication instance;
-    public final String PREF_USERNAME="username";
-    public static String currentUserNick="";
-    //服务器头地址
-    //final String serverurl="http://192.168.89.173:8080/iccp/api";
-    final String serverurl="http://lubo.logansoft.com:8080/iccp/api";
-    private String token;
-    private String user_id;
+    public final String PREF_USERNAME = "username";
+    public static String currentUserNick = "";
 
     @Override
     public void onCreate() {
@@ -46,14 +41,13 @@ public class ECApplication extends Application {
 
         int pid = android.os.Process.myPid();
         String processAppName = getAppName(pid);
-// 如果APP启用了远程的service，此application:onCreate会被调用2次
-// 为了防止环信SDK被初始化2次，加此判断会保证SDK被初始化1次
-// 默认的APP会在以包名为默认的process name下运行，如果查到的process name不是APP的process name就立即返回
+        // 如果APP启用了远程的service，此application:onCreate会被调用2次
+        // 为了防止环信SDK被初始化2次，加此判断会保证SDK被初始化1次
+        // 默认的APP会在以包名为默认的process name下运行，如果查到的process name不是APP的process name就立即返回
 
         if (processAppName == null || !processAppName.equalsIgnoreCase(this.getPackageName
                 ())) {
             Log.e(TAG, "enter the service process!");
-
             // 则此application::onCreate 是被service 调用的，直接返回
             return;
         }
@@ -72,7 +66,8 @@ public class ECApplication extends Application {
         Iterator i = l.iterator();
         PackageManager pm = this.getPackageManager();
         while (i.hasNext()) {
-            ActivityManager.RunningAppProcessInfo info = (ActivityManager.RunningAppProcessInfo) (i.next());
+            ActivityManager.RunningAppProcessInfo info = (ActivityManager.RunningAppProcessInfo)
+                    (i.next());
             try {
                 if (info.pid == pID) {
                     processName = info.processName;
@@ -92,25 +87,4 @@ public class ECApplication extends Application {
         super.attachBaseContext(base);
         MultiDex.install(this);
     }*/
-
-
-    public String getServerurl() {
-        return serverurl;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public String getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
 }

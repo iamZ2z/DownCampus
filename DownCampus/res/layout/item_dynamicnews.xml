@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+    <com.util.CircleImageView
+        android:id="@+id/icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/touxiang"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/icon"
+        android:layout_toEndOf="@+id/icon"
+        android:text="刘波"
+        android:textColor="@color/blue_download"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/icon"
+        android:text="哈哈哈"/>
+
+
+    <TextView
+        android:id="@+id/leavetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reply"
+        android:layout_toRightOf="@id/icon"
+        android:text="2017"
+        android:textSize="12dp"/>
+
+    <TextView
+        android:text="最近听这歌"
+        android:id="@+id/content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bordgray"/>
+
+</RelativeLayout>

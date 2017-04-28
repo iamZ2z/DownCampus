@@ -47,7 +47,7 @@ public class ExamArrangeDetail extends Activity {
 		mAdapter = new SimpleAdapter(this, getData(),
 				R.layout.home_examarrange_detail_list, new String[] {
 						"subject", "data", "time", "timelong" }, new int[] {
-						R.id.subject, R.id.data, R.id.time, R.id.timelong });
+						R.id.subject, R.id.data, R.id.leavetime, R.id.timelong });
 		mListView.setAdapter(mAdapter);
 		// 禁止滑动
 		mListView.setOnTouchListener(new OnTouchListener() {

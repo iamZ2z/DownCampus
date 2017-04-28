@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/y192"
+    android:layout_marginTop="64dp"
     android:orientation="vertical" >
 
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/x18">
+                    android:padding="6dp">
 
         <EditText
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/x9"
+            android:layout_marginRight="3dp"
             android:background="@android:color/transparent"
             android:src="@mipmap/nav_btn_close"
             android:visibility="invisible"/>
@@ -34,11 +34,11 @@
         android:id="@+id/text_classact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15"
+        android:layout_marginTop="5dp"
         android:background="#ffffff"
         android:drawableLeft="@mipmap/dynamic_icon_dyn"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/x60"
+        android:paddingLeft="20dp"
         android:text="班级动态" />
 
     <Button
@@ -48,8 +48,8 @@
         android:background="#ffffff"
         android:gravity="center_vertical"
         android:drawableLeft="@mipmap/dynamic_icon_news"
-        android:paddingLeft="@dimen/x60"
-        android:layout_marginTop="@dimen/y75"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="25dp"
         android:text="校园新闻" />
 
     <Button
@@ -57,10 +57,10 @@
         android:layout_width="match_parent"
         android:drawableLeft="@mipmap/dynamic_icon_activity"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y15"
+        android:layout_marginTop="5dp"
         android:background="#ffffff"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/x60"
+        android:paddingLeft="20dp"
         android:text="校园活动" />
 
 

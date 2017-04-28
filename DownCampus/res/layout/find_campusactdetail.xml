@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/img"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y585"/>
+        android:layout_height="195dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,29 +20,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/x45"
-            android:layout_marginRight="@dimen/x45"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y39"
+                android:layout_marginTop="13dp"
                 android:textSize="18dp"/>
 
             <TextView
                 android:id="@+id/type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y36"
+                android:layout_marginTop="12dp"
                 android:textColor="@color/gray_162x3"
                 android:textSize="15dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y45"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -55,7 +55,7 @@
                     android:id="@+id/place"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/x45"
+                    android:layout_marginLeft="15dp"
                     android:textColor="@color/gray_162x3"
                     android:textSize="12dp"/>
             </LinearLayout>
@@ -63,7 +63,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y36"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -76,7 +76,7 @@
                     android:id="@+id/data"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/x45"
+                    android:layout_marginLeft="15dp"
                     android:textColor="@color/gray_162x3"
                     android:textSize="12dp"/>
             </LinearLayout>
@@ -84,7 +84,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y36"
+                android:layout_marginTop="12dp"
                 android:text="活动介绍："
                 android:textSize="15dp"/>
 
@@ -92,13 +92,13 @@
                 android:id="@+id/introduce"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y36"
+                android:layout_marginTop="12dp"
                 android:textSize="14dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y36"
+                android:layout_marginTop="12dp"
                 android:text="备注："
                 android:textSize="15dp"/>
 
@@ -106,13 +106,13 @@
                 android:id="@+id/remark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y36"
+                android:layout_marginTop="12dp"
                 android:textSize="14dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y42"
+                android:layout_marginTop="14dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -132,8 +132,8 @@
             <Button
                 android:id="@+id/download"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/y120"
-                android:layout_marginTop="@dimen/y36"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/bluebutton"
                 android:text="下载附件"
                 android:textColor="#ffffff"
@@ -142,8 +142,8 @@
             <Button
                 android:id="@+id/sign"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/y120"
-                android:layout_marginTop="@dimen/y45"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/redbutton"
                 android:text="立即报名"
                 android:textColor="#ffffff"
@@ -151,7 +151,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/y24"/>
+                android:layout_height="8dp"/>
         </LinearLayout>
     </ScrollView>
 

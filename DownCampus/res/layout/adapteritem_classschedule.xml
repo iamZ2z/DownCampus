@@ -18,7 +18,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text=""
                 android:textColor="@color/blue_download"
                 android:textSize="12sp"/>
@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text="一"
                 android:textSize="12sp"/>
 
@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text="二"
                 android:textSize="12sp"/>
 
@@ -49,7 +49,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text="三"
                 android:textSize="12sp"/>
 
@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text="四"
                 android:textSize="12sp"/>
 
@@ -69,7 +69,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text="五"
                 android:textSize="12sp"/>
 
@@ -79,7 +79,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text="六"
                 android:textSize="12sp"/>
 
@@ -89,7 +89,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:minHeight="@dimen/y120"
+                android:minHeight="40dp"
                 android:text="日"
                 android:textSize="12sp"/>
         </TableRow>

@@ -4,11 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.util.TitleBar
-        android:id="@+id/title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray_title" />
+    <com.util.TitleBar style="@style/bar_title"/>
 
     <ListView
         android:id="@+id/leaverecord_list"

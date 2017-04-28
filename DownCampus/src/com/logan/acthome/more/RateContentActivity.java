@@ -49,7 +49,7 @@ public class RateContentActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		x.view().inject(this);
 
-		titlebar.setTitle("教师评价");
+		titlebar.setTitle("教师评价详情");
 		titlebar.setLeftClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

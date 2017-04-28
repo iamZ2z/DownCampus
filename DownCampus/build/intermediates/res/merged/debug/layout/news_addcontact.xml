@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layouttop"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/blue_theme"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="30dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/nav_btn_back"/>
+
+        <com.logan.widgets.ClearEditText
+            android:id="@+id/filter_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:background="@drawable/bordgray"
+            android:drawableLeft="@mipmap/message_icon_search"
+            android:drawablePadding="5dp"
+            android:hint="输入添加的联系人"
+            android:paddingLeft="5dp"
+            android:textColor="@color/deep_gray"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/no_search_result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layouttop"
+        android:layout_margin="15dp"
+        android:text="未搜索到结果"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/no_search_result_tv"/>
+</RelativeLayout>

@@ -51,7 +51,7 @@ public class WorkRestAdapter extends BaseAdapter {
             convertView = LinearLayout.inflate(mContext, R.layout.adapteritem_workrest, null);
             viewHolder = new ViewHolder();
             viewHolder.act = (TextView) convertView.findViewById(act);
-            viewHolder.time = (TextView) convertView.findViewById(R.id.time);
+            viewHolder.time = (TextView) convertView.findViewById(R.id.leavetime);
             viewHolder.leng = (TextView) convertView.findViewById(leng);
             convertView.setTag(viewHolder);
         } else viewHolder = (ViewHolder) convertView.getTag();

@@ -14,22 +14,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x37"
-            android:layout_marginRight="@dimen/x37"
+            android:layout_marginLeft="12.5dp"
+            android:layout_marginRight="12.5dp"
             android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/sp_subject"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/y141"
+                android:layout_height="47dp"
                 android:layout_weight="1"
                 android:background="@drawable/bordblueround"/>
 
             <TextView
                 android:id="@+id/tv_date_begin"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/y141"
-                android:layout_marginLeft="@dimen/x30"
+                android:layout_height="47dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/bordblueround"
                 android:gravity="center"
@@ -37,8 +37,8 @@
                 android:textSize="14dp"/>
 
             <TextView
-                android:layout_width="@dimen/x60"
-                android:layout_height="@dimen/y141"
+                android:layout_width="20dp"
+                android:layout_height="47dp"
                 android:gravity="center"
                 android:text="-"
                 android:textSize="14dp"/>
@@ -46,7 +46,7 @@
             <TextView
                 android:id="@+id/tv_date_end"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/y141"
+                android:layout_height="47dp"
                 android:layout_weight="1"
                 android:background="@drawable/bordblueround"
                 android:gravity="center"
@@ -57,14 +57,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="@dimen/y30"
+            android:layout_marginBottom="10dp"
             android:background="@color/gray_204x3"/>
 
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/y30">
+            android:layout_marginTop="10dp">
         </ListView>
 
     </LinearLayout>
@@ -74,7 +74,7 @@
         android:id="@+id/date_begin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/y192"
+        android:layout_marginTop="64dp"
         android:background="@android:color/transparent"
         android:visibility="gone"/>
 

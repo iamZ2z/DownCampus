@@ -40,7 +40,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y14"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         app:layout_widthPercent="84%">
 
@@ -61,7 +61,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y14"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         app:layout_widthPercent="84%">
 
@@ -83,7 +83,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y14"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         app:layout_widthPercent="84%">
 
@@ -108,7 +108,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/y30"
+        android:layout_marginTop="10dp"
         android:background="@mipmap/login_btn_login_default"
         android:text="提交"
         android:textColor="@color/white"
@@ -118,7 +118,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y30"
+        android:layout_marginTop="10dp"
         android:text="提交成功后，乐庚数字校园平台客服会尽快与你联系，你也可以拨打电话13882158505，了解最新进度"
         android:textColor="@color/gray_162x3"
         app:layout_widthPercent="88%"/>

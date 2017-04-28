@@ -41,8 +41,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
     </uses-permission>
     <!-- SD卡读取权限，用户写入离线定位数据 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <!-- 环信权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -52,9 +51,30 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <!-- 从SDCard读取数据权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 拨打电话 -->
+    <!-- 极光权限 -->
+    <permission
+        android:name="com.example.mobilecampus.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.mobilecampus.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 拨打电话 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.0" />
 
     <application
         android:name="com.easemob.ECApplication"
@@ -115,9 +135,9 @@
             android:theme="@style/AppBaseTheme" />
         <activity android:name="com.logan.actnews.OtherActivity" >
         </activity>
-        <activity android:name="com.easemob.ContactActivity" />
+        <!-- <activity android:name="com.easemob.ContactActivity"/> -->
         <activity android:name="com.easemob.VerificationActivity" />
-        <activity android:name="com.logan.acthome.studentteacher.LogManage" >
+        <activity android:name="com.logan.acthome.studentteacher.LogManageActivity" >
         </activity>
         <activity android:name="com.logan.actme.EditDataActivity" >
         </activity>
@@ -148,6 +168,8 @@
         </activity>
         <activity android:name="com.logan.acthome.more.SignActivity" >
         </activity>
+        <activity android:name="com.logan.acthome.studentteacher.StudentAttendanceActivity" >
+        </activity>
         <activity android:name="com.logan.acthome.more.FootPrint" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.LeaveActivity" >
@@ -168,18 +190,18 @@
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.MyScore" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.MySeat" >
+        <activity android:name="com.logan.acthome.studentteacher.MySeatActivity" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.CampusPay" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.Homework" >
+        <activity android:name="com.logan.acthome.studentteacher.HomeworkActivity" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.TeacherRateActivity" />
         <activity android:name="com.logan.acthome.more.RateContentActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.ClassActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.ClassActivityActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.parentleader.Behavior" >
+        <activity android:name="com.logan.acthome.parentleader.BehaviorActivity" >
         </activity>
         <activity android:name="com.logan.acthome.parentleader.MyApprove" />
         <activity android:name="com.logan.acthome.parentleader.ApproveDetail" />

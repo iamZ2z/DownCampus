@@ -19,7 +19,7 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
-import com.logan.Constant.InterfaceTest;
+import com.logan.constant.InterfaceTest;
 import com.logan.fragment.FindFragment;
 import com.logan.fragment.HomeFragment;
 import com.logan.fragment.MeFragment;
@@ -40,7 +40,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     private Fragment findFragment, meFragment, newsFragment, homeFragment;
     // 记录当前fragment
     private Fragment currentFragment;
-
     private RelativeLayout findLayout, homeLayout, meLayout, newsLayout;
     private ImageView findImg, homeImg, meImg, newsImg;
     private TextView findTv, homeTv, meTv, newsTv;
@@ -49,7 +48,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     private int ret = 0;
     private String role, token;
 
-    //private String url = "http://192.168.89.173:8080/iccp/api/basic/getCurrentSemester.api";
     private InterfaceTest interfaceTest=new InterfaceTest();
     private String url;
 
@@ -67,9 +65,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         else if (ret == 3) clickTab2Layout();
         else if (ret == 4) clickTab4Layout();
 
-        Intent mIntent = getIntent();
-        if (mIntent.getStringExtra("role") != null) role = mIntent.getStringExtra("role");
-        if (mIntent.getStringExtra("token") != null) token = mIntent.getStringExtra("token");
+        role=interfaceTest.getRole();
+        token=interfaceTest.getToken();
 
         //初始化环信
         initEasemob();
@@ -260,8 +257,4 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         currentFragment = fragment;
     }
 
-    public String getTitles() {
-        return role;
-    }
-    public String getToken(){return token;}
 }

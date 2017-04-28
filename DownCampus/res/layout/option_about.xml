@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/y240"
+        android:layout_marginTop="80dp"
         android:src="@mipmap/install_icon_about"/>
 
     <TextView
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y240"
+        android:layout_marginTop="80dp"
         android:gravity="center_horizontal"
         android:text="客服电话：400-100-1212"
         android:textColor="@color/gray_162x3"/>

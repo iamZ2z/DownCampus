@@ -72,7 +72,7 @@ public class MyApprove extends Activity {
 		mAdapter = new SimpleAdapter(this, getData(),
 				R.layout.home_approve_list, new String[] { "head", "name",
 						"type", "wait", "time" }, new int[] { R.id.head,
-						R.id.name, R.id.type, R.id.wait, R.id.time });
+						R.id.name, R.id.type, R.id.wait, R.id.leavetime});
 		list.setAdapter(mAdapter);
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override

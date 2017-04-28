@@ -1,55 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/y195"
-                android:paddingRight="@dimen/x45">
+                android:layout_height="65dp"
+                android:paddingRight="15dp">
 
     <com.util.CircleImageView
         android:id="@+id/img"
-        android:layout_width="@dimen/x135"
-        android:layout_height="@dimen/y135"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/x45"
-        android:layout_marginRight="@dimen/x24"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="8dp"
         android:src="@drawable/touxiang"/>
 
     <TextView
-        android:id="@+id/report"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y45"
+        android:layout_marginTop="15dp"
         android:layout_toRightOf="@id/img"
         android:text="汇报人：刘波"
         android:textSize="15dp"/>
 
     <TextView
-        android:id="@+id/type"
+        android:id="@+id/logtypeStr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/time"
-        android:layout_alignBottom="@+id/time"
-        android:layout_toEndOf="@+id/img"
         android:text="类型：日报"
         android:textColor="@color/gray_title"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:layout_below="@+id/name"
+        android:layout_toEndOf="@+id/img"/>
 
     <TextView
         android:id="@+id/readornot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/img"
         android:gravity="right"
         android:text="未阅读"
         android:textColor="@color/red_sign"
-        android:textSize="12dp"/>
+        android:textSize="12dp"
+        android:layout_alignTop="@+id/name"
+        android:layout_alignParentStart="true"/>
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/createTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/readornot"
-        android:layout_marginTop="@dimen/y30"
         android:gravity="right"
         android:text="2017-04-05"
         android:textSize="12dp"/>

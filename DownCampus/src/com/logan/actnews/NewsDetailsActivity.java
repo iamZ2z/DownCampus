@@ -40,7 +40,7 @@ public class NewsDetailsActivity extends Activity {
 		mAdapter = new SimpleAdapter(this, getData(),
 				R.layout.item_newsdetails, new String[] { "title", "time",
 						"upload", "content" }, new int[] { R.id.title,
-						R.id.time, R.id.upload, R.id.content });
+						R.id.leavetime, R.id.upload, R.id.content });
 		mListView.setAdapter(mAdapter);
 	}
 

@@ -7,7 +7,7 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_marginTop="@dimen/y192"
+        android:layout_marginTop="64dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -27,22 +27,22 @@
 
                     <com.util.CircleImageView
                         android:id="@+id/head"
-                        android:layout_width="@dimen/x150"
-                        android:layout_height="@dimen/x150"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="@dimen/y75"
-                        android:layout_marginLeft="@dimen/x45"
-                        android:layout_marginRight="@dimen/x45"
+                        android:layout_marginBottom="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:src="@drawable/touxiang"/>
 
                     <Button
                         android:id="@+id/btn_changehead"
-                        android:layout_width="@dimen/x162"
-                        android:layout_height="@dimen/y66"
+                        android:layout_width="54dp"
+                        android:layout_height="22dp"
                         android:layout_alignBottom="@+id/head"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="@dimen/y102"
-                        android:layout_marginRight="@dimen/x75"
+                        android:layout_marginEnd="34dp"
+                        android:layout_marginRight="25dp"
                         android:background="@drawable/bluebutton"
                         android:drawableLeft="@drawable/dynamic_icon_cover"
                         android:text="封面"
@@ -73,27 +73,27 @@
 
                 <LinearLayout
                     android:id="@+id/layout_news"
-                    android:layout_width="@dimen/x360"
-                    android:layout_height="@dimen/y120"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="@dimen/y45"
-                    android:layout_marginTop="@dimen/y45"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/gray_134x159x169"
                     android:orientation="horizontal">
 
                     <com.util.CircleImageView
-                        android:layout_width="@dimen/x90"
-                        android:layout_height="@dimen/x90"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/x30"
+                        android:layout_marginLeft="10dp"
                         android:src="@drawable/touxiang"/>
 
                     <TextView
                         android:id="@+id/newnews"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/x24"
-                        android:layout_marginTop="@dimen/y39"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="13dp"
                         android:text="1条新消息"
                         android:textColor="#ffffff"
                         android:textSize="12dp"/>
@@ -103,10 +103,10 @@
                     android:id="@+id/list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/x45"
-                    android:layout_marginRight="@dimen/x45"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:divider="@color/white_247x3"
-                    android:dividerHeight="@dimen/y30"
+                    android:dividerHeight="10dp"
                     android:listSelector="#00000000"/>
 
             </LinearLayout>
@@ -121,9 +121,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="@dimen/y45"
-        android:layout_marginRight="@dimen/x45"
-        android:layout_marginTop="@dimen/y600"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="200dp"
         android:background="#00000000"
         android:src="@mipmap/suspend_btn_eidt"/>
 

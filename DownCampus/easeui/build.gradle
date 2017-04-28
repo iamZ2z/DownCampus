@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion '25.0.0'
 
     defaultConfig {
@@ -47,8 +47,8 @@ dependencies {
     //release时需要把hyphenatechatsdk的依赖注释掉，sdk已经被打成jar包放在libs底下
     //compile project(':hyphenatechatsdk')
     //compile fileTree(include: '*.jar', dir: 'libs')
+    provided 'com.android.support:support-v4:25.3.0'
     provided 'com.github.bumptech.glide:glide:3.7.0'
-    provided 'com.android.support:support-v4:23.1.1'
     provided files('libs/BaiduLBS_Android.jar')
     provided files('libs/google-play-services.jar')
     provided files('libs/HwPush_SDK_V2705_nomap.jar')

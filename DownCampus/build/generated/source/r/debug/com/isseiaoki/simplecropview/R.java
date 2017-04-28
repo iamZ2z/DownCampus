@@ -8,43 +8,43 @@ package com.isseiaoki.simplecropview;
 
 public final class R {
     public static final class attr {
-        public static final int scv_animation_duration = 0x7f01017d;
-        public static final int scv_animation_enabled = 0x7f01017c;
-        public static final int scv_background_color = 0x7f01016e;
-        public static final int scv_crop_enabled = 0x7f01017a;
-        public static final int scv_crop_mode = 0x7f01016d;
-        public static final int scv_frame_color = 0x7f010170;
-        public static final int scv_frame_stroke_weight = 0x7f010178;
-        public static final int scv_guide_color = 0x7f010172;
-        public static final int scv_guide_show_mode = 0x7f010173;
-        public static final int scv_guide_stroke_weight = 0x7f010179;
-        public static final int scv_handle_color = 0x7f010171;
-        public static final int scv_handle_shadow_enabled = 0x7f01017e;
-        public static final int scv_handle_show_mode = 0x7f010174;
-        public static final int scv_handle_size = 0x7f010175;
-        public static final int scv_img_src = 0x7f01016c;
-        public static final int scv_initial_frame_scale = 0x7f01017b;
-        public static final int scv_min_frame_size = 0x7f010177;
-        public static final int scv_overlay_color = 0x7f01016f;
-        public static final int scv_touch_padding = 0x7f010176;
+        public static final int scv_animation_duration = 0x7f0101a8;
+        public static final int scv_animation_enabled = 0x7f0101a7;
+        public static final int scv_background_color = 0x7f010199;
+        public static final int scv_crop_enabled = 0x7f0101a5;
+        public static final int scv_crop_mode = 0x7f010198;
+        public static final int scv_frame_color = 0x7f01019b;
+        public static final int scv_frame_stroke_weight = 0x7f0101a3;
+        public static final int scv_guide_color = 0x7f01019d;
+        public static final int scv_guide_show_mode = 0x7f01019e;
+        public static final int scv_guide_stroke_weight = 0x7f0101a4;
+        public static final int scv_handle_color = 0x7f01019c;
+        public static final int scv_handle_shadow_enabled = 0x7f0101a9;
+        public static final int scv_handle_show_mode = 0x7f01019f;
+        public static final int scv_handle_size = 0x7f0101a0;
+        public static final int scv_img_src = 0x7f010197;
+        public static final int scv_initial_frame_scale = 0x7f0101a6;
+        public static final int scv_min_frame_size = 0x7f0101a2;
+        public static final int scv_overlay_color = 0x7f01019a;
+        public static final int scv_touch_padding = 0x7f0101a1;
     }
     public static final class id {
-        public static final int circle = 0x7f0d0043;
-        public static final int circle_square = 0x7f0d0044;
-        public static final int custom = 0x7f0d0045;
-        public static final int fit_image = 0x7f0d0046;
-        public static final int free = 0x7f0d0047;
-        public static final int not_show = 0x7f0d004d;
-        public static final int ratio_16_9 = 0x7f0d0048;
-        public static final int ratio_3_4 = 0x7f0d0049;
-        public static final int ratio_4_3 = 0x7f0d004a;
-        public static final int ratio_9_16 = 0x7f0d004b;
-        public static final int show_always = 0x7f0d004e;
-        public static final int show_on_touch = 0x7f0d004f;
-        public static final int square = 0x7f0d004c;
+        public static final int circle = 0x7f0e004a;
+        public static final int circle_square = 0x7f0e004b;
+        public static final int custom = 0x7f0e004c;
+        public static final int fit_image = 0x7f0e004d;
+        public static final int free = 0x7f0e004e;
+        public static final int not_show = 0x7f0e0054;
+        public static final int ratio_16_9 = 0x7f0e004f;
+        public static final int ratio_3_4 = 0x7f0e0050;
+        public static final int ratio_4_3 = 0x7f0e0051;
+        public static final int ratio_9_16 = 0x7f0e0052;
+        public static final int show_always = 0x7f0e0055;
+        public static final int show_on_touch = 0x7f0e0056;
+        public static final int square = 0x7f0e0053;
     }
     public static final class styleable {
-        public static final int[] scv_CropImageView = { 0x7f01016c, 0x7f01016d, 0x7f01016e, 0x7f01016f, 0x7f010170, 0x7f010171, 0x7f010172, 0x7f010173, 0x7f010174, 0x7f010175, 0x7f010176, 0x7f010177, 0x7f010178, 0x7f010179, 0x7f01017a, 0x7f01017b, 0x7f01017c, 0x7f01017d, 0x7f01017e };
+        public static final int[] scv_CropImageView = { 0x7f010197, 0x7f010198, 0x7f010199, 0x7f01019a, 0x7f01019b, 0x7f01019c, 0x7f01019d, 0x7f01019e, 0x7f01019f, 0x7f0101a0, 0x7f0101a1, 0x7f0101a2, 0x7f0101a3, 0x7f0101a4, 0x7f0101a5, 0x7f0101a6, 0x7f0101a7, 0x7f0101a8, 0x7f0101a9 };
         public static final int scv_CropImageView_scv_animation_duration = 17;
         public static final int scv_CropImageView_scv_animation_enabled = 16;
         public static final int scv_CropImageView_scv_background_color = 2;

@@ -7,32 +7,46 @@
 
     <com.util.TitleBar style="@style/bar_title"/>
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y120"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="@dimen/x186"
-        android:layout_marginRight="@dimen/x186"
-        android:layout_marginTop="@dimen/y30"
-        android:background="@color/blue_download"
-        android:gravity="center"
-        android:text="讲台"
-        android:textColor="@color/white"
-        android:textSize="15sp"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_marginTop="@dimen/y30"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y3"
-        android:background="@color/gray_230x3"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <com.logan.acthome.more.MySeatView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y1050"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/blue_download"
+                android:gravity="center"
+                android:text="讲台"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="注：红色标记是你的位置"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_230x3"/>
+
+            <com.logan.acthome.more.MySeatView
+                android:id="@+id/seatview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:text="注：蓝色方块是你的位置"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

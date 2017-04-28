@@ -92,7 +92,7 @@
         </activity>
         <activity android:name="com.logan.actnews.OtherActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.LogManage" >
+        <activity android:name="com.logan.acthome.studentteacher.LogManageActivity" >
         </activity>
         <activity android:name="com.logan.actme.EditDataActivity" >
         </activity>
@@ -135,17 +135,17 @@
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.MyScore" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.MySeat" >
+        <activity android:name="com.logan.acthome.studentteacher.MySeatActivity" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.CampusPay" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.Homework" >
+        <activity android:name="com.logan.acthome.studentteacher.HomeworkActivity" >
         </activity>
         <activity android:name="com.logan.acthome.more.RateContentActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.ClassActivity" >
+        <activity android:name="com.logan.acthome.studentteacher.ClassActivityActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.parentleader.Behavior" >
+        <activity android:name="com.logan.acthome.parentleader.BehaviorActivity" >
         </activity>
         <activity android:name="com.logan.acthome.parentleader.MyApprove" >
         </activity>

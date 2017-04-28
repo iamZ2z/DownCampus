@@ -6,8 +6,8 @@
 
     <TextView
         android:id="@+id/tvtext"
-        android:layout_width="@dimen/x135"
-        android:layout_height="@dimen/y165"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
         android:gravity="center" />
 
 </LinearLayout>

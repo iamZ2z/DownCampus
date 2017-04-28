@@ -16,10 +16,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.easemob.ECApplication;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.Constant.InterfaceTest;
+import com.logan.constant.InterfaceTest;
 import com.logan.bean.MeetingManagerBean;
 import com.util.TitleBar;
 
@@ -64,7 +63,6 @@ public class MeetingManage extends Activity {
     private HashMap<String, Object> mMap;
     private Intent mIntent;
 
-    //private String urlmeeting = "/office/meeting/query.api";
     private InterfaceTest interfaceTest=new InterfaceTest();
 
     @Override
@@ -124,7 +122,7 @@ public class MeetingManage extends Activity {
         });
         mAdapter = new SimpleAdapter(this, getData(), R.layout.home_meetingmanage_list, new
                 String[]{"title", "content", "time"}, new int[]{R.id.title,
-                R.id.content, R.id.time});
+                R.id.content, R.id.leavetime});
         list.setAdapter(mAdapter);
     }
 
@@ -160,10 +158,8 @@ public class MeetingManage extends Activity {
     }
 
     private void urlmeeting() {
-        //final ECApplication ecApplication = (ECApplication) getApplication();
         String url = interfaceTest.getServerurl() + interfaceTest.getMeetingquery();
         String token = interfaceTest.getToken();
-
         final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
@@ -179,8 +175,8 @@ public class MeetingManage extends Activity {
                         MeetingManagerBean accountListBean = gson.fromJson(str,
                                 MeetingManagerBean.class);
                         for (int i = 0; i < accountListBean.getList().size(); i++) {
-                            Log.e("id:", accountListBean.getList().get(i).getName());
-                            Log.e("name:", accountListBean.getList().get(i).getContent());
+                            Log.e("title:", accountListBean.getList().get(i).getName());
+                            Log.e("content:", accountListBean.getList().get(i).getContent());
                             Log.e("time:", accountListBean.getList().get(i).getCreateTime());
                         }
 
@@ -188,7 +184,7 @@ public class MeetingManage extends Activity {
                         mAdapter = new SimpleAdapter(MeetingManage.this, getData2
                                 (accountListBean), R.layout.home_meetingmanage_list, new
                                 String[]{"title", "content", "time"}, new int[]{R.id.title,
-                                R.id.content, R.id.time});
+                                R.id.content, R.id.leavetime});
                         list.setAdapter(mAdapter);
                     }
                 } catch (IOException e) {

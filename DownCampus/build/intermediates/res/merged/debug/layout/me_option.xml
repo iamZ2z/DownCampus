@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <com.util.TitleBar style="@style/bar_title"/>
 
     <ImageView
+        android:id="@+id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/title_bar"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/y126"
-        android:src="@mipmap/install_logo"/>
+        android:layout_marginTop="42dp"
+        android:src="@mipmap/install_logo"
+        app:layout_marginTopPercent="5%"/>
 
     <LinearLayout
         android:id="@+id/dataclean"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y126"
+        android:layout_below="@id/img"
         android:background="@drawable/bord2"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/x45"
-        android:paddingRight="@dimen/x45">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:layout_marginTopPercent="5%">
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,22 +50,24 @@
         android:id="@+id/option_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y90"
+        android:layout_below="@id/dataclean"
         android:background="@drawable/bord2"
         android:drawableRight="@mipmap/search_icon_more"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
         android:text="新消息提醒"
-        android:textSize="17dp"/>
+        android:textSize="17dp"
+        app:layout_marginTopPercent="4%"/>
 
     <Button
         android:id="@+id/option_help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/option_message"
         android:background="@drawable/bord2"
         android:drawableRight="@mipmap/search_icon_more"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/x60"
+        android:paddingLeft="20dp"
         android:text="使用帮助"
         android:textSize="17dp"/>
 
@@ -65,10 +75,11 @@
         android:id="@+id/option_rate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/option_help"
         android:background="@drawable/bord2"
         android:drawableRight="@mipmap/search_icon_more"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/x60"
+        android:paddingLeft="20dp"
         android:text="吐槽产品经理"
         android:textSize="17dp"/>
 
@@ -76,10 +87,11 @@
         android:id="@+id/option_about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/option_rate"
         android:background="@drawable/bord2"
         android:drawableRight="@mipmap/search_icon_more"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/x60"
+        android:paddingLeft="20dp"
         android:text="关于"
         android:textSize="17dp"/>
 
@@ -87,12 +99,11 @@
         android:id="@+id/btn_exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/y90"
+        android:layout_alignParentBottom="true"
         android:background="@color/blue_download"
-        android:paddingBottom="@dimen/y9"
-        android:paddingTop="@dimen/y9"
-        android:textColor="@color/white"
         android:text="退出登录"
-        android:textSize="17dp"/>
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        app:layout_marginBottomPercent="5%"/>
 
-</LinearLayout>
+</android.support.percent.PercentRelativeLayout>

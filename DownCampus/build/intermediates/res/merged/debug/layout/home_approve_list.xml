@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="@dimen/y210"
-              android:layout_marginLeft="@dimen/x45"
-              android:layout_marginBottom="@dimen/y30"
-              android:layout_marginRight="@dimen/x45"
+              android:layout_height="70dp"
+              android:layout_marginLeft="15dp"
+              android:layout_marginBottom="10dp"
+              android:layout_marginRight="15dp"
               android:background="@drawable/bord_campusact"
               android:orientation="horizontal">
 
     <com.util.CircleImageView
         android:id="@+id/head"
-        android:layout_marginTop="@dimen/y30"
-        android:layout_marginLeft="@dimen/x25"
-        android:layout_width="@dimen/x150"
-        android:layout_height="@dimen/y150"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8.5dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/x45"
+        android:layout_marginLeft="10dp"
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginTop="@dimen/y42"
+            android:layout_marginTop="14dp"
             android:id="@+id/name"
             android:textSize="15dp"
             android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         <TextView
             android:id="@+id/type"
             android:textSize="13dp"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/gray_title"/>
@@ -41,21 +41,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="right"
-        android:layout_marginRight="@dimen/y45"
+        android:layout_marginRight="15dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/wait"
-            android:layout_marginTop="@dimen/y42"
+            android:layout_marginTop="14dp"
             android:textSize="14dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/orange_238x147x40"/>
 
         <TextView
-            android:id="@+id/time"
+            android:id="@+id/leavetime"
             android:textSize="13dp"
-            android:layout_marginTop="@dimen/y30"
+            android:layout_marginTop="10dp"
             android:textColor="@color/gray_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

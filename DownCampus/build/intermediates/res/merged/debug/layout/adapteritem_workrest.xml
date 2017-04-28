@@ -10,16 +10,16 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:minHeight="@dimen/y120"
+        android:minHeight="40dp"
         android:textSize="13dp"/>
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/leavetime"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:minHeight="@dimen/y120"
+        android:minHeight="40dp"
         android:textSize="13dp"/>
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:minHeight="@dimen/y120"
+        android:minHeight="40dp"
         android:textSize="13dp"/>
 
 </LinearLayout>

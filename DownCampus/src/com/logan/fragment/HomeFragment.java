@@ -1,6 +1,5 @@
 package com.logan.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -16,23 +15,23 @@ import android.widget.GridView;
 import com.example.mobilecampus.R;
 import com.logan.acthome.studentteacher.CalendarActivity;
 import com.logan.acthome.studentteacher.CampusPay;
-import com.logan.acthome.studentteacher.ClassActivity;
+import com.logan.acthome.studentteacher.ClassActivityActivity;
 import com.logan.acthome.studentteacher.ClassScheduleActivity;
 import com.logan.acthome.studentteacher.ExamArrange;
-import com.logan.acthome.studentteacher.Homework;
+import com.logan.acthome.studentteacher.HomeworkActivity;
 import com.logan.acthome.studentteacher.LeaveActivity;
-import com.logan.acthome.studentteacher.LogManage;
+import com.logan.acthome.studentteacher.LogManageActivity;
 import com.logan.acthome.studentteacher.MyScore;
-import com.logan.acthome.studentteacher.MySeat;
+import com.logan.acthome.studentteacher.MySeatActivity;
 import com.logan.acthome.studentteacher.MySignActivity;
+import com.logan.acthome.studentteacher.StudentAttendanceActivity;
 import com.logan.acthome.studentteacher.TeacherRateActivity;
 import com.logan.acthome.studentteacher.WorkRestActivity;
-import com.logan.acthome.more.FootPrint;
-import com.logan.acthome.parentleader.Behavior;
+import com.logan.acthome.parentleader.BehaviorActivity;
 import com.logan.acthome.parentleader.MeetingManage;
 import com.logan.acthome.parentleader.MyApprove;
-import com.logan.actmobilecampus.MainActivity;
 import com.logan.adapter.HomeGridAdapter;
+import com.logan.constant.InterfaceTest;
 import com.util.viewflow.CircleFlowIndicator;
 import com.util.viewflow.ImagePagerAdapter;
 import com.util.viewflow.ViewFlow;
@@ -58,22 +57,28 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     private List<Map<String, Object>> data_list;
 
     private String token;
+    private InterfaceTest interfaceTest=new InterfaceTest();
 
-    @Override
+    /*@Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (((MainActivity) activity).getTitles() != null)
-            role = ((MainActivity) activity).getTitles();
+        *//*if (((MainActivity) activity).getTitles() != null)
+            role = ((MainActivity) activity).getTitles();*//*
+        role=interfaceTest.getRole();
         Log.v("role home", role);
 
-        if (((MainActivity) activity).getToken() != null)
-            token = ((MainActivity) activity).getToken();
+        *//*if (((MainActivity) activity).getToken() != null)
+            token = ((MainActivity) activity).getToken();*//*
+        token=interfaceTest.getToken();
         Log.e("HomeFragment获取activity","token="+token);
-    }
+    }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        role=interfaceTest.getRole();
+        token=interfaceTest.getToken();
+
         if (role.equals("老师")) {
             str_role = getResources().getStringArray(R.array.teacher);
             mTypeArray = getActivity().getResources().obtainTypedArray(R.array.teacher_img);
@@ -179,7 +184,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             mIntent = new Intent(getActivity(), WorkRestActivity.class);
             startActivity(mIntent);
         } else if (str.equals("日志管理")) {
-            mIntent = new Intent(getActivity(), LogManage.class);
+            mIntent = new Intent(getActivity(), LogManageActivity.class);
             startActivity(mIntent);
         } else if (str.equals("校园日历")) {
             mIntent = new Intent(getActivity(), CalendarActivity.class);
@@ -194,25 +199,25 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             mIntent = new Intent(getActivity(), MyScore.class);
             startActivity(mIntent);
         } else if (str.equals("我的座位")) {
-            mIntent = new Intent(getActivity(), MySeat.class);
+            mIntent = new Intent(getActivity(), MySeatActivity.class);
             startActivity(mIntent);
         } else if (str.equals("校园缴费")) {
             mIntent = new Intent(getActivity(), CampusPay.class);
             startActivity(mIntent);
         } else if (str.equals("我的作业") || str.equals("学生作业")) {
-            mIntent = new Intent(getActivity(), Homework.class);
+            mIntent = new Intent(getActivity(), HomeworkActivity.class);
             startActivity(mIntent);
         } else if (str.equals("教师评价")) {
             mIntent = new Intent(getActivity(), TeacherRateActivity.class);
             startActivity(mIntent);
         } else if (str.equals("班级活动")) {
-            mIntent = new Intent(getActivity(), ClassActivity.class);
+            mIntent = new Intent(getActivity(), ClassActivityActivity.class);
             startActivity(mIntent);
         } else if (str.equals("学生表现")) {
-            mIntent = new Intent(getActivity(), Behavior.class);
+            mIntent = new Intent(getActivity(), BehaviorActivity.class);
             startActivity(mIntent);
         } else if (str.equals("学生考勤")) {
-            mIntent = new Intent(getActivity(), FootPrint.class);
+            mIntent = new Intent(getActivity(), StudentAttendanceActivity.class);
             startActivity(mIntent);
         } else if (str.equals("　审批　")) {
             mIntent = new Intent(getActivity(), MyApprove.class);

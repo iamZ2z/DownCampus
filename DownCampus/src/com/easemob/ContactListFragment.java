@@ -25,7 +25,6 @@ public class ContactListFragment extends EaseContactListFragment {
     protected void initView() {
         super.initView();
         View v = (LinearLayout) View.inflate(getActivity(), R.layout.fragment_contact, null);
-        //listView.addHeaderView(v);
         hideTitleBar();
         registerForContextMenu(listView);
     }
@@ -36,7 +35,10 @@ public class ContactListFragment extends EaseContactListFragment {
         //需要设置联系人列表才能启动fragment
         getContactList();
 
-        setContactsMap(getContacts());
+        
+
+        //setContactsMap(getContacts());
+
         /*contactListLayout.setContactListItemClickListener(new EaseContactListItemClickListener() {
             @Override
             public void onListItemClicked(EaseUser user) {
