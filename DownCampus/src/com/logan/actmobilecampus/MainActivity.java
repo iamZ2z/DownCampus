@@ -1,12 +1,14 @@
 package com.logan.actmobilecampus;
 
 import android.app.ActivityManager;
-import android.content.Intent;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,17 +16,27 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.easemob.ConversationListFragment;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.EMConnectionListener;
+import com.hyphenate.EMError;
+import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
+import com.hyphenate.util.NetUtils;
 import com.logan.constant.InterfaceTest;
 import com.logan.fragment.FindFragment;
 import com.logan.fragment.HomeFragment;
 import com.logan.fragment.MeFragment;
 import com.logan.fragment.NewsFragment;
 import com.logan.server.CurrentSemesterListBean;
+
+import org.xutils.x;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -42,19 +54,18 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     private Fragment currentFragment;
     private RelativeLayout findLayout, homeLayout, meLayout, newsLayout;
     private ImageView findImg, homeImg, meImg, newsImg;
-    private TextView findTv, homeTv, meTv, newsTv;
+    private TextView tv_find, tv_home, tv_me, tv_news;
     private TextView top_item;
     // 回调
     private int ret = 0;
     private String role, token;
-
-    private InterfaceTest interfaceTest=new InterfaceTest();
-    private String url;
+    private InterfaceTest interfaceTest = new InterfaceTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        x.view().inject(this);
         setContentView(R.layout.activity_main);
 
         initUI();
@@ -65,17 +76,87 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         else if (ret == 3) clickTab2Layout();
         else if (ret == 4) clickTab4Layout();
 
-        role=interfaceTest.getRole();
-        token=interfaceTest.getToken();
+        role = interfaceTest.getRole();
+        token = interfaceTest.getToken();
 
         //初始化环信
         initEasemob();
         //加载学年学期
         initCurrentSemester();
+        //环信监听
+        initEaselistener();
+    }
+
+    private void initEaselistener() {
+        //模拟登录
+        EMClient.getInstance().login("8004", "8004", new EMCallBack() {
+            @Override
+            public void onSuccess() {
+                EMClient.getInstance().groupManager().loadAllGroups();
+                EMClient.getInstance().chatManager().loadAllConversations();
+                Log.e("main", "登录聊天服务器成功！");
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                Log.d("main", "登录聊天服务器失败！");
+
+            }
+
+            @Override
+            public void onProgress(int i, String s) {
+
+            }
+        });
+
+        EMClient.getInstance().addConnectionListener(new EaseConnectionListener());
+
+        EMMessageListener msglistener = new EMMessageListener() {
+            @Override
+            public void onMessageReceived(List<EMMessage> list) {
+                for (EMMessage msg : list) {
+                    Log.e("Msg", msg.getFrom() + "body:" + msg.getBody().toString());
+
+                    NotificationManager notificationManager = (NotificationManager) getSystemService
+                            (Context.NOTIFICATION_SERVICE);
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity
+                            .this);
+                    builder.setContentTitle(msg.getFrom()).setContentText(msg.getBody().toString
+                            ().substring(4)).setSmallIcon(R.mipmap.icon_logo).setWhen(System
+                            .currentTimeMillis()).setAutoCancel(true);
+                    notificationManager.notify(1, builder.build());
+                }
+            }
+
+            @Override
+            public void onCmdMessageReceived(List<EMMessage> list) {
+                for (EMMessage msg : list) {
+                    Log.e("透传msg", msg.getFrom() + msg.getBody());
+                }
+            }
+
+            @Override
+            public void onMessageRead(List<EMMessage> list) {
+
+            }
+
+            @Override
+            public void onMessageDelivered(List<EMMessage> list) {
+
+            }
+
+            @Override
+            public void onMessageChanged(EMMessage emMessage, Object o) {
+
+            }
+        };
+
+        //实现ConnectionListener接口
+        EMClient.getInstance().chatManager().addMessageListener(msglistener);
     }
 
     private void initCurrentSemester() {
-        url=interfaceTest.getServerurl()+interfaceTest.getCurrentterm();
+        String url = interfaceTest.getServerurl() + interfaceTest.getCurrentterm();
         final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
@@ -162,10 +243,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         newsImg = (ImageView) findViewById(R.id.iv_news);
         findImg = (ImageView) findViewById(R.id.iv_find);
         meImg = (ImageView) findViewById(R.id.iv_me);
-        homeTv = (TextView) findViewById(R.id.tv_home);
-        newsTv = (TextView) findViewById(R.id.tv_news);
-        findTv = (TextView) findViewById(R.id.tv_find);
-        meTv = (TextView) findViewById(R.id.tv_me);
+        tv_home = (TextView) findViewById(R.id.tv_home);
+        tv_news = (TextView) findViewById(R.id.tv_news);
+        tv_find = (TextView) findViewById(R.id.tv_find);
+        tv_me = (TextView) findViewById(R.id.tv_me);
 
         top_item = (TextView) findViewById(R.id.top_item);
     }
@@ -183,6 +264,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
             newsImg.setImageResource(R.mipmap.tag_icon_news_default);
             findImg.setImageResource(R.mipmap.tag_icon_find_default);
             meImg.setImageResource(R.mipmap.tag_icon_my_default);
+            tv_home.setTextColor(getResources().getColor(R.color.blue_download));
         }
     }
 
@@ -215,6 +297,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         findImg.setImageResource(R.mipmap.tag_icon_find_default);
         meImg.setImageResource(R.mipmap.tag_icon_my_default);
         top_item.setText("首页");
+        tv_home.setTextColor(getResources().getColor(R.color.blue_download));
+        tv_news.setTextColor(getResources().getColor(R.color.gray_162x3));
+        tv_find.setTextColor(getResources().getColor(R.color.gray_162x3));
+        tv_me.setTextColor(getResources().getColor(R.color.gray_162x3));
     }
 
     private void clickTab2Layout() {
@@ -225,6 +311,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         findImg.setImageResource(R.mipmap.tag_icon_find_default);
         meImg.setImageResource(R.mipmap.tag_icon_my_default);
         top_item.setText("");
+        tv_home.setTextColor(getResources().getColor(R.color.gray_162x3));
+        tv_news.setTextColor(getResources().getColor(R.color.blue_download));
+        tv_find.setTextColor(getResources().getColor(R.color.gray_162x3));
+        tv_me.setTextColor(getResources().getColor(R.color.gray_162x3));
     }
 
     private void clickTab3Layout() {
@@ -235,6 +325,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         findImg.setImageResource(R.mipmap.tag_icon_find_pressed);
         meImg.setImageResource(R.mipmap.tag_icon_my_default);
         top_item.setText("发现");
+        tv_home.setTextColor(this.getResources().getColor(R.color.gray_162x3));
+        tv_news.setTextColor(this.getResources().getColor(R.color.gray_162x3));
+        tv_find.setTextColor(this.getResources().getColor(R.color.blue_download));
+        tv_me.setTextColor(this.getResources().getColor(R.color.gray_162x3));
     }
 
     private void clickTab4Layout() {
@@ -245,6 +339,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         findImg.setImageResource(R.mipmap.tag_icon_find_default);
         meImg.setImageResource(R.mipmap.tag_icon_my_pressed);
         top_item.setText("我的");
+        tv_home.setTextColor(this.getResources().getColor(R.color.gray_162x3));
+        tv_news.setTextColor(this.getResources().getColor(R.color.gray_162x3));
+        tv_find.setTextColor(this.getResources().getColor(R.color.gray_162x3));
+        tv_me.setTextColor(this.getResources().getColor(R.color.blue_download));
     }
 
     private void addOrShowFragment(FragmentTransaction transaction, Fragment fragment) {
@@ -257,4 +355,35 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         currentFragment = fragment;
     }
 
+
+    private class EaseConnectionListener implements EMConnectionListener {
+        @Override
+        public void onConnected() {
+            Log.e("注册连接状态监听", "注册连接状态监听");
+        }
+
+        @Override
+        public void onDisconnected(final int error) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (error == EMError.USER_REMOVED) {
+                        // 显示帐号已经被移除
+                    } else if (error == EMError.USER_LOGIN_ANOTHER_DEVICE) {
+                        // 显示帐号在其他设备登录
+                        Toast.makeText(MainActivity.this, "帐号在其他设备登录", Toast.LENGTH_SHORT).show();
+                    } else {
+                        if (NetUtils.hasNetwork(MainActivity.this))
+                            //连接不到聊天服务器
+                            Toast.makeText(MainActivity.this, "连接不到服务器", Toast.LENGTH_SHORT)
+                                    .show();
+                        else
+                            //当前网络不可用，请检查网络设置
+                            Toast.makeText(MainActivity.this, "当前网络不可用", Toast.LENGTH_SHORT)
+                                    .show();
+                    }
+                }
+            });
+        }
+    }
 }

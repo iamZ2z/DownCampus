@@ -21,7 +21,7 @@ import com.logan.acthome.studentteacher.ExamArrange;
 import com.logan.acthome.studentteacher.HomeworkActivity;
 import com.logan.acthome.studentteacher.LeaveActivity;
 import com.logan.acthome.studentteacher.LogManageActivity;
-import com.logan.acthome.studentteacher.MyScore;
+import com.logan.acthome.studentteacher.MyScoreActivity;
 import com.logan.acthome.studentteacher.MySeatActivity;
 import com.logan.acthome.studentteacher.MySignActivity;
 import com.logan.acthome.studentteacher.StudentAttendanceActivity;
@@ -29,7 +29,7 @@ import com.logan.acthome.studentteacher.TeacherRateActivity;
 import com.logan.acthome.studentteacher.WorkRestActivity;
 import com.logan.acthome.parentleader.BehaviorActivity;
 import com.logan.acthome.parentleader.MeetingManage;
-import com.logan.acthome.parentleader.MyApprove;
+import com.logan.acthome.parentleader.MyApproveActivity;
 import com.logan.adapter.HomeGridAdapter;
 import com.logan.constant.InterfaceTest;
 import com.util.viewflow.CircleFlowIndicator;
@@ -196,7 +196,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             mIntent = new Intent(getActivity(), ExamArrange.class);
             startActivity(mIntent);
         } else if (str.equals("我的成绩") || str.equals("学生成绩")) {
-            mIntent = new Intent(getActivity(), MyScore.class);
+            mIntent = new Intent(getActivity(), MyScoreActivity.class);
             startActivity(mIntent);
         } else if (str.equals("我的座位")) {
             mIntent = new Intent(getActivity(), MySeatActivity.class);
@@ -220,7 +220,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             mIntent = new Intent(getActivity(), StudentAttendanceActivity.class);
             startActivity(mIntent);
         } else if (str.equals("　审批　")) {
-            mIntent = new Intent(getActivity(), MyApprove.class);
+            mIntent = new Intent(getActivity(), MyApproveActivity.class);
             startActivity(mIntent);
         } else if (str.equals("会议管理")) {
             mIntent = new Intent(getActivity(), MeetingManage.class);
