@@ -1,10 +1,45 @@
 package com.logan.bean;
 
+import java.util.List;
+
 public class CampusNewsBean {
 	private String title;
 	private String contentType;
 	private String dataTime;
 	private int img_str;
+	private String createTime;
+	private String clickCount;
+
+	private List<CampusNewsBean> data;
+
+
+
+
+
+
+	public String getClickCount() {
+		return clickCount;
+	}
+
+	public void setClickCount(String clickCount) {
+		this.clickCount = clickCount;
+	}
+
+	public String getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public List<CampusNewsBean> getData() {
+		return data;
+	}
+
+	public void setData(List<CampusNewsBean> data) {
+		this.data = data;
+	}
 
 	public String getTitle() {
 		return title;

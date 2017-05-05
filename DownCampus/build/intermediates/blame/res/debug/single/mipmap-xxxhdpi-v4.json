@@ -372,6 +372,10 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxxhdpi\\login_icon_account_pressed.png"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\message_icon_tips.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxxhdpi\\message_icon_tips.png"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\select_btn_add.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxxhdpi\\select_btn_add.png"
     },

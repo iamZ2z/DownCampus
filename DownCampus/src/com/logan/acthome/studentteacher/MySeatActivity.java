@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
@@ -31,21 +33,22 @@ import okhttp3.Response;
 public class MySeatActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-    @ViewInject(R.id.seatview)
-    private MySeatView seatview;
+    /*@ViewInject(R.id.seatview)
+    private MySeatView seatview;*/
+    @ViewInject(R.id.loadingimg)
+    private ImageView loadingimg;
 
+    @ViewInject(R.id.belowseatview)
+    private TextView belowseatview;
+    @ViewInject(R.id.li)
+    private LinearLayout li;
+    private DisplayMetrics displayMetrics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
-        initView();
-
-        dourl();
-    }
-
-    private void initView() {
         titlebar.setTitle("我的座位");
         titlebar.setLeftClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +57,24 @@ public class MySeatActivity extends Activity {
             }
         });
 
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) seatview.getLayoutParams();
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        //initView();
+        displayMetrics = getResources().getDisplayMetrics();
+        dourl();
+    }
+
+    private void initView(int seatRow,int seatsort) {
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) li
+                .getLayoutParams();
+        displayMetrics = getResources().getDisplayMetrics();
         int height = displayMetrics.heightPixels;
         params.height = height / 2;
-        seatview.setLayoutParams(params);
+        li.setLayoutParams(params);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams
+                .WRAP_CONTENT, height * 2);
+
+        MySeatView mySeatView = new MySeatView(this, seatRow,seatsort);
+        mySeatView.setLayoutParams(layoutParams);
+        li.addView(mySeatView);
     }
 
     private void dourl() {
@@ -79,18 +95,18 @@ public class MySeatActivity extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("座位的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        final MySeatBean accountListBean = gson.fromJson(str,
-                                MySeatBean.class);
+                        final MySeatBean accountListBean = new Gson().fromJson(str, MySeatBean.class);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                int myposition = Integer.parseInt(accountListBean.getData().get
+                                /*int myposition = Integer.parseInt(accountListBean.getData().get
                                         (0).getSeatSort());
                                 int allrow = Integer.parseInt(accountListBean.getData().get(0)
-                                        .getClassNum()) / 8;
-                                int seatRow = Integer.parseInt(accountListBean.getData().get(0)
-                                        .getSeatRow());
+                                        .getClassNum()) / 8;*/
+                                int seatRow = accountListBean.getData().get(0).getSeatRow();
+                                int seatsort=accountListBean.getData().get(0).getSeatSort();
+                                loadingimg.setVisibility(View.GONE);
+                                initView(seatRow,seatsort);
                             }
                         });
                     }

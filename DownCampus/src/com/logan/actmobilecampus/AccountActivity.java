@@ -1,9 +1,12 @@
 package com.logan.actmobilecampus;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -19,7 +22,7 @@ import com.hyphenate.chat.EMPushConfigs;
 import com.hyphenate.exceptions.HyphenateException;
 import com.logan.bean.AccountListBean;
 import com.logan.constant.InterfaceTest;
-import com.logan.server.AccountLoginListBean;
+import com.logan.server.AccountLoginBean;
 import com.logan.widgets.CustomDialog;
 
 import org.xutils.view.annotation.ContentView;
@@ -151,80 +154,51 @@ public class AccountActivity extends Activity {
         startActivity(new Intent(AccountActivity.this, CampusCooperationActivity.class));
     }
 
-    /*@Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.findpassword:
-                mIntent = new Intent(AccountActivity.this, FindPassActivity.class);
-                startActivity(mIntent);
-                break;
-            case R.id.btn_loginmain:
-                if (mEditText_account.getText() != null && mEditText_password.getText() != null
-                        || sp_role.getText() != "请选择角色") {
-                    if (role.equals(""))
-                        Toast.makeText(AccountActivity.this, "请选择角色", Toast.LENGTH_SHORT).show();
-                    else
-                        loginurl(mEditText_account.getText().toString(), mEditText_password
-                                .getText()
-                                .toString());
-                    *//*else {
-                        mIntent = new Intent(AccountActivity.this, MainActivity.class);
-                        mIntent.putExtra("role", role);
-                        mIntent.putExtra("token", token);
-                        startActivity(mIntent);
-                    }*//*
-                } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.campus:
-                mIntent = new Intent(this, CampusCooperationActivity.class);
-                startActivity(mIntent);
-                break;
-            default:
-                break;
-        }
-    }*/
-
     private void loginurl(String user, String pass) {
         String urllogin = interfaceTest.getServerurl() + interfaceTest.getLogin();
-        final OkHttpClient client = new OkHttpClient();
         //user pass写死
-        /*FormBody formBody = new FormBody.Builder().add("roleCode",
-                "4028882d5a5937ad015a594ff8bb0001").add("loginId", "zhoudd").add("password",
-                "zhoudd").build();*/
-        /*FormBody formBody = new FormBody.Builder().add("roleCode",
-                "4028882d5a5937ad015a5952e6250002").add("loginId", "1008601").add("password",
-                "123456").build();*/
-        FormBody formBody = new FormBody.Builder().add("roleCode",
-                "4028d9225aabdabb015aabed33340007").add("loginId", "2017001").add("password",
-                "123456").build();
+        FormBody formBody = null;
+        if (role.equals("老师")) {
+            formBody = new FormBody.Builder().add("roleCode", "4028882d5a5937ad015a594ff8bb0001")
+                    .add("loginId", "zhoudd").add("password", "zhoudd").build();
+        } else if (role.equals("家长")) {
+            formBody = new FormBody.Builder().add("roleCode", "4028882d5a5937ad015a5952e6250002")
+                    .add("loginId", "1008601").add("password", "123456").build();
+        } else if (role.equals("学生")) {
+            formBody = new FormBody.Builder().add("roleCode", "4028d9225aabdabb015aabed33340007")
+                    .add("loginId", "2017001").add("password", "123456").build();
+        } else if (role.equals("校长")) {
+            formBody = new FormBody.Builder().add("roleCode", "4028882d5ac6d951015ac6e544f50001")
+                    .add("loginId", "sah").add("password", "123456").build();
+        }
+
         final Request request = new Request.Builder().url(urllogin).post(formBody).build();
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
-                        Gson gson = new Gson();
-                        AccountLoginListBean accountListBean = gson.fromJson(str,
-                                AccountLoginListBean.class);
-                        token = accountListBean.getList().get(0).getToken();
-                        Log.e("登录请求数据token:", accountListBean.getList().get(0).getToken());
+                        AccountLoginBean bean = new Gson().fromJson(str, AccountLoginBean.class);
+                        token = bean.getData().get(0).getToken();
                         mIntent = new Intent(AccountActivity.this, MainActivity.class);
                         mIntent.putExtra("role", role);
                         mIntent.putExtra("token", token);
                         Log.e("token在mIntent的值", "token为" + token);
 
-                        if (role.equals("学生"))
-                            interfaceTest.setStudentId(accountListBean.getList().get(0)
-                                    .getUser_id());
-
+                        if (role.equals("学生")) {
+                            interfaceTest.setStudentId(bean.getData().get(0).getUser_id());
+                        }
                         interfaceTest.setToken(token);
                         interfaceTest.setRole(role);
-                        String user_id = accountListBean.getList().get(0).getUser_id();
+                        String user_id = bean.getData().get(0).getUser_id();
                         interfaceTest.setUser_id(user_id);
-
+                        //bean.getData().get(0).getGrade().get(0).getGrade_id();
+                        Log.e("gradename",bean.getData().get(0).getGrade().get(0).getGrade_name());
                         startActivity(mIntent);
+
+                        interfaceTest.setPicture(bean.getData().get(0).getPicture());
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -235,24 +209,21 @@ public class AccountActivity extends Activity {
 
     private void dourl() {
         String url = interfaceTest.getServerurl() + interfaceTest.getLoginrole();
-
-        final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("ururururururr的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        AccountListBean accountListBean = gson.fromJson(str, AccountListBean.class);
-                        for (int i = 0; i < accountListBean.getList().size(); i++) {
-                            Log.e("id:", accountListBean.getList().get(i).getId());
-                            Log.e("name:", accountListBean.getList().get(i).getName());
-                            roleItem[i] = accountListBean.getList().get(i).getName();
+                        AccountListBean bean = new Gson().fromJson(str, AccountListBean.class);
+                        for (int i = 0; i < bean.getList().size(); i++) {
+                            Log.e("id:", bean.getList().get(i).getId());
+                            Log.e("name:", bean.getList().get(i).getName());
+                            roleItem[i] = bean.getList().get(i).getName();
                         }
                     }
                 } catch (IOException e) {
@@ -261,5 +232,4 @@ public class AccountActivity extends Activity {
             }
         }).start();
     }
-
 }

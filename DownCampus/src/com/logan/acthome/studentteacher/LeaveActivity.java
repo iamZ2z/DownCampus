@@ -65,8 +65,6 @@ public class LeaveActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
 
-    /*@ViewInject(R.id.datepicker)
-    private DatePicker mDatepicker;*/
     @ViewInject(R.id.tv_begindate)
     private TextView tv_begindate;
     private int i;
@@ -159,12 +157,6 @@ public class LeaveActivity extends Activity {
         mTimePicker.show();
     }
 
-   /*
-    protected void timedifference() {
-        if (month == month2)
-            time_difference.setText("请假时长：" + (day2 - day) + "天" + (hour2 - hour) + "小时");
-    }*/
-
     private void spinnerListener() {
         // 建立数据源
         String[] mItems = getResources().getStringArray(R.array.leave_type);
@@ -219,14 +211,7 @@ public class LeaveActivity extends Activity {
         leave_textenddate.setText("结束日期：" + (ca.get(Calendar.MONTH) + 1) + "-" + ca.get(Calendar
                 .DAY_OF_MONTH) + "  " + (ca.get(Calendar.HOUR_OF_DAY) + 2) + ":" + ca.get
                 (Calendar.MINUTE));
-        time_difference.setText("请假时长：0天2小时");
-        // 隐藏年份，分钟
-        *//*((ViewGroup) ((ViewGroup) mDatePicker.getChildAt(0)).getChildAt(0)).getChildAt(0)
-         .setVisibility(View.GONE);
-        ((ViewGroup) ((ViewGroup) mDatePicker2.getChildAt(0)).getChildAt(0)).getChildAt(0)
-                .setVisibility(View.GONE);*//*
-        ((ViewGroup) mTimePicker.getChildAt(0)).getChildAt(0).setVisibility(View.GONE);
-        ((ViewGroup) mTimePicker2.getChildAt(0)).getChildAt(0).setVisibility(View.GONE);*/
+        time_difference.setText("请假时长：0天2小时");*/
     }
 
     @Event(value = R.id.btn_send)

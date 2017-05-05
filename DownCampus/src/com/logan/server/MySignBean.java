@@ -9,8 +9,21 @@ public class MySignBean {
     private String state1;
     private String time2;
     private String state2;
+    private String code;
 
     private MySignBean data;
+
+
+
+
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getTime1() {
         return time1;

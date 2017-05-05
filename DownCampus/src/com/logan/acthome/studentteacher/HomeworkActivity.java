@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.HomeworkBean;
+import com.logan.bean.HomeworkSubjectBean;
 import com.logan.constant.InterfaceTest;
 import com.util.TitleBar;
 
@@ -75,6 +76,7 @@ public class HomeworkActivity extends Activity {
         datebegin();
 
         urlcheck();
+        urlsubject();
     }
 
     @Event(value = R.id.tv_date_begin)
@@ -112,7 +114,7 @@ public class HomeworkActivity extends Activity {
             }
         });
         mAdapter = new SimpleAdapter(this, getData(), R.layout.home_homework_list, new
-                String[]{"subject",  "author","content","leavetime"}, new int[]{R.id.subject,
+                String[]{"subject", "author", "content", "leavetime"}, new int[]{R.id.subject,
                 R.id.author, R.id.content, R.id.leavetime});
         mListView.setAdapter(mAdapter);
     }
@@ -173,8 +175,10 @@ public class HomeworkActivity extends Activity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                mAdapter = new SimpleAdapter(HomeworkActivity.this, data, R.layout.home_homework_list, new
-                                        String[]{"subject",  "author","content","leavetime"}, new int[]{R.id.subject,
+                                mAdapter = new SimpleAdapter(HomeworkActivity.this, data, R
+                                        .layout.home_homework_list, new
+                                        String[]{"subject", "author", "content", "leavetime"},
+                                        new int[]{R.id.subject,
                                         R.id.author, R.id.content, R.id.leavetime});
                                 mListView.setAdapter(mAdapter);
                             }
@@ -198,8 +202,74 @@ public class HomeworkActivity extends Activity {
                 return mHashmap;
             }
         }).start();
-
     }
 
+    private void urlsubject() {
+        InterfaceTest interfaceTest = new InterfaceTest();
+        String url = interfaceTest.getServerurl() + interfaceTest.getStudentsubject();
+        String token = interfaceTest.getToken();
+        String studentId = interfaceTest.getStudentId();
 
+        final OkHttpClient client = new OkHttpClient();
+        FormBody formBody = new FormBody.Builder().add("token", token).add("studentId",
+                studentId).build();
+        final Request request = new Request.Builder().url(url).post(formBody).build();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Response response = client.newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        String str = response.body().string();
+                        Log.e("url作业的result", "请求数据:" + str);
+                        Gson gson = new Gson();
+                        final HomeworkSubjectBean accountListBean = gson.fromJson(str,
+                                HomeworkSubjectBean.class);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                /*mAdapter = new SimpleAdapter(HomeworkActivity.this, data, R
+                                .layout.home_homework_list, new
+                                        String[]{"subject",  "author","content","leavetime"}, new
+                                         int[]{R.id.subject,
+                                        R.id.author, R.id.content, R.id.leavetime});
+                                mListView.setAdapter(mAdapter);*/
+
+                                sp_subject(accountListBean);
+                            }
+                        });
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            private void sp_subject(HomeworkSubjectBean accountBean) {
+                String[] subject = new String[accountBean.getData().size()];
+                for (int j = 0; j < accountBean.getData().size(); j++) {
+                    subject[j] = accountBean.getData().get(j).getSubjectName();
+                }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(HomeworkActivity.this, R.layout
+                        .spinner_bluebord, subject);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                // 绑定 Adapter到控件
+                sp_subject.setAdapter(adapter);
+                sp_subject.setOnItemSelectedListener(new OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position,
+                                               long id) {
+                /*
+                 * Toast.makeText(LeaveActivity.this,"你点击的是" +
+				 * leave_type[position], Toast.LENGTH_SHORT).show();
+				 */
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                });
+            }
+        }).start();
+    }
 }

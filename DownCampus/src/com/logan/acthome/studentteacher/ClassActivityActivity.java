@@ -13,7 +13,6 @@ import org.xutils.view.annotation.ViewInject;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.ClassActivityBean;
-import com.logan.bean.StudentAttendanceBean;
 import com.logan.constant.InterfaceTest;
 import com.util.TitleBar;
 
@@ -83,10 +82,9 @@ public class ClassActivityActivity extends Activity {
             }
         });
         mAdapter = new SimpleAdapter(this, getData(),
-                R.layout.home_classactivityactivity_list, new String[]{"leavetime",
+                R.layout.home_classactactivity_list, new String[]{"leavetime",
                 "content", "subject", "author"}, new int[]{
-                R.id.leavetime, R.id.content, R.id.subject,
-                R.id.author});
+                R.id.leavetime, R.id.content, R.id.subject, R.id.author});
         list.setAdapter(mAdapter);
     }
 
@@ -198,7 +196,7 @@ public class ClassActivityActivity extends Activity {
                             @Override
                             public void run() {
                                 mAdapter = new SimpleAdapter(ClassActivityActivity.this, data,
-                                        R.layout.home_classactivityactivity_list, new
+                                        R.layout.home_classactactivity_list, new
                                         String[]{"leavetime",
                                         "content", "subject", "author"}, new int[]{R.id
                                         .leavetime, R.id.content, R.id.subject,
@@ -249,7 +247,7 @@ public class ClassActivityActivity extends Activity {
                             break;
                     }
                     mMap.put("content", accountListBean.getData().get(j).getSummary());
-                    mMap.put("leavetime", accountListBean.getData().get(j).getStartTime() + "至" +
+                    mMap.put("leavetime", accountListBean.getData().get(j).getStartTime() + "-" +
                             accountListBean.getData().get(j).getEndTime());
                     mHashmap.add(mMap);
                 }

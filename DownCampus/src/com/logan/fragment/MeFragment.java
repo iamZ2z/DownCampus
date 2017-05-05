@@ -11,18 +11,24 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.DrawableRequestBuilder;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.actme.ChangePassActivity;
 import com.logan.actme.DynamicActivity;
 import com.logan.actme.EditDataActivity;
 import com.logan.actme.OptionActivity;
+import com.logan.actmobilecampus.AccountActivity;
 import com.logan.bean.MeFragmentBean;
 import com.logan.constant.InterfaceTest;
+import com.util.CircleImageView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -50,7 +56,9 @@ public class MeFragment extends Fragment implements OnClickListener {
     @ViewInject(R.id.btn_changerole)
     private Button btn_changerole;
     private InterfaceTest interfaceTest = new InterfaceTest();
-    //还没获取接口图片
+
+    @ViewInject(R.id.head)
+    private de.hdodenhof.circleimageview.CircleImageView head;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +82,16 @@ public class MeFragment extends Fragment implements OnClickListener {
         if (interfaceTest.getRole().equals("家长")) urlchange();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        String imgurl = interfaceTest.getPicture();
+        DrawableRequestBuilder<Integer> thumbnailRequest = Glide.with(this).load(R.drawable
+                .touxiang);
+        Glide.with(getActivity()).load(imgurl).thumbnail(thumbnailRequest).diskCacheStrategy
+                (DiskCacheStrategy.ALL).into(head);
+    }
+
     private void urlchange() {
         String url = interfaceTest.getServerurl() + interfaceTest.getParentschild();
         String userid = interfaceTest.getUser_id();
@@ -91,9 +109,8 @@ public class MeFragment extends Fragment implements OnClickListener {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("url家长所有孩子的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        final MeFragmentBean accountListBean = gson.fromJson(str, MeFragmentBean
-                                .class);
+                        final MeFragmentBean accountListBean = new Gson().fromJson(str,
+                                MeFragmentBean.class);
                         if (accountListBean.getData().size() != 0 || accountListBean.getData()
                                 .size() != 1) {
                             getActivity().runOnUiThread(new Runnable() {

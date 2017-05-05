@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="老师修养"
+            android:textColor="@color/blue_theme"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="10分"
+            android:textColor="@color/blue_theme"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/content"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    
-    <TextView 
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:text="爱岗敬业，工作认真"/>
 
-    <RadioGroup
-        android:id="@+id/radiogroup"
+    <EditText
+        android:id="@+id/editscore"
         android:layout_width="match_parent"
+        android:hint="请输入分值"
+        android:gravity="center"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-    </RadioGroup>
+        android:background="@drawable/bordblueround"/>
 
 </LinearLayout>

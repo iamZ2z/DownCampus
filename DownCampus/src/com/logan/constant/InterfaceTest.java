@@ -7,8 +7,12 @@ package com.logan.constant;
 public class InterfaceTest {
     //服务器
     //final String serverurl="http://192.168.89.173:8080/iccp/api";//东东
-    //final String serverurl="http://lubo.logansoft.com:8080/iccp/api";
-    final String serverurl="http://192.168.89.162:8080/iccp/api";//景喜
+    //final String serverurl="http://lubo.logansoft.com:8080/iccp/api";//外网
+    //final String serverurl="http://192.168.89.162:8080/iccp/api";//景喜
+    final String serverurl="http://192.168.89.177:8080/iccp/api";//绵科
+    //final String serverurl="http://192.168.89.150:8080/iccp/api";//彦谨
+    //final String serverurl="http://192.168.89.149:8080/iccp/api";//何伟
+
 
     //东东
     public static final String loginrole="/ums/roles.api";
@@ -18,9 +22,12 @@ public class InterfaceTest {
     public static final String currentterm ="/basic/getCurrentSemester.api";
     public static final String queryschedule ="/edu/querySyllabus.api";
 
+    public static final String querygrade ="/getGradeOrClazzByUser.api";
+
     private static String token;
     private static String user_id;
     private static String role;
+    private static String picture;
 
     //彦谨
     public static final String meetingquery ="/office/meeting/query.api";
@@ -42,14 +49,57 @@ public class InterfaceTest {
     public static final String studenthomework="/edu/homework.api";
     public static final String studentquery="/edu/queryEvaluate.api";
     public static final String studentteacherrate="/edu/evaluate.api";
-
     public static final String studentmyseat="/edu/querySeat.api";
+    public static final String studentsubject="/common/querySubject.api";
 
     private static String studentId;
 
+    //何伟
+    public static final String examquery="/exam/queryExam.api";
+    public static final String examadd="/exam/add.api";
+    public static final String examachievement="/achievement/queryAchievement.api";
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static String getPicture() {
+        return picture;
+    }
+
+    public static void setPicture(String picture) {
+        InterfaceTest.picture = picture;
+    }
+
+    public static String getExamachievement() {
+        return examachievement;
+    }
+
+    public static String getExamquery() {
+        return examquery;
+    }
+
+    public static String getLeaveaudit() {
+        return leaveaudit;
+    }
+
+    public static String getStudentsubject() {
+        return studentsubject;
+    }
 
     public static String getStudentquery() {
         return studentquery;

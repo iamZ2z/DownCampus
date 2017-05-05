@@ -43,8 +43,7 @@ public class LeaveRecordActivity extends Activity {
 
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
-    private InterfaceTest interfaceTest = new InterfaceTest();
+    InterfaceTest interfaceTest = new InterfaceTest();
     private List<? extends Map<String, ?>> data;
 
     @Override
@@ -89,7 +88,7 @@ public class LeaveRecordActivity extends Activity {
     }
 
     private void urlstudentleave() {
-        String url = interfaceTest.getServerurl() + interfaceTest.getLeavequery();
+        String url = interfaceTest.getServerurl() + interfaceTest.getStudentleavequery();
         String token = interfaceTest.getToken();
         String studentId = interfaceTest.getStudentId();
 
@@ -104,9 +103,8 @@ public class LeaveRecordActivity extends Activity {
                     Response response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
-                        Log.e("urlleave的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        LeaveRecordStudentBean accountListBean = gson.fromJson(str,
+                        Log.e("urlstudentleave的result", "请求数据:" + str);
+                        LeaveRecordStudentBean accountListBean = new Gson().fromJson(str,
                                 LeaveRecordStudentBean.class);
                         data = getData2(accountListBean);
                         runOnUiThread(new Runnable() {
@@ -115,9 +113,8 @@ public class LeaveRecordActivity extends Activity {
                                 //放入list
                                 mAdapter = new SimpleAdapter(LeaveRecordActivity.this, data, R
                                         .layout.home_leaverecord_list, new String[]{"iv", "name",
-                                        "submit", "leavetime", "or"},
-                                        new int[]{R.id.iv, R.id.name, R.id.submit, R.id
-                                                .leavetime, R.id.or});
+                                        "submit", "leavetime", "or"}, new int[]{R.id.iv, R.id
+                                        .name, R.id.submit, R.id.leavetime, R.id.or});
                                 mListView.setAdapter(mAdapter);
                             }
                         });
@@ -135,8 +132,16 @@ public class LeaveRecordActivity extends Activity {
                     mMap.put("iv", R.drawable.touxiang);
                     mMap.put("name", "刘波");
                     mMap.put("submit", accountListBean.getData().get(j).getApplyTime());
-                    mMap.put("leavetime", accountListBean.getData().get(j).getStartTime()+accountListBean.getData().get(j).getEndTime());
-                    mMap.put("or:", accountListBean.getData().get(j).getApprove());
+                    mMap.put("leavetime", accountListBean.getData().get(j).getStartTime() + "——" +
+                            accountListBean.getData().get(j).getEndTime());
+                    if (accountListBean.getData().get(j).getApprove().equals("0"))
+                        mMap.put("or", "未审批");
+                    else if (accountListBean.getData().get(j).getApprove().equals("1"))
+                        mMap.put("or", "同意");
+                    else if (accountListBean.getData().get(j).getApprove().equals("2"))
+                        mMap.put("or", "驳回");
+                    else if (accountListBean.getData().get(j).getApprove().equals("3"))
+                        mMap.put("or", "不通过");
                     mHashmap.add(mMap);
                 }
                 return mHashmap;
@@ -158,8 +163,7 @@ public class LeaveRecordActivity extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlleave的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        LeaveRecordBean accountListBean = gson.fromJson(str,
+                        LeaveRecordBean accountListBean = new Gson().fromJson(str,
                                 LeaveRecordBean.class);
                         data = getData2(accountListBean);
                         runOnUiThread(new Runnable() {
@@ -168,9 +172,8 @@ public class LeaveRecordActivity extends Activity {
                                 //放入list
                                 mAdapter = new SimpleAdapter(LeaveRecordActivity.this, data, R
                                         .layout.home_leaverecord_list, new String[]{"iv", "name",
-                                        "submit", "leavetime", "or"},
-                                        new int[]{R.id.iv, R.id.name, R.id.submit, R.id
-                                                .leavetime, R.id.or});
+                                        "submit", "leavetime", "or"}, new int[]{R.id.iv, R.id
+                                        .name, R.id.submit, R.id.leavetime, R.id.or});
                                 mListView.setAdapter(mAdapter);
                             }
                         });
@@ -186,9 +189,10 @@ public class LeaveRecordActivity extends Activity {
                     mMap = new HashMap<>();
                     mMap.put("iv", R.drawable.touxiang);
                     mMap.put("name", accountListBean.getData().get(j).getUserName());
-                    mMap.put("submit", accountListBean.getData().get(j).getStart());
-                    mMap.put("leavetime", accountListBean.getData().get(j).getCreateTime());
-                    mMap.put("or:", accountListBean.getData().get(j).getAuditStr());
+                    mMap.put("submit", "申请时间：" + accountListBean.getData().get(j).getCreateTime());
+                    mMap.put("leavetime", "请假时间：" + accountListBean.getData().get(j).getStart() +
+                            "——" + accountListBean.getData().get(j).getEnd());
+                    mMap.put("or", accountListBean.getData().get(j).getAuditStr());
                     mHashmap.add(mMap);
                 }
                 return mHashmap;

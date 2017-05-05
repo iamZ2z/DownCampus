@@ -16,13 +16,13 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+        android:layout_height="wrap_content" />
     
     <Button
         android:id="@+id/btn"
         android:text="提交评价"
         android:background="@drawable/bluebutton"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

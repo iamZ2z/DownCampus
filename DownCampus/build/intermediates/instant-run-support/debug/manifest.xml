@@ -170,7 +170,7 @@
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.StudentAttendanceActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.more.FootPrint" >
+        <activity android:name="com.logan.acthome.more.FootPrintActivity" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.LeaveActivity" >
         </activity>
@@ -186,9 +186,11 @@
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.ExamArrange" >
         </activity>
-        <activity android:name="com.logan.acthome.more.ExamArrangeDetail" >
+        <activity android:name="com.logan.acthome.studentteacher.ExamArrangeDetail" >
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.MyScore" >
+        <activity android:name="com.logan.acthome.studentteacher.MyScoreActivity" >
+        </activity>
+        <activity android:name="com.logan.acthome.studentteacher.MyScoreDetailActivity" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.MySeatActivity" >
         </activity>
@@ -203,7 +205,7 @@
         </activity>
         <activity android:name="com.logan.acthome.parentleader.BehaviorActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.parentleader.MyApprove" />
+        <activity android:name="com.logan.acthome.parentleader.MyApproveActivity" />
         <activity android:name="com.logan.acthome.parentleader.ApproveDetail" />
         <activity android:name="com.logan.acthome.parentleader.ApproveSearch" />
         <activity android:name="com.logan.acthome.parentleader.MeetingManage" />

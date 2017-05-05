@@ -92,17 +92,17 @@ public final class R {
         public static final int error_item_color = 0x7f0c0045;
         public static final int gray_normal = 0x7f0c004d;
         public static final int gray_pressed = 0x7f0c004e;
-        public static final int grid_state_focused = 0x7f0c0051;
-        public static final int grid_state_pressed = 0x7f0c0052;
-        public static final int holo_blue_bright = 0x7f0c0055;
-        public static final int holo_green_light = 0x7f0c0056;
-        public static final int holo_orange_light = 0x7f0c0057;
-        public static final int holo_red_light = 0x7f0c0058;
-        public static final int list_itease_primary_color = 0x7f0c0059;
-        public static final int list_itease_secondary_color = 0x7f0c005a;
-        public static final int orange = 0x7f0c0069;
-        public static final int top_bar_normal_bg = 0x7f0c0089;
-        public static final int voip_interface_text_color = 0x7f0c008a;
+        public static final int grid_state_focused = 0x7f0c0052;
+        public static final int grid_state_pressed = 0x7f0c0053;
+        public static final int holo_blue_bright = 0x7f0c0056;
+        public static final int holo_green_light = 0x7f0c0057;
+        public static final int holo_orange_light = 0x7f0c0058;
+        public static final int holo_red_light = 0x7f0c0059;
+        public static final int list_itease_primary_color = 0x7f0c005a;
+        public static final int list_itease_secondary_color = 0x7f0c005b;
+        public static final int orange = 0x7f0c006a;
+        public static final int top_bar_normal_bg = 0x7f0c008a;
+        public static final int voip_interface_text_color = 0x7f0c008b;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin = 0x7f070840;

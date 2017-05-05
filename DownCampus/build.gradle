@@ -86,6 +86,7 @@ android {
     }
     //环信
     //useLibrary 'org.apache.http.legacy'
+
 }
 
 allprojects {

@@ -24,7 +24,7 @@ import org.xutils.x;
  */
 
 @ContentView(R.layout.home_teacherrate)
-public class TeacherRateActivity extends Activity{
+public class TeacherRateActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
 
@@ -51,17 +51,17 @@ public class TeacherRateActivity extends Activity{
         sp_Year();
     }
 
-
     private void sp_Year() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon, str);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon,
+                str);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // 绑定 Adapter到控件
         sp.setAdapter(adapter);
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				/*
-				 * Toast.makeText(LeaveActivity.this,"你点击的是" +
+                /*
+                 * Toast.makeText(LeaveActivity.this,"你点击的是" +
 				 * leave_type[position], Toast.LENGTH_SHORT).show();
 				 */
             }
@@ -73,9 +73,10 @@ public class TeacherRateActivity extends Activity{
         });
     }
 
+
     @Event(value = R.id.btn)
-    private void onBtn_Click(View v){
-        Intent mIntent=new Intent(this, RateContentActivity.class);
+    private void onBtn_Click(View v) {
+        Intent mIntent = new Intent(this, RateContentActivity.class);
         startActivity(mIntent);
     }
 }

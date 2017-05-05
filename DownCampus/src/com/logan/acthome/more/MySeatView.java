@@ -4,39 +4,46 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Toast;
+
+import com.logan.bean.MySeatBean;
 
 public class MySeatView extends View {
-    // 设置填充红色的位置
-    int fillNum = 13;
+    // 设置填充位置
+    int fillNum;
+
     int width;
     int squareside;
-    int height5x = 5;
+    int height5x = 14;
 
+    MySeatBean mySeatBean = new MySeatBean();
     //总横数
     int allrow = 0;
     //第几大行
-    int seatRow = 3;
+    int seatRow ;
+    //int seatRow = Integer.parseInt(mySeatBean.getData().get(0).getSeatRow());
 
     public MySeatView(Context context) {
         super(context);
     }
 
-    public MySeatView(Context context, @Nullable AttributeSet attrs) {
+    //上下文，第几大行，第几位
+    public MySeatView(Context context,int seatRow,int seatsort) {
+        super(context);
+        this.seatRow=seatRow;
+        this.fillNum=seatsort;
+    }
+
+    public MySeatView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MySeatView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MySeatView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-    //MySeatBean mySeatBean=new MySeatBean();
-    //我的座位号
-    //int myposition= Integer.parseInt(mySeatBean.getData().get(0).getSeatSort());
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -44,7 +51,7 @@ public class MySeatView extends View {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         width = displayMetrics.widthPixels;
         squareside = displayMetrics.widthPixels / 28;
-        height5x = height5x * squareside;
+        height5x *= squareside;
 
         canvas.drawColor(Color.WHITE);
         Paint paint = new Paint();

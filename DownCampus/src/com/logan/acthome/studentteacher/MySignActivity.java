@@ -26,7 +26,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.constant.InterfaceTest;
-import com.logan.acthome.more.FootPrint;
+import com.logan.acthome.more.FootPrintActivity;
 import com.logan.acthome.more.SignActivity;
 import com.logan.server.MySignBean;
 import com.util.TitleBar;
@@ -82,7 +82,7 @@ public class MySignActivity extends Activity {
     private TextView mComplain;
 
     //private String signurl = "/loadTeacherAttendance.api";
-    private InterfaceTest interfaceTest=new InterfaceTest();
+    private InterfaceTest interfaceTest = new InterfaceTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,7 +150,7 @@ public class MySignActivity extends Activity {
         titlebar.addAction(new TitleBar.TextAction("足迹") {
             @Override
             public void performAction(View view) {
-                mIntent = new Intent(MySignActivity.this, FootPrint.class);
+                mIntent = new Intent(MySignActivity.this, FootPrintActivity.class);
                 startActivity(mIntent);
             }
         });
@@ -247,12 +247,20 @@ public class MySignActivity extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlsignurlsign的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        MySignBean mySignBean=gson.fromJson(str,MySignBean.class);
-                        Log.e("time1:", mySignBean.getData().getTime1());
-                        Log.e("state1:", mySignBean.getData().getState1());
-                        Log.e("time2:", mySignBean.getData().getTime2());
-                        Log.e("state2:", mySignBean.getData().getState2());
+                        final MySignBean mySignBean = new Gson().fromJson(str, MySignBean.class);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (mySignBean.getCode().equals("0")) {
+                                    Log.e("time1:", mySignBean.getData().getTime1());
+                                    Log.e("state1:", mySignBean.getData().getState1());
+                                    Log.e("time2:", mySignBean.getData().getTime2());
+                                    Log.e("state2:", mySignBean.getData().getState2());
+                                } else
+                                    Toast.makeText(MySignActivity.this, "登录信息为空", Toast.LENGTH_LONG)
+                                            .show();
+                            }
+                        });
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -260,5 +268,4 @@ public class MySignActivity extends Activity {
             }
         }).start();
     }
-
 }
