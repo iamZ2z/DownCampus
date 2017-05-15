@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -17,7 +18,6 @@ import com.example.mobilecampus.R;
 import com.logan.acthome.more.RateActivityUtil;
 
 public class RateContentAdapter extends BaseAdapter {
-    private Context context;
     private List<RateActivityUtil> list;
     private LayoutInflater mLayoutInflater;
     private int mTouchItemPosition = -1;
@@ -38,7 +38,6 @@ public class RateContentAdapter extends BaseAdapter {
     }
 
     public RateContentAdapter(Context context, List<RateActivityUtil> listItems) {
-        this.context = context;
         mLayoutInflater = LayoutInflater.from(context); // 创建视图容器并设置上下文
         this.list = listItems;
     }
@@ -60,35 +59,49 @@ public class RateContentAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.home_rate_list, null);
             viewHolder = new ViewHolder(convertView);
-
-            viewHolder.editscore.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    mTouchItemPosition = (Integer) v.getTag();
-                    return false;
-                }
-            });
-            viewHolder.textWatcher = new MyTextWatcher();
-            viewHolder.editscore.addTextChangedListener(viewHolder.textWatcher);
-            viewHolder.textWatcher.updatePosition(position);
             convertView.setTag(viewHolder);
-
-            viewHolder.title.setText(list.get(position).title);
-            viewHolder.content.setText(list.get(position).content);
-            viewHolder.score.setText(list.get(position).score + "");
-            viewHolder.editscore.setText(list.get(position).setscore + "");
-            viewHolder.editscore.setTag(position);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
+            viewHolder.textWatcher.updatePosition(position);
         }
+
+        viewHolder.title.setText(list.get(position).getTitle());
+        viewHolder.content.setText(list.get(position).getContent());
+        viewHolder.score.setText("分值:"+list.get(position).getScore());
+        //viewHolder.editscore.setText(list.get(position).getSetscore());
+        viewHolder.editscore.setTag(list.get(position));
+
         if (mTouchItemPosition == position) {
             viewHolder.editscore.requestFocus();
             viewHolder.editscore.setSelection(viewHolder.editscore.getText().length());
         } else viewHolder.editscore.clearFocus();
+
+        viewHolder.textWatcher = new MyTextWatcher();
+        //viewHolder.editscore.addTextChangedListener(viewHolder.textWatcher);
+        viewHolder.editscore.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                RateActivityUtil bean=(RateActivityUtil)viewHolder.editscore.getTag();
+                bean.setSetscore(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+        viewHolder.textWatcher.updatePosition(position);
+
+        if(!TextUtils.isEmpty(list.get(position).getSetscore()+""))
+            viewHolder.editscore.setText(list.get(position).getSetscore());
+        else viewHolder.editscore.setText("");
 
         return convertView;
     }
@@ -113,8 +126,9 @@ public class RateContentAdapter extends BaseAdapter {
 
         @Override
         public void afterTextChanged(Editable s) {
-            if(s.toString().equals("")||s.toString().equals("0")) list.get(mPosition).setSetscore(0);
-            else list.get(mPosition).setSetscore(Integer.parseInt(s.toString()));
+            /*if (s.toString().equals("") )
+                list.get(mPosition).setSetscore("");
+            else list.get(mPosition).setSetscore(s.toString());*/
         }
     }
 }

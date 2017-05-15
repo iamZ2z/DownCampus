@@ -32,6 +32,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * conversation list adapter
  *
@@ -42,7 +44,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
     private List<EMConversation> copyConversationList;
     private ConversationFilter conversationFilter;
     private boolean notiyfyByFilter;
-    
+
     protected int primaryColor;
     protected int secondaryColor;
     protected int timeColor;
@@ -88,7 +90,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
             holder.unreadLabel = (TextView) convertView.findViewById(R.id.unread_msg_number);
             holder.message = (TextView) convertView.findViewById(R.id.message);
             holder.time = (TextView) convertView.findViewById(R.id.time);
-            holder.avatar = (ImageView) convertView.findViewById(R.id.avatar);
+            holder.avatar = (CircleImageView) convertView.findViewById(R.id.avatar);
             holder.msgState = convertView.findViewById(R.id.msg_state);
             holder.list_itease_layout = (RelativeLayout) convertView.findViewById(R.id.list_itease_layout);
             holder.motioned = (TextView) convertView.findViewById(R.id.mentioned);
@@ -100,7 +102,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
         EMConversation conversation = getItem(position);
         // get username or group id
         String username = conversation.conversationId();
-        
+
         if (conversation.getType() == EMConversationType.GroupChat) {
             String groupId = conversation.conversationId();
             if(EaseAtMessageHelper.get().hasAtMeMsg(groupId)){
@@ -132,7 +134,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
         }
 
         if (conversation.getAllMsgCount() != 0) {
-        	// show the content of latest message
+            // show the content of latest message
             EMMessage lastMessage = conversation.getLastMessage();
             String content = null;
             if(cvsListHelper != null){
@@ -150,7 +152,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
                 holder.msgState.setVisibility(View.GONE);
             }
         }
-        
+
         //set property
         holder.name.setTextColor(primaryColor);
         holder.message.setTextColor(secondaryColor);
@@ -164,7 +166,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
 
         return convertView;
     }
-    
+
     @Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
@@ -174,7 +176,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
             notiyfyByFilter = false;
         }
     }
-    
+
     @Override
     public Filter getFilter() {
         if (conversationFilter == null) {
@@ -182,7 +184,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
         }
         return conversationFilter;
     }
-    
+
 
     public void setPrimaryColor(int primaryColor) {
         this.primaryColor = primaryColor;
@@ -234,7 +236,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
                 for (int i = 0; i < count; i++) {
                     final EMConversation value = mOriginalValues.get(i);
                     String username = value.conversationId();
-                    
+
                     EMGroup group = EMClient.getInstance().groupManager().getGroup(username);
                     if(group != null){
                         username = group.getGroupName();
@@ -249,10 +251,10 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
                     if (username.startsWith(prefixString)) {
                         newValues.add(value);
                     } else{
-                          final String[] words = username.split(" ");
-                            final int wordCount = words.length;
+                        final String[] words = username.split(" ");
+                        final int wordCount = words.length;
 
-                            // Start at index 0, in case valueText starts with space(s)
+                        // Start at index 0, in case valueText starts with space(s)
                         for (String word : words) {
                             if (word.startsWith(prefixString)) {
                                 newValues.add(value);
@@ -288,7 +290,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
     public void setCvsListHelper(EaseConversationListHelper cvsListHelper){
         this.cvsListHelper = cvsListHelper;
     }
-    
+
     private static class ViewHolder {
         /** who you chat with */
         TextView name;
@@ -299,7 +301,7 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
         /** time of last message */
         TextView time;
         /** avatar */
-        ImageView avatar;
+        CircleImageView avatar;
         /** status of last message */
         View msgState;
         /** layout */

@@ -8,12 +8,16 @@ import java.util.List;
 
 public class AccountLoginBean {
     private String code;
+    private String message;
 
     private String token;
     private String user_id;
     private String username;
     private String fullname;
+    private String organizationName;
     private String mobile;
+    private String email;
+    private String autograph;
     private String sex;
     private String picture;
     private List<AccountLoginBean> data;
@@ -27,6 +31,9 @@ public class AccountLoginBean {
     private String clazz_id;
     private String clazz_name;
 
+    //老师
+    private String checkDate;
+    private String signOutDate;
 
 
 
@@ -37,14 +44,29 @@ public class AccountLoginBean {
 
 
 
+    public String getAutograph() {
+        return autograph;
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public String getOrganizationName() {
+        return organizationName;
+    }
 
+    public String getMessage() {
+        return message;
+    }
 
+    public String getCheckDate() {
+        return checkDate;
+    }
 
-
-
-
+    public String getSignOutDate() {
+        return signOutDate;
+    }
 
     public String getCode() {
         return code;

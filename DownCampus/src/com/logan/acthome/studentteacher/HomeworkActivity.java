@@ -1,17 +1,7 @@
 package com.logan.acthome.studentteacher;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.xutils.view.annotation.Event;
-import org.xutils.x;
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.ViewInject;
-
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,33 +13,44 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.bigkoo.pickerview.TimePickerView;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.HomeworkBean;
 import com.logan.bean.HomeworkSubjectBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
-import cn.aigestudio.datepicker.cons.DPMode;
-import cn.aigestudio.datepicker.views.DatePicker;
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static cn.finalteam.toolsfinal.DateUtils.getDate;
+
 @ContentView(R.layout.home_homework)
 public class HomeworkActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
     @ViewInject(R.id.sp_subject)
     private Spinner sp_subject;
     String[] str_subject = {"科目", "语文", "数学", "英语"};
-
-    @ViewInject(R.id.date_begin)
-    private DatePicker date_begin;
+    @ViewInject(R.id.timepicker)
+    private TimePickerView mTimePicker;
     @ViewInject(R.id.tv_date_begin)
     private TextView tv_date_begin;
 
@@ -73,7 +74,6 @@ public class HomeworkActivity extends Activity {
         x.view().inject(this);
         initView();
         spinner_subject();
-        datebegin();
 
         urlcheck();
         urlsubject();
@@ -82,27 +82,35 @@ public class HomeworkActivity extends Activity {
     @Event(value = R.id.tv_date_begin)
     private void onTv_beginClick(View v) {
         i = 1;
-        date_begin.setVisibility(View.VISIBLE);
+        chooseDate();
+        mTimePicker.show();
     }
 
     @Event(value = R.id.tv_date_end)
     private void onTv_endClick(View v) {
         i = 2;
-        date_begin.setVisibility(View.VISIBLE);
+        chooseDate();
+        mTimePicker.show();
     }
 
-    private void datebegin() {
-        Toast.makeText(HomeworkActivity.this, "左右滑动月份，上下滑动年份", Toast.LENGTH_SHORT).show();
-        date_begin.setDate(2017, 3);
-        date_begin.setMode(DPMode.SINGLE);
-        date_begin.setOnDatePickedListener(new DatePicker.OnDatePickedListener() {
+    private void chooseDate() {
+        Calendar selectedDate = Calendar.getInstance();
+        mTimePicker = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
             @Override
-            public void onDatePicked(String date) {
-                if (i == 1) tv_date_begin.setText(date);
-                else tv_date_end.setText(date);
-                date_begin.setVisibility(View.GONE);
+            public void onTimeSelect(Date date, View v) {//选中事件回调
+                // 这里回调过来的v,就是show()方法里面所添加的 View 参数，如果show的时候没有添加参数，v则为null
+                if (i == 1) {
+                    String strdate = getDate(date);
+                    tv_date_begin.setText(strdate.replaceAll("/", "-"));
+                } else if (i == 2) {
+                    String strdate = getDate(date);
+                    tv_date_end.setText(strdate.replaceAll("/", "-"));
+                }
             }
-        });
+        }).setType(TimePickerView.Type.YEAR_MONTH_DAY).setLabel("年", "月", "日", "", "",
+                "")
+                //设置空字符串以隐藏单位提示   hide label
+                .setDividerColor(Color.BLUE).setContentSize(20).setDate(selectedDate).build();
     }
 
     private void initView() {
@@ -179,7 +187,7 @@ public class HomeworkActivity extends Activity {
                                         .layout.home_homework_list, new
                                         String[]{"subject", "author", "content", "leavetime"},
                                         new int[]{R.id.subject,
-                                        R.id.author, R.id.content, R.id.leavetime});
+                                                R.id.author, R.id.content, R.id.leavetime});
                                 mListView.setAdapter(mAdapter);
                             }
                         });

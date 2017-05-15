@@ -13,6 +13,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.example.mobilecampus.R;
+import com.google.gson.Gson;
 import com.logan.acthome.studentteacher.CalendarActivity;
 import com.logan.acthome.studentteacher.CampusPay;
 import com.logan.acthome.studentteacher.ClassActivityActivity;
@@ -31,15 +32,24 @@ import com.logan.acthome.parentleader.BehaviorActivity;
 import com.logan.acthome.parentleader.MeetingManage;
 import com.logan.acthome.parentleader.MyApproveActivity;
 import com.logan.adapter.HomeGridAdapter;
+import com.logan.bean.GradeClassBean;
+import com.logan.bean.MeFragmentBean;
 import com.logan.constant.InterfaceTest;
+import com.logan.constant.UsuallyData;
 import com.util.viewflow.CircleFlowIndicator;
 import com.util.viewflow.ImagePagerAdapter;
 import com.util.viewflow.ViewFlow;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class HomeFragment extends Fragment implements OnItemClickListener {
     private Intent mIntent;
@@ -57,27 +67,15 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     private List<Map<String, Object>> data_list;
 
     private String token;
-    private InterfaceTest interfaceTest=new InterfaceTest();
+    private InterfaceTest interfaceTest = new InterfaceTest();
+    private UsuallyData usuallyData = new UsuallyData();
 
-    /*@Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        *//*if (((MainActivity) activity).getTitles() != null)
-            role = ((MainActivity) activity).getTitles();*//*
-        role=interfaceTest.getRole();
-        Log.v("role home", role);
-
-        *//*if (((MainActivity) activity).getToken() != null)
-            token = ((MainActivity) activity).getToken();*//*
-        token=interfaceTest.getToken();
-        Log.e("HomeFragment获取activity","token="+token);
-    }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        role=interfaceTest.getRole();
-        token=interfaceTest.getToken();
+        role = interfaceTest.getRole();
+        token = interfaceTest.getToken();
 
         if (role.equals("老师")) {
             str_role = getResources().getStringArray(R.array.teacher);
@@ -157,6 +155,9 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
         mGridView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         mGridView.setAdapter(new HomeGridAdapter(getActivity(), data_list));
         mGridView.setOnItemClickListener(this);
+
+        if (role.equals("家长")) kidurl();
+        else if (role.equals("学生")) gradeclass();
     }
 
     private void initBanner(ArrayList<String> imageUrlList) {
@@ -177,8 +178,8 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             startActivity(mIntent);
         } else if (str.equals("班级课表")) {
             mIntent = new Intent(getActivity(), ClassScheduleActivity.class);
-            mIntent.putExtra("token",token);
-            Log.e("HomeFragment里的token",token);
+            mIntent.putExtra("token", token);
+            Log.e("HomeFragment里的token", token);
             startActivity(mIntent);
         } else if (str.equals("作息安排")) {
             mIntent = new Intent(getActivity(), WorkRestActivity.class);
@@ -227,4 +228,81 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             startActivity(mIntent);
         }
     }
+
+    private void kidurl() {
+        //if (interfaceTest.getStudentId().equals(null)) {
+            String url = interfaceTest.getServerurl() + interfaceTest.getParentschild();
+            String userid = interfaceTest.getUser_id();
+            String token = interfaceTest.getToken();
+
+            FormBody formBody = new FormBody.Builder().add("token", token).add("parentId", userid)
+                    .build();
+            final Request request = new Request.Builder().url(url).post(formBody).build();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Response response = new OkHttpClient().newCall(request).execute();
+                        if (response.isSuccessful()) {
+                            String str = response.body().string();
+                            Log.e("url家长所有孩子的result", "请求数据:" + str);
+                            final MeFragmentBean bean = new Gson().fromJson(str, MeFragmentBean.class);
+                            if (bean.getData().size() != 0 || bean.getData().size() != 1) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        String st = bean.getData().get(0).getStudentId();
+                                        interfaceTest.setStudentId(st);
+                                    }
+                                });
+                            }
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+        }
+    //}
+
+    private void gradeclass() {
+        String url = interfaceTest.getServerurl() + interfaceTest.getQuerygrade();
+        String userid = interfaceTest.getUser_id();
+        String token = interfaceTest.getToken();
+
+        FormBody formBody = new FormBody.Builder().add("token", token).add("user_id", userid)
+                .build();
+        final Request request = new Request.Builder().url(url).post(formBody).build();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Response response = new OkHttpClient().newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        String str = response.body().string();
+                        Log.e("学生年班级的result", "请求数据:" + str);
+                        final GradeClassBean bean = new Gson().fromJson(str, GradeClassBean.class);
+                        if (bean.getCode().equals("0")) {
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    usuallyData.setGradeid(bean.getData().get(0).getGrade().get
+                                            (0).getGrade_id());
+                                    usuallyData.setGradeid(bean.getData().get(0).getGrade().get
+                                            (0).getGrade_name());
+                                    usuallyData.setClazzid(bean.getData().get(0).getClazz().get
+                                            (0).getClazz_id());
+                                    usuallyData.setClazzid(bean.getData().get(0).getClazz().get
+                                            (0).getClazz_name());
+                                }
+                            });
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
 }

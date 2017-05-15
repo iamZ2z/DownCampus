@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\dynamic_img_add.png"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\sign_btn_out.png",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\sign_btn_out.png"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\login_bg_bounced.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\login_bg_bounced.png"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\sign_btn_out.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\sign_btn_out.png"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\login_btn_close.png",
@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\home_icon_16.png"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\my_bg_role.png",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\my_bg_role.png"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\login_btn_students.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\login_btn_students.png"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\my_bg_role.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\my_bg_role.png"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\home_icon_14.png",
@@ -100,6 +100,10 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\my_icon_install.png"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\guide_page_01.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\guide_page_01.png"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\search_icon_right.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\search_icon_right.png"
     },
@@ -126,6 +130,10 @@
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\message_icon_search.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\message_icon_search.png"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\guide_page_02.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\guide_page_02.png"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\tag_icon_find_default.png",
@@ -180,12 +188,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\nav_btn_address.png"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\evaluate_img_bg.png",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\evaluate_img_bg.png"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\home_icon_8.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\home_icon_8.png"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\evaluate_img_bg.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\evaluate_img_bg.png"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\home_icon_5.png",
@@ -252,12 +260,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\sign_img_bg_night.png"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\grp_btn_add.png",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\grp_btn_add.png"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\dynamic_icon_comment.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\dynamic_icon_comment.png"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\grp_btn_add.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\grp_btn_add.png"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\home_icon_7.png",
@@ -406,6 +414,10 @@
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\check_icon_line.png",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\check_icon_line.png"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\guide_page_03.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\mipmap-xxhdpi\\guide_page_03.png"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\login_btn_pressed.png",

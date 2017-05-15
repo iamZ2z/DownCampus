@@ -13,9 +13,6 @@ import com.example.mobilecampus.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.example.mobilecampus.R.id.act;
-import static com.example.mobilecampus.R.id.leng;
-
 /**
  * Created by Z2z on 2017/4/1.
  */
@@ -50,9 +47,9 @@ public class WorkRestAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LinearLayout.inflate(mContext, R.layout.adapteritem_workrest, null);
             viewHolder = new ViewHolder();
-            viewHolder.act = (TextView) convertView.findViewById(act);
+            viewHolder.act = (TextView) convertView.findViewById(R.id.act);
             viewHolder.time = (TextView) convertView.findViewById(R.id.leavetime);
-            viewHolder.leng = (TextView) convertView.findViewById(leng);
+            viewHolder.leng = (TextView) convertView.findViewById(R.id.leng);
             convertView.setTag(viewHolder);
         } else viewHolder = (ViewHolder) convertView.getTag();
 

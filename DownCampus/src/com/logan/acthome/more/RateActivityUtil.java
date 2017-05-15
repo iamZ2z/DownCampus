@@ -6,12 +6,12 @@ public class RateActivityUtil {
     public String title; // hold the question
     public int score;
     public String content;
-    public int setscore;
+    public String setscore;
 
     public List<RateActivityUtil> data;
 
     public RateActivityUtil(String title, String content,
-                            int score, int setscore) {
+                            int score, String setscore) {
         this.title = title;
         this.content = content;
         this.score = score;
@@ -53,11 +53,11 @@ public class RateActivityUtil {
         this.content = content;
     }
 
-    public int getSetscore() {
+    public String getSetscore() {
         return setscore;
     }
 
-    public void setSetscore(int setscore) {
+    public void setSetscore(String setscore) {
         this.setscore = setscore;
     }
 }

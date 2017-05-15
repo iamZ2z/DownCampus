@@ -6,12 +6,13 @@ package com.logan.constant;
 
 public class InterfaceTest {
     //服务器
-    //final String serverurl="http://192.168.89.173:8080/iccp/api";//东东
+    final String serverurl="http://192.168.89.173:8080/iccp/api";//东东
     //final String serverurl="http://lubo.logansoft.com:8080/iccp/api";//外网
     //final String serverurl="http://192.168.89.162:8080/iccp/api";//景喜
-    final String serverurl="http://192.168.89.177:8080/iccp/api";//绵科
+    //final String serverurl="http://192.168.89.177:8080/iccp/api";//绵科
     //final String serverurl="http://192.168.89.150:8080/iccp/api";//彦谨
     //final String serverurl="http://192.168.89.149:8080/iccp/api";//何伟
+    //final String serverurl="http://192.168.8.37:8080/iccp/api";//8段内网
 
 
     //东东
@@ -22,7 +23,13 @@ public class InterfaceTest {
     public static final String currentterm ="/basic/getCurrentSemester.api";
     public static final String queryschedule ="/edu/querySyllabus.api";
 
+    public static final String teacherfootprint ="/loadTeacherAttenByMonth.api";
+    public static final String teachersavefootprint ="/saveTeacherAttendance.api";
     public static final String querygrade ="/getGradeOrClazzByUser.api";
+    public static final String uploademail ="/saveUserUpdateEmail.api";
+    public static final String uploadautograph ="/saveUserAutograph.api";
+    public static final String uploadicon ="/saveUserUpdatePicture.api";//上传头像
+
 
     private static String token;
     private static String user_id;
@@ -33,11 +40,13 @@ public class InterfaceTest {
     public static final String meetingquery ="/office/meeting/query.api";
     public static final String logmanagequery ="/office/log/query.api";
     public static final String leavequery ="/office/leave/query.api";
+    public static final String leavesave ="/office/leave/save.api";
     public static final String leaveaudit ="/office/leave/audit.api";
     public static final String leavedelete ="/office/leave/delete.api";
     public static final String schedulequery ="/office/schedules/query.api";
     public static final String campusnewsquery ="/cms/content/query.api";
     public static final String campusactivityquery ="/cms/activity/query.api";
+    public static final String organizationquery ="/office/organization/query.api";
 
     //景喜
     public static final String parentschild ="/ums/childs.api";
@@ -56,7 +65,6 @@ public class InterfaceTest {
 
     //何伟
     public static final String examquery="/exam/queryExam.api";
-    public static final String examadd="/exam/add.api";
     public static final String examachievement="/achievement/queryAchievement.api";
 
 
@@ -71,11 +79,37 @@ public class InterfaceTest {
 
 
 
+    public static String getOrganizationquery() {
+        return organizationquery;
+    }
 
+    public static String getUploadautograph() {
+        return uploadautograph;
+    }
 
+    public static String getUploademail() {
+        return uploademail;
+    }
 
+    public static String getUploadicon() {
+        return uploadicon;
+    }
 
+    public static String getLeavesave() {
+        return leavesave;
+    }
 
+    public static String getQuerygrade() {
+        return querygrade;
+    }
+
+    public static String getTeachersavefootprint() {
+        return teachersavefootprint;
+    }
+
+    public static String getTeacherfootprint() {
+        return teacherfootprint;
+    }
 
     public static String getPicture() {
         return picture;

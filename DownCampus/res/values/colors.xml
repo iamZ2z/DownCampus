@@ -15,8 +15,10 @@
 
     <color name="white">#FFFFFF</color>
     <color name="white_247x3">#F7F7F7</color>
+    <color name="gray_51x3">#333333</color>
     <color name="gray_type">#A2A2A2</color>
     <color name="gray_162x3">#A2A2A2</color>
+    <color name="gray_189x3">#BDBDBD</color>
     <color name="gray_line">#E6E6E6</color>
     <color name="gray_230x3">#E6E6E6</color>
     <color name="gray_transparent">#77A2A2A2</color>

@@ -3,6 +3,7 @@ package com.logan.acthome.more;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -14,7 +15,7 @@ import com.google.gson.Gson;
 import com.logan.bean.LeaveRecordBean;
 import com.logan.bean.LeaveRecordStudentBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -40,11 +41,13 @@ public class LeaveRecordActivity extends Activity {
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
     private String benginend_time;
-
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
     InterfaceTest interfaceTest = new InterfaceTest();
     private List<? extends Map<String, ?>> data;
+
+    @ViewInject(R.id.refresh)
+    private SwipeRefreshLayout refresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +70,13 @@ public class LeaveRecordActivity extends Activity {
 
         if (interfaceTest.getRole().equals("学生")) urlstudentleave();
         else urlleave();
+
+        refreshdata();
     }
 
     private void receiveTime() {
         Intent mIntent = getIntent();
-        benginend_time = mIntent.getStringExtra("begin_time") + "——"
-                + mIntent.getStringExtra("end_time");
+        benginend_time = mIntent.getStringExtra("begin_time") + "——" + mIntent.getStringExtra("end_time");
     }
 
     private List<? extends Map<String, ?>> getData() {
@@ -110,7 +114,6 @@ public class LeaveRecordActivity extends Activity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //放入list
                                 mAdapter = new SimpleAdapter(LeaveRecordActivity.this, data, R
                                         .layout.home_leaverecord_list, new String[]{"iv", "name",
                                         "submit", "leavetime", "or"}, new int[]{R.id.iv, R.id
@@ -198,5 +201,15 @@ public class LeaveRecordActivity extends Activity {
                 return mHashmap;
             }
         }).start();
+    }
+
+    private void refreshdata() {
+        refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (interfaceTest.getRole().equals("学生")) urlstudentleave();
+                else urlleave();
+            }
+        });
     }
 }

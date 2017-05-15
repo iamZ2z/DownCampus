@@ -7,10 +7,9 @@ import org.xutils.view.annotation.ViewInject;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.bean.ExamArrangeBean;
 import com.logan.bean.MyScoreBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -49,6 +49,7 @@ dependencies {
     //compile fileTree(include: '*.jar', dir: 'libs')
     provided 'com.android.support:support-v4:25.3.0'
     provided 'com.github.bumptech.glide:glide:3.7.0'
+    provided 'de.hdodenhof:circleimageview:2.1.0'
     provided files('libs/BaiduLBS_Android.jar')
     provided files('libs/google-play-services.jar')
     provided files('libs/HwPush_SDK_V2705_nomap.jar')

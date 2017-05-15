@@ -89,15 +89,16 @@
             android:value="Ss1MwGecqapSMekVPLCHSCg2sSuDBeM4" />
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="1182170316115704#com.logan.www.educationsystem" />
+            android:value="1182170316115704#comloganeducationsystem" />
         <!-- 高德地图 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="908e0a89f7519e9729123de9d30f2ed2" />
 
         <activity
-            android:name="com.logan.actmobilecampus.AdvertisementActivity"
-            android:label="@string/app_name" >
+            android:name="com.logan.actmobilecampus.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -135,7 +136,6 @@
             android:theme="@style/AppBaseTheme" />
         <activity android:name="com.logan.actnews.OtherActivity" >
         </activity>
-        <!-- <activity android:name="com.easemob.ContactActivity"/> -->
         <activity android:name="com.easemob.VerificationActivity" />
         <activity android:name="com.logan.acthome.studentteacher.LogManageActivity" >
         </activity>
@@ -199,8 +199,7 @@
         <activity android:name="com.logan.acthome.studentteacher.HomeworkActivity" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.TeacherRateActivity" />
-        <activity android:name="com.logan.acthome.more.RateContentActivity" >
-        </activity>
+        <activity android:name="com.logan.acthome.more.RateContentActivity" />
         <activity android:name="com.logan.acthome.studentteacher.ClassActivityActivity" >
         </activity>
         <activity android:name="com.logan.acthome.parentleader.BehaviorActivity" >

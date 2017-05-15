@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.util.TitleBar
+        <com.util.title.TitleBar
             style="@style/bar_title"/>
 
         <LinearLayout
@@ -69,14 +69,49 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/timepicker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:visibility="gone">
 
-    <cn.aigestudio.datepicker.views.DatePicker
-        android:id="@+id/date_begin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="64dp"
-        android:background="@android:color/transparent"
-        android:visibility="gone"/>
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/year"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 
+        <com.bigkoo.pickerview.lib.WheelView
 
+            android:id="@+id/month"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"/>
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/day"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"/>
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/hour"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"/>
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/min"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"/>
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/second"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"/>
+    </LinearLayout>
 </FrameLayout>

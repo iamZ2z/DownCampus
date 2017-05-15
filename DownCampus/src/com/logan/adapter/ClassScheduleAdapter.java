@@ -27,9 +27,9 @@ import static com.example.mobilecampus.R.id.wed;
 
 public class ClassScheduleAdapter extends BaseAdapter {
     private Context mContext;
-    private ArrayList<HashMap<String, Object>> arr;
+    private ArrayList<ArrayList<String>> arr;
 
-    public ClassScheduleAdapter(Context context, ArrayList<HashMap<String, Object>> arr) {
+    public ClassScheduleAdapter(Context context, ArrayList<ArrayList<String>> arr) {
         this.mContext = context;
         this.arr = arr;
     }
@@ -66,14 +66,14 @@ public class ClassScheduleAdapter extends BaseAdapter {
             convertView.setTag(viewHolder);
         } else viewHolder = (ViewHolder) convertView.getTag();
 
-        viewHolder.item.setText(arr.get(position).get("item").toString());
-        viewHolder.mon.setText(arr.get(position).get("mon").toString());
-        viewHolder.tue.setText(arr.get(position).get("tue").toString());
-        viewHolder.wed.setText(arr.get(position).get("wed").toString());
-        viewHolder.thr.setText(arr.get(position).get("thr").toString());
-        viewHolder.fri.setText(arr.get(position).get("fri").toString());
-        viewHolder.sat.setText(arr.get(position).get("sat").toString());
-        viewHolder.sun.setText(arr.get(position).get("sun").toString());
+        viewHolder.item.setText(arr.get(position).get(0).toString());
+        viewHolder.mon.setText(arr.get(position).get(1).toString());
+        viewHolder.tue.setText(arr.get(position).get(2).toString());
+        viewHolder.wed.setText(arr.get(position).get(3).toString());
+        viewHolder.thr.setText(arr.get(position).get(4).toString());
+        viewHolder.fri.setText(arr.get(position).get(5).toString());
+        viewHolder.sat.setText(arr.get(position).get(6).toString());
+        viewHolder.sun.setText(arr.get(position).get(7).toString());
 
         if (position  == 0) {
             viewHolder.item.setBackgroundColor(Color.rgb(56, 194, 232));

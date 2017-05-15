@@ -11,7 +11,7 @@ import android.view.Window;
 import com.example.mobilecampus.R;
 import com.logan.actme.OptionActivity;
 import com.suke.widget.SwitchButton;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;

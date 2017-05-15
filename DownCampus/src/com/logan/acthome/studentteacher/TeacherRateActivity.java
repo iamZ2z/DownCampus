@@ -3,6 +3,7 @@ package com.logan.acthome.studentteacher;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -11,13 +12,23 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.mobilecampus.R;
+import com.google.gson.Gson;
 import com.logan.acthome.more.RateContentActivity;
-import com.util.TitleBar;
+import com.logan.bean.TeacherRateBean;
+import com.logan.constant.InterfaceTest;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by Z2z on 2017/3/31.
@@ -27,13 +38,18 @@ import org.xutils.x;
 public class TeacherRateActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
     @ViewInject(R.id.sp)
     private Spinner sp;
-    String[] str = {"2017-02-15", "2017-02-01", "2017-03-01"};
-
+    String[] str = {"老师a", "老师b", "老师c"};
     @ViewInject(R.id.btn)
     private Button btn;
+
+    private String[] strname;
+    private String[] strteacherid;
+    private String correctname="";
+    private ArrayList<String> mArrayList = new ArrayList<>();
+    private ArrayList<String> mArrayList2 = new ArrayList<>();
+    private TeacherRateBean bean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +64,13 @@ public class TeacherRateActivity extends Activity {
             }
         });
 
-        sp_Year();
+        //sp_Year();
+        dourl();
     }
 
     private void sp_Year() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon,
-                str);
+                strname);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // 绑定 Adapter到控件
         sp.setAdapter(adapter);
@@ -64,6 +81,7 @@ public class TeacherRateActivity extends Activity {
                  * Toast.makeText(LeaveActivity.this,"你点击的是" +
 				 * leave_type[position], Toast.LENGTH_SHORT).show();
 				 */
+                correctname=strteacherid[position];
             }
 
             @Override
@@ -73,10 +91,74 @@ public class TeacherRateActivity extends Activity {
         });
     }
 
-
-    @Event(value = R.id.btn)
+    /*@Event(value = R.id.btn)
     private void onBtn_Click(View v) {
-        Intent mIntent = new Intent(this, RateContentActivity.class);
-        startActivity(mIntent);
+        Intent intent = new Intent(this, RateContentActivity.class);
+        intent.putExtra("teacherrate",bean);
+        startActivity(intent);
+    }*/
+
+    private void dourl() {
+        InterfaceTest interfaceTest = new InterfaceTest();
+        String url = interfaceTest.getServerurl() + interfaceTest.getStudentquery();
+        String token = interfaceTest.getToken();
+        final String studentId = interfaceTest.getUser_id();
+
+        FormBody formBody = new FormBody.Builder().add("token", token).add("studentId",
+                studentId).build();
+        final Request request = new Request.Builder().url(url).post(formBody).build();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Response response = new OkHttpClient().newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        String str = response.body().string();
+                        Log.e("RateContent的result", "请求数据:" + str);
+                        bean = new Gson().fromJson(str, TeacherRateBean
+                                .class);
+                        for (int j = 0; j < bean.getData().size(); j++) {
+                            if (bean.getData().get(j).getCode() != null) {
+                                String str1 = bean.getData().get(j).getCode();
+                                Log.e("getCode", str1);
+                            }
+                        }
+                        for (int n = 0; n < bean.getData().size(); n++) {
+                            if (bean.getData().get(n).getFullname() != null) {
+                                String str1 = bean.getData().get(n).getFullname();
+                                String str2 = bean.getData().get(n).getTeacherId();
+                                mArrayList.add(str1);
+                                mArrayList2.add(str2);
+                            }
+                        }
+                        strname = new String[mArrayList.size()];
+                        strteacherid = new String[mArrayList2.size()];
+                        for (int k = 0; k < mArrayList.size(); k++) {
+                            strname[k] = mArrayList.get(k);
+                            strteacherid[k]=mArrayList2.get(k);
+                            Log.e("fullname", strname[k]);
+                        }
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                sp_Year();
+                                btn.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(TeacherRateActivity.this,
+                                                RateContentActivity.class);
+                                        intent.putExtra("teacherrate", bean);
+                                        intent.putExtra("teacherid",correctname);
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }

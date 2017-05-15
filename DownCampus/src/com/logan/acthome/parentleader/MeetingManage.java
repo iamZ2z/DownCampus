@@ -10,17 +10,19 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.bigkoo.pickerview.TimePickerView;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.constant.InterfaceTest;
 import com.logan.bean.MeetingManagerBean;
-import com.util.TitleBar;
+import com.logan.widgets.MultiSpinner;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -29,16 +31,18 @@ import org.xutils.x;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.aigestudio.datepicker.cons.DPMode;
-import cn.aigestudio.datepicker.views.DatePicker;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import static cn.finalteam.toolsfinal.DateUtils.getDate;
 
 @ContentView(R.layout.home_meetingmanage)
 public class MeetingManage extends Activity {
@@ -47,23 +51,22 @@ public class MeetingManage extends Activity {
     @ViewInject(R.id.sp_subject)
     private Spinner sp_subject;
     String[] str_subject = {"科目", "语文", "数学", "英语"};
-
-    @ViewInject(R.id.date_begin)
-    private DatePicker date_begin;
+    @ViewInject(R.id.timepicker)
+    private TimePickerView mTimePicker;
     @ViewInject(R.id.tv_date_begin)
     private TextView tv_date_begin;
     @ViewInject(R.id.tv_date_end)
     private TextView tv_date_end;
     private int i;
-
     @ViewInject(R.id.list)
     private ListView list;
     private SimpleAdapter mAdapter;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
     private Intent mIntent;
+    @ViewInject(R.id.loadingimg)
+    private ImageView loadingimg;
 
-    private InterfaceTest interfaceTest=new InterfaceTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +75,6 @@ public class MeetingManage extends Activity {
         x.view().inject(this);
         initView();
         spinner_subject();
-        datebegin();
 
         urlmeeting();
     }
@@ -80,27 +82,36 @@ public class MeetingManage extends Activity {
     @Event(value = R.id.tv_date_begin)
     private void onTv_beginClick(View v) {
         i = 1;
-        date_begin.setVisibility(View.VISIBLE);
+        chooseDate();
+        mTimePicker.show();
     }
 
     @Event(value = R.id.tv_date_end)
     private void onTv_endClick(View v) {
         i = 2;
-        date_begin.setVisibility(View.VISIBLE);
+        chooseDate();
+        mTimePicker.show();
     }
 
-    private void datebegin() {
-        Toast.makeText(MeetingManage.this, "左右滑动月份，上下滑动年份", Toast.LENGTH_SHORT).show();
-        date_begin.setDate(2017, 3);
-        date_begin.setMode(DPMode.SINGLE);
-        date_begin.setOnDatePickedListener(new DatePicker.OnDatePickedListener() {
+    private void chooseDate() {
+        Calendar selectedDate = Calendar.getInstance();
+        mTimePicker = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
             @Override
-            public void onDatePicked(String date) {
-                if (i == 1) tv_date_begin.setText(date);
-                else tv_date_end.setText(date);
-                date_begin.setVisibility(View.GONE);
+            public void onTimeSelect(Date date, View v) {//选中事件回调
+                // 这里回调过来的v,就是show()方法里面所添加的 View 参数，如果show的时候没有添加参数，v则为null
+                if (i == 1) {
+                    String strdate=getDate(date);
+                    tv_date_begin.setText(strdate.replaceAll("/","-"));
+                } else if (i == 2) {
+                    String strdate=getDate(date);
+                    tv_date_end.setText(strdate.replaceAll("/","-"));
+                }
             }
-        });
+        }).setType(TimePickerView.Type.YEAR_MONTH_DAY).setLabel("年", "月", "日", "", "",
+                "")
+                //设置空字符串以隐藏单位提示   hide label
+                .setDividerColor(Color.BLUE).setContentSize(20).setDate(selectedDate).build();
+
     }
 
     private void initView() {
@@ -127,8 +138,7 @@ public class MeetingManage extends Activity {
     }
 
     private void spinner_subject() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout
-                .spinner_bluebord, str_subject);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.sp_bluebordgrayword, str_subject);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // 绑定 Adapter到控件
         sp_subject.setAdapter(adapter);
@@ -158,34 +168,37 @@ public class MeetingManage extends Activity {
     }
 
     private void urlmeeting() {
+        InterfaceTest interfaceTest=new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getMeetingquery();
         String token = interfaceTest.getToken();
-        final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlmeeting的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        MeetingManagerBean accountListBean = gson.fromJson(str,
+                        final MeetingManagerBean accountListBean = new Gson().fromJson(str,
                                 MeetingManagerBean.class);
                         for (int i = 0; i < accountListBean.getList().size(); i++) {
                             Log.e("title:", accountListBean.getList().get(i).getName());
                             Log.e("content:", accountListBean.getList().get(i).getContent());
                             Log.e("time:", accountListBean.getList().get(i).getCreateTime());
                         }
-
-                        //放入list
-                        mAdapter = new SimpleAdapter(MeetingManage.this, getData2
-                                (accountListBean), R.layout.home_meetingmanage_list, new
-                                String[]{"title", "content", "time"}, new int[]{R.id.title,
-                                R.id.content, R.id.leavetime});
-                        list.setAdapter(mAdapter);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                loadingimg.setVisibility(View.GONE);
+                                mAdapter = new SimpleAdapter(MeetingManage.this, getData2
+                                        (accountListBean), R.layout.home_meetingmanage_list, new
+                                        String[]{"title", "content", "time"}, new int[]{R.id.title,
+                                        R.id.content, R.id.leavetime});
+                                list.setAdapter(mAdapter);
+                            }
+                        });
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

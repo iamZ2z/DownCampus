@@ -4,11 +4,11 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="输入原密码"
@@ -16,7 +16,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
@@ -25,7 +25,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
@@ -44,6 +44,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@mipmap/login_btn_login_default"/>
+        android:background="@mipmap/login_btn_login_default"
+        android:text="确定"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

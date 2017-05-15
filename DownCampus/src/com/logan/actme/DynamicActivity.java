@@ -17,7 +17,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.me_dynamic)
 public class DynamicActivity extends Activity {

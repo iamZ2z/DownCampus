@@ -1,10 +1,15 @@
 package com.logan.actmobilecampus;
 
 import android.app.ActivityManager;
+import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -18,7 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.easemob.ConversationListFragment;
+import com.easemob.NewsChat2Activity;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.hyphenate.EMCallBack;
@@ -28,8 +33,10 @@ import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
+import com.hyphenate.easeui.EaseConstant;
 import com.hyphenate.util.NetUtils;
 import com.logan.constant.InterfaceTest;
+import com.logan.constant.UsuallyData;
 import com.logan.fragment.FindFragment;
 import com.logan.fragment.HomeFragment;
 import com.logan.fragment.MeFragment;
@@ -60,6 +67,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     private int ret = 0;
     private String role, token;
     private InterfaceTest interfaceTest = new InterfaceTest();
+    private UsuallyData usuallyData=new UsuallyData();
+
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +99,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
     private void initEaselistener() {
         //模拟登录
-        EMClient.getInstance().login("8004", "8004", new EMCallBack() {
+        EMClient.getInstance().login("zjhissb", "123456", new EMCallBack() {
             @Override
             public void onSuccess() {
                 EMClient.getInstance().groupManager().loadAllGroups();
@@ -116,15 +126,26 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
             public void onMessageReceived(List<EMMessage> list) {
                 for (EMMessage msg : list) {
                     Log.e("Msg", msg.getFrom() + "body:" + msg.getBody().toString());
-
                     NotificationManager notificationManager = (NotificationManager) getSystemService
                             (Context.NOTIFICATION_SERVICE);
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity
                             .this);
+
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    intent.putExtra(EaseConstant.EXTRA_USER_ID, msg.getFrom());
+                    PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0,
+                            intent, 0);
+
                     builder.setContentTitle(msg.getFrom()).setContentText(msg.getBody().toString
                             ().substring(4)).setSmallIcon(R.mipmap.icon_logo).setWhen(System
-                            .currentTimeMillis()).setAutoCancel(true);
+                            .currentTimeMillis()).setAutoCancel(true).setContentIntent(pendingIntent);
+
                     notificationManager.notify(1, builder.build());
+
+                    Message message = new Message();
+                    message.obj = 1;
+                    message.what = 1;
+                    mHandler.sendMessage(message);
                 }
             }
 
@@ -155,6 +176,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         EMClient.getInstance().chatManager().addMessageListener(msglistener);
     }
 
+    public void setHandler(Handler handler) {
+        mHandler = handler;
+    }
+
     private void initCurrentSemester() {
         String url = interfaceTest.getServerurl() + interfaceTest.getCurrentterm();
         final OkHttpClient client = new OkHttpClient();
@@ -168,14 +193,14 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        CurrentSemesterListBean accountListBean = gson.fromJson(str,
+                        CurrentSemesterListBean bean = new Gson().fromJson(str,
                                 CurrentSemesterListBean.class);
-                        Log.e("id:", accountListBean.getList().get(0).getSemester_id());
-                        Log.e("name:", accountListBean.getList().get(0).getSemester_name());
-                        Log.e("idyear:", accountListBean.getList().get(0).getSemester_yearId());
-                        Log.e("nameyear:", accountListBean.getList().get(0).getSemester_yearName());
+                        Log.e("id:", bean.getList().get(0).getSemester_id());
+                        Log.e("name:", bean.getList().get(0).getSemester_name());
+                        Log.e("idyear:", bean.getList().get(0).getSemester_yearId());
+                        Log.e("nameyear:", bean.getList().get(0).getSemester_yearName());
                         //roleItem[i] = accountListBean.getList().get(i).getName();
+                        usuallyData.setSemesterid(bean.getList().get(0).getSemester_id());
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -373,10 +398,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
                         // 显示帐号在其他设备登录
                         Toast.makeText(MainActivity.this, "帐号在其他设备登录", Toast.LENGTH_SHORT).show();
                     } else {
-                        if (NetUtils.hasNetwork(MainActivity.this))
-                            //连接不到聊天服务器
-                            Toast.makeText(MainActivity.this, "连接不到服务器", Toast.LENGTH_SHORT)
-                                    .show();
+                        if (NetUtils.hasNetwork(MainActivity.this));//连接不到聊天服务器
                         else
                             //当前网络不可用，请检查网络设置
                             Toast.makeText(MainActivity.this, "当前网络不可用", Toast.LENGTH_SHORT)
@@ -386,4 +408,5 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
             });
         }
     }
+
 }

@@ -1,37 +1,34 @@
 package com.logan.acthome.more;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.xutils.x;
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
-
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.adapter.RateContentAdapter;
 import com.logan.bean.RateContentBean;
+import com.logan.bean.TeacherRateBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.logan.constant.UsuallyData;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.util.title.TitleBar;
+import com.util.title.TitleBars;
+
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -42,16 +39,12 @@ import okhttp3.Response;
 public class RateContentActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-    @ViewInject(R.id.sp)
-    private Spinner sp;
-    String[] str = {"李刚", "郭霖", "鸿洋"};
     @ViewInject(R.id.list)
     private ListView mListView;
     private ArrayList<RateActivityUtil> mArrayList;
-
     @ViewInject(R.id.btn)
     private Button btn;
-    private RateContentAdapter adapter_arr;
+    private int inttemp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,62 +60,78 @@ public class RateContentActivity extends Activity {
             }
         });
 
-        spinner_teacher();
-        list_Listener();
-        dourl();
+        loadData();
+        hidekeyboard();
+
     }
 
-    private void list_Listener() {
+    private void loadData() {
         mArrayList = new ArrayList<>();
-        RateActivityUtil util1 = new RateActivityUtil("老师修养",
-                "爱岗敬业，工作认真。沟通时态度和气、无体罚和变相体罚学生现象。", 10, 0);
-        mArrayList.add(util1);
-        RateActivityUtil util2 = new RateActivityUtil("家访情况", "主动家访，交流", 20, 0);
-        mArrayList.add(util2);
-        RateActivityUtil util3 = new RateActivityUtil("家访情况", "主动家访，交流", 50, 0);
-        mArrayList.add(util3);
-        final RateContentAdapter adapter = new RateContentAdapter(this, mArrayList);
+        TeacherRateBean bean = (TeacherRateBean) getIntent().getSerializableExtra("teacherrate");
+
+        for (int j = 0; j < bean.getData().size(); j++) {
+            if (bean.getData().get(j).getCode() != null) {
+                String str1 = bean.getData().get(j).getProject();
+                String str2 = bean.getData().get(j).getStandard();
+                int str3 = Integer.parseInt(bean.getData().get(j).getScore());
+                String str4 = bean.getData().get(j).getCode();
+                RateActivityUtil util = new RateActivityUtil(str1, str2, str3, "");
+                mArrayList.add(util);
+            }
+        }
+        RateContentAdapter adapter = new RateContentAdapter(RateContentActivity.this, mArrayList);
         mListView.setAdapter(adapter);
     }
 
-    private void spinner_teacher() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, str);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp.setAdapter(adapter);
-        sp.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                /*
-                 * Toast.makeText(LeaveActivity.this,"你点击的是" +
-				 * leave_type[position], Toast.LENGTH_SHORT).show();
-				 */
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
-    }
-
+    //提交评分
     @Event(value = R.id.btn)
     private void onBtnClick(View v) {
-        int pos = mArrayList.get(0).getSetscore();
-        int pos2 = mArrayList.get(1).getSetscore();
-        int pos3 = mArrayList.get(2).getSetscore();
-        Toast.makeText(this, "测试提交：" + pos + pos2 + pos3, Toast.LENGTH_SHORT).show();
+        TeacherRateBean bean = (TeacherRateBean) getIntent().getSerializableExtra("teacherrate");
+        String strpos = "";
+        int totalScore = 0;
+        First:
+        for (int i = 0; i < bean.getData().size(); i++) {
+            if (bean.getData().get(i).getCode() != null) {
+                if (mArrayList.get(i).getSetscore().equals("")) {
+                    Toast.makeText(RateContentActivity.this, "请填完所有题目", Toast.LENGTH_SHORT).show();
+                    inttemp = 1;
+                    break First;
+                } else {
+                    strpos += i + "," + mArrayList.get(i).getSetscore() + ";";
+                    totalScore += Integer.parseInt(mArrayList.get(i).getSetscore());
+                }
+            }
+        }
+        if (inttemp == 0) submitData(strpos, totalScore);
     }
 
-    private void dourl() {
+    private void submitData(String strpos, int totalScore) {
         InterfaceTest interfaceTest = new InterfaceTest();
-        String url = interfaceTest.getServerurl() + interfaceTest.getStudentquery();
+        UsuallyData usuallyData = new UsuallyData();
         String token = interfaceTest.getToken();
-        String studentId = interfaceTest.getUser_id();
+        String url = interfaceTest.getServerurl() + interfaceTest.getStudentteacherrate();
+        String studentid = interfaceTest.getStudentId();
+        String teacherid = getIntent().getStringExtra("teacherid");
+        //String teacherid = "402888225a555c81015a55c11adf0002";
 
-        FormBody formBody = new FormBody.Builder().add("token", token).add("studentId",
-                studentId).build();
+        String grade = "优秀";
+        if (totalScore < 60) grade = "不及格";
+        else if (totalScore >= 60 && totalScore < 75) grade = "及格";
+        else if (totalScore >= 75 && totalScore < 85) grade = "良好";
+        else ;
+
+        String itemScore = strpos;
+        String classid = "4028812b5a6a878a015a6a8d04570006";
+        if (!usuallyData.getClazzid().equals(null)) classid = usuallyData.getClazzid();
+
+        String valuatorType = "0";
+        if (interfaceTest.getRole().equals("学生")) valuatorType = "0";
+        else if (interfaceTest.getRole().equals("家长")) valuatorType = "1";
+
+        FormBody formBody = new FormBody.Builder().add("token", token).add("student.id",
+                studentid).add("valuatorType", valuatorType).add("totalScore", totalScore + "")
+                .add("clazz" + ".id", classid).add("teacher.id", teacherid).add("grade", grade)
+                .add("itemScore", itemScore).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
             @Override
@@ -131,25 +140,17 @@ public class RateContentActivity extends Activity {
                     Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
-                        Log.e("RateContent的result", "请求数据:" + str);
+                        Log.e("提交评价的result", "请求数据:" + str);
                         final RateContentBean bean = new Gson().fromJson(str, RateContentBean
                                 .class);
-                        mArrayList = new ArrayList<>();
-                        for (int j = 0; j < bean.getData().size(); j++) {
-                            String str1 = bean.getData().get(j).getProject();
-                            String str2 = bean.getData().get(j).getStandard();
-                            int str3 = Integer.parseInt(bean.getData().get(j).getScore());
-                            int str4 = Integer.parseInt(bean.getData().get(j).getCode());
-                            RateActivityUtil util = new RateActivityUtil(str1, str2, str3, str4);
-                            mArrayList.add(util);
-                        }
-                        final RateContentAdapter adapter = new RateContentAdapter
-                                (RateContentActivity.this, mArrayList);
-                        mListView.setAdapter(adapter);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-
+                                if (bean.getCode().equals("0")) {
+                                    Toast.makeText(RateContentActivity.this, "提交成功 ", Toast
+                                            .LENGTH_SHORT).show();
+                                    finish();
+                                }
                             }
                         });
                     }
@@ -159,4 +160,30 @@ public class RateContentActivity extends Activity {
             }
         }).start();
     }
+
+    private void hidekeyboard() {
+        mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                switch (scrollState) {
+                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:    //当停止滚动时
+                        break;
+                    case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:    //滚动时
+                        //没错，下面这一坨就是隐藏软键盘的代码
+                        ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                                .hideSoftInputFromWindow(RateContentActivity.this.getCurrentFocus
+                                        ().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                        break;
+                    case AbsListView.OnScrollListener.SCROLL_STATE_FLING:   //手指抬起，但是屏幕还在滚动状态
+                        break;
+                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
+                                 int totalItemCount) {
+            }
+        });
+    }
+
 }

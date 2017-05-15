@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@mipmap/footprint_search_left"            />
+            android:src="@mipmap/footprint_search_left"/>
 
         <TextView
             android:id="@+id/footprint_search_center"
@@ -26,7 +26,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="2017-04"
+            android:text="2017-05"
             android:textColor="@color/blue_theme"
             android:textSize="24dp"/>
 
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@mipmap/footprint_search_right"            />
+            android:src="@mipmap/footprint_search_right"/>
 
     </LinearLayout>
 
@@ -44,16 +44,27 @@
         android:id="@+id/footprint_signtime"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:gravity="center"
         android:background="@color/white_247x3"
+        android:gravity="center"
         android:text="本月签到0次"
         android:textColor="#000000"
         android:textSize="13sp"/>
 
-    <ListView
-        android:id="@+id/footprint_list"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </ListView>
 
+        <ListView
+            android:id="@+id/footprint_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/nulldata"
+            android:visibility="gone"
+            android:src="@mipmap/nulldata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
 </LinearLayout>

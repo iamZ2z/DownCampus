@@ -34,26 +34,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="7566d0c6b8a67ef97e98ce354fce489637773c5d">
+        sha1="081e429f736c75344a464f4a7d9f9b58b19436c8">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8886b3de08ef6064cc5bcb6ea793d641b01eeed9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_03ee87860a263a4d375ea531362d1486a91a3114\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\picasso-2.5.2_9cdf53084fbeb6040163dce6dd2be3856fda6069\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -90,6 +72,24 @@
         revision="25.0.0"
         sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\okio-1.11.0_3fce540844bf4fc613b0a7cf594377063964c509\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_03ee87860a263a4d375ea531362d1486a91a3114\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\picasso-2.5.2_9cdf53084fbeb6040163dce6dd2be3856fda6069\classes.dex" />
     </item>
 
 </items>

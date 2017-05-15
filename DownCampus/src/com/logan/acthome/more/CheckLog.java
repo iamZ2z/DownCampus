@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.home_log_check)
 public class CheckLog extends Activity {	

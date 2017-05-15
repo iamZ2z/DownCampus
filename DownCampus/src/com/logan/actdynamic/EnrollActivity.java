@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.find_enroll)
 public class EnrollActivity extends Activity implements OnClickListener {

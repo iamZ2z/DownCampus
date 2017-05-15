@@ -3,8 +3,6 @@ package com.logan.acthome.studentteacher;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -17,7 +15,7 @@ import com.google.gson.Gson;
 import com.logan.acthome.more.WriteLog;
 import com.logan.bean.LogManageBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;

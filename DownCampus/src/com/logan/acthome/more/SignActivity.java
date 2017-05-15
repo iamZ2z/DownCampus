@@ -14,7 +14,7 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.home_sign)
 public class SignActivity extends Activity{

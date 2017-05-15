@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <ScrollView
         android:id="@+id/scroll"

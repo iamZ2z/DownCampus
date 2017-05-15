@@ -2,22 +2,17 @@ package com.logan.actnews;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.mobilecampus.R;
@@ -25,7 +20,7 @@ import com.hyphenate.EMCallBack;
 import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMClient;
 import com.logan.widgets.ClearEditText;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 import com.util.address.CharacterParser;
 import com.util.address.GroupMemberBean;
 import com.util.address.AddressAdapter;
@@ -138,9 +133,10 @@ public class AddressActivity extends Activity {
 
     private void initEaseList() {
         listString = new ArrayList<>();
-        EMClient.getInstance().login("8004", "8004", new EMCallBack() {
+        EMClient.getInstance().login("zjhissb", "123456", new EMCallBack() {
             @Override
             public void onSuccess() {
+
             }
 
             @Override

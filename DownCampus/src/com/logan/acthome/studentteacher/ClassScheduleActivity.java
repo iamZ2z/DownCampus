@@ -11,7 +11,6 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +26,7 @@ import com.google.gson.Gson;
 import com.logan.constant.InterfaceTest;
 import com.logan.adapter.ClassScheduleAdapter;
 import com.logan.server.ClassScheduleListBean;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -39,23 +38,19 @@ public class ClassScheduleActivity extends Activity implements OnClickListener {
     // 列表
     @ViewInject(R.id.schedule_list)
     private ListView mListView;
-    private ArrayList<HashMap<String, Object>> mArrayList=new ArrayList<>();
-    private HashMap<String, Object> mMap;
-
+    private ArrayList<ArrayList<String>> mArrayList = new ArrayList<>();
+    private ArrayList<String> mArray;
     @ViewInject(R.id.schedule_sp)
     private Spinner mSpinner;
     private List<String> list = new ArrayList<>();
     private ArrayAdapter<String> adapter;
-
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
     private ClassScheduleAdapter mClassScheduleAdapter;
-    private Intent mIntent;
 
-    private String url ;
-    private String token;
     private String[] mArrayList_getData = new String[5];
-    private InterfaceTest interfaceTest= new InterfaceTest();
+    private ArrayList<String>[] mArraySchedule;
+    private String[][] data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,14 +68,14 @@ public class ClassScheduleActivity extends Activity implements OnClickListener {
         spinner();
         classScheduleAdapter();
 
-        mIntent = getIntent();
-        if (mIntent.getStringExtra("token") != null) token = mIntent.getStringExtra("token");
         initURLClassSchedule();
     }
 
     private void initURLClassSchedule() {
-        url=interfaceTest.getServerurl()+interfaceTest.getQueryschedule();
-        final OkHttpClient client = new OkHttpClient();
+        InterfaceTest interfaceTest = new InterfaceTest();
+        String url = interfaceTest.getServerurl() + interfaceTest.getQueryschedule();
+        String token = interfaceTest.getToken();
+
         //写死Params
         FormBody formBody = new FormBody.Builder().add("token", token).add("year",
                 "4028812b5a6a878a015a6a8881f20001").add("semester",
@@ -93,28 +88,26 @@ public class ClassScheduleActivity extends Activity implements OnClickListener {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
-                        Log.e("result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        ClassScheduleListBean accountListBean = gson.fromJson(str,
+                        Log.e("课表result", "请求数据:" + str);
+                        final ClassScheduleListBean bean = new Gson().fromJson(str,
                                 ClassScheduleListBean.class);
-                        for (int i = 0; i < accountListBean.getList().size(); i++) {
-                            for (int j = 0; j < 5; j++) {
-                                Log.e("id:", accountListBean.getList().get(i).get(j).getWeek());
-                                Log.e("name:", accountListBean.getList().get(i).get(j).getSection
-                                        ());
-                                Log.e("name:", accountListBean.getList().get(i).get(j).getSubject
-                                        ());
-                                Log.e("name:", accountListBean.getList().get(i).get(j).getUser());
-
-                                //数据填入列表
-                                mArrayList_getData[j] = accountListBean.getList().get(0).get(j)
-                                        .getSubject();
+                        mArraySchedule = new ArrayList[bean.getList().size()];
+                        data = new String[bean.getList().size()][8];
+                        for (int i = 0; i < bean.getList().size(); i++) {
+                            for (int j = 0; j < bean.getList().get(i).size(); j++) {
+                                data[i][j] = bean.getList().get(i).get(j).getSubject();
                             }
                         }
-                        ClassScheduleActivity.this.runOnUiThread(updateThread);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                getData(bean);
+                                mClassScheduleAdapter.notifyDataSetChanged();
+                            }
+                        });
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -123,16 +116,7 @@ public class ClassScheduleActivity extends Activity implements OnClickListener {
         }).start();
     }
 
-    Runnable updateThread = new Runnable() {
-        @Override
-        public void run() {
-            getData();
-            mClassScheduleAdapter.notifyDataSetChanged();
-        }
-    };
-
     private void classScheduleAdapter() {
-        //getData();
         mClassScheduleAdapter = new ClassScheduleAdapter(this, mArrayList);
         mListView.setAdapter(mClassScheduleAdapter);
     }
@@ -156,28 +140,27 @@ public class ClassScheduleActivity extends Activity implements OnClickListener {
         });
     }
 
-    private List<? extends Map<String, ?>> getData() {
-        mMap = new HashMap<>();
-        mMap.put("item", "");
-        mMap.put("mon", "一");
-        mMap.put("tue", "二");
-        mMap.put("wed", "三");
-        mMap.put("thr", "四");
-        mMap.put("fri", "五");
-        mMap.put("sat", "六");
-        mMap.put("sun", "日");
-        mArrayList.add(mMap);
+    private List<? extends List<String>> getData(ClassScheduleListBean bean) {
+        mArray = new ArrayList<>();
+        mArray.add("");
+        mArray.add("一");
+        mArray.add("二");
+        mArray.add("三");
+        mArray.add("四");
+        mArray.add("五");
+        mArray.add("六");
+        mArray.add("日");
+        mArrayList.add(mArray);
 
-        mMap = new HashMap<>();
-        mMap.put("item", "第一节");
-        mMap.put("mon", mArrayList_getData[0]);
-        mMap.put("tue", mArrayList_getData[1]);
-        mMap.put("wed", mArrayList_getData[2]);
-        mMap.put("thr", mArrayList_getData[3]);
-        mMap.put("fri", mArrayList_getData[4]);
-        mMap.put("sat", "化学");
-        mMap.put("sun", "地理");
-        mArrayList.add(mMap);
+        for (int j = 0; j < bean.getList().size(); j++) {
+            mArray = new ArrayList<>();
+            mArray.add("第" + (j + 1) + "节");
+            for (int i = 0; i < 7; i++) {
+                if (data[0][i] != null) mArray.add(data[j][i]);
+                else mArray.add("");
+            }
+            mArrayList.add(mArray);
+        }
 
         return mArrayList;
     }

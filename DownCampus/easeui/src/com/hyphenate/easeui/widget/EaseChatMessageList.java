@@ -85,8 +85,7 @@ public class EaseChatMessageList extends RelativeLayout{
         showUserNick = ta.getBoolean(R.styleable.EaseChatMessageList_msgListShowUserNick, false);
         ta.recycle();
     }
-    
-    
+
     /**
      * refresh
      */

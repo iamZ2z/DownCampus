@@ -1,7 +1,6 @@
 package com.easemob;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -9,7 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;

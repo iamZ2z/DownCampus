@@ -11,18 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.mobilecampus.R;
-import com.hyphenate.chat.EMMessage;
 import com.hyphenate.easeui.controller.EaseUI;
-import com.hyphenate.easeui.model.EaseNotifier;
 import com.logan.constant.InterfaceTest;
 import com.logan.actme.option.AboutActivity;
 import com.logan.actme.option.CommentActivity;
 import com.logan.actme.option.HelpActivity;
 import com.logan.actme.option.NewMessageActivity;
 import com.logan.actmobilecampus.AccountActivity;
-import com.logan.actmobilecampus.MainActivity;
 import com.util.DataCleanManager;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -40,15 +37,12 @@ import okhttp3.Response;
 public class OptionActivity extends Activity implements OnClickListener {
     private Intent mIntent;
     private Button option_message, option_help, option_rate, option_about;
-
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
     @ViewInject(R.id.dataclean)
     private Button btn_dataclean;
     @ViewInject(R.id.dataclean_num)
     private TextView dataclean_num;
-
     @ViewInject(R.id.btn_exit)
     private Button btn_exit;
     //private String url = "http://192.168.89.173:8080/iccp/api/ums/userLogout.api";
@@ -132,24 +126,24 @@ public class OptionActivity extends Activity implements OnClickListener {
 
     @Event(value = R.id.btn_exit)
     private void onbtn_exitClick(View v) {
-        logouturl();
-    }
-
-    private void logouturl() {
-
-        final OkHttpClient client = new OkHttpClient();
-        FormBody formBody = new FormBody.Builder().add("token", token).build();
+       FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
-
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("OptionsAcitivity的登出数据", "数据=" + str);
-                        OptionActivity.this.runOnUiThread(updateThread);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mIntent = new Intent(OptionActivity.this, AccountActivity.class);
+                                mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(mIntent);
+                            }
+                        });
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -157,14 +151,4 @@ public class OptionActivity extends Activity implements OnClickListener {
             }
         }).start();
     }
-
-    Runnable updateThread = new Runnable() {
-        @Override
-        public void run() {
-            mIntent = new Intent(OptionActivity.this, AccountActivity.class);
-            mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(mIntent);
-        }
-    };
-
 }

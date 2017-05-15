@@ -29,10 +29,12 @@
             android:layout_gravity="center"
             android:layout_marginLeft="3dp"
             android:background="@drawable/spinner_account"
-            android:paddingLeft="30dp"
-            android:text="请选择角色"
-            android:textSize="17dp"
-            app:layout_widthPercent="66%"/>
+            android:gravity="center_vertical"
+            android:paddingLeft="24dp"
+            android:text="选择角色"
+            android:textColor="@color/gray_162x3"
+            android:textSize="14dp"
+            app:layout_widthPercent="70%"/>
 
         <TextView
             android:id="@+id/sp_line"
@@ -41,7 +43,7 @@
             android:layout_below="@id/sp_role"
             android:layout_centerHorizontal="true"
             android:background="@color/blue_theme"
-            app:layout_widthPercent="66%"/>
+            app:layout_widthPercent="70%"/>
 
         <EditText
             android:id="@+id/et_account"
@@ -49,37 +51,72 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/sp_line"
             android:layout_centerHorizontal="true"
+            android:background="@null"
             android:drawableLeft="@mipmap/login_icon_account_pressed"
             android:hint="请输入帐号或手机号"
-            app:layout_widthPercent="70%"
-            app:layout_marginTopPercent="4%"/>
+            android:textColor="@color/gray_162x3"
+            android:textColorHint="@color/gray_162x3"
+            android:textSize="14dp"
+            app:layout_marginTopPercent="6%"
+            app:layout_widthPercent="70%"/>
+
+        <TextView
+            android:id="@+id/sp_line2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/et_account"
+            android:layout_centerHorizontal="true"
+            android:background="@color/blue_theme"
+            app:layout_widthPercent="70%"/>
 
         <EditText
             android:id="@+id/et_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/et_account"
+            android:layout_below="@id/sp_line2"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
+            android:background="@null"
             android:drawableLeft="@mipmap/login_icon_password_pressed"
             android:hint="请输入密码"
             android:inputType="textPassword"
-            app:layout_widthPercent="70%"
-            app:layout_marginTopPercent="4%"/>
+            android:textColor="@color/gray_162x3"
+            android:textColorHint="@color/gray_162x3"
+            android:textSize="14dp"
+            app:layout_marginTopPercent="6%"
+            app:layout_widthPercent="70%"/>
+
+        <TextView
+            android:id="@+id/sp_line3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/et_password"
+            android:layout_centerHorizontal="true"
+            android:background="@color/blue_theme"
+            app:layout_widthPercent="70%"/>
+
+        <TextView
+            android:id="@+id/nomatch"
+            android:layout_below="@id/sp_line3"
+            android:text="选择的角色与帐号绑定角色不符"
+            android:textColor="@color/red_242x70x70"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_marginTopPercent="5%"/>
 
         <Button
             android:id="@+id/btn_loginmain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/et_password"
+            android:layout_below="@id/nomatch"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:background="@mipmap/login_btn_login_default"
             android:gravity="center"
             android:text="登录"
             android:textColor="@color/white"
-            app:layout_widthPercent="70%"
-            app:layout_marginTopPercent="5%"/>
+            app:layout_marginTopPercent="6%"
+            app:layout_widthPercent="70%"/>
 
         <TextView
             android:id="@+id/line"
@@ -87,32 +124,33 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            app:layout_marginBottomPercent="2.1%"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:background="@color/blue_theme"/>
 
-        <Button
+        <TextView
             android:id="@+id/campus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignLeft="@id/line"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
             android:background="@null"
             android:text="学校合作"
             android:textColor="@color/blue_theme"
-            android:textSize="16dp"
-            app:layout_marginRightPercent="5%"/>
+            android:textSize="16dp"/>
 
-        <Button
+        <TextView
             android:id="@+id/findpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@id/line"
+            android:layout_marginRight="15dp"
             android:background="@null"
             android:text="忘记密码"
             android:textColor="@color/blue_theme"
-            android:textSize="16dp"
-            app:layout_marginLeftPercent="5%"/>
+            android:textSize="16dp"/>
 
     </android.support.percent.PercentRelativeLayout>
 </RelativeLayout>

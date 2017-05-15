@@ -4,6 +4,8 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <com.util.title.TitleBar style="@style/bar_title"/>
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
               android:gravity="center_horizontal"
               android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -55,17 +55,6 @@
                     android:text="请选择开始日期"
                     android:textSize="15dp"/>
 
-                <TextView
-                    android:id="@+id/tv_begintime"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bordblueround"
-                    android:gravity="center"
-                    android:text="请选择开始时间"
-                    android:textSize="15dp"/>
-
             </LinearLayout>
 
             <TextView
@@ -90,16 +79,6 @@
                     android:text="请选择结束日期"
                     android:textSize="15dp"/>
 
-                <TextView
-                    android:id="@+id/tv_endtime"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bordblueround"
-                    android:gravity="center"
-                    android:text="请选择结束时间"
-                    android:textSize="15dp"/>
             </LinearLayout>
 
             <TextView
@@ -109,7 +88,7 @@
                 android:layout_marginTop="10dp"/>
 
             <TextView
-                android:id="@+id/leave_difference"
+                android:id="@+id/leave_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="45dp"
@@ -124,6 +103,7 @@
                 android:text="请假事由："/>
 
             <EditText
+                android:id="@+id/reason"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@drawable/bordblueround"/>

@@ -4,12 +4,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ListView
         android:id="@+id/leaverecord_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </ListView>
+        android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 </LinearLayout>

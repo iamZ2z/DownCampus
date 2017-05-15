@@ -23,11 +23,11 @@ dependencies {
     compile 'com.isseiaoki:simplecropview:1.1.4'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.jaeger.ninegridimageview:library:1.1.0'
-    compile 'cn.aigestudio.datepicker:DatePicker:2.2.0'
     compile 'com.contrarywind:Android-PickerView:3.2.3'
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.github.zcweng:switch-button:0.0.3@aar'
     compile 'com.android.support:percent:25.3.0'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     //环信
     //compile 'com.google.android.gms:play-services-gcm:9.4.0'
     //compile 'com.hyphenate:hyphenate-sdk:3.3.0'

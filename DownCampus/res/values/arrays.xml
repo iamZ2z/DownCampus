@@ -11,9 +11,9 @@
         <item>联系人</item>
     </string-array>
     <string-array name="leave_type">
-        <item>病假</item>
         <item>事假</item>
-        <item>婚假</item>
+        <item>病假</item>
+        <item>共假</item>
         <item>丧假</item>
         <item>产假</item>
         <item>其他</item>

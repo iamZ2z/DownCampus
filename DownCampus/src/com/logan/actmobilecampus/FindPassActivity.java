@@ -19,7 +19,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.activity_findpass)
 public class FindPassActivity extends Activity implements OnClickListener {

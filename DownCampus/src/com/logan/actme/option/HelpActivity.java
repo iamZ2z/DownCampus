@@ -12,7 +12,7 @@ import android.view.Window;
 
 import com.example.mobilecampus.R;
 import com.logan.actme.OptionActivity;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.option_help)
 public class HelpActivity extends Activity {

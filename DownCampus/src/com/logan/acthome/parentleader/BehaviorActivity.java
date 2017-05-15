@@ -14,11 +14,9 @@ import android.widget.Spinner;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.acthome.more.LeaveRecordActivity;
 import com.logan.bean.BehaviorBean;
-import com.logan.bean.LeaveRecordBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;

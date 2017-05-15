@@ -10,7 +10,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -28,13 +28,11 @@ import java.util.List;
 public class DynamicNewsActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
     @ViewInject(R.id.list)
     private ListView mListView;
     private SimpleAdapter mAdapter;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
-
     @ViewInject(R.id.nonews)
     private TextView nonews;
 

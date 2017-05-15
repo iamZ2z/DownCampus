@@ -1,8 +1,11 @@
 package com.logan.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +13,6 @@ import android.widget.ImageView;
 
 import com.easemob.ConversationListFragment;
 import com.example.mobilecampus.R;
-import com.hyphenate.chat.EMMessage;
-import com.hyphenate.easeui.controller.EaseUI;
-import com.hyphenate.easeui.domain.EaseUser;
-import com.hyphenate.easeui.model.EaseNotifier;
-import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.logan.actmobilecampus.MainActivity;
 import com.logan.actnews.AddressActivity;
 
@@ -27,8 +25,21 @@ import org.xutils.x;
 public class NewsFragment extends Fragment {
     @ViewInject(R.id.img)
     private ImageView img;
-
     private ConversationListFragment mConversationListFragment;
+
+    private MainActivity mainActivity;
+    public Handler mHandler = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+            if (msg.what == 1) mConversationListFragment.refresh();
+        }
+    };
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mainActivity = (MainActivity) activity;
+        mainActivity.setHandler(mHandler);
+    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,5 +73,10 @@ public class NewsFragment extends Fragment {
         Intent mIntent = new Intent(getActivity(), AddressActivity.class);
         startActivity(mIntent);
     }
+
+    /*public void listrefresh() {
+        mConversationListFragment.refresh();
+        Log.e("是否接收到listrefresh", "接收到listrefresh");
+    }*/
 
 }

@@ -8,7 +8,7 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 import com.util.calendar.CalendarAdapter;
 
 import android.app.Activity;

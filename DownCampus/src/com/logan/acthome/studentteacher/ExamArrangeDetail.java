@@ -19,7 +19,7 @@ import android.widget.SimpleAdapter;
 
 import com.example.mobilecampus.R;
 import com.logan.bean.ExamArrangeBean;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.home_examarrange_detail)
 public class ExamArrangeDetail extends Activity {

@@ -16,9 +16,9 @@
         <item>@mipmap/home_icon_17</item>
     </string-array>
     <string-array name="leave_type">
-        <item>病假</item>
         <item>事假</item>
-        <item>婚假</item>
+        <item>病假</item>
+        <item>共假</item>
         <item>丧假</item>
         <item>产假</item>
         <item>其他</item>
@@ -179,8 +179,11 @@
     <color name="foreground_material_light">@android:color/black</color>
     <color name="gray_134x159x169">#869FA9</color>
     <color name="gray_162x3">#A2A2A2</color>
+    <color name="gray_189x3">#BDBDBD</color>
     <color name="gray_204x3">#cccccc</color>
     <color name="gray_230x3">#E6E6E6</color>
+    <color name="gray_238x3">#EEEEEE</color>
+    <color name="gray_51x3">#333333</color>
     <color name="gray_line">#E6E6E6</color>
     <color name="gray_normal">#666667</color>
     <color name="gray_pressed">#b5b5b6</color>
@@ -2442,6 +2445,11 @@
     <style name="RtlUnderlay.Widget.AppCompat.ActionButton.Overflow" parent="Base.Widget.AppCompat.ActionButton">
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
+    </style>
+    <style name="SplashTheme" parent="AppBaseTheme">
+        
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>

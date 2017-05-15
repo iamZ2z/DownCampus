@@ -267,12 +267,9 @@ public class EaseMessageAdapter extends BaseAdapter{
 		return convertView;
 	}
 
-
 	public String getToChatUsername(){
 	    return toChatUsername;
 	}
-	
-	
 	
 	public void setShowUserNick(boolean showUserNick) {
         this.showUserNick = showUserNick;

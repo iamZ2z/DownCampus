@@ -10,7 +10,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import com.example.mobilecampus.R;
 import com.logan.actmobilecampus.MainActivity;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -139,10 +139,9 @@ public class AddressAdapter extends BaseExpandableListAdapter {
         childHolderView.childLl.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, NewsChat2Activity
-                        .class);
-                intent.putExtra(EaseConstant.EXTRA_USER_ID,
-                        childHolderView.remark.getText().toString()
+                Intent intent = new Intent(mContext, NewsChat2Activity.class);
+                intent.putExtra(EaseConstant.EXTRA_USER_ID, childHolderView.remark.getText()
+                        .toString()
                 );
                 mContext.startActivity(intent);
             }

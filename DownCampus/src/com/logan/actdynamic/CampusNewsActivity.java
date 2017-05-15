@@ -12,22 +12,17 @@ import org.xutils.view.annotation.ViewInject;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.acthome.more.LeaveRecordActivity;
 import com.logan.bean.CampusNewsBean;
-import com.logan.bean.LeaveRecordBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;

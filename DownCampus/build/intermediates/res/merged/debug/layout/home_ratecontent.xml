@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title" />
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
-    <Spinner
-        android:id="@+id/sp"
-        android:layout_gravity="right"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right" />
+        android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    
-    <Button
-        android:id="@+id/btn"
-        android:text="提交评价"
-        android:background="@drawable/bluebutton"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bordblueradiusmore"
+            android:text="提交评价"
+            android:textColor="@color/white"/>
 
+        <ListView
+            android:id="@+id/list"
+            android:layout_above="@id/btn"
+            android:layout_width="match_parent"
+            android:transcriptMode="normal"
+            android:fastScrollEnabled="true"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
 </LinearLayout>

@@ -6,7 +6,7 @@
               android:background="@mipmap/sign_img_bg_day"
               android:orientation="vertical">
 
-    <com.util.TitleBar
+    <com.util.title.TitleBar
         style="@style/bar_title"
         android:background="@android:color/transparent"/>
 
@@ -66,7 +66,9 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/danger"
             android:layout_marginTop="20dp"
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -126,6 +128,7 @@
                 android:textSize="15dp"/>
 
             <TextView
+                android:id="@+id/tv_downsign"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
@@ -143,7 +146,6 @@
                 android:textSize="18dp"/>
 
         </LinearLayout>
-
     </LinearLayout>
 
     <ImageView
@@ -152,6 +154,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+        android:clickable="false"
         android:src="@mipmap/sign_btn_default"
         android:text="签到"
         android:textSize="20sp"/>

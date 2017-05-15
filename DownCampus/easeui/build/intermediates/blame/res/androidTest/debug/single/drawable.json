@@ -36,6 +36,10 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable\\ease_mm_listitem_grey.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\bordgray.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable\\bordgray.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ease_chatfrom_bg.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable\\ease_chatfrom_bg.xml"
     },

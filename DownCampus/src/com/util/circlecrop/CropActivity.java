@@ -8,7 +8,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import com.example.mobilecampus.R;
 import com.logan.actme.EditDataActivity;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import android.app.Activity;
 import android.content.Intent;

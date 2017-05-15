@@ -2,34 +2,61 @@
 <instant-run
     abi="x86"
     api-level="22"
-    build-mode="HOT_WARM"
+    build-mode="COLD"
     density="xxhdpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1493891239781"
+    timestamp="1494840402631"
     token="-8449966198615224661"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="442" />
+        duration="1748" />
     <task
         name="instant-run-dex"
-        duration="459" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="34" />
+        duration="226" />
     <task
         name="verifier"
-        duration="2" />
+        duration="126" />
 
     <artifact
-        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\outputs\apk\DownCampus-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1493885996689"
+        timestamp="1494835696885"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -70,30 +97,38 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1493889317040"
+        timestamp="1494840402631"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1493890704110"
-        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\outputs\apk\DownCampus-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493891239781"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

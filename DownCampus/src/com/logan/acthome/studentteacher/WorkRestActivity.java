@@ -17,7 +17,8 @@ import com.google.gson.Gson;
 import com.logan.adapter.WorkRestAdapter;
 import com.logan.bean.WorkRestBean;
 import com.logan.constant.InterfaceTest;
-import com.util.TitleBar;
+import com.logan.constant.UsuallyData;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -56,6 +57,7 @@ public class WorkRestActivity extends Activity {
     private WorkRestAdapter mWorkRestAdapter;
 
     private InterfaceTest interfaceTest = new InterfaceTest();
+    private UsuallyData usuallyData = new UsuallyData();
     private List<? extends Map<String, ?>> data;
 
     @Override
@@ -165,14 +167,11 @@ public class WorkRestActivity extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlworkrest的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        WorkRestBean accountListBean = gson.fromJson(str,
-                                WorkRestBean.class);
+                        WorkRestBean accountListBean = new Gson().fromJson(str, WorkRestBean.class);
                         data = getData2(accountListBean);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //放入list
                                 mWorkRestAdapter = new WorkRestAdapter(WorkRestActivity.this,
                                         mArrayList);
                                 mListView.setAdapter(mWorkRestAdapter);

@@ -22,11 +22,20 @@
         <LinearLayout
             android:id="@+id/ll_bottom_tab"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:baselineAligned="true"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_189x3"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
             <RelativeLayout
                 android:id="@+id/rl_news"
@@ -131,7 +140,7 @@
                     android:textColor="@color/gray_162x3"
                     android:textSize="11dp"/>
             </RelativeLayout>
-        </LinearLayout>
+        </LinearLayout></LinearLayout>
 
         <LinearLayout
             android:id="@+id/content_layout"

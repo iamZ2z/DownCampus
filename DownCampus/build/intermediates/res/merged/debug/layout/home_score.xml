@@ -10,7 +10,7 @@
               android:gravity="center_horizontal"
               android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <LinearLayout
         android:layout_width="match_parent"

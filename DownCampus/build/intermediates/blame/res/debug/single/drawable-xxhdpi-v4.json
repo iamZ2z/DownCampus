@@ -292,6 +292,10 @@
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\install_icon_about.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable-xxhdpi\\install_icon_about.png"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_gf_crop.png",
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\8b5635b9e61f7b91380f4876e321f5b74bd43299\\output\\res\\drawable-xxhdpi\\ic_gf_crop.png"
     },

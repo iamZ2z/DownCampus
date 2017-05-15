@@ -28,6 +28,7 @@ import com.logan.actme.OptionActivity;
 import com.logan.actmobilecampus.AccountActivity;
 import com.logan.bean.MeFragmentBean;
 import com.logan.constant.InterfaceTest;
+import com.logan.constant.UsuallyData;
 import com.util.CircleImageView;
 
 import org.xutils.view.annotation.ContentView;
@@ -52,11 +53,13 @@ public class MeFragment extends Fragment implements OnClickListener {
     @ViewInject(R.id.text_options)
     private LinearLayout text_options;
     private Intent mIntent;
-
     @ViewInject(R.id.btn_changerole)
     private Button btn_changerole;
     private InterfaceTest interfaceTest = new InterfaceTest();
+    private UsuallyData usuallyData=new UsuallyData();
 
+    @ViewInject(R.id.name)
+    private TextView name;
     @ViewInject(R.id.head)
     private de.hdodenhof.circleimageview.CircleImageView head;
 
@@ -80,6 +83,7 @@ public class MeFragment extends Fragment implements OnClickListener {
         text_options.setOnClickListener(this);
 
         if (interfaceTest.getRole().equals("家长")) urlchange();
+        name.setText(usuallyData.getFullname());
     }
 
     @Override

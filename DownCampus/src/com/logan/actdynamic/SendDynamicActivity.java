@@ -22,7 +22,7 @@ import com.logan.widgets.AlignGridView;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 import com.util.UILImageLoader;
 
 import org.xutils.view.annotation.ContentView;

@@ -7,7 +7,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <ImageView
         android:id="@+id/img"
@@ -35,6 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="清除缓存"
+            android:textColor="@color/black_deep"
             android:textSize="17dp"/>
 
         <TextView

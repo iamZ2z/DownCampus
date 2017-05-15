@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.easemob.VerificationActivity;
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;

@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.example.mobilecampus.R;
 import com.logan.adapter.ClassDynamicAdapter;
 import com.logan.bean.ClassDynamicBean;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 import com.util.view.FloatImageButton;
 
 @ContentView(R.layout.find_classact)
@@ -30,18 +30,13 @@ public class ClassDynamicActivity extends Activity {
     private ListView mListView;
     private ArrayList<ClassDynamicBean> mArrayList;
     ClassDynamicBean mClassDynamicBean;
-
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
     @ViewInject(R.id.btn_send)
     private FloatImageButton mFloatImageButton;
-
     @ViewInject(R.id.scroll)
     private ScrollView mScrollView;
-
     private ClassDynamicAdapter mClassDynamicAdapter;
-
     @ViewInject(R.id.newnews)
     private TextView newnews;
 
@@ -62,7 +57,6 @@ public class ClassDynamicActivity extends Activity {
         mClassDynamicAdapter=new ClassDynamicAdapter(this, mArrayList);
         mListView.setAdapter(mClassDynamicAdapter);
         mScrollView.smoothScrollTo(0,0);
-
     }
 
     @Event(value = R.id.btn_send)

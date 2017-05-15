@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -26,7 +26,7 @@ public class ChangePassActivity extends Activity{
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
-        titlebar.setTitle("编辑资料");
+        titlebar.setTitle("更改密码");
         titlebar.setLeftClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

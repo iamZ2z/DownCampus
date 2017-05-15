@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.util.TitleBar style="@style/bar_title" />
+    <com.util.title.TitleBar style="@style/bar_title" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,11 +45,11 @@
             android:layout_marginTop="10dp"
             android:text="提示：会议时间，会议内容，会议地点可以在会议内容里详细说明"
             android:textColor="@color/gray_162x3"
-            android:textSize="12dp" />
+            android:textSize="12sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
@@ -60,18 +60,16 @@
                 android:text="接收对象"
                 android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="32dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/bordblueround_dash" />
-
-            <ImageView
-                android:id="@+id/btn_add"
+            <com.logan.widgets.MultiSpinner
+                android:id="@+id/spmulti"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:src="@mipmap/report_btn_add" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/bordblueround"
+                android:gravity="center"
+                android:hint="点击选择发送对象"
+                android:paddingLeft="15dp"/>
 
         </LinearLayout>
 

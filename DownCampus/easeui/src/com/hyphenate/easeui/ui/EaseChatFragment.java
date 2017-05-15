@@ -64,7 +64,6 @@ import java.util.List;
  * <br/>
  * <br/>
  * you can see ChatActivity in demo for your reference
- *
  */
 public class EaseChatFragment extends EaseBaseFragment implements EMMessageListener {
     protected static final String TAG = "EaseChatFragment";
@@ -127,8 +126,6 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         toChatUsername = fragmentArgs.getString(EaseConstant.EXTRA_USER_ID);
 
         super.onActivityCreated(savedInstanceState);
-
-
     }
 
     /**
@@ -260,6 +257,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     protected void onConversationInit(){
         conversation = EMClient.getInstance().chatManager().getConversation(toChatUsername, EaseCommonUtils.getConversationType(chatType), true);
         conversation.markAllMessagesAsRead();
+
         // the number of messages loaded into conversation is getChatOptions().getNumberOfMessagesLoaded
         // you can change this number
         final List<EMMessage> msgs = conversation.getAllMessages();
@@ -489,7 +487,6 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                         } else {
                             titleBar.setTitle(toChatUsername);
                         }
-                        addChatRoomChangeListenr();
                         onConversationInit();
                         onMessageListInit();
                     }
@@ -507,74 +504,6 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                     }
                 });
                 getActivity().finish();
-            }
-        });
-    }
-
-    protected void addChatRoomChangeListenr() {
-        /*
-        chatRoomChangeListener = new EMChatRoomChangeListener() {
-
-            @Override
-            public void onChatRoomDestroyed(String roomId, String roomName) {
-                if (roomId.equals(toChatUsername)) {
-                    showChatroomToast(" room : " + roomId + " with room name : " + roomName + " was destroyed");
-                    getActivity().finish();
-                }
-            }
-
-            @Override
-            public void onMemberJoined(String roomId, String participant) {
-                showChatroomToast("member : " + participant + " join the room : " + roomId);
-            }
-
-            @Override
-            public void onMemberExited(String roomId, String roomName, String participant) {
-                showChatroomToast("member : " + participant + " leave the room : " + roomId + " room name : " + roomName);
-            }
-
-            @Override
-            public void onRemovedFromChatRoom(String roomId, String roomName, String participant) {
-                if (roomId.equals(toChatUsername)) {
-                    String curUser = EMClient.getInstance().getCurrentUser();
-                    if (curUser.equals(participant)) {
-                    	EMClient.getInstance().chatroomManager().leaveChatRoom(toChatUsername);
-                        getActivity().finish();
-                    }else{
-                        showChatroomToast("member : " + participant + " was kicked from the room : " + roomId + " room name : " + roomName);
-                    }
-                }
-            }
-
-
-            // ============================= group_reform new add api begin
-            @Override
-            public void onMuteListAdded(String chatRoomId, Map<String, Long> mutes) {}
-
-            @Override
-            public void onMuteListRemoved(String chatRoomId, List<String> mutes) {}
-
-            @Override
-            public void onAdminAdded(String chatRoomId, String admin) {}
-
-            @Override
-            public void onAdminRemoved(String chatRoomId, String admin) {}
-
-            @Override
-            public void onOwnerChanged(String chatRoomId, String newOwner, String oldOwner) {}
-
-            // ============================= group_reform new add api end
-
-        };
-        
-        EMClient.getInstance().chatroomManager().addChatRoomChangeListener(chatRoomChangeListener);
-        */
-    }
-    
-    protected void showChatroomToast(final String toastContent){
-        getActivity().runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(getActivity(), toastContent, Toast.LENGTH_SHORT).show();
             }
         });
     }

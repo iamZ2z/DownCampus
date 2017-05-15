@@ -6,7 +6,7 @@
               android:orientation="vertical"
               tools:context="com.logan.actdynamic.SendDynamicActivity">
 
-    <com.util.TitleBar style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <TextView
         android:layout_width="match_parent"

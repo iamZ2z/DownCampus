@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import com.easemob.NewsChat2Activity;
 import com.example.mobilecampus.R;
-import com.util.TitleBar;
+import com.util.title.TitleBar;
 
 @ContentView(R.layout.news_other)
 public class OtherActivity extends Activity implements OnClickListener {
