@@ -95,7 +95,7 @@
         </activity>
         <activity android:name="com.logan.actme.EditDataActivity" >
         </activity>
-        <activity android:name="com.logan.actnews.AddressActivity"
+        <activity android:name="com.easemob.AddressActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity android:name="com.logan.actme.DynamicActivity" >
@@ -124,7 +124,7 @@
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.WorkRestActivity" >
         </activity>
-        <activity android:name="com.logan.acthome.more.WriteLog" >
+        <activity android:name="com.logan.acthome.more.WriteLogActivity" >
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.CalendarActivity" >
         </activity>

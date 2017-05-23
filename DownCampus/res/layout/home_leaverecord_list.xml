@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/leavetime"
         android:layout_alignParentEnd="true"
-        android:textColor="@color/blue_theme"
+        android:textColor="@color/blue_55x176x233"
         android:text="待审核"
         android:textSize="14sp"/>
 

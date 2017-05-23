@@ -17,36 +17,39 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/uploadtest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bord2"
-                android:orientation="horizontal">
+                android:paddingRight="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="5sp"
-                    android:layout_weight="6"
                     android:text="头像"
                     android:textColor="@color/gray_51x3"
                     android:textSize="18sp"/>
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_headportrait"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/headportrait"/>
-
-                <ImageView
+                <!--<ImageView
                     android:id="@+id/btn_headportrait"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@mipmap/search_icon_more"/>
-            </LinearLayout>
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/search_icon_more"/>-->
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_headportrait"
+                    android:layout_width="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="48dp"
+                    android:src="@drawable/headportrait"/>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -232,6 +235,7 @@
                     android:id="@+id/btn_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="0.5"
                     android:src="@mipmap/search_icon_more"/>
             </LinearLayout>
@@ -267,6 +271,7 @@
                     android:id="@+id/btn_autograph"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="0.5"
                     android:src="@mipmap/search_icon_more"/>
             </LinearLayout>

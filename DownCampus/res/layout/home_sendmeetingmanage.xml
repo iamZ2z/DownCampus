@@ -21,6 +21,7 @@
             android:textSize="15dp" />
 
         <EditText
+            android:id="@+id/ettitle"
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginTop="10dp"
@@ -34,8 +35,10 @@
             android:textSize="15dp" />
 
         <EditText
+            android:id="@+id/etcontent"
             android:layout_width="match_parent"
             android:layout_height="280dp"
+            android:gravity="top"
             android:layout_marginTop="10dp"
             android:background="@drawable/bordblueround" />
 
@@ -49,7 +52,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
@@ -57,19 +60,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="接收对象"
+                android:text="接收对象:"
+                android:layout_marginRight="10dp"
                 android:textSize="15dp" />
 
-            <com.logan.widgets.MultiSpinner
-                android:id="@+id/spmulti"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/bordblueround"
+            <TextView
+                android:id="@+id/tvname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="点击选择发送对象"
-                android:paddingLeft="15dp"/>
+                android:minHeight="32dp"
+                android:layout_weight="3"
+                android:background="@drawable/bordblueround"/>
+
+            <ImageView
+                android:id="@+id/btnadd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/report_btn_add"/>
 
         </LinearLayout>
 

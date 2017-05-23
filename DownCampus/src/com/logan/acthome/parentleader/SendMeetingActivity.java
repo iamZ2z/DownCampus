@@ -7,26 +7,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.SimpleAdapter;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.bean.MeetingManagerBean;
-import com.logan.bean.MultiSpinnerBean;
-import com.logan.bean.OrganizationBean;
+import com.logan.bean.SaveMeetingBean;
 import com.logan.constant.InterfaceTest;
-import com.logan.widgets.MultiSpinner;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -42,9 +39,16 @@ public class SendMeetingActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
     private Intent mIntent;
-    @ViewInject(R.id.spmulti)
-    private MultiSpinner mMultiSpinner;
+    @ViewInject(R.id.tvname)
+    private TextView tvname;
     private ArrayList<String> mArrayList;
+
+    @ViewInject(R.id.ettitle)
+    private EditText ettitle;
+    @ViewInject(R.id.etcontent)
+    private EditText etcontent;
+    private String receiverid = "";
+    private String receivername = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,60 +66,75 @@ public class SendMeetingActivity extends Activity {
         titlebar.addAction(new TitleBar.TextAction("发布") {
             @Override
             public void performAction(View view) {
-                mIntent = new Intent();
-                mIntent.setClass(SendMeetingActivity.this, MeetingManage.class);
-                startActivity(mIntent);
+                sendurl();
             }
         });
-
-        //multiSpinnerListener();
-        dourl();
     }
 
-    private void multiSpinnerListener() {
-        mMultiSpinner.setTitle("选择发送对象");
-        ArrayList multispinnerlist = new ArrayList();
-        for (int i = 0; i < mArrayList.size(); i++) {
-            MultiSpinnerBean multiSpinnerBean = new MultiSpinnerBean();
-            multiSpinnerBean.setName(mArrayList.get(i));
-            multiSpinnerBean.setValue(i+1);
-            multispinnerlist.add(multiSpinnerBean);
-        }
-        mMultiSpinner.setDataList(multispinnerlist);
-    }
+    private void sendurl() {
+        if (ettitle.getText().toString().equals(null) || etcontent.getText().toString().equals
+                (null) || receivername.equals(""))
+            Toast.makeText(SendMeetingActivity.this, "信息填写不完整", Toast
+                    .LENGTH_SHORT).show();
+        else {
+            InterfaceTest interfaceTest = new InterfaceTest();
+            String name = ettitle.getText().toString();
+            String content = etcontent.getText().toString();
+            String userid = interfaceTest.getUser_id();
 
-    private void dourl() {
-        InterfaceTest interfaceTest = new InterfaceTest();
-        String url = interfaceTest.getServerurl() + interfaceTest.getOrganizationquery();
-        String token = interfaceTest.getToken();
-        FormBody formBody = new FormBody.Builder().add("token", token).build();
-        final Request request = new Request.Builder().url(url).post(formBody).build();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Response response = new OkHttpClient().newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        String str = response.body().string();
-                        Log.e("urlmeeting的result", "请求数据:" + str);
-                        final OrganizationBean bean = new Gson().fromJson(str, OrganizationBean
-                                .class);
-                        mArrayList = new ArrayList<>();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                for (int i = 0; i < bean.getData().size(); i++) {
-                                    String str = bean.getData().get(i).getName();
-                                    mArrayList.add(str);
+            String url = interfaceTest.getServerurl() + interfaceTest.getMeetingsave();
+            String token = interfaceTest.getToken();
+            FormBody formBody = new FormBody.Builder().add("token", token).add("name", name).add
+                    ("content", content).add("receiverIds", receiverid).add("receivers",
+                    receivername).add("user.id", userid).build();
+            final Request request = new Request.Builder().url(url).post(formBody).build();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Response response = new OkHttpClient().newCall(request).execute();
+                        if (response.isSuccessful()) {
+                            String str = response.body().string();
+                            Log.e("发送会议的result", "请求数据:" + str);
+                            final SaveMeetingBean bean = new Gson().fromJson(str, SaveMeetingBean
+                                    .class);
+                            mArrayList = new ArrayList<>();
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (bean.getCode().equals("0")) {
+                                        Toast.makeText(SendMeetingActivity.this, "发送成功", Toast
+                                                .LENGTH_SHORT).show();
+                                        finish();
+                                    } else
+                                        Toast.makeText(SendMeetingActivity.this, "发送失败", Toast
+                                                .LENGTH_SHORT).show();
                                 }
-                                multiSpinnerListener();
-                            }
-                        });
+                            });
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
-            }
-        }).start();
+            }).start();
+        /*mIntent = new Intent();
+        mIntent.setClass(SendMeetingActivity.this, MeetingManage.class);
+        startActivity(mIntent);*/
+        }
+    }
+
+    @Event(value = R.id.btnadd)
+    private void onbtnaddClick(View v) {
+        Intent intent = new Intent(this, ChooseObjectActivity.class);
+        startActivityForResult(intent, 1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //得到新Activity关闭后返回的数据
+        receiverid = data.getStringExtra("strid");
+        receivername = data.getStringExtra("strname");
+        tvname.setText(receivername);
     }
 }

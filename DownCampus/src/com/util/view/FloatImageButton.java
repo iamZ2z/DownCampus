@@ -2,14 +2,12 @@ package com.util.view;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.util.AttributeSet;
 import android.widget.ImageButton;
@@ -80,7 +78,7 @@ public class FloatImageButton extends ImageButton {
     private void init(AttributeSet attrSet) {
         Resources.Theme theme = ctx.getTheme();
         try {
-            setBgColor(R.color.blue_theme);
+            setBgColor(R.color.blue_55x176x233);
             setBgColorPressed(R.color.white);
         }
         catch(Throwable t) {}

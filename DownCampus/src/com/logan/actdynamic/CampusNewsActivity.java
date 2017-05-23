@@ -20,6 +20,7 @@ import android.widget.SimpleAdapter;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
+import com.logan.adapter.CampusNewsAdapter;
 import com.logan.bean.CampusNewsBean;
 import com.logan.constant.InterfaceTest;
 import com.util.title.TitleBar;
@@ -43,6 +44,9 @@ public class CampusNewsActivity extends Activity {
     //private SwipeRefreshLayout refresh;
 
     private List<? extends Map<String, ?>> data;
+    private CampusNewsAdapter campusNewsAdapter;
+    private List<HashMap<String, Object>> campuslist;
+    private HashMap<String, Object> campusmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,31 +65,6 @@ public class CampusNewsActivity extends Activity {
                 finish();
             }
         });
-
-        /*mAdapter = new SimpleAdapter(this, getData(),
-                R.layout.item_campusnews_big,
-                new String[]{"img", "title", "type", "data", "img2",
-                        "title2", "type2", "data2", "img3", "title3", "type3",
-                        "data3", "img4", "title4", "type4", "data4", "img5",
-                        "title5", "type5", "data5",}, new int[]{R.id.img,
-                R.id.title, R.id.type, R.id.data, R.id.img2,
-                R.id.title2, R.id.type2, R.id.data2, R.id.img3,
-                R.id.title3, R.id.type3, R.id.data3, R.id.img4,
-                R.id.title4, R.id.type4, R.id.data4, R.id.img5,
-                R.id.title5, R.id.type5, R.id.data5,
-        });
-        mListView.setAdapter(mAdapter);*/
-    }
-
-    private List<? extends Map<String, ?>> getData() {
-        mHashmap = new ArrayList<>();
-        /*addContent(R.drawable.upload, "俊县骏洲北关小学：走进自然寻找春天", "综合时间", "12-17 12:00",
-                R.drawable.upload, "“智能+”时代，软件和数据如何驱动营销？", "广东广州", "12-17 12:00",
-                R.drawable.upload, "“智能+”时代，软件和数据如何驱动营销？", "广东广州", "12-17 12:00",
-                R.drawable.upload, "“智能+”时代，软件和数据如何驱动营销？", "广东广州", "12-17 12:00",
-                R.drawable.upload, "“智能+”时代，软件和数据如何驱动营销？", "广东广州", "12-17 12:00"
-        );*/
-        return mHashmap;
     }
 
     private void dourl() {
@@ -103,14 +82,17 @@ public class CampusNewsActivity extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlleave的result", "请求数据:" + str);
-                        CampusNewsBean accountListBean = new Gson().fromJson(str,
+                        final CampusNewsBean bean = new Gson().fromJson(str,
                                 CampusNewsBean.class);
-                        data = getData2(accountListBean);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                campusnewsadapter(bean);
+                                campusNewsAdapter=new CampusNewsAdapter(CampusNewsActivity.this,campuslist);
+
+                                data = getData2(bean);
                                 mAdapter = new SimpleAdapter(CampusNewsActivity.this, data,
-                                        R.layout.item_campusnews_big, new String[]{"img",
+                                        R.layout.item_campusnews_all, new String[]{"img",
                                         "title", "type", "data", "img2", "title2", "type2",
                                         "data2", "img3", "title3", "type3", "data3", "img4",
                                         "title4", "type4", "data4", "img5", "title5", "type5",
@@ -120,7 +102,7 @@ public class CampusNewsActivity extends Activity {
                                         .img4, R.id.title4, R.id.type4, R.id.data4, R.id.img5, R
                                         .id.title5, R.id.type5, R.id.data5,
                                 });
-                                mListView.setAdapter(mAdapter);
+                                mListView.setAdapter(campusNewsAdapter);
                             }
                         });
                     }
@@ -129,24 +111,38 @@ public class CampusNewsActivity extends Activity {
                 }
             }
 
+            private void campusnewsadapter(CampusNewsBean bean) {
+                campuslist= new ArrayList<>();
+                for (int j = 0; j < bean.getData().size(); j++) {
+                    campusmap= new HashMap<>();
+                    campusmap.put("img", bean.getData().get(j).getImage());
+                    campusmap.put("title", bean.getData().get(j).getTitle());
+                    campusmap.put("place", bean.getData().get(j).getSummary());
+                    campusmap.put("date", bean.getData().get(j).getUpdateTime());
+                    campusmap.put("clickCount", bean.getData().get(j).getClickCount());
+                    campusmap.put("showPage", bean.getData().get(j).getShowPage());
+                    campuslist.add(campusmap);
+                }
+            }
+
             private List<? extends Map<String, ?>> getData2(CampusNewsBean bean) {
                 mHashmap= new ArrayList<>();
                 for (int j = 0; j < bean.getData().size(); j += 5) {
                     addContent(R.drawable.upload, bean.getData().get(j).getTitle(), "点击次数：" +
                                     bean.getData().get(j).getClickCount(), bean.getData().get(j)
-                                    .getCreateTime(),
+                                    .getUpdateTime(),
                             R.drawable.upload, bean.getData().get(j + 1).getTitle(), "点击次数：" +
                                     bean.getData().get(j + 1).getClickCount(), bean.getData().get
-                                    (j + 1).getCreateTime(),
+                                    (j + 1).getUpdateTime(),
                             R.drawable.upload, bean.getData().get(j + 2).getTitle(), "点击次数：" +
                                     bean.getData().get(j + 2).getClickCount(), bean.getData().get
-                                    (j + 2).getCreateTime(),
+                                    (j + 2).getUpdateTime(),
                             R.drawable.upload, bean.getData().get(j + 3).getTitle(), "点击次数：" +
                                     bean.getData().get(j + 3).getClickCount(), bean.getData().get
-                                    (j + 3).getCreateTime(),
+                                    (j + 3).getUpdateTime(),
                             R.drawable.upload, bean.getData().get(j + 4).getTitle(), "点击次数：" +
                                     bean.getData().get(j + 4).getClickCount(), bean.getData().get
-                                    (j + 4).getCreateTime());
+                                    (j + 4).getUpdateTime());
                 }
                 return mHashmap;
             }

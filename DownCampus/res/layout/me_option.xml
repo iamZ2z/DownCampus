@@ -25,17 +25,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/img"
-        android:background="@drawable/bord2"
+        android:background="@drawable/bordoption"
         android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         app:layout_marginTopPercent="5%">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="清除缓存"
-            android:textColor="@color/black_deep"
+            android:textColor="@color/gray_162x3"
             android:textSize="17dp"/>
 
         <TextView
@@ -47,54 +47,105 @@
             android:textSize="17dp"/>
     </LinearLayout>
 
-    <Button
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/dataclean"
+        android:background="@color/gray_162x3"
+        app:layout_marginTopPercent="4%"/>
+
+    <TextView
         android:id="@+id/option_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dataclean"
-        android:background="@drawable/bord2"
-        android:drawableRight="@mipmap/search_icon_more"
+        android:layout_below="@id/line1"
+        android:background="@color/white"
         android:gravity="center_vertical"
+        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
+        android:paddingTop="10dp"
         android:text="新消息提醒"
-        android:textSize="17dp"
-        app:layout_marginTopPercent="4%"/>
+        android:textColor="@color/gray_162x3"
+        android:textSize="17dp"/>
 
-    <Button
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/option_message"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/gray_162x3"/>
+
+    <TextView
         android:id="@+id/option_help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/option_message"
-        android:background="@drawable/bord2"
-        android:drawableRight="@mipmap/search_icon_more"
+        android:layout_below="@id/line2"
+        android:background="@color/white"
         android:gravity="center_vertical"
+        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
+        android:paddingTop="10dp"
         android:text="使用帮助"
+        android:textColor="@color/gray_162x3"
         android:textSize="17dp"/>
 
-    <Button
+    <TextView
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/option_help"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/gray_162x3"/>
+
+    <TextView
         android:id="@+id/option_rate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/option_help"
-        android:background="@drawable/bord2"
-        android:drawableRight="@mipmap/search_icon_more"
+        android:layout_below="@id/line3"
+        android:background="@color/white"
         android:gravity="center_vertical"
+        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
+        android:paddingTop="10dp"
         android:text="吐槽产品经理"
+        android:textColor="@color/gray_162x3"
         android:textSize="17dp"/>
 
-    <Button
+    <TextView
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/option_rate"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/gray_162x3"/>
+
+    <TextView
         android:id="@+id/option_about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/option_rate"
-        android:background="@drawable/bord2"
-        android:drawableRight="@mipmap/search_icon_more"
+        android:layout_below="@id/line4"
+        android:background="@color/white"
         android:gravity="center_vertical"
+        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
+        android:textColor="@color/gray_162x3"
+        android:paddingTop="10dp"
         android:text="关于"
         android:textSize="17dp"/>
+
+    <TextView
+        android:id="@+id/line5"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/option_about"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/gray_162x3"/>
 
     <Button
         android:id="@+id/btn_exit"
@@ -106,5 +157,4 @@
         android:textColor="@color/white"
         android:textSize="17dp"
         app:layout_marginBottomPercent="5%"/>
-
 </android.support.percent.PercentRelativeLayout>

@@ -6,9 +6,15 @@
               android:paddingLeft="15dp"
               android:paddingRight="15dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_230x3"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -16,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="老师修养"
-            android:textColor="@color/blue_theme"
+            android:textColor="@color/blue_55x176x233"
             android:textSize="15sp"/>
 
         <TextView
@@ -25,21 +31,27 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="10分"
-            android:textColor="@color/blue_theme"/>
+            android:textColor="@color/blue_55x176x233"/>
     </LinearLayout>
 
     <TextView
         android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="爱岗敬业，工作认真"/>
+        android:layout_marginTop="10dp"
+        android:text="爱岗敬业，工作认真"
+        android:textColor="@android:color/black"/>
 
     <EditText
         android:id="@+id/editscore"
         android:layout_width="match_parent"
-        android:hint="请输入分值"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:background="@drawable/bordblueround"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bordblueround"
+        android:gravity="center"
+        android:hint="请输入分值"
+        android:text="@android:color/black"
+        android:textColorHint="@color/blue_55x176x233"/>
 
 </LinearLayout>

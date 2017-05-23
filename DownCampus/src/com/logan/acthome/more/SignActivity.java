@@ -17,43 +17,44 @@ import com.example.mobilecampus.R;
 import com.util.title.TitleBar;
 
 @ContentView(R.layout.home_sign)
-public class SignActivity extends Activity{
-	@ViewInject(R.id.sign_time)
-	private TextView sign_time;
-	
-	@ViewInject(R.id.sign_location)
-	private TextView sign_location;
-	
-	@ViewInject(R.id.title_bar)
-	private TitleBar titlebar;
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		x.view().inject(this);
+public class SignActivity extends Activity {
+    @ViewInject(R.id.sign_time)
+    private TextView sign_time;
 
-		initView();
-		
-		Calendar cal=Calendar.getInstance();
-		sign_time.setText("签到时间："+cal.get(Calendar.HOUR_OF_DAY)+":"+cal.get(Calendar.MINUTE));
-		
-		Intent mIntent=getIntent();
-		if(mIntent.getStringExtra("signlocation")!=null&&mIntent.getStringExtra("signlocation")!=" ")
-			sign_location.setText("签到地点："+mIntent.getStringExtra("signlocation"));
-		else
-			sign_location.setText("签到地点：");
-	}
+    @ViewInject(R.id.sign_location)
+    private TextView sign_location;
 
-	private void initView() {
-		titlebar.setTitle("签到");
-		titlebar.setLeftClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
-	}
+    @ViewInject(R.id.title_bar)
+    private TitleBar titlebar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        x.view().inject(this);
+
+        initView();
+
+        Calendar cal = Calendar.getInstance();
+        sign_time.setText("签到时间：" + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
+
+        Intent mIntent = getIntent();
+        if (mIntent.getStringExtra("signlocation") != null && mIntent.getStringExtra
+                ("signlocation") != " ")
+            sign_location.setText("签到地点：" + mIntent.getStringExtra("signlocation"));
+        else
+            sign_location.setText("签到地点：");
+    }
+
+    private void initView() {
+        titlebar.setTitle("申诉");
+        titlebar.setLeftClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
 
 }

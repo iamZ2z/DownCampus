@@ -11,7 +11,7 @@
             android:id="@+id/top_item"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:background="@color/blue_theme"
+            android:background="@color/blue_55x176x233"
             android:fitsSystemWindows="true"
             android:gravity="center"
             android:text="首页"
@@ -30,7 +30,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="1px"
                 android:background="@color/gray_189x3"/>
 
             <LinearLayout

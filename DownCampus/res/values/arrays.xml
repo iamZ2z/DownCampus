@@ -52,7 +52,7 @@
         <item>考试安排</item>
         <item>我的成绩</item>
         <item>我的座位</item>
-        <item>校园缴费</item>
+        <!--<item>校园缴费</item>-->
         <item>我的作业</item>
         <item>教师评价</item>
         <item>班级活动</item>
@@ -68,7 +68,7 @@
         <item>@mipmap/home_icon_8</item>
         <item>@mipmap/home_icon_9</item>
         <item>@mipmap/home_icon_10</item>
-        <item>@mipmap/home_icon_11</item>
+        <!--<item>@mipmap/home_icon_11</item>-->
     </string-array>
 
     <string-array name="parent">
@@ -77,7 +77,7 @@
         <item>学生作业</item>
         <item>学生成绩</item>
         <item>校园日历</item>
-        <item>校园缴费</item>
+        <!--<item>校园缴费</item>-->
         <item>教师评价</item>
     </string-array>
     <string-array name="parent_img">
@@ -87,7 +87,7 @@
         <item>@mipmap/home_icon_4</item>
         <item>@mipmap/home_icon_10</item>
         <item>@mipmap/home_icon_6</item>
-        <item>@mipmap/home_icon_11</item>
+        <!--<item>@mipmap/home_icon_11</item>-->
     </string-array>
 
 

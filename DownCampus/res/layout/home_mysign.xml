@@ -6,8 +6,7 @@
               android:background="@mipmap/sign_img_bg_day"
               android:orientation="vertical">
 
-    <com.util.title.TitleBar
-        style="@style/bar_title"
+    <com.util.title.TitleBar style="@style/bar_title"
         android:background="@android:color/transparent"/>
 
     <TextView
@@ -49,7 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:text="当前位置：北兴中学"
+                android:text="当前位置："
                 android:textSize="15dp"/>
 
             <TextView
@@ -66,7 +65,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/danger"
+            android:id="@+id/updanger"
             android:layout_marginTop="20dp"
             android:visibility="invisible"
             android:layout_width="match_parent"
@@ -101,14 +100,15 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/complain"
+                android:id="@+id/upcomplain"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:gravity="center"
                 android:text="申诉>>"
                 android:textColor="@color/blue_download"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:visibility="invisible"/>
 
         </LinearLayout>
 
@@ -139,11 +139,15 @@
                 android:textSize="15dp"/>
 
             <TextView
+                android:id="@+id/downcomplain"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:gravity="center"
-                android:textSize="18dp"/>
+                android:text="申诉>>"
+                android:textColor="@color/blue_download"
+                android:textSize="15dp"
+                android:visibility="invisible"/>
 
         </LinearLayout>
     </LinearLayout>

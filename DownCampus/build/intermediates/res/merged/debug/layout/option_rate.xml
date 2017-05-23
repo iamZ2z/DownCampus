@@ -1,31 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-  <com.util.title.TitleBar
-        style="@style/bar_title" />
-   
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.util.title.TitleBar style="@style/bar_title"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:hint="说点什么吧！"
-        android:textSize="20sp" />
+        android:gravity="top"
+        android:textColor="@color/gray_162x3"
+        android:textColorHint="@color/gray_162x3"
+        android:padding="15dp"
+        android:background="@null"
+        android:textSize="15sp"/>
 
-    <Button
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/img_add"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@mipmap/nav_btn_add"
-        android:text="添加照片、视频"
-        android:textSize="20sp" />
+        android:layout_margin="15dp"
+        android:src="@mipmap/dynamic_img_add"/>
+
+    <com.logan.widgets.AlignGridView
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="6dp"
+        android:verticalSpacing="3dp"/>
 
     <EditText
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请留下您的手机号或QQ或邮箱（选填）"
-        android:textSize="20sp" />
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/gray_162x3"
+        android:textColorHint="@color/gray_162x3"
+        android:background="@null"
+        android:textSize="20sp"/>
 
 </LinearLayout>

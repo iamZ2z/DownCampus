@@ -22,8 +22,8 @@ import java.util.Set;
  * Created by Z2z on 2017/4/10.
  */
 
-public class MultiSpinner extends TextView implements DialogInterface.OnClickListener, View
-        .OnClickListener {
+public class MultiSpinner extends android.support.v7.widget.AppCompatTextView implements
+        DialogInterface.OnClickListener, View.OnClickListener {
     private ListView listView;
 
     private Context context;
@@ -37,7 +37,6 @@ public class MultiSpinner extends TextView implements DialogInterface.OnClickLis
     private Set<Object> checkedSet;
 
     private int selectCount = -1;
-
 
     private boolean isEmpty() {
         return dataList == null ? true : dataList.isEmpty();

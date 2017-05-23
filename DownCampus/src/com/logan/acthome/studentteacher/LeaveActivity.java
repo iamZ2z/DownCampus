@@ -42,7 +42,6 @@ import okhttp3.Response;
 import static cn.finalteam.toolsfinal.DateUtils.getDate;
 import static cn.finalteam.toolsfinal.DateUtils.getTime;
 
-
 @ContentView(R.layout.home_leave)
 public class LeaveActivity extends Activity {
     private TextView time_difference;
@@ -74,7 +73,7 @@ public class LeaveActivity extends Activity {
     @ViewInject(R.id.btn_send)
     private Button btn_send;
 
-    private long time1, time2;
+    private long time1, time2=0;
     private String leavetype="1";
 
 
@@ -150,7 +149,7 @@ public class LeaveActivity extends Activity {
     }
 
     private void timedifference() {
-        if (time1 != 0 || time2 != 0) {
+        if (time1 != 0 && time2 != 0) {
             long diff = time2 - time1;
             long days = diff / (1000 * 60 * 60 * 24);
             long hours = (diff - days * (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);

@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobilecampus.R;
@@ -18,9 +19,7 @@ import com.logan.bean.RateContentBean;
 import com.logan.bean.TeacherRateBean;
 import com.logan.constant.InterfaceTest;
 import com.logan.constant.UsuallyData;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.util.title.TitleBar;
-import com.util.title.TitleBars;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -45,6 +44,8 @@ public class RateContentActivity extends Activity {
     @ViewInject(R.id.btn)
     private Button btn;
     private int inttemp = 0;
+    @ViewInject(R.id.teachername)
+    private TextView teachername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +61,14 @@ public class RateContentActivity extends Activity {
             }
         });
 
+        initTeachername();
         loadData();
         hidekeyboard();
+    }
 
+    private void initTeachername() {
+        String name = getIntent().getStringExtra("teachername");
+        teachername.setText("教师：" + name);
     }
 
     private void loadData() {

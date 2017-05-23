@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import android.widget.ImageView;
 import com.easemob.ConversationListFragment;
 import com.example.mobilecampus.R;
 import com.logan.actmobilecampus.MainActivity;
-import com.logan.actnews.AddressActivity;
+import com.easemob.AddressActivity;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;

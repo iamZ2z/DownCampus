@@ -132,7 +132,7 @@
         <activity android:name="com.logan.actme.EditDataActivity">
         </activity>
         <activity
-            android:name="com.logan.actnews.AddressActivity"
+            android:name="com.easemob.AddressActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged"></activity>
         <activity android:name="com.logan.actnews.AddContactActivity">
         </activity>
@@ -170,7 +170,7 @@
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.WorkRestActivity">
         </activity>
-        <activity android:name="com.logan.acthome.more.WriteLog">
+        <activity android:name="com.logan.acthome.more.WriteLogActivity">
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.CalendarActivity">
         </activity>
@@ -189,7 +189,8 @@
         <activity android:name="com.logan.acthome.studentteacher.HomeworkActivity">
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.TeacherRateActivity"/>
-        <activity android:name="com.logan.acthome.more.RateContentActivity"/>
+        <activity android:name="com.logan.acthome.more.RateContentActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
         <activity android:name="com.logan.acthome.studentteacher.ClassActivityActivity">
         </activity>
         <activity android:name="com.logan.acthome.parentleader.BehaviorActivity">
@@ -199,6 +200,7 @@
         <activity android:name="com.logan.acthome.parentleader.ApproveSearch"/>
         <activity android:name="com.logan.acthome.parentleader.MeetingManage"/>
         <activity android:name="com.logan.acthome.parentleader.SendMeetingActivity"/>
+        <activity android:name="com.logan.acthome.parentleader.ChooseObjectActivity"/>
 
         <activity android:name="com.util.circlecrop.CropActivity">
         </activity>

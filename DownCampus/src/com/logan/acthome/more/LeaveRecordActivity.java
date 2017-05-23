@@ -46,8 +46,8 @@ public class LeaveRecordActivity extends Activity {
     InterfaceTest interfaceTest = new InterfaceTest();
     private List<? extends Map<String, ?>> data;
 
-    @ViewInject(R.id.refresh)
-    private SwipeRefreshLayout refresh;
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +119,9 @@ public class LeaveRecordActivity extends Activity {
                                         "submit", "leavetime", "or"}, new int[]{R.id.iv, R.id
                                         .name, R.id.submit, R.id.leavetime, R.id.or});
                                 mListView.setAdapter(mAdapter);
+
+                                mAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -172,12 +175,14 @@ public class LeaveRecordActivity extends Activity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //放入list
                                 mAdapter = new SimpleAdapter(LeaveRecordActivity.this, data, R
                                         .layout.home_leaverecord_list, new String[]{"iv", "name",
                                         "submit", "leavetime", "or"}, new int[]{R.id.iv, R.id
                                         .name, R.id.submit, R.id.leavetime, R.id.or});
                                 mListView.setAdapter(mAdapter);
+
+                                mAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -204,7 +209,7 @@ public class LeaveRecordActivity extends Activity {
     }
 
     private void refreshdata() {
-        refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 if (interfaceTest.getRole().equals("学生")) urlstudentleave();

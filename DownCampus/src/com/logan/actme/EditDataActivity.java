@@ -22,14 +22,11 @@ import android.widget.Toast;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.actmobilecampus.MainActivity;
 import com.logan.bean.UploadEmailBean;
 import com.logan.bean.UploadiconBean;
 import com.logan.constant.InterfaceTest;
 import com.logan.constant.UsuallyData;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
-import com.util.circlecrop.CropActivity;
-import com.util.title.TitleBar;
 import com.util.title.TitleBars;
 import com.util.view.CropViewActivity;
 
@@ -43,6 +40,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.FormBody;
 import okhttp3.Headers;
 import okhttp3.MediaType;
@@ -54,10 +52,10 @@ import okhttp3.Response;
 
 @ContentView(R.layout.me_editdata)
 public class EditDataActivity extends Activity implements OnClickListener, OnMenuItemClickListener {
-    @ViewInject(R.id.btn_headportrait)
-    private ImageView btn_headportrait;
+    /*@ViewInject(R.id.btn_headportrait)
+    private ImageView btn_headportrait;*/
     @ViewInject(R.id.iv_headportrait)
-    private ImageView iv_headportrait;
+    private CircleImageView iv_headportrait;
     @ViewInject(R.id.editdata_role)
     private TextView editdata_role;
     @ViewInject(R.id.name)
@@ -103,7 +101,7 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
 
         initView();
         initData();
-        btn_headportrait.setOnClickListener(this);
+        iv_headportrait.setOnClickListener(this);
         //uploadtest.setOnClickListener(this);
 
     }
@@ -123,7 +121,7 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
         tintManager.setStatusBarTintEnabled(true);
         // enable navigation bar tint
         tintManager.setNavigationBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.color.blue_theme);
+        tintManager.setStatusBarTintResource(R.color.blue_55x176x233);
     }
 
     private void initData() {
@@ -137,99 +135,10 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
         autograph.setText(usuallyData.getAutograph());
     }
 
-    @Event(value = {R.id.btn_email, R.id.btn_autograph})
-    private void onbtnemailClick(View v) {
-        String url="";
-        FormBody formBody =null;
-        if (v.getId() == R.id.btn_email) {
-            String st = email.getText().toString();
-            String token = interfaceTest.getToken();
-            String userid = interfaceTest.getUser_id();
-            url = interfaceTest.getServerurl() + interfaceTest.getUploademail();
-            formBody = new FormBody.Builder().add("token", token).add("user_id", userid)
-                    .add("email", st).build();
-        } else if (v.getId() == R.id.btn_autograph) {
-            String st = autograph.getText().toString();
-            String token = interfaceTest.getToken();
-            String userid = interfaceTest.getUser_id();
-            url = interfaceTest.getServerurl() + interfaceTest.getUploadautograph();
-            formBody = new FormBody.Builder().add("token", token).add("user_id", userid).add
-                    ("autograph", st).build();
-        }
-        final Request request = new Request.Builder().url(url).post(formBody).build();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Response response = new OkHttpClient().newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        String str = response.body().string();
-                        Log.e("邮箱的result", "请求数据:" + str);
-                        final UploadEmailBean bean = new Gson().fromJson(str,
-                                UploadEmailBean
-                                        .class);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (bean.getCode().equals("0"))
-                                    Toast.makeText(EditDataActivity.this, bean.getMessage(),
-                                            Toast.LENGTH_SHORT).show();
-                                else
-                                    Toast.makeText(EditDataActivity.this, bean.getMessage(),
-                                            Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
-
-    /*@Event(value = {R.id.btn_autograph})
-    private void onbtnautographClick(View v) {
-        String st = autograph.getText().toString();
-        String token = interfaceTest.getToken();
-        String userid = interfaceTest.getUser_id();
-        String url = interfaceTest.getServerurl() + interfaceTest.getUploadautograph();
-
-        FormBody formBody = new FormBody.Builder().add("token", token).add("user_id", userid).add
-                ("autograph", st).build();
-        final Request request = new Request.Builder().url(url).post(formBody).build();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Response response = new OkHttpClient().newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        String str = response.body().string();
-                        Log.e("邮箱的result", "请求数据:" + str);
-                        final UploadEmailBean bean = new Gson().fromJson(str, UploadEmailBean
-                                .class);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (bean.getCode().equals("0"))
-                                    Toast.makeText(EditDataActivity.this, bean.getMessage(),
-                                            Toast.LENGTH_SHORT).show();
-                                else
-                                    Toast.makeText(EditDataActivity.this, bean.getMessage(),
-                                            Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }*/
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_headportrait:
+            case R.id.iv_headportrait:
                 popupMenu();
                 break;
             default:
@@ -238,7 +147,7 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     }
 
     private void popupMenu() {
-        PopupMenu popup = new PopupMenu(this, btn_headportrait);
+        PopupMenu popup = new PopupMenu(this, iv_headportrait);
         popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
@@ -285,7 +194,7 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     }
 
     private void selectphoto() {
-        mIntent = new Intent(Intent.ACTION_PICK, null);
+        mIntent = new Intent(Intent.ACTION_PICK);
         mIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         startActivityForResult(mIntent, PHOTO_PICKED_WITH_DATA);
     }
@@ -293,8 +202,7 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     // 因为调用了Camera和Gally所以要判断他们各自的返回情况,他们启动时是这样的startActivityForResult
     @SuppressWarnings("deprecation")
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode != RESULT_OK)
-            return;
+        if (resultCode != RESULT_OK) return;
         switch (requestCode) {
             case PHOTO_PICKED_WITH_DATA: {// 调用Gallery返回的
                 cropPhoto(data.getData());// 裁剪图片
@@ -324,7 +232,7 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     // 调用系统的裁剪
     private void cropPhoto(Uri uri) {
         Intent intent = new Intent("com.android.camera.action.CROP");
-        intent.setDataAndType(uri, "image*//*");
+        intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
         // aspectX aspectY 是宽高的比例
         intent.putExtra("aspectX", 1);
@@ -340,7 +248,6 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     public void startResultActivity(Uri uri) {
         /*if(isFinishing()) return;
         startActivity(CropViewActivity.createIntent(this,uri));*/
-
         mIntent = new Intent();
         mIntent.setClass(this, CropViewActivity.class);
         mIntent.putExtra("uri", uri);
@@ -348,12 +255,12 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     }
 
     //自设圆形裁剪
-    private void cropImage(Uri uri) {
+    /*private void cropImage(Uri uri) {
         Intent mIntent = new Intent(this, CropActivity.class);
         mIntent.putExtra("uri", uri.toString());
         Log.v("debug uri", uri.toString());
         startActivityForResult(mIntent, SDCARD_DISPLAY);
-    }
+    }*/
 
     private void setPicToView(Bitmap mBitmap) {
         String sdStatus = Environment.getExternalStorageState();
@@ -425,6 +332,56 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
                                     Toast.makeText(EditDataActivity.this, "上传成功", Toast
                                             .LENGTH_SHORT).show();
                                 }
+                            }
+                        });
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    @Event(value = {R.id.btn_email, R.id.btn_autograph})
+    private void onbtnemailClick(View v) {
+        String url="";
+        FormBody formBody =null;
+        if (v.getId() == R.id.btn_email) {
+            String st = email.getText().toString();
+            String token = interfaceTest.getToken();
+            String userid = interfaceTest.getUser_id();
+            url = interfaceTest.getServerurl() + interfaceTest.getUploademail();
+            formBody = new FormBody.Builder().add("token", token).add("user_id", userid)
+                    .add("email", st).build();
+        } else if (v.getId() == R.id.btn_autograph) {
+            String st = autograph.getText().toString();
+            String token = interfaceTest.getToken();
+            String userid = interfaceTest.getUser_id();
+            url = interfaceTest.getServerurl() + interfaceTest.getUploadautograph();
+            formBody = new FormBody.Builder().add("token", token).add("user_id", userid).add
+                    ("autograph", st).build();
+        }
+        final Request request = new Request.Builder().url(url).post(formBody).build();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Response response = new OkHttpClient().newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        String str = response.body().string();
+                        Log.e("邮箱的result", "请求数据:" + str);
+                        final UploadEmailBean bean = new Gson().fromJson(str,
+                                UploadEmailBean
+                                        .class);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (bean.getCode().equals("0"))
+                                    Toast.makeText(EditDataActivity.this, bean.getMessage(),
+                                            Toast.LENGTH_SHORT).show();
+                                else
+                                    Toast.makeText(EditDataActivity.this, bean.getMessage(),
+                                            Toast.LENGTH_SHORT).show();
                             }
                         });
                     }

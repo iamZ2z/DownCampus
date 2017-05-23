@@ -3,74 +3,84 @@ package com.logan.bean;
 import java.util.List;
 
 public class CampusNewsBean {
-	private String title;
-	private String contentType;
-	private String dataTime;
-	private int img_str;
-	private String createTime;
-	private String clickCount;
+    private String id;
+    private String showPage;
+    private String title;
+    private String image;
+    private String summary;
+    private String updateTime;
+    private int clickCount;
 
-	private List<CampusNewsBean> data;
-
-
-
+    private List<CampusNewsBean> data;
 
 
 
-	public String getClickCount() {
-		return clickCount;
-	}
 
-	public void setClickCount(String clickCount) {
-		this.clickCount = clickCount;
-	}
 
-	public String getCreateTime() {
-		return createTime;
-	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
 
-	public List<CampusNewsBean> getData() {
-		return data;
-	}
 
-	public void setData(List<CampusNewsBean> data) {
-		this.data = data;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public void setShowPage(String showPage) {
+        this.showPage = showPage;
+    }
 
-	public int getImg_str() {
-		return img_str;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setImg_str(int img_str) {
-		this.img_str = img_str;
-	}
+    public void setImage(String image) {
+        this.image = image;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
 
-	public String getContentType() {
-		return contentType;
-	}
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
 
-	public void setContentType(String contentType) {
-		this.contentType = contentType;
-	}
+    public void setClickCount(int clickCount) {
+        this.clickCount = clickCount;
+    }
 
-	public String getDataTime() {
-		return dataTime;
-	}
+    public void setData(List<CampusNewsBean> data) {
+        this.data = data;
+    }
 
-	public void setDataTime(String dataTime) {
-		this.dataTime = dataTime;
-	}
+    public int getClickCount() {
+        return clickCount;
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getShowPage() {
+        return showPage;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public List<CampusNewsBean> getData() {
+        return data;
+    }
 }

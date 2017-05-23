@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
                 android:padding="2dp"
-                app:activeColor="@color/blue_theme"
+                app:activeColor="@color/blue_55x176x233"
                 app:activeType="fill"
                 app:circleSeparation="20dip"
                 app:inactiveColor="#ffffff"

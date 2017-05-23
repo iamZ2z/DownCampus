@@ -2,6 +2,7 @@ package com.logan.acthome.more;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -52,10 +53,12 @@ public class FootPrintActivity extends Activity {
     private ImageView footprint_search_right;
     private Calendar mCalendar = Calendar.getInstance();
     private String st = mCalendar.get(Calendar.YEAR) + "-" + (mCalendar.get(Calendar.MONTH) + 1);
-
     private List<HashMap<String, Object>> data;
     @ViewInject(R.id.nulldata)
     private ImageView nulldata;
+
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +69,7 @@ public class FootPrintActivity extends Activity {
 
         footprint_search_center.setText(st);
         dourl(st + "-01");
+        swipe();
     }
 
     private List<? extends Map<String, ?>> getData() {
@@ -144,6 +148,9 @@ public class FootPrintActivity extends Activity {
                                     mListView.setAdapter(adapter);
                                     nulldata.setVisibility(View.GONE);
                                     mListView.setVisibility(View.VISIBLE);
+
+                                    adapter.notifyDataSetChanged();
+                                    swiperefresh.setRefreshing(false);
                                 }
                             });
                         } else runOnUiThread(new Runnable() {
@@ -151,6 +158,8 @@ public class FootPrintActivity extends Activity {
                             public void run() {
                                 mListView.setVisibility(View.GONE);
                                 nulldata.setVisibility(View.VISIBLE);
+
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -180,5 +189,14 @@ public class FootPrintActivity extends Activity {
                 return mHashmap;
             }
         }).start();
+    }
+
+    private void swipe() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                dourl(st + "-01");
+            }
+        });
     }
 }

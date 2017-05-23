@@ -36,7 +36,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="1px"
                     android:layout_marginTop="10dp"
                     android:background="@color/gray_230x3"/>
 
@@ -62,12 +62,5 @@
         </ScrollView>
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/loadingimg"
-        android:background="@color/gray_transparent"
-        android:src="@mipmap/loadingimg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </RelativeLayout>

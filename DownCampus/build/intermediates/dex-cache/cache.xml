@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\universal-image-loader-1.9.5.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_dd028bc8b9decb9955842708bb05c99504f9943f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\glide-3.7.0.jar"
         jumboMode="true"
         optimize="true"
@@ -30,21 +21,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\universal-image-loader-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_dd028bc8b9decb9955842708bb05c99504f9943f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="081e429f736c75344a464f4a7d9f9b58b19436c8">
+        sha1="0491643c84e7ceb31a2ed90b437e6b7d1511eda0">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8886b3de08ef6064cc5bcb6ea793d641b01eeed9\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\AMap_Location_V3.3.0_20170118.jar"
+        jar="C:\Users\Z2z\.android\build-cache\a3ac7c43105b9244ab0f7e15896c7183aa6371ae\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="299ccce875c1bbd5eb2802923ae89946e22b7ee6">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\AMap_Location_V3.3.0_20170118_bc6704fb910d209ebd011dd17e253722260b9250\classes.dex" />
+        sha1="09760ff2313fe0b52cdc830045cd0266a03d1e78">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_95e8026fb80b09722c4f769b319b4c165d6869ab\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,12 +66,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\AMap_Location_V3.3.0_20170118.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="299ccce875c1bbd5eb2802923ae89946e22b7ee6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\AMap_Location_V3.3.0_20170118_bc6704fb910d209ebd011dd17e253722260b9250\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\okio-1.11.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\okio-1.11.0_3fce540844bf4fc613b0a7cf594377063964c509\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\1f236479d51e490f4f38e49e68ce968f5f223323\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d0df3bf618b078d102a4234ceff33c44026e64b9">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ac7a2fc09b69580c6b742e8193b52f6a54f4d60d\classes.dex" />
     </item>
     <item
         is-multidex="true"

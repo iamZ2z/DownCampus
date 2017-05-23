@@ -17,9 +17,9 @@
             android:layout_weight="1"
             android:background="@drawable/bord2"
             android:gravity="center"
-            android:text="我收到的"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:text="我的日志"
+            android:textColor="@color/blue_55x176x233"
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,14 +28,18 @@
             android:background="@drawable/bord2"
             android:gravity="center"
             android:text="我发出的"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textColor="@color/black_deep"
+            android:textSize="15sp" />
     </LinearLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </ListView>
-
+        android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

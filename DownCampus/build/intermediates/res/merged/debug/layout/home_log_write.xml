@@ -57,10 +57,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/bordblueround"/>
+                android:background="@drawable/bordblueround"
+                android:gravity="center"/>
 
         </LinearLayout>
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,35 +69,44 @@
             android:text="汇报内容："/>
 
         <EditText
-            android:id="@+id/et"
+            android:id="@+id/etcontent"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/bordblueround"/>
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bordblueround"
+            android:gravity="top"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/obj"
-                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableRight="@mipmap/nav_btn_add"
-                android:text="汇报对象："/>
-
-            <com.logan.widgets.MultiSpinner
-                android:id="@+id/spmulti"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/bordblueround"
                 android:gravity="center"
-                android:hint="点击选择汇报对象"
-                android:paddingLeft="15dp"/>
+                android:text="汇报对象:"/>
+
+            <TextView
+                android:id="@+id/tvname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:layout_weight="3"
+                android:background="@drawable/bordblueround"/>
+
+            <ImageView
+                android:id="@+id/btnadd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/report_btn_add"/>
 
         </LinearLayout>
     </LinearLayout>

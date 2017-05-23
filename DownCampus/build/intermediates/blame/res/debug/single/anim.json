@@ -4,16 +4,16 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\slide_out_to_left.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\head_in.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\head_in.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\anim\\design_fab_out.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\head_in.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\head_in.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_top_out2.xml",
@@ -21,19 +21,19 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_popup_enter.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
@@ -45,7 +45,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\anim\\design_fab_in.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\anim\\design_fab_in.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_dialog_scale_out.xml",
@@ -60,12 +60,16 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\voice_to_icon.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\popup_exit.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\anim\\popup_exit.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_from_right.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\slide_in_from_right.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\head_out.xml",
@@ -84,16 +88,24 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\anim\\voice_from_icon.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\popup_enter.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\anim\\popup_enter.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_fade_out.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\anim\\design_snackbar_in.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\decelerate_cubic.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\anim\\decelerate_cubic.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\anim\\design_snackbar_out.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_in.xml",
@@ -101,7 +113,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_slide_out_top.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_to_right.xml",
@@ -137,15 +149,15 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_fade_in.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_popup_exit.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\push_bottom_out.xml",
@@ -157,7 +169,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\anim\\abc_slide_in_top.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\anim\\pickerview_slide_out_bottom.xml",

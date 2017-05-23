@@ -2,9 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/white_247x3"
               android:orientation="vertical">
 
     <com.util.title.TitleBar style="@style/bar_title"/>
+
+    <TextView
+        android:id="@+id/teachername"
+        android:textColor="@color/gray_162x3"
+        android:text="教师"
+        android:padding="15dp"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,8 +35,11 @@
 
         <ListView
             android:id="@+id/list"
-            android:layout_above="@id/btn"
             android:layout_width="match_parent"
+            android:background="@color/white"
+            android:divider="@null"
+            android:layout_above="@id/btn"
+            android:dividerHeight="15dp"
             android:transcriptMode="normal"
             android:fastScrollEnabled="true"
             android:layout_height="wrap_content"/>

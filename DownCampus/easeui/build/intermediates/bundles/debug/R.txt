@@ -48,10 +48,10 @@ int attr titleBarRightImage 0x7f01001d
 int attr titleBarTitle 0x7f01001b
 int color bg_bottom 0x7f090000
 int color black_deep 0x7f090001
-int color blue_99x180x255 0x7f090002
-int color blue_appendix 0x7f090003
-int color blue_download 0x7f090004
-int color blue_theme 0x7f090005
+int color blue_55x176x233 0x7f090002
+int color blue_99x180x255 0x7f090003
+int color blue_appendix 0x7f090004
+int color blue_download 0x7f090005
 int color bottom_bar_normal_bg 0x7f090006
 int color bottom_text_color_normal 0x7f090007
 int color btn_answer_normal 0x7f090008

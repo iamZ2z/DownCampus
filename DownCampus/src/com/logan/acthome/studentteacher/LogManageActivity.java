@@ -3,6 +3,7 @@ package com.logan.acthome.studentteacher;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -12,7 +13,7 @@ import android.widget.SimpleAdapter;
 
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.acthome.more.WriteLog;
+import com.logan.acthome.more.WriteLogActivity;
 import com.logan.bean.LogManageBean;
 import com.logan.constant.InterfaceTest;
 import com.util.title.TitleBar;
@@ -45,8 +46,10 @@ public class LogManageActivity extends Activity {
     private ImageView mCollectView;
     private Intent mIntent;
     private InterfaceTest interfaceTest = new InterfaceTest();
-
     private List<? extends Map<String, ?>> data2;
+
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,7 @@ public class LogManageActivity extends Activity {
         initView();
 
         urllogmanage();
+        swipe();
     }
 
     private void initView() {
@@ -70,7 +74,7 @@ public class LogManageActivity extends Activity {
                 .nav_btn_add) {
             @Override
             public void performAction(View view) {
-                mIntent = new Intent(LogManageActivity.this, WriteLog.class);
+                mIntent = new Intent(LogManageActivity.this, WriteLogActivity.class);
                 startActivity(mIntent);
             }
         });
@@ -119,6 +123,9 @@ public class LogManageActivity extends Activity {
                                         .logtypeStr, R.id.createTime, R
                                         .id.readornot});
                                 mListView.setAdapter(mAdapter);
+
+                                mAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -142,5 +149,14 @@ public class LogManageActivity extends Activity {
             }
         }).start();
 
+    }
+
+    private void swipe() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                urllogmanage();
+            }
+        });
     }
 }

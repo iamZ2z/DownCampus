@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
@@ -65,9 +66,6 @@ public class MySignActivity extends Activity {
     //声明定位回调监听器
     public AMapLocationListener mLocationListener = null;
     public AMapLocationClientOption mLocationOption = null;
-    private String str;
-    // Thread thread;
-    private Handler handler = new Handler();
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
     @ViewInject(R.id.dayofweek)
@@ -75,17 +73,19 @@ public class MySignActivity extends Activity {
     @ViewInject(R.id.dayofyear)
     private TextView mDayofyear;
     private Calendar mCalendar = Calendar.getInstance();
-    @ViewInject(R.id.complain)
-    private TextView mComplain;
+    @ViewInject(R.id.upcomplain)
+    private TextView upcomplain;
+    @ViewInject(R.id.downcomplain)
+    private TextView downcomplain;
 
     private InterfaceTest interfaceTest = new InterfaceTest();
+    private UsuallyData usuallyData = new UsuallyData();
     private String mylocation = "";
-    private String gettime1;
-    private String gettime2;
+    private String gettime1="";
+    private String gettime2="";
     private String state1;
     private String state2;
     private String type = "check";
-    private UsuallyData usuallyData = new UsuallyData();
 
 
     @Override
@@ -95,51 +95,9 @@ public class MySignActivity extends Activity {
         x.view().inject(this);
 
         initView();
-        initTime();
+        initTime();//获取上班时间
+        urlloadsign();//加载签到时间
         initLocate();
-        urlloadsign();
-    }
-
-    private void initLocate() {
-        //初始化定位
-        mLocationClient = new AMapLocationClient(this);
-        //设置定位回调监听
-        mLocationClient.setLocationListener(mLocationListener);
-
-        //声明AMapLocationClientOption对象
-        //AMapLocationClientOption mLocationOption = null;
-        //初始化AMapLocationClientOption对象
-        mLocationOption = new AMapLocationClientOption();
-        mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
-        mLocationOption.setOnceLocation(true);
-        mLocationOption.setNeedAddress(true);
-        mLocationOption.setHttpTimeOut(10000);
-        mLocationClient.setLocationOption(mLocationOption);
-        //启动定位
-        mLocationClient.startLocation();
-
-        mLocationListener = new AMapLocationListener() {
-            @Override
-            public void onLocationChanged(AMapLocation aMapLocation) {
-                if (aMapLocation != null) {
-                    if (aMapLocation.getErrorCode() == 0) {
-                        tv_nowplace.setText("当前位置：" + aMapLocation.getAddress());
-                        mylocation = aMapLocation.getAddress();
-                    } else {
-                        Log.e("AmapError", "location Error, ErrCode:" + aMapLocation.getErrorCode
-                                () + ", errInfo:" + aMapLocation.getErrorInfo());
-                        Toast.makeText(MySignActivity.this, "无法定位，请检查网络", Toast.LENGTH_SHORT)
-                                .show();
-                    }
-                }
-            }
-        };
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mLocationClient.isStarted()) mLocationClient.onDestroy();//销毁定位客户端，同时销毁本地定位服务。
     }
 
     private void initView() {
@@ -190,14 +148,54 @@ public class MySignActivity extends Activity {
             default:
                 return;
         }
-
         mDayofyear.setText(mCalendar.get(Calendar.YEAR) + "-" + (mCalendar.get(Calendar.MONTH) +
                 1) + "-" + mCalendar.get(Calendar.DAY_OF_MONTH));
     }
 
+    private void initLocate() {
+        //初始化定位
+        mLocationClient = new AMapLocationClient(this);
+        //设置定位回调监听
+        mLocationClient.setLocationListener(mLocationListener);
+        //声明AMapLocationClientOption对象
+        //AMapLocationClientOption mLocationOption = null;
+        //初始化AMapLocationClientOption对象
+        mLocationOption = new AMapLocationClientOption();
+        mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+        mLocationOption.setOnceLocation(true);
+        mLocationOption.setNeedAddress(true);
+        mLocationOption.setHttpTimeOut(10000);
+        mLocationClient.setLocationOption(mLocationOption);
+        //启动定位
+        mLocationClient.startLocation();
+
+        mLocationListener = new AMapLocationListener() {
+            @Override
+            public void onLocationChanged(AMapLocation aMapLocation) {
+                if (aMapLocation != null) {
+                    if (aMapLocation.getErrorCode() == 0) {
+                        tv_nowplace.setText("当前位置：" + aMapLocation.getAddress());
+                        mylocation = aMapLocation.getAddress();
+                    } else {
+                        Log.e("AmapError", "location Error, ErrCode:" + aMapLocation.getErrorCode
+                                () + ", errInfo:" + aMapLocation.getErrorInfo());
+                        Toast.makeText(MySignActivity.this, "无法定位，请检查网络", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                }
+            }
+        };
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mLocationClient.isStarted()) mLocationClient.onDestroy();//销毁定位客户端，同时销毁本地定位服务。
+    }
+
     private void initTime() {
-        tv_uptime.setText("上班："+usuallyData.getCheckDate());
-        tv_downtime.setText("下班："+usuallyData.getSignOutDate());
+        tv_uptime.setText("上班：" + usuallyData.getCheckDate());
+        tv_downtime.setText("下班：" + usuallyData.getSignOutDate());
     }
 
     @Event(value = R.id.mysign_btnlocation)
@@ -207,42 +205,24 @@ public class MySignActivity extends Activity {
 
     @Event(value = R.id.mysign_sign)
     private void onSignClick(View v) {
-        int h = mCalendar.get(Calendar.HOUR_OF_DAY);
-        int m = mCalendar.get(Calendar.MINUTE);
-        if (h == 9 || (h == 10 && m == 0) || h == 18) {
-            mysign_sign.setImageResource(R.mipmap.sign_btn_in);
-            tv_upsign.setText(mCalendar.get(Calendar.HOUR_OF_DAY) + ":" + mCalendar.get(Calendar
-                    .MINUTE) + " 正常");
-            tv_upsign.setTextColor(Color.rgb(99, 180, 255));
-            Drawable drawable = getResources().getDrawable(R.mipmap.sign_icon_yes);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            tv_upsign.setCompoundDrawables(drawable, null, null, null);
-        } else {
-            mysign_sign.setImageResource(R.mipmap.sign_btn_none);
-            tv_upsign.setText(mCalendar.get(Calendar.HOUR_OF_DAY) + ":" + mCalendar.get(Calendar
-                    .MINUTE) + " 迟到");
-            tv_upsign.setTextColor(Color.rgb(242, 137, 12));
-            Drawable drawable = getResources().getDrawable(R.mipmap.sign_icon_no);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            tv_upsign.setCompoundDrawables(drawable, null, null, null);
-        }
-
         urlsign();
     }
 
-    @Event(value = R.id.complain)
+    @Event(value = {R.id.upcomplain, R.id.downcomplain})
     private void onComplainClick(View v) {
         mIntent = new Intent(this, SignActivity.class);
-        mIntent.putExtra("signlocation", str);
+        mIntent.putExtra("signlocation", mylocation);
         startActivity(mIntent);
     }
 
     private void urlloadsign() {
+        final MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         String url = interfaceTest.getServerurl() + interfaceTest.getAttendence();
         String token = interfaceTest.getToken();
         String user_id = interfaceTest.getUser_id();
-
-        final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).add("user_id", user_id)
                 .build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
@@ -250,7 +230,7 @@ public class MySignActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         mysign_sign.setClickable(true);
                         String str = response.body().string();
@@ -259,52 +239,8 @@ public class MySignActivity extends Activity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                if (mySignBean.getCode().equals("0")) {
-                                    gettime1 = mySignBean.getData().getTime1();
-                                    gettime2 = mySignBean.getData().getTime2();
-                                    state1 = mySignBean.getData().getState1();
-                                    state2 = mySignBean.getData().getState2();
-                                    if (!gettime1.equals("") || !gettime1.equals("null")) {
-                                        tv_upsign.setText(gettime1 + state1);
-                                        Drawable drawable;
-                                        if (state1.equals("正常")) {
-                                            tv_upsign.setTextColor(getResources().getColor(R
-                                                    .color.blue_download));
-                                            drawable = getResources().getDrawable(R.mipmap
-                                                    .sign_icon_yes);
-                                        } else {
-                                            tv_upsign.setTextColor(getResources().getColor(R
-                                                    .color.orange_242x137x12));
-                                            drawable = getResources().getDrawable(R.mipmap
-                                                    .sign_icon_no);
-                                        }
-                                        drawable.setBounds(0, 0, drawable.getMinimumWidth(),
-                                                drawable.getMinimumHeight());
-                                        tv_upsign.setCompoundDrawables(drawable, null, null, null);
-                                        type = "sign";
-                                        if (!gettime2.equals("") || !gettime2.equals("null")) {
-                                            tv_downsign.setText(gettime2 + state2);
-                                            Drawable drawable2;
-                                            if (state1.equals("正常")) {
-                                                tv_downsign.setTextColor(getResources().getColor(R
-                                                        .color.blue_download));
-                                                drawable2 = getResources().getDrawable(R.mipmap
-                                                        .sign_icon_yes);
-                                            } else {
-                                                tv_downsign.setTextColor(getResources().getColor(R
-                                                        .color.orange_242x137x12));
-                                                drawable2 = getResources().getDrawable(R.mipmap
-                                                        .sign_icon_no);
-                                            }
-                                            drawable2.setBounds(0, 0, drawable2.getMinimumWidth(),
-                                                    drawable2.getMinimumHeight());
-                                            tv_downsign.setCompoundDrawables(drawable2, null,
-                                                    null, null);
-                                        }
-                                    } else type = "check";
-                                } else
-                                    Toast.makeText(MySignActivity.this, "当天签到信息为空", Toast
-                                            .LENGTH_LONG).show();
+                                dialog.dismiss();
+                                loadsignData(mySignBean);
                             }
                         });
                     }
@@ -313,6 +249,53 @@ public class MySignActivity extends Activity {
                 }
             }
         }).start();
+    }
+
+
+
+    private void loadsignData(MySignBean mySignBean) {
+        if (mySignBean.getCode().equals("0")) {
+            gettime1 = mySignBean.getData().getTime1();
+            gettime2 = mySignBean.getData().getTime2();
+            state1 = mySignBean.getData().getState1();
+            state2 = mySignBean.getData().getState2();
+            if (!gettime1.equals("") || !gettime1.equals("null")) {
+                tv_upsign.setVisibility(View.VISIBLE);
+                tv_upsign.setText(gettime1 + " " + state1);
+                Drawable drawable;
+                if (state1.equals("正常")) {
+                    tv_upsign.setTextColor(getResources().getColor(R.color.blue_download));
+                    drawable = getResources().getDrawable(R.mipmap.sign_icon_yes);
+                    upcomplain.setVisibility(View.INVISIBLE);
+                } else {
+                    tv_upsign.setTextColor(getResources().getColor(R.color
+                            .orange_242x137x12));
+                    drawable = getResources().getDrawable(R.mipmap.sign_icon_no);
+                }
+                drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable
+                        .getMinimumHeight());
+                tv_upsign.setCompoundDrawables(drawable, null, null, null);
+                type = "sign";
+                if (!gettime2.equals("") || !gettime2.equals("null")) {
+                    tv_downsign.setVisibility(View.VISIBLE);
+                    tv_downsign.setText(gettime2 + " " + state2);
+                    Drawable drawable2;
+                    if (state1.equals("正常")) {
+                        tv_downsign.setTextColor(getResources().getColor(R.color.blue_download));
+                        drawable2 = getResources().getDrawable(R.mipmap.sign_icon_yes);
+                    } else {
+                        tv_downsign.setTextColor(getResources().getColor(R.color.orange_242x137x12));
+                        drawable2 = getResources().getDrawable(R.mipmap.sign_icon_no);
+                    }
+                    drawable2.setBounds(0, 0, drawable2.getMinimumWidth(), drawable2.getMinimumHeight());
+                    tv_downsign.setCompoundDrawables(drawable2, null, null, null);
+                } else tv_downsign.setVisibility(View.INVISIBLE);
+            } else type = "check";
+        } else {
+            Toast.makeText(MySignActivity.this, "当天签到信息为空", Toast.LENGTH_SHORT).show();
+            tv_upsign.setVisibility(View.INVISIBLE);
+            tv_downsign.setVisibility(View.INVISIBLE);
+        }
     }
 
     private void urlsign() {
@@ -332,10 +315,11 @@ public class MySignActivity extends Activity {
         int signm = Integer.parseInt(signtime[1]);
 
         if (h < checkh || (h == checkh && m <= checkm)) state = "正常";
-        else if (h > checkh && h < signh || (h == signh && m <= signm)) state = "早退";
-        else if ((h > checkh && h < signh) || (h == checkh && m > checkm && h < signh))
-            state = "迟到";
-
+        else if (!gettime2.equals("null")||!gettime2.equals("")) {
+            if ((h > checkh && h < signh) || (h == signh && m <= signm)) state = "早退";
+        } else if (gettime1.equals("null")||!gettime1.equals("")) {
+            if ((h > checkh && h < signh) || (h == checkh && m > checkm)) state = "迟到";
+        }
         String address = mylocation;
 
         if (!mylocation.equals("")) {
@@ -343,6 +327,7 @@ public class MySignActivity extends Activity {
                     .add("type", type).add("time", time).add("state", state).add("address", address)
                     .build();
             final Request request = new Request.Builder().url(url).post(formBody).build();
+            final String finalState = state;
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -351,14 +336,16 @@ public class MySignActivity extends Activity {
                         if (response.isSuccessful()) {
                             String str = response.body().string();
                             Log.e("sign的result", "请求数据:" + str);
-                            final SaveSignBean bean = new Gson().fromJson(str,
-                                    SaveSignBean.class);
+                            final SaveSignBean bean = new Gson().fromJson(str, SaveSignBean.class);
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     if (bean.getCode().equals("0")) {
+                                        urlloadsign();
                                         Toast.makeText(MySignActivity.this, bean.getMessage(),
                                                 Toast.LENGTH_SHORT).show();
+                                        urlsignData(finalState);
+                                        mysign_sign.setClickable(false);
                                     } else
                                         Toast.makeText(MySignActivity.this, bean.getMessage(),
                                                 Toast.LENGTH_SHORT).show();
@@ -372,4 +359,26 @@ public class MySignActivity extends Activity {
             }).start();
         } else Toast.makeText(MySignActivity.this, "请先定位", Toast.LENGTH_SHORT).show();
     }
+
+    private void urlsignData(String finalState) {
+        /*if (finalState.equals("正常")) {
+            mysign_sign.setImageResource(R.mipmap.sign_btn_in);
+            tv_upsign.setTextColor(Color.rgb(99, 180, 255));
+            Drawable drawable = getResources().getDrawable(R.mipmap.sign_icon_yes);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+            tv_upsign.setCompoundDrawables(drawable, null, null, null);
+        } else {
+            mysign_sign.setImageResource(R.mipmap.sign_btn_none);
+            tv_upsign.setTextColor(Color.rgb(242, 137, 12));
+            Drawable drawable = getResources().getDrawable(R.mipmap.sign_icon_no);
+            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+            tv_upsign.setCompoundDrawables(drawable, null, null, null);
+            if (finalState.equals("迟到")) upcomplain.setVisibility(View.VISIBLE);
+            else if (finalState.equals("早退")) downcomplain.setVisibility(View.VISIBLE);
+        }*/
+
+        if (finalState.equals("迟到")) upcomplain.setVisibility(View.VISIBLE);
+        else if (finalState.equals("早退")) downcomplain.setVisibility(View.VISIBLE);
+    }
+
 }

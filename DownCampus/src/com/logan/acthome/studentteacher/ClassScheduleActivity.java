@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.constant.InterfaceTest;
@@ -72,6 +73,10 @@ public class ClassScheduleActivity extends Activity implements OnClickListener {
     }
 
     private void initURLClassSchedule() {
+        final MaterialDialog dialog=new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getQueryschedule();
         String token = interfaceTest.getToken();
@@ -104,6 +109,7 @@ public class ClassScheduleActivity extends Activity implements OnClickListener {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                dialog.dismiss();
                                 getData(bean);
                                 mClassScheduleAdapter.notifyDataSetChanged();
                             }

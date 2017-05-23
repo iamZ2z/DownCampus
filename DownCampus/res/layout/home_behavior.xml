@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
 
-    <com.util.title.TitleBar style="@style/bar_title" />
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,45 +14,50 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <com.util.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/head"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="14dp"
-            android:src="@drawable/touxiang" />
+            android:src="@drawable/touxiang"/>
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:text="刘波"
             android:textColor="@color/white"
-            android:textSize="17dp" />
+            android:textSize="17dp"/>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginTop="70dp">
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="1px"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"/>
 
             <Spinner
                 android:id="@+id/sp_year"
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="50dp"
-                android:background="@drawable/bordblueround" />
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/line"
+                android:background="@drawable/bordblueround"/>
 
             <Spinner
-                android:layout_marginRight="50dp"
-                android:layout_gravity="right"
                 android:id="@+id/sp_term"
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
-                android:background="@drawable/bordblueround" />
-        </LinearLayout>
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/line"
+                android:background="@drawable/bordblueround"/>
+        </RelativeLayout>
     </LinearLayout>
 
     <ListView

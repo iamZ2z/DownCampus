@@ -11,11 +11,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.bumptech.glide.DrawableRequestBuilder;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.BehaviorBean;
 import com.logan.constant.InterfaceTest;
+import com.logan.constant.UsuallyData;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -28,6 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -42,15 +48,20 @@ public class BehaviorActivity extends Activity {
     String[] str_year = {"2017-02-15", "2017-02-01", "2017-03-01"};
     @ViewInject(R.id.sp_term)
     private Spinner sp_term;
-    String[] str_term = {"春季学期", "秋季学期"};
+    String[] str_term = {"春季(上学期)"};
     @ViewInject(R.id.list)
     private ListView list;
     private SimpleAdapter mAdapter;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
-
     private List<? extends Map<String, ?>> data;
 
+    @ViewInject(R.id.head)
+    private CircleImageView head;
+    @ViewInject(R.id.name)
+    private TextView name;
+    private InterfaceTest interfaceTest = new InterfaceTest();
+    private UsuallyData usuallyData=new UsuallyData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +77,24 @@ public class BehaviorActivity extends Activity {
         });
 
         initView();
-        sp_Year();
-        sp_Term();
+        initData();
 
+        spinneryear();
+        spinnerterm();
         dourl();
     }
 
-    private void sp_Year() {
+    private void initData() {
+        String imgurl = interfaceTest.getPicture();
+        DrawableRequestBuilder<Integer> thumbnailRequest = Glide.with(this).load(R.drawable
+                .touxiang);
+        Glide.with(this).load(imgurl).thumbnail(thumbnailRequest).diskCacheStrategy
+                (DiskCacheStrategy.ALL).into(head);
+
+        name.setText(usuallyData.getFullname());
+    }
+
+    private void spinneryear() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon,
                 str_year);
         adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
@@ -94,7 +116,7 @@ public class BehaviorActivity extends Activity {
         });
     }
 
-    private void sp_Term() {
+    private void spinnerterm() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon,
                 str_term);
         adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
@@ -128,19 +150,17 @@ public class BehaviorActivity extends Activity {
         mMap = new HashMap<>();
         mMap.put("title", "评语老师");
         mMap.put("rank", "评价");
-        mMap.put("content", "你是个聪明的孩子，接收能力强善于思考，作业能独立完成，爱动脑筋，还积极参与活动。");
+        mMap.put("content", "——");
         mMap.put("time", "2017-04");
         mHashmap.add(mMap);
         return mHashmap;
     }
 
     private void dourl() {
-        InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getParentsperformance();
         String token = interfaceTest.getToken();
         String studentId = interfaceTest.getStudentId();
 
-        final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).add("studentId",
                 studentId).add("pageNo", "1").build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
@@ -148,12 +168,11 @@ public class BehaviorActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("BehaviorBean的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        BehaviorBean accountListBean = gson.fromJson(str,
+                        BehaviorBean accountListBean = new Gson().fromJson(str,
                                 BehaviorBean.class);
                         data = getData2(accountListBean);
                         runOnUiThread(new Runnable() {

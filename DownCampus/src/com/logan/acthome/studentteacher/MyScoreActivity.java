@@ -5,6 +5,7 @@ import org.xutils.x;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.MyScoreBean;
@@ -48,11 +49,8 @@ public class MyScoreActivity extends Activity {
     @ViewInject(R.id.sp_name)
     private Spinner sp_name;
     String[] str_name = {"第一周周考", "第二周周考"};
-
     @ViewInject(R.id.btn_sure)
     private Button btn_sure;
-    @ViewInject(R.id.loadingimg)
-    private ImageView loadingimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +71,9 @@ public class MyScoreActivity extends Activity {
     }
 
     private void sp_Year() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.spinner_bluebord_icon, str_year);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp_year.setAdapter(adapter);
         sp_year.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -96,9 +94,9 @@ public class MyScoreActivity extends Activity {
     }
 
     private void sp_Term() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.spinner_bluebord_icon, str_term);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp_term.setAdapter(adapter);
         sp_term.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -121,7 +119,7 @@ public class MyScoreActivity extends Activity {
     private void sp_Type() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.spinner_bluebord_icon, str_type);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp_type.setAdapter(adapter);
         sp_type.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -143,7 +141,7 @@ public class MyScoreActivity extends Activity {
     private void sp_Name() {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.spinner_bluebord_icon, str_name);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp_name.setAdapter(adapter);
         sp_name.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -166,11 +164,14 @@ public class MyScoreActivity extends Activity {
 
     @Event(value = R.id.btn_sure)
     private void onSureClick(View v) {
-        loadingimg.setVisibility(View.VISIBLE);
         dourl();
     }
 
     private void dourl() {
+        final MaterialDialog dialog=new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getExamachievement();
         String token = interfaceTest.getToken();
@@ -192,15 +193,13 @@ public class MyScoreActivity extends Activity {
                             @Override
                             public void run() {
                                 if (bean.getCode().equals("0")) {
-                                    Intent intent = new Intent(MyScoreActivity.this,
-                                            MyScoreDetailActivity
-                                            .class);
+                                    Intent intent = new Intent(MyScoreActivity.this, MyScoreDetailActivity.class);
                                     intent.putExtra("myscore", bean);
                                     startActivity(intent);
                                 } else
                                     Toast.makeText(MyScoreActivity.this, "数据为空", Toast
                                             .LENGTH_SHORT).show();
-                                loadingimg.setVisibility(View.GONE);
+                                dialog.dismiss();
                             }
                         });
                     }

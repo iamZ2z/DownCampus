@@ -109,11 +109,4 @@
         android:textColor="@color/white_247x3"/>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/loadingimg"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/loadingimg"/>
-
 </RelativeLayout>

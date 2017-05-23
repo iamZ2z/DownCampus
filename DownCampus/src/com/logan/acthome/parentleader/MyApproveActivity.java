@@ -14,6 +14,7 @@ import org.xutils.view.annotation.ViewInject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -46,15 +47,16 @@ public class MyApproveActivity extends Activity {
     private SimpleAdapter mAdapter;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
-
     private Intent mIntent;
     @ViewInject(R.id.layout_type)
     private LinearLayout layout_type;
     @ViewInject(R.id.list_type)
     private ListView list_type;
     private String str_type[] = new String[]{"事假", "病假", "婚假"};
-
     private List<? extends Map<String, ?>> data;
+
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +79,8 @@ public class MyApproveActivity extends Activity {
             }
         });
         list_Listener();
-
         dourl();
+        swipe();
     }
 
     private void list_Listener() {
@@ -164,6 +166,8 @@ public class MyApproveActivity extends Activity {
                                     }
                                 });
 
+                                mAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -186,5 +190,14 @@ public class MyApproveActivity extends Activity {
                 return mHashmap;
             }
         }).start();
+    }
+
+    private void swipe() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                dourl();
+            }
+        });
     }
 }

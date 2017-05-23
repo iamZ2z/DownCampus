@@ -7,7 +7,7 @@ package com.logan.constant;
 public class InterfaceTest {
     //服务器
     final String serverurl="http://192.168.89.173:8080/iccp/api";//东东
-    //final String serverurl="http://lubo.logansoft.com:8080/iccp/api";//外网
+    //final String serverurl="http://lubo.logansoft.com:8080/api";//外网
     //final String serverurl="http://192.168.89.162:8080/iccp/api";//景喜
     //final String serverurl="http://192.168.89.177:8080/iccp/api";//绵科
     //final String serverurl="http://192.168.89.150:8080/iccp/api";//彦谨
@@ -18,7 +18,7 @@ public class InterfaceTest {
     //东东
     public static final String loginrole="/ums/roles.api";
     public static final String login ="/ums/checkUser.api";
-    public static final String loginout ="/ums/userLogout.api";
+    public static final String loginout ="/ums/logout.api";
     public static final String attendence ="/loadTeacherAttendance.api";
     public static final String currentterm ="/basic/getCurrentSemester.api";
     public static final String queryschedule ="/edu/querySyllabus.api";
@@ -38,7 +38,9 @@ public class InterfaceTest {
 
     //彦谨
     public static final String meetingquery ="/office/meeting/query.api";
+    public static final String meetingsave ="/office/meeting/save.api";
     public static final String logmanagequery ="/office/log/query.api";
+    public static final String logmanagesave ="/office/log/save.api";
     public static final String leavequery ="/office/leave/query.api";
     public static final String leavesave ="/office/leave/save.api";
     public static final String leaveaudit ="/office/leave/audit.api";
@@ -47,6 +49,8 @@ public class InterfaceTest {
     public static final String campusnewsquery ="/cms/content/query.api";
     public static final String campusactivityquery ="/cms/activity/query.api";
     public static final String organizationquery ="/office/organization/query.api";
+    public static final String queryorganizationlist ="/office/user/appList.api";
+    public static final String queryuser ="/office/user/query.api";
 
     //景喜
     public static final String parentschild ="/ums/childs.api";
@@ -75,9 +79,21 @@ public class InterfaceTest {
 
 
 
+    public static String getLogmanagesave() {
+        return logmanagesave;
+    }
 
+    public static String getMeetingsave() {
+        return meetingsave;
+    }
 
+    public static String getQueryorganizationlist() {
+        return queryorganizationlist;
+    }
 
+    public static String getQueryuser() {
+        return queryuser;
+    }
 
     public static String getOrganizationquery() {
         return organizationquery;

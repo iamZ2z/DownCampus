@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.acthome.more.MySeatView;
@@ -35,9 +36,6 @@ public class MySeatActivity extends Activity {
     private TitleBar titlebar;
     /*@ViewInject(R.id.seatview)
     private MySeatView seatview;*/
-    @ViewInject(R.id.loadingimg)
-    private ImageView loadingimg;
-
     @ViewInject(R.id.belowseatview)
     private TextView belowseatview;
     @ViewInject(R.id.li)
@@ -78,6 +76,10 @@ public class MySeatActivity extends Activity {
     }
 
     private void dourl() {
+        final MaterialDialog dialog=new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getStudentmyseat();
         String token = interfaceTest.getToken();
@@ -105,8 +107,8 @@ public class MySeatActivity extends Activity {
                                         .getClassNum()) / 8;*/
                                 int seatRow = accountListBean.getData().get(0).getSeatRow();
                                 int seatsort=accountListBean.getData().get(0).getSeatSort();
-                                loadingimg.setVisibility(View.GONE);
                                 initView(seatRow,seatsort);
+                                dialog.dismiss();
                             }
                         });
                     }

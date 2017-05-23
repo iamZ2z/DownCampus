@@ -1,4 +1,4 @@
-package com.logan.actnews;
+package com.easemob;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,12 +19,14 @@ import com.example.mobilecampus.R;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMClient;
+import com.logan.actnews.AddContactActivity;
+import com.logan.actnews.GroupManagerActivity;
 import com.logan.widgets.ClearEditText;
-import com.util.title.TitleBar;
+import com.util.address.AddressAdapter;
 import com.util.address.CharacterParser;
 import com.util.address.GroupMemberBean;
-import com.util.address.AddressAdapter;
 import com.util.address.PinyinComparator;
+import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -40,11 +42,9 @@ public class AddressActivity extends Activity {
     private ExpandableListView myExpandLv;
     @ViewInject(R.id.filter_edit)
     private ClearEditText myClearEt;
-
     @ViewInject(R.id.no_search_result_tv)
     private TextView noSearchResultTv;
     private AddressAdapter myAdapter;
-
     private List<GroupMemberBean> groupBeanList;
     private List<List<GroupMemberBean>> childBeanList = new ArrayList<>();
     //汉字转换成拼音的类
@@ -54,11 +54,9 @@ public class AddressActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
     private ImageView mCollectView;
-
     private List<String> listString;
     private List<GroupMemberBean> tempOne;
     private ArrayList<String> mArrayListresult = new ArrayList<>();
-
     @ViewInject(R.id.loadingimg)
     private ImageView loadingimg;
 
@@ -133,7 +131,7 @@ public class AddressActivity extends Activity {
 
     private void initEaseList() {
         listString = new ArrayList<>();
-        EMClient.getInstance().login("zjhissb", "123456", new EMCallBack() {
+        EMClient.getInstance().login("zzzjh", "123456", new EMCallBack() {
             @Override
             public void onSuccess() {
 
@@ -160,6 +158,13 @@ public class AddressActivity extends Activity {
                 Collections.sort(groupBeanList, pinyinComparator);
                 Collections.sort(tempOne, pinyinComparator);
                 childBeanList.add(tempOne);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        myExpandLv.expandGroup(0);
+                        myAdapter.notifyDataSetChanged();
+                    }
+                });
             }
 
             @Override
@@ -169,9 +174,6 @@ public class AddressActivity extends Activity {
         });
         //初始化时需要传入联系人list
         //mEaseContactlist.init(contactList);
-        //刷新列表
-        //mEaseContactlist.refresh();
-
         loadingimg.setVisibility(View.GONE);
     }
 

@@ -1,168 +1,109 @@
 package com.logan.adapter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import android.content.Context;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class CampusNewsAdapter extends BaseAdapter {	
-	private static final int TYPE_BIG = 0;
-	private static final int TYPE_NORNAL = 1;
-	private Context context;
-	// list
-	private ArrayList<HashMap<String, Object>> mArrayList=null;
-	private int[] layout;
-	private String[] from;
-	private int[] to;
+import com.bumptech.glide.DrawableRequestBuilder;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.mobilecampus.R;
 
-	public CampusNewsAdapter(Context context, ArrayList<HashMap<String, Object>> arr,
-			int[] layout,String[] from ,int[] to) {
-		this.context = context;
-		this.mArrayList=arr;
-		this.layout=layout;
-		this.from=from;
-		this.to=to;
-	}
+import java.util.HashMap;
+import java.util.List;
 
-	/*public int getItemViewType(int position) {
-		int result = 0;
-		if (mList.get(position) instanceof CampusNewsBigBean) {
-			result = TYPE_BIG;
-		} else if (mList.get(position) instanceof CampusNewsBean) {
-			result = TYPE_NORNAL;
-		}
-		return result;
-	}*/
+public class CampusNewsAdapter extends BaseAdapter {
+    private static final int TYPE_BIG = 0;
+    private static final int TYPE_NORNAL = 1;
+    private Context context;
+    private List<HashMap<String, Object>> arrayList;
 
-	@Override
-	public int getCount() {
-		return mArrayList.size();
-	}
+    public CampusNewsAdapter(Context context, List<HashMap<String, Object>> arr) {
+        this.context = context;
+        this.arrayList = arr;
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return position;
-	}
+    @Override
+    public int getCount() {
+        return arrayList.size();
+    }
 
-	@Override
-	public long getItemId(int position) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder viewHolder=null;
-		final int who=(Integer)mArrayList.get(position).get("scale");
-		convertView=LayoutInflater.from(context).inflate(layout[who==TYPE_BIG?0:1],null );
-		viewHolder=new ViewHolder();
-		viewHolder.title=(TextView)convertView.findViewById(to[who*2+0]);
-		viewHolder.contentType=(TextView)convertView.findViewById(to[who*2+1]);
-		viewHolder.dataTime=(TextView)convertView.findViewById(to[who*2+2]);
-		viewHolder.img=(ImageView)convertView.findViewById(to[who*2+3]);
-		viewHolder.title.setText((mArrayList.get(position).get(from[0]).toString()));
-		viewHolder.contentType.setText((mArrayList.get(position).get(from[1]).toString()));
-		viewHolder.dataTime.setText((mArrayList.get(position).get(from[2]).toString()));
-		viewHolder.img.setBackgroundResource((Integer)mArrayList.get(position).get(from[3]));		
-		return convertView;		
-	}
-	
-	private class ViewHolder{
-		TextView title;
-		TextView contentType;
-		TextView dataTime;
-		ImageView img;
-	}
+    @Override
+    public Object getItem(int position) {
+        return position;
+    }
 
-	/*@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolderBig holderBig = null;
-		ViewHolderNor holderNor = null;
-		int type = getItemViewType(position);
-		if (convertView == null) {
-			holderBig = new ViewHolderBig();
-			holderNor = new ViewHolderNor();
-			switch (type) {
-			case TYPE_BIG:
-				convertView = View.inflate(context,
-						R.adapter_photo_item.item_campusnews_big, null);
-				holderBig.title = (TextView) convertView
-						.findViewById(R.id.title);
-				holderBig.contentType = (TextView) convertView
-						.findViewById(R.id.place);
-				holderBig.dataTime = (TextView) convertView
-						.findViewById(R.id.time);
-				holderBig.img = (ImageView) convertView.findViewById(R.id.img);
-				convertView.setTag(R.id.tag_big, holderBig);
-				break;
-			case TYPE_NORNAL:
-				convertView = View.inflate(context, R.adapter_photo_item.item_campusnews,
-						null);
-				holderNor.title = (TextView) convertView
-						.findViewById(R.id.title2);
-				holderNor.contentType = (TextView) convertView
-						.findViewById(R.id.place2);
-				holderNor.dataTime = (TextView) convertView
-						.findViewById(R.id.time2);
-				holderNor.img = (ImageView) convertView.findViewById(R.id.img2);
-				convertView.setTag(R.id.tag_normal, holderNor);
-				break;
-			default:
-				break;
-			}
-		} else {
-			switch (type) {
-			case TYPE_BIG:
-				holderBig = (ViewHolderBig) convertView.getTag(R.id.tag_big);
-				break;
-			case TYPE_NORNAL:
-				holderNor = (ViewHolderNor) convertView.getTag(R.id.tag_normal);
-				break;
-			default:
-				break;
-			}
-		}
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
 
-		Object obj = mList.get(position);
-		switch (type) {
-		case TYPE_BIG:
-			CampusNewsBigBean bigBean = (CampusNewsBigBean) obj;
-			holderBig.title.setText(bigBean.getTitle());
-			holderBig.contentType.setText(bigBean.getContentType());
-			holderBig.dataTime.setText(bigBean.getDataTime());
-			//holderBig.img.setImageURI(Uri.parse(bigBean.getImg_str()));
-			holderBig.img.setBackgroundResource(bigBean.getImg_str());
-			break;
-		case TYPE_NORNAL:
-			CampusNewsBean bean = (CampusNewsBean) obj;
-			holderNor.title.setText("");
-			holderNor.contentType.setText("");
-			holderNor.dataTime.setText("");
-			holderNor.img.setBackgroundResource(bean.getImg_str());
-			break;
-		default:
-			break;
-		}
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolderBig viewHolderBig = null;
+        ViewHolder viewHolder = null;
+        if (convertView == null) {
+            if (position % 5 == 0) {
+                convertView = LinearLayout.inflate(context, R.layout.item_campusnews_big, null);
+                viewHolderBig = new ViewHolderBig();
+                viewHolderBig.img = (ImageView) convertView.findViewById(R.id.img);
+                viewHolderBig.title = (TextView) convertView.findViewById(R.id.title);
+                viewHolderBig.type = (TextView) convertView.findViewById(R.id.type);
+                viewHolderBig.date = (TextView) convertView.findViewById(R.id.date);
+            } else {
+                convertView = LinearLayout.inflate(context, R.layout.item_campusnews, null);
+                viewHolder = new ViewHolder();
+                viewHolder.img2 = (ImageView) convertView.findViewById(R.id.img2);
+                viewHolder.title2 = (TextView) convertView.findViewById(R.id.title2);
+                viewHolder.type2 = (TextView) convertView.findViewById(R.id.type2);
+                viewHolder.date2 = (TextView) convertView.findViewById(R.id.date2);
+            }
+        } else {
+            if (position % 5 == 0) {
+                viewHolderBig = (ViewHolderBig) convertView.getTag();
+            } else viewHolder = (ViewHolder) convertView.getTag();
+        }
 
-		return convertView;
-	}
+        if (position % 5 == 0) {
+            DrawableRequestBuilder<Integer> thumbnailRequest = Glide.with(context).load(R.drawable
+                    .upload);
+            Glide.with(context).load(arrayList.get(position).get("img").toString()).thumbnail
+                    (thumbnailRequest).diskCacheStrategy(DiskCacheStrategy.ALL).into
+                    (viewHolderBig.img);
+            viewHolderBig.title.setText(arrayList.get(position).get("title").toString());
+            viewHolderBig.type.setText("综合实践");
+            Log.e("type",viewHolderBig.type.getText().toString());
+            viewHolderBig.date.setText(arrayList.get(position).get("date").toString());
+            Log.e("date",viewHolderBig.date.getText().toString());
+        } else {
+            DrawableRequestBuilder<Integer> thumbnailRequest = Glide.with(context).load(R.drawable
+                    .upload);
+            Glide.with(context).load(arrayList.get(position).get("img").toString()).thumbnail
+                    (thumbnailRequest).diskCacheStrategy(DiskCacheStrategy.ALL).into(viewHolder
+                    .img2);
+            viewHolder.title2.setText(arrayList.get(position).get("title").toString());
+            viewHolder.type2.setText("综合实践");
+            viewHolder.date2.setText(arrayList.get(position).get("date").toString());
+        }
+        return convertView;
+    }
 
-	private class ViewHolderBig {
-		TextView title;
-		TextView contentType;
-		TextView dataTime;
-		ImageView img;
-	}
+    private class ViewHolderBig {
+        ImageView img;
+        TextView title;
+        TextView type;
+        TextView date;
+    }
 
-	private class ViewHolderNor {
-		TextView title;
-		TextView contentType;
-		TextView dataTime;
-		ImageView img;
-	}*/
+    private class ViewHolder {
+        ImageView img2;
+        TextView title2;
+        TextView type2;
+        TextView date2;
+    }
+
 }

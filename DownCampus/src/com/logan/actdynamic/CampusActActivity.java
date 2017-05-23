@@ -3,6 +3,7 @@ package com.logan.actdynamic;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -11,8 +12,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
+import com.logan.adapter.CampusActAdapter;
 import com.logan.bean.CampusActBean;
 import com.logan.constant.InterfaceTest;
 import com.util.title.TitleBar;
@@ -32,6 +35,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static com.example.mobilecampus.R.id.img;
+
 @ContentView(R.layout.find_campusact)
 public class CampusActActivity extends Activity implements OnItemClickListener {
     private Intent mIntent;
@@ -43,9 +48,12 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
     private HashMap<String, Object> mMap;
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
     private InterfaceTest interfaceTest = new InterfaceTest();
     private List<? extends Map<String, ?>> data;
+
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
+    private CampusActAdapter campusActAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +62,10 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
         x.view().inject(this);
         initView();
 
-        mAdapter = new SimpleAdapter(this, getData(), R.layout.item_campusact,
-                new String[]{"img", "title", "type", "place", "data"},
-                new int[]{R.id.img, R.id.title, R.id.type, R.id.place,
-                        R.id.data});
-        mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(this);
 
         urlcampusact();
-
+        swipe();
     }
 
     private void initView() {
@@ -84,38 +87,20 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
         mMap.put("place", "体育运动场");
         mMap.put("data", "2017-03-01 12:00");
         mHashmap.add(mMap);
-
-        mMap = new HashMap<String, Object>();
-        mMap.put("img", R.drawable.upload);
-        mMap.put("title", "伶仃希望小学帝第七届校运会");
-        mMap.put("type", "活动类型：学校运动场");
-        mMap.put("place", "体育运动场");
-        mMap.put("data", "2017-03-01 12:00");
-        mHashmap.add(mMap);
         return mHashmap;
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        // String titles=mHashmap.get(position).get("title");
-        /*
-         * Map<String, Object> map = (Map<String, Object>)
-		 * CampusActActivity.this.mAdapter .getItem(position);
-		 */
-
-        //Bitmap img= mHashmap.get(position).get("img");
-        String title = mHashmap.get(position).get("title").toString();
-        String type = mHashmap.get(position).get("type").toString();
-        String place = mHashmap.get(position).get("place").toString();
-        String data = mHashmap.get(position).get("data").toString();
-        String description = mHashmap.get(position).get("description").toString();
-        String remark = mHashmap.get(position).get("remark").toString();
-
         mIntent = new Intent(this, CampusActDetailActivity.class);
         mIntent.putExtra("campusact", mHashmap.get(position));
         startActivity(mIntent);
     }
 
     private void urlcampusact() {
+        final MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         String url = interfaceTest.getServerurl() + interfaceTest.getCampusactivityquery();
         String token = interfaceTest.getToken();
         final OkHttpClient client = new OkHttpClient();
@@ -130,18 +115,19 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
                         String str = response.body().string();
                         Log.e("urlCampusAct的result", "请求数据:" + str);
                         Gson gson = new Gson();
-                        CampusActBean accountListBean = gson.fromJson(str,
+                        final CampusActBean accountListBean = gson.fromJson(str,
                                 CampusActBean.class);
-                        data = getData2(accountListBean);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //放入list
-                                mAdapter = new SimpleAdapter(CampusActActivity.this, data, R
-                                        .layout.item_campusact, new String[]{"img", "title",
-                                        "type", "place", "data"}, new int[]{R.id.img, R.id.title,
-                                        R.id.type, R.id.place, R.id.data});
-                                mListView.setAdapter(mAdapter);
+                                getData2(accountListBean);
+                                campusActAdapter = new CampusActAdapter(CampusActActivity.this,
+                                        mHashmap);
+
+                                mListView.setAdapter(campusActAdapter);
+                                dialog.dismiss();
+                                campusActAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -150,25 +136,29 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
                 }
             }
 
-            private List<? extends Map<String, ?>> getData2(CampusActBean accountListBean) {
+            private void getData2(CampusActBean bean) {
                 mHashmap = new ArrayList<>();
-                for (int j = 0; j < accountListBean.getData().size(); j++) {
+                for (int j = 0; j < bean.getData().size(); j++) {
                     mMap = new HashMap<>();
-                    mMap.put("img", "https://timgsa.baidu" +
-                            ".com/timg?image&quality=80&size=b9999_10000&sec=1493126948527&di" +
-                            "=6cd3cc4f72b57af4d44a88354f0edfaa&imgtype=0&src=http%3A%2F%2Fs.news" +
-                            ".bandao.cn%2Fnews_upload%2F201704%2F20170424094443_13AX1MEV.jpg");
-                    mMap.put("title", accountListBean.getData().get(j).getName());
+                    mMap.put("img", bean.getData().get(j).getImage());
+                    mMap.put("title", bean.getData().get(j).getName());
                     mMap.put("type", "活动类型：学校运动场");
-                    mMap.put("place", accountListBean.getData().get(j).getAddress());
-                    mMap.put("data", accountListBean.getData().get(j).getCreateTime());
-
-                    mMap.put("description", accountListBean.getData().get(j).getDescription());
-                    mMap.put("remark", accountListBean.getData().get(j).getRemark());
+                    mMap.put("place", bean.getData().get(j).getAddress());
+                    mMap.put("data", bean.getData().get(j).getCreateTime());
+                    mMap.put("description", bean.getData().get(j).getDescription());
+                    mMap.put("remark", bean.getData().get(j).getRemark());
                     mHashmap.add(mMap);
                 }
-                return mHashmap;
             }
         }).start();
+    }
+
+    private void swipe() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                urlcampusact();
+            }
+        });
     }
 }

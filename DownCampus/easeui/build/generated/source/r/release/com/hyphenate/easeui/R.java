@@ -278,10 +278,10 @@ containing a value of this type.
     public static final class color {
         public static int bg_bottom=0x7f090000;
         public static int black_deep=0x7f090001;
-        public static int blue_99x180x255=0x7f090002;
-        public static int blue_appendix=0x7f090003;
-        public static int blue_download=0x7f090004;
-        public static int blue_theme=0x7f090005;
+        public static int blue_55x176x233=0x7f090002;
+        public static int blue_99x180x255=0x7f090003;
+        public static int blue_appendix=0x7f090004;
+        public static int blue_download=0x7f090005;
         public static int bottom_bar_normal_bg=0x7f090006;
         public static int bottom_text_color_normal=0x7f090007;
         public static int btn_answer_normal=0x7f090008;

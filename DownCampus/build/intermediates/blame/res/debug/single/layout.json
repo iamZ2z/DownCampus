@@ -8,6 +8,10 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\me_editdata.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_stub_titleframe.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_stub_titleframe.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\option_rate.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\option_rate.xml"
     },
@@ -17,7 +21,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_template_part_time.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_log_check.xml",
@@ -26,6 +30,10 @@
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_studentattendance_list.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_studentattendance_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_input.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_input.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_picture.xml",
@@ -52,16 +60,16 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_examarrange.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_widget_emojicon.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_myseat.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_myseat.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_emojicon.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_widget_emojicon.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\me_option.xml",
@@ -69,19 +77,19 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_alert_dialog_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_workrest.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_workrest.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_leaverecord.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_leaverecord.xml"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\find_classact.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\find_classact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_leaverecord.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_leaverecord.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\searchbar_item.xml",
@@ -100,20 +108,20 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_row_sent_voice_call.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\gf_adapter_preview_viewpgaer_item.xml",
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\8b5635b9e61f7b91380f4876e321f5b74bd43299\\output\\res\\layout\\gf_adapter_preview_viewpgaer_item.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_template_lines_media.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_row_received_voice.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_commom_back_btn.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_commom_back_btn.xml"
-    },
-    {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_row_received_voice.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_newschat.xml",
@@ -121,7 +129,11 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_select_dialog_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_input_check.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_input_check.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_approvesearch.xml",
@@ -137,7 +149,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_newsdetails.xml",
@@ -154,6 +166,10 @@
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_chat_history.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_row_chat_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_basic.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_basic.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_homefragment.xml",
@@ -176,16 +192,20 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_widget_chat_primary_menu.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_stub_titleframe_lesspadding.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_stub_titleframe_lesspadding.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\gf_adapter_edit_list.xml",
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\8b5635b9e61f7b91380f4876e321f5b74bd43299\\output\\res\\layout\\gf_adapter_edit_list.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_template_media_custom.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_template_media_custom.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\autocomplete_item.xml",
@@ -204,12 +224,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_layout_chat_primary_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tab2.xml",
@@ -221,31 +241,31 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_template_media.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\me_groupmanager.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\me_groupmanager.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\me_editdata_crop.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\me_editdata_crop.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\me_editdata_crop.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\me_editdata_crop.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\activity_advertisement.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\activity_advertisement.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_expression.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_row_expression.xml"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\activity_crop.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\activity_crop.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_expression.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_row_expression.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar_with_padding.xml",
@@ -261,7 +281,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_template_part_chronometer.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_voice_call.xml",
@@ -277,11 +297,11 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_navigation_item_header.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_navigation_item_header.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_layout_tab_icon.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
@@ -289,11 +309,15 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_action_bar_up_container.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_progress_indeterminate.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_progress_indeterminate.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_navigation_item_separator.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_log_write.xml",
@@ -301,7 +325,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_layout_emojicon_menu.xml",
@@ -317,19 +341,23 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_action.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_listitem_multichoice.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_listitem_multichoice.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_showvideo_activity.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_showvideo_activity.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_chat.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_fragment_chat.xml"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\pickerview_options.xml",
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\layout\\pickerview_options.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_chat.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_fragment_chat.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_contact.xml",
@@ -341,7 +369,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_bottom_navigation_item.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_classdynamic_more_gridimage.xml",
@@ -393,7 +421,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_myapprove.xml",
@@ -401,19 +429,23 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_screen_content_include.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_screen_content_include.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_activity_chooser_view.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_newschat2.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\item_newschat2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_stub_actionbuttons.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_stub_actionbuttons.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tab1.xml",
@@ -421,7 +453,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_action_mode_bar.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\news_addcontact.xml",
@@ -433,7 +465,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_screen_toolbar.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_behavior_list.xml",
@@ -444,16 +476,24 @@
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\layout\\layout_basepickerview.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_basic_check.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_basic_check.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_custom.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\dialog_custom.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_layout_snackbar_include.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_text_input_password_icon.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_custom.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_custom.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tab1_grid.xml",
@@ -509,7 +549,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_meetingmanage.xml",
@@ -533,11 +573,11 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_dialog_title_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_teacherrate.xml",
@@ -569,15 +609,23 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_action_menu_layout.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_list.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_list.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_navigation_menu.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_progress_indeterminate_horizontal.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_progress_indeterminate_horizontal.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_chat_message_list.xml",
@@ -633,7 +681,11 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_layout_snackbar.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_list_check.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_list_check.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_conversation_list.xml",
@@ -652,20 +704,28 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\news_newsdetails.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_listitem.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_listitem.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\spinnerdropdownitem.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\spinnerdropdownitem.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_chooseobj.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\item_chooseobj.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_layout_tab_text.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_layout_tab_text.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_address.xml",
@@ -673,7 +733,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\gf_adapter_folder_list_item.xml",
@@ -685,7 +745,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_search_view.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_search_view.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\news_addcontactdetail.xml",
@@ -717,7 +777,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_navigation_item_subheader.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_conversation.xml",
@@ -733,7 +793,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_bigexpression.xml",
@@ -749,7 +809,11 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_campusnews_all.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\item_campusnews_all.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_emojicon.xml",
@@ -765,7 +829,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_navigation_menu_item.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\searchbar_newsfragment.xml",
@@ -805,11 +869,11 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_screen_simple.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_action_bar_title_item.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_received_video.xml",
@@ -821,7 +885,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_approve.xml",
@@ -840,6 +904,14 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_classschedule.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_chooseobject.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_chooseobject.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_listitem_singlechoice.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_listitem_singlechoice.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_approve_detail.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_approve_detail.xml"
     },
@@ -849,7 +921,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\notification_template_icon_group.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\notification_template_icon_group.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_logmanage.xml",
@@ -865,7 +937,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tab4.xml",
@@ -876,20 +948,24 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_studentattendance.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_progress.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_progress.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_meetingmanage_list.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\home_meetingmanage_list.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_navigation_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\em_layout_loading_data.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\em_layout_loading_data.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\sp_bluebordgrayword.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\sp_bluebordgrayword.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\em_layout_loading_data.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\em_layout_loading_data.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_fragment_contact_list.xml",
@@ -904,8 +980,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\layout\\ease_row_received_video_call.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\item_stuattenhead.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\item_stuattenhead.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\layout\\design_menu_item_action_area.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_voice_recorder.xml",
@@ -913,7 +993,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\home_approve_list.xml",
@@ -921,7 +1001,7 @@
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_file.xml",

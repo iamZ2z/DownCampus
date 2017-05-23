@@ -8,7 +8,7 @@
     -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@color/white_247x3</item>
-        <item name="colorPrimary">@color/blue_theme</item>
+        <item name="colorPrimary">@color/blue_55x176x233</item>
         <item name="colorPrimaryDark">#ffffff</item>
         <item name="colorAccent">#cccccc</item>
         <!--
@@ -44,7 +44,7 @@
         <item name="android:id">@id/title_bar</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/blue_theme</item>
+        <item name="android:background">@color/blue_55x176x233</item>
     </style>
 
     <style name="AppBaseTheme.NoActionBar">

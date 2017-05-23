@@ -19,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.ExamArrangeBean;
@@ -46,8 +47,6 @@ public class ExamArrange extends Activity {
     private Spinner sp_name;
     @ViewInject(R.id.btn_sure)
     private Button btn_sure;
-    @ViewInject(R.id.loadingimg)
-    private ImageView loadingimg;
 
     String[] str_year = {"2015-2016", "2016-2017"};
     String[] str_term = {"春季学期", "秋季学期"};
@@ -156,11 +155,15 @@ public class ExamArrange extends Activity {
 
     @Event(value = R.id.btn_sure)
     private void onSureClick(View v) {
-        loadingimg.setVisibility(View.VISIBLE);
         dourl();
     }
 
     private void dourl() {
+        final MaterialDialog dialog=new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
+
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getExamquery();
         String token = interfaceTest.getToken();
@@ -189,7 +192,7 @@ public class ExamArrange extends Activity {
                                 } else
                                     Toast.makeText(ExamArrange.this, "数据为空", Toast.LENGTH_SHORT)
                                             .show();
-                                loadingimg.setVisibility(View.GONE);
+                                dialog.dismiss();
                             }
                         });
                     }

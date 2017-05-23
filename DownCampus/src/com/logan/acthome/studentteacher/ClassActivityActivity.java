@@ -18,6 +18,7 @@ import com.util.title.TitleBar;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -37,26 +38,24 @@ import okhttp3.Response;
 public class ClassActivityActivity extends Activity {
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
-
     @ViewInject(R.id.sp_subject)
     private Spinner sp_subject;
     String[] str_subject = {"全部", "课内", "课外"};
-
     @ViewInject(R.id.sp_begindata)
     private Spinner sp_begindata;
     String[] str_begindata = {"2017-02-15", "2017-02-01", "2017-03-01"};
-
     @ViewInject(R.id.sp_enddata)
     private Spinner sp_enddata;
     String[] str_enddata = {"2017-02-15", "2017-02-01", "2017-03-01"};
-
     @ViewInject(R.id.list)
     private ListView list;
     private SimpleAdapter mAdapter;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
-
     private List<? extends Map<String, ?>> data;
+
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
 
 
     @Override
@@ -71,6 +70,7 @@ public class ClassActivityActivity extends Activity {
         spinner_enddata();
 
         dourl();
+        swipe();
     }
 
     private void initView() {
@@ -168,7 +168,6 @@ public class ClassActivityActivity extends Activity {
         return mHashmap;
     }
 
-
     private void dourl() {
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getClassactivity();
@@ -202,6 +201,9 @@ public class ClassActivityActivity extends Activity {
                                         .leavetime, R.id.content, R.id.subject,
                                         R.id.author});
                                 list.setAdapter(mAdapter);
+
+                                mAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -255,6 +257,16 @@ public class ClassActivityActivity extends Activity {
             }
         }).start();
 
+    }
+
+
+    private void swipe() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                dourl();
+            }
+        });
     }
 
 

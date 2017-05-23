@@ -1,34 +1,46 @@
 [
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\md_btn_selector_ripple_dark.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\drawable-v21\\md_btn_selector_ripple_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\md_btn_shape.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\drawable-v21\\md_btn_shape.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\drawable-v21\\notification_action_background.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\md_btn_selector_ripple.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\drawable-v21\\md_btn_selector_ripple.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\drawable-v21\\avd_hide_password.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\drawable-v21\\avd_show_password.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\drawable-v21\\avd_show_password.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\8280b019aca5e64b153709493cc840a33d724c24\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\23a3bd12bbfe0b937e50f14e40d0e268324d633b\\output\\res\\drawable-v21\\design_password_eye.xml"
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\drawable-v21\\design_password_eye.xml"
     }
 ]

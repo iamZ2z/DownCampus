@@ -39,12 +39,10 @@ public class CampusActDetailActivity extends Activity implements OnClickListener
     private TextView remark;
     @ViewInject(R.id.appendix)
     private TextView appendix;
-
     @ViewInject(R.id.download)
     private Button download;
     @ViewInject(R.id.sign)
     private Button sign;
-
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
 

@@ -117,7 +117,7 @@ public class WorkRestActivity extends Activity {
         list2.add("春季学期");
         list2.add("冬季学期");
         adapter2 = new ArrayAdapter<>(this, R.layout.spinner_workrest, list2);
-        adapter2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        adapter2.setDropDownViewResource(R.layout.spinnerdropdownitem);
         mSpinner2.setAdapter(adapter2);
         mSpinner2.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override

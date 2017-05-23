@@ -26,10 +26,10 @@
             android:id="@+id/switchpush"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:sb_checked_color="@color/blue_theme"
+            app:sb_checked_color="@color/blue_55x176x233"
             android:layout_alignParentRight="true"
             app:sb_background="@color/gray_162x3"
-            app:sb_checkline_color="@color/blue_theme"
+            app:sb_checkline_color="@color/blue_55x176x233"
             app:sb_effect_duration="300" />
 
     </RelativeLayout>
@@ -52,11 +52,11 @@
             android:id="@+id/switchmusic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:sb_checked_color="@color/blue_theme"
+            app:sb_checked_color="@color/blue_55x176x233"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
             app:sb_background="@color/gray_162x3"
-            app:sb_checkline_color="@color/blue_theme"
+            app:sb_checkline_color="@color/blue_55x176x233"
             app:sb_effect_duration="300" />
 
     </RelativeLayout>
@@ -80,11 +80,11 @@
             android:id="@+id/switchvibrate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:sb_checked_color="@color/blue_theme"
+            app:sb_checked_color="@color/blue_55x176x233"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
             app:sb_background="@color/gray_162x3"
-            app:sb_checkline_color="@color/blue_theme"
+            app:sb_checkline_color="@color/blue_55x176x233"
             app:sb_effect_duration="300" />
 
     </RelativeLayout>

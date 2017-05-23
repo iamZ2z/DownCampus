@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -16,12 +17,12 @@ import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bigkoo.pickerview.TimePickerView;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.constant.InterfaceTest;
 import com.logan.bean.MeetingManagerBean;
-import com.logan.widgets.MultiSpinner;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -64,9 +65,9 @@ public class MeetingManage extends Activity {
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
     private Intent mIntent;
-    @ViewInject(R.id.loadingimg)
-    private ImageView loadingimg;
 
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,7 @@ public class MeetingManage extends Activity {
         spinner_subject();
 
         urlmeeting();
+        swipe();
     }
 
     @Event(value = R.id.tv_date_begin)
@@ -139,7 +141,7 @@ public class MeetingManage extends Activity {
 
     private void spinner_subject() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.sp_bluebordgrayword, str_subject);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp_subject.setAdapter(adapter);
         sp_subject.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -168,6 +170,10 @@ public class MeetingManage extends Activity {
     }
 
     private void urlmeeting() {
+        final MaterialDialog dialog=new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         InterfaceTest interfaceTest=new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getMeetingquery();
         String token = interfaceTest.getToken();
@@ -181,6 +187,7 @@ public class MeetingManage extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlmeeting的result", "请求数据:" + str);
+
                         final MeetingManagerBean accountListBean = new Gson().fromJson(str,
                                 MeetingManagerBean.class);
                         for (int i = 0; i < accountListBean.getList().size(); i++) {
@@ -191,12 +198,15 @@ public class MeetingManage extends Activity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                loadingimg.setVisibility(View.GONE);
                                 mAdapter = new SimpleAdapter(MeetingManage.this, getData2
                                         (accountListBean), R.layout.home_meetingmanage_list, new
                                         String[]{"title", "content", "time"}, new int[]{R.id.title,
                                         R.id.content, R.id.leavetime});
                                 list.setAdapter(mAdapter);
+                                dialog.dismiss();
+
+                                mAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -217,6 +227,15 @@ public class MeetingManage extends Activity {
                 return mHashmap;
             }
         }).start();
+    }
+
+    private void swipe() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                urlmeeting();
+            }
+        });
     }
 
 }

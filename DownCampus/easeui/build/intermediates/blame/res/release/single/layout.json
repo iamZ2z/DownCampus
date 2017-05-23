@@ -168,12 +168,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\res\\layout\\ease_layout_chat_primary_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\res\\merged\\release\\layout\\ease_row_sent_bigexpression.xml",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\res\\layout\\ease_row_sent_bigexpression.xml"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\res\\merged\\release\\layout\\ease_row_sent_picture.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\res\\layout\\ease_row_sent_picture.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\res\\merged\\release\\layout\\ease_row_sent_bigexpression.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\res\\layout\\ease_row_sent_bigexpression.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\res\\merged\\release\\layout\\ease_row_contact.xml",

@@ -4,8 +4,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <com.util.title.TitleBar
-        style="@style/bar_title"/>
+    <com.util.title.TitleBar style="@style/bar_title"/>
 
     <LinearLayout
         android:id="@+id/layout_type"
@@ -34,7 +33,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:layout_marginBottom="10dp"
         android:background="@color/gray_230x3"/>
 
@@ -42,17 +41,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white_247x3">
-        </ListView>
+            android:background="@color/white_247x3"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
 
         <ListView
             android:id="@+id/list_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0px"
             android:visibility="gone"/>
 
     </FrameLayout>

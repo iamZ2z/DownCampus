@@ -2,7 +2,9 @@ package com.logan.actme;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,6 +12,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.hyphenate.easeui.controller.EaseUI;
 import com.logan.constant.InterfaceTest;
@@ -36,9 +40,10 @@ import okhttp3.Response;
 @ContentView(R.layout.me_option)
 public class OptionActivity extends Activity implements OnClickListener {
     private Intent mIntent;
-    private Button option_message, option_help, option_rate, option_about;
+    private TextView option_message, option_help, option_rate, option_about;
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
+
     @ViewInject(R.id.dataclean)
     private Button btn_dataclean;
     @ViewInject(R.id.dataclean_num)
@@ -46,9 +51,9 @@ public class OptionActivity extends Activity implements OnClickListener {
     @ViewInject(R.id.btn_exit)
     private Button btn_exit;
     //private String url = "http://192.168.89.173:8080/iccp/api/ums/userLogout.api";
-    private String url="";
-    private String token="";
-    private InterfaceTest interfaceTest=new InterfaceTest();
+    private String url = "";
+    private String token = "";
+    private InterfaceTest interfaceTest = new InterfaceTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +66,12 @@ public class OptionActivity extends Activity implements OnClickListener {
         option_rate.setOnClickListener(this);
         option_about.setOnClickListener(this);
 
-        url=interfaceTest.getServerurl()+interfaceTest.getLoginout();
-        token=interfaceTest.getToken();
-        Log.e("exit的token",token);
-        Log.e("exit的url",url);
+        url = interfaceTest.getServerurl() + interfaceTest.getLoginout();
+        token = interfaceTest.getToken();
+        Log.e("exit的token", token);
+        Log.e("exit的url", url);
 
-
-        EaseUI easeUI=EaseUI.getInstance();
+        EaseUI easeUI = EaseUI.getInstance();
         easeUI.getNotifier();
     }
 
@@ -79,10 +83,11 @@ public class OptionActivity extends Activity implements OnClickListener {
                 finish();
             }
         });
-        option_message = (Button) findViewById(R.id.option_message);
-        option_help = (Button) findViewById(R.id.option_help);
-        option_rate = (Button) findViewById(R.id.option_rate);
-        option_about = (Button) findViewById(R.id.option_about);
+
+        option_message = (TextView) findViewById(R.id.option_message);
+        option_help = (TextView) findViewById(R.id.option_help);
+        option_rate = (TextView) findViewById(R.id.option_rate);
+        option_about = (TextView) findViewById(R.id.option_about);
         try {
             dataclean_num.setText("" + DataCleanManager.getTotalCacheSize(this));
         } catch (Exception e) {
@@ -92,12 +97,24 @@ public class OptionActivity extends Activity implements OnClickListener {
 
     @Event(value = R.id.dataclean)
     private void onDataCleanClick(View v) {
-        DataCleanManager.clearAllCache(this);
-        try {
-            dataclean_num.setText("" + DataCleanManager.getTotalCacheSize(this));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new MaterialDialog.Builder(this)
+                .content("是否清除缓存")
+                .positiveText("是")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction
+                            which) {
+                        DataCleanManager.clearAllCache(OptionActivity.this);
+                        try {
+                            dataclean_num.setText("" + DataCleanManager.getTotalCacheSize
+                                    (OptionActivity.this));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                })
+                .negativeText("否")
+                .show();
     }
 
     @Override
@@ -126,7 +143,7 @@ public class OptionActivity extends Activity implements OnClickListener {
 
     @Event(value = R.id.btn_exit)
     private void onbtn_exitClick(View v) {
-       FormBody formBody = new FormBody.Builder().add("token", token).build();
+        FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
             @Override
@@ -140,7 +157,8 @@ public class OptionActivity extends Activity implements OnClickListener {
                             @Override
                             public void run() {
                                 mIntent = new Intent(OptionActivity.this, AccountActivity.class);
-                                mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent
+                                        .FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(mIntent);
                             }
                         });

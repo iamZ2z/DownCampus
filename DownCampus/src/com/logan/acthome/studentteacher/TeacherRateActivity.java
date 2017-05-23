@@ -46,7 +46,8 @@ public class TeacherRateActivity extends Activity {
 
     private String[] strname;
     private String[] strteacherid;
-    private String correctname="";
+    private String correctname = "";
+    private String correctid = "";
     private ArrayList<String> mArrayList = new ArrayList<>();
     private ArrayList<String> mArrayList2 = new ArrayList<>();
     private TeacherRateBean bean;
@@ -64,24 +65,20 @@ public class TeacherRateActivity extends Activity {
             }
         });
 
-        //sp_Year();
         dourl();
     }
 
     private void sp_Year() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon,
                 strname);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         sp.setAdapter(adapter);
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                /*
-                 * Toast.makeText(LeaveActivity.this,"你点击的是" +
-				 * leave_type[position], Toast.LENGTH_SHORT).show();
-				 */
-                correctname=strteacherid[position];
+                correctid = strteacherid[position];
+                correctname=strname[position];
             }
 
             @Override
@@ -90,13 +87,6 @@ public class TeacherRateActivity extends Activity {
             }
         });
     }
-
-    /*@Event(value = R.id.btn)
-    private void onBtn_Click(View v) {
-        Intent intent = new Intent(this, RateContentActivity.class);
-        intent.putExtra("teacherrate",bean);
-        startActivity(intent);
-    }*/
 
     private void dourl() {
         InterfaceTest interfaceTest = new InterfaceTest();
@@ -135,7 +125,7 @@ public class TeacherRateActivity extends Activity {
                         strteacherid = new String[mArrayList2.size()];
                         for (int k = 0; k < mArrayList.size(); k++) {
                             strname[k] = mArrayList.get(k);
-                            strteacherid[k]=mArrayList2.get(k);
+                            strteacherid[k] = mArrayList2.get(k);
                             Log.e("fullname", strname[k]);
                         }
                         runOnUiThread(new Runnable() {
@@ -148,7 +138,8 @@ public class TeacherRateActivity extends Activity {
                                         Intent intent = new Intent(TeacherRateActivity.this,
                                                 RateContentActivity.class);
                                         intent.putExtra("teacherrate", bean);
-                                        intent.putExtra("teacherid",correctname);
+                                        intent.putExtra("teacherid", correctid);
+                                        intent.putExtra("teachername", correctname);
                                         startActivity(intent);
                                     }
                                 });

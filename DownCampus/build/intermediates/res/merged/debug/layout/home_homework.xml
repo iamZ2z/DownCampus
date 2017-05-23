@@ -8,14 +8,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.util.title.TitleBar
-            style="@style/bar_title"/>
+        <com.util.title.TitleBar style="@style/bar_title"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="12.5dp"
             android:layout_marginRight="12.5dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <Spinner
@@ -34,14 +35,15 @@
                 android:background="@drawable/bordblueround"
                 android:gravity="center"
                 android:text="2017-01-01"
-                android:textSize="14dp"/>
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
 
             <TextView
                 android:layout_width="20dp"
                 android:layout_height="47dp"
                 android:gravity="center"
                 android:text="-"
-                android:textSize="14dp"/>
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/tv_date_end"
@@ -51,21 +53,26 @@
                 android:background="@drawable/bordblueround"
                 android:gravity="center"
                 android:text="2017-12-31"
-                android:textSize="14dp"/>
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
             android:layout_marginBottom="10dp"
             android:background="@color/gray_204x3"/>
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-        </ListView>
+            android:layout_marginTop="10dp"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 

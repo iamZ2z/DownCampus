@@ -3,6 +3,7 @@ package com.logan.acthome.studentteacher;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -62,21 +63,21 @@ public class HomeworkActivity extends Activity {
     private SimpleAdapter mAdapter;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
-
     private List<? extends Map<String, ?>> data;
 
+    @ViewInject(R.id.swiperefresh)
+    private SwipeRefreshLayout swiperefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
         initView();
-        spinner_subject();
 
         urlcheck();
         urlsubject();
+        swipe();
     }
 
     @Event(value = R.id.tv_date_begin)
@@ -127,27 +128,6 @@ public class HomeworkActivity extends Activity {
         mListView.setAdapter(mAdapter);
     }
 
-    private void spinner_subject() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout
-                .spinner_bluebord, str_subject);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // 绑定 Adapter到控件
-        sp_subject.setAdapter(adapter);
-        sp_subject.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                /*
-                 * Toast.makeText(LeaveActivity.this,"你点击的是" +
-				 * leave_type[position], Toast.LENGTH_SHORT).show();
-				 */
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-    }
-
     private List<? extends Map<String, ?>> getData() {
         mHashmap = new ArrayList<>();
         mMap = new HashMap<>();
@@ -189,6 +169,9 @@ public class HomeworkActivity extends Activity {
                                         new int[]{R.id.subject,
                                                 R.id.author, R.id.content, R.id.leavetime});
                                 mListView.setAdapter(mAdapter);
+
+                                mAdapter.notifyDataSetChanged();
+                                swiperefresh.setRefreshing(false);
                             }
                         });
                     }
@@ -201,10 +184,11 @@ public class HomeworkActivity extends Activity {
                 mHashmap = new ArrayList<>();
                 for (int j = 0; j < accountListBean.getData().size(); j++) {
                     mMap = new HashMap<>();
-                    mMap.put("subject", accountListBean.getData().get(j).getSubjectName());
-                    mMap.put("author", accountListBean.getData().get(j).getAssigner());
+                    mMap.put("subject", "科目:" + accountListBean.getData().get(j).getSubjectName());
+                    mMap.put("author", "发布人:" + accountListBean.getData().get(j).getAssigner());
                     mMap.put("content", accountListBean.getData().get(j).getContent());
-                    mMap.put("leavetime", accountListBean.getData().get(j).getAssignTime());
+                    mMap.put("leavetime", "布置日期:" + accountListBean.getData().get(j)
+                            .getAssignTime());
                     mHashmap.add(mMap);
                 }
                 return mHashmap;
@@ -218,7 +202,6 @@ public class HomeworkActivity extends Activity {
         String token = interfaceTest.getToken();
         String studentId = interfaceTest.getStudentId();
 
-        final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).add("studentId",
                 studentId).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
@@ -226,12 +209,11 @@ public class HomeworkActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("url作业的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        final HomeworkSubjectBean accountListBean = gson.fromJson(str,
+                        final HomeworkSubjectBean accountListBean = new Gson().fromJson(str,
                                 HomeworkSubjectBean.class);
                         runOnUiThread(new Runnable() {
                             @Override
@@ -260,7 +242,7 @@ public class HomeworkActivity extends Activity {
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(HomeworkActivity.this, R.layout
                         .spinner_bluebord, subject);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
                 // 绑定 Adapter到控件
                 sp_subject.setAdapter(adapter);
                 sp_subject.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -280,4 +262,15 @@ public class HomeworkActivity extends Activity {
             }
         }).start();
     }
+
+    private void swipe() {
+        swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                urlcheck();
+            }
+        });
+    }
+
+
 }

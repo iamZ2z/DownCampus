@@ -57,7 +57,6 @@ public class MeFragment extends Fragment implements OnClickListener {
     private Button btn_changerole;
     private InterfaceTest interfaceTest = new InterfaceTest();
     private UsuallyData usuallyData=new UsuallyData();
-
     @ViewInject(R.id.name)
     private TextView name;
     @ViewInject(R.id.head)
@@ -150,7 +149,7 @@ public class MeFragment extends Fragment implements OnClickListener {
         builder.setSingleChoiceItems(strarr, 0, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getActivity(), "点击了" + strarr[which], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "点击了" + strarr[which], Toast.LENGTH_SHORT).show();
                 interfaceTest.setStudentId(studentid[which]);
                 dialog.dismiss();
             }

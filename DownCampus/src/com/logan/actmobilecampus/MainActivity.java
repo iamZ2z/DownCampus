@@ -99,7 +99,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
     private void initEaselistener() {
         //模拟登录
-        EMClient.getInstance().login("zjhissb", "123456", new EMCallBack() {
+        EMClient.getInstance().login("zzzjh", "123456", new EMCallBack() {
             @Override
             public void onSuccess() {
                 EMClient.getInstance().groupManager().loadAllGroups();
