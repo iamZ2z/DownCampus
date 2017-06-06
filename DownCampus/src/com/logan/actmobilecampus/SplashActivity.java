@@ -23,7 +23,7 @@ public class SplashActivity extends Activity {
 			}
 		}, 1);*/
 
-        startActivity(new Intent(this, AccountActivity.class));
+        startActivity(new Intent(this, GuideActivity.class));
         finish();
     }
 }

@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,8 +19,8 @@ import com.google.gson.Gson;
 import com.logan.adapter.RateContentAdapter;
 import com.logan.bean.RateContentBean;
 import com.logan.bean.TeacherRateBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
+import com.logan.net.InterfaceTest;
+import com.logan.net.UsuallyData;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -46,6 +48,7 @@ public class RateContentActivity extends Activity {
     private int inttemp = 0;
     @ViewInject(R.id.teachername)
     private TextView teachername;
+    private RateContentAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,7 @@ public class RateContentActivity extends Activity {
         initTeachername();
         loadData();
         hidekeyboard();
+        //listViewHeight(mListView);
     }
 
     private void initTeachername() {
@@ -85,7 +89,7 @@ public class RateContentActivity extends Activity {
                 mArrayList.add(util);
             }
         }
-        RateContentAdapter adapter = new RateContentAdapter(RateContentActivity.this, mArrayList);
+        adapter = new RateContentAdapter(RateContentActivity.this, mArrayList);
         mListView.setAdapter(adapter);
     }
 
@@ -128,7 +132,8 @@ public class RateContentActivity extends Activity {
 
         String itemScore = strpos;
         String classid = "4028812b5a6a878a015a6a8d04570006";
-        if (!usuallyData.getClazzid().equals(null)) classid = usuallyData.getClazzid();
+        ArrayList<String> arrayList=usuallyData.getClazzid();
+        if (!usuallyData.getClazzid().equals(null)) classid = arrayList.get(0);
 
         String valuatorType = "0";
         if (interfaceTest.getRole().equals("学生")) valuatorType = "0";
@@ -175,7 +180,7 @@ public class RateContentActivity extends Activity {
                     case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:    //当停止滚动时
                         break;
                     case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:    //滚动时
-                        //没错，下面这一坨就是隐藏软键盘的代码
+                        //下面是隐藏软键盘的代码
                         ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
                                 .hideSoftInputFromWindow(RateContentActivity.this.getCurrentFocus
                                         ().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
@@ -191,5 +196,30 @@ public class RateContentActivity extends Activity {
             }
         });
     }
+
+    private void listViewHeight(ListView listView) {
+        // 获取ListView对应的Adapter
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+
+        int totalHeight = 0;
+        for (int i = 0, len = listAdapter.getCount(); i < len; i++) {
+            // listAdapter.getCount()返回数据项的数目
+            View listItem = listAdapter.getView(i, null, listView);
+            // 计算子项View 的宽高
+            listItem.measure(0, 0);
+            // 统计所有子项的总高度
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        // listView.getDividerHeight()获取子项间分隔符占用的高度
+        // params.height最后得到整个ListView完整显示需要的高度
+        listView.setLayoutParams(params);
+    }
+
 
 }

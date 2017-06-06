@@ -1,15 +1,39 @@
 package com.logan.server;
 
+import java.util.List;
+
 /**
  * Created by Z2z on 2017/4/10.
  */
 public class ClassScheduleBean {
+    //private String code;
+
     private String week;
     private String section;
     private String subject;
     private String subject_id;
     private String user;
     private String user_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*public List<List<ClassScheduleBean>> getData() {
+        return data;
+    }
+
+    public String getCode() {
+        return code;
+    }*/
 
     public String getWeek() {
         return week;

@@ -3,11 +3,12 @@ package com.logan.acthome.more;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -15,7 +16,7 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.adapter.FootPrintAdapter;
 import com.logan.bean.FootPrintBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -28,7 +29,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -40,7 +40,7 @@ public class FootPrintActivity extends Activity {
     // 列表
     private SimpleAdapter mAdapter;
     @ViewInject(R.id.footprint_list)
-    private ListView mListView;
+    private RecyclerView mListView;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
     @ViewInject(R.id.title_bar)
@@ -56,9 +56,10 @@ public class FootPrintActivity extends Activity {
     private List<HashMap<String, Object>> data;
     @ViewInject(R.id.nulldata)
     private ImageView nulldata;
-
     @ViewInject(R.id.swiperefresh)
     private SwipeRefreshLayout swiperefresh;
+    @ViewInject(R.id.signtime)
+    private TextView signtime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,16 +71,6 @@ public class FootPrintActivity extends Activity {
         footprint_search_center.setText(st);
         dourl(st + "-01");
         swipe();
-    }
-
-    private List<? extends Map<String, ?>> getData() {
-        mHashmap = new ArrayList<>();
-        mMap = new HashMap<>();
-        mMap.put("data", "3月30日");
-        mMap.put("time", "9:00签到");
-        mMap.put("sign", "正常");
-        mHashmap.add(mMap);
-        return mHashmap;
     }
 
     @Event(value = R.id.footprint_search_left)
@@ -137,20 +128,23 @@ public class FootPrintActivity extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("footprint的result", "请求数据:" + str);
-                        FootPrintBean bean = new Gson().fromJson(str, FootPrintBean.class);
+                        final FootPrintBean bean = new Gson().fromJson(str, FootPrintBean.class);
                         if (bean.getCode().equals("0")) {
-                            data = getData2(bean);
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    data = getData2(bean);
                                     FootPrintAdapter adapter = new FootPrintAdapter
                                             (FootPrintActivity.this, data);
+                                    mListView.setLayoutManager(new LinearLayoutManager
+                                            (FootPrintActivity.this));
+                                    mListView.setHasFixedSize(true);
                                     mListView.setAdapter(adapter);
                                     nulldata.setVisibility(View.GONE);
                                     mListView.setVisibility(View.VISIBLE);
-
                                     adapter.notifyDataSetChanged();
                                     swiperefresh.setRefreshing(false);
+                                    signtime.setText("本月签到" + bean.getData().size() + "次");
                                 }
                             });
                         } else runOnUiThread(new Runnable() {
@@ -158,8 +152,8 @@ public class FootPrintActivity extends Activity {
                             public void run() {
                                 mListView.setVisibility(View.GONE);
                                 nulldata.setVisibility(View.VISIBLE);
-
                                 swiperefresh.setRefreshing(false);
+                                signtime.setText("本月签到0次");
                             }
                         });
                     }

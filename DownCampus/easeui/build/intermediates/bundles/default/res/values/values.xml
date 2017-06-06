@@ -180,6 +180,7 @@
     <string name="Send_the_following_pictures">Send the following pictures?</string>
     <string name="Send_voice_need_sdcard_support">Send voice need sdcard support</string>
     <string name="Shielding_of_the_message">Block message</string>
+    <string name="Sync_Groups_From_Server">Download groups from server</string>
     <string name="The_delete_button_is_clicked">The delete button is clicked</string>
     <string name="The_file_is_not_greater_than_10_m">The file is not greater than 10 m</string>
     <string name="The_new_group_chat">Create new group</string>
@@ -206,6 +207,7 @@
     <string name="Whether_to_empty_all_chats">Clear all messages?</string>
     <string name="Whether_to_send">Are you sure to send?</string>
     <string name="add_friend">Add friends</string>
+    <string name="add_public_chat_room">Add chat room</string>
     <string name="add_public_group_chat">Add public group</string>
     <string name="address_book">Address book</string>
     <string name="agree">Agree</string>
@@ -380,6 +382,12 @@
     <string name="toast_updatephoto_success">update photo success!</string>
     <string name="unable_to_connect">Unable to connect to the server</string>
     <string name="unable_to_get_loaction">Unable to get to your location information!</string>
+    <string name="update_black_list">update black list</string>
+    <string name="update_black_list_failed">update black_list failed</string>
+    <string name="update_contact_list">update contact list</string>
+    <string name="update_contact_list_failed">update contact list failed</string>
+    <string name="update_groups">update groups</string>
+    <string name="update_groups_failed">update groups failed</string>
     <string name="user_card">Business card</string>
     <string name="user_name">User name</string>
     <string name="video">[Video]</string>
@@ -427,16 +435,16 @@
     <style name="HeadScale" parent="android:Theme.Dialog">
         <item name="android:windowAnimationStyle">@style/AnimHead</item>
         <item name="android:windowFrame">@null</item>
-        <!-- 边框 -->
+        
         <item name="android:windowIsFloating">true</item>
-        <!-- 是否浮现在activity之上 -->
+        
         <item name="android:windowIsTranslucent">true</item>
-        <!-- 半透明 -->
+        
         <item name="android:windowNoTitle">true</item>
-        <!-- 无标题 -->
+        
         <item name="android:windowBackground">@android:color/black</item>
         <item name="android:backgroundDimEnabled">false</item>
-        <!-- 模糊 -->
+        
     </style>
     <style name="MyAlertDialog" parent="android:Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -457,32 +465,32 @@
     <style name="MyDialogStyleBottom" parent="android:Theme.Dialog">
         <item name="android:windowAnimationStyle">@style/AnimBottom</item>
         <item name="android:windowFrame">@null</item>
-        <!-- 边框 -->
+        
         <item name="android:windowIsFloating">true</item>
-        <!-- 是否浮现在activity之上 -->
+        
         <item name="android:windowIsTranslucent">true</item>
-        <!-- 半透明 -->
+        
         <item name="android:windowNoTitle">true</item>
-        <!-- 无标题 -->
+        
         <item name="android:windowBackground">@android:color/transparent</item>
-        <!-- 背景透明 -->
+        
         <item name="android:backgroundDimEnabled">true</item>
-        <!-- 模糊 -->
+        
     </style>
     <style name="MyDialogStyleTop" parent="android:Theme.Dialog">
         <item name="android:windowAnimationStyle">@style/AnimTop2</item>
         <item name="android:windowFrame">@null</item>
-        <!-- 边框 -->
+        
         <item name="android:windowIsFloating">true</item>
-        <!-- 是否浮现在activity之上 -->
+        
         <item name="android:windowIsTranslucent">true</item>
-        <!-- 半透明 -->
+        
         <item name="android:windowNoTitle">true</item>
-        <!-- 无标题 -->
+        
         <item name="android:windowBackground">@android:color/transparent</item>
-        <!-- 背景透明 -->
+        
         <item name="android:backgroundDimEnabled">false</item>
-        <!-- 模糊 -->
+        
     </style>
     <style name="bottom_line_edit_text_style" parent="@android:style/Widget.EditText">
         <item name="android:gravity">center_vertical</item>

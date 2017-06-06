@@ -23,8 +23,6 @@ public final class R {
         public static final int slide_in_from_right = 0x7f05000c;
         public static final int slide_out_to_left = 0x7f05000d;
         public static final int slide_out_to_right = 0x7f05000e;
-        public static final int voice_from_icon = 0x7f05000f;
-        public static final int voice_to_icon = 0x7f050010;
     }
     public static final class attr {
         public static final int bigEmojiconRows = 0x7f010010;
@@ -314,6 +312,8 @@ public final class R {
         public static final int ee_8 = 0x7f0200a5;
         public static final int ee_9 = 0x7f0200a6;
         public static final int ic_launcher = 0x7f0200a7;
+        public static final int voice_from_icon = 0x7f0200a8;
+        public static final int voice_to_icon = 0x7f0200a9;
     }
     public static final class id {
         public static final int alert_message = 0x7f0a000d;

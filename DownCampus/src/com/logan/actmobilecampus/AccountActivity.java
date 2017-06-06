@@ -1,8 +1,10 @@
 package com.logan.actmobilecampus;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,14 +14,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMPushConfigs;
 import com.hyphenate.exceptions.HyphenateException;
 import com.logan.bean.AccountListBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
+import com.logan.net.InterfaceTest;
+import com.logan.net.UsuallyData;
 import com.logan.server.AccountLoginBean;
 import com.logan.widgets.AccountroleDialog;
 
@@ -29,6 +32,7 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -52,12 +56,11 @@ public class AccountActivity extends Activity {
     @ViewInject(R.id.et_password)
     private EditText mEditText_password;
     private String[] roleItem = new String[4];
-    //无用
     private String token = "";
     private InterfaceTest interfaceTest = new InterfaceTest();
     private UsuallyData usuallyData = new UsuallyData();
-
     private EMPushConfigs emPushConfigs;
+    private static final String space="data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +68,9 @@ public class AccountActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
         dourl();
+        preferenceAccount();
 
+        //推送
         try {
             EMClient.getInstance().pushManager().enableOfflinePush();
             emPushConfigs = EMClient.getInstance().pushManager().getPushConfigs();
@@ -137,9 +142,11 @@ public class AccountActivity extends Activity {
     private void onloginmainClick(View v) {
         if (mEditText_account.getText() != null && mEditText_password.getText() != null
                 || sp_role.getText() != "请选择角色") {
-            if (role.equals(""))
+            /*if (role.equals(""))
                 Toast.makeText(AccountActivity.this, "请选择角色", Toast.LENGTH_SHORT).show();
-            else loginurl(mEditText_account.getText().toString(), mEditText_password.getText().toString());
+            else*/
+            loginurl(mEditText_account.getText().toString(), mEditText_password.getText()
+                    .toString());
         } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
 
     }
@@ -149,13 +156,16 @@ public class AccountActivity extends Activity {
         startActivity(new Intent(AccountActivity.this, CampusCooperationActivity.class));
     }
 
-    private void loginurl(String user, String pass) {
+    private void loginurl(final String user, final String pass) {
+        final MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         String urllogin = interfaceTest.getServerurl() + interfaceTest.getLogin();
-        //user pass写死
         FormBody formBody = null;
-        if (role.equals("老师")) {
+        /*if (role.equals("老师")) {
             formBody = new FormBody.Builder().add("roleCode", "4028882d5a5937ad015a594ff8bb0001")
-                    .add("loginId", "zhoudd").add("password", "123456").build();
+                    .add("loginId", "170001").add("password", "123456").build();
         } else if (role.equals("家长")) {
             formBody = new FormBody.Builder().add("roleCode", "4028882d5a5937ad015a5952e6250002")
                     .add("loginId", "1008601").add("password", "123456").build();
@@ -165,8 +175,10 @@ public class AccountActivity extends Activity {
         } else if (role.equals("校长")) {
             formBody = new FormBody.Builder().add("roleCode", "4028882d5ac6d951015ac6e544f50001")
                     .add("loginId", "sah").add("password", "123456").build();
-        }
+        }*/
 
+        formBody = new FormBody.Builder()
+                .add("loginId", user).add("password", pass).build();
         final Request request = new Request.Builder().url(urllogin).post(formBody).build();
         new Thread(new Runnable() {
             @Override
@@ -175,10 +187,37 @@ public class AccountActivity extends Activity {
                     Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
-                        AccountLoginBean bean = new Gson().fromJson(str, AccountLoginBean.class);
+                        Log.e("登录成功的数据", "请求数据:" + str);
+                        SharedPreferences sp = getSharedPreferences(space, Context.MODE_PRIVATE);
+                        sp.edit().putString("account", user).putString("password", pass).commit();
+
+                        final AccountLoginBean bean = new Gson().fromJson(str, AccountLoginBean
+                                .class);
                         if (bean.getCode().equals("0")) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dialog.dismiss();
+                                }
+                            });
                             token = bean.getData().get(0).getToken();
                             mIntent = new Intent(AccountActivity.this, MainActivity.class);
+
+                            interfaceTest.setToken(token);
+                            if (bean.getData().get(0).getRoleType().equals("0")) {
+                                role = "学生";
+                                interfaceTest.setRole("学生");
+                            } else if (bean.getData().get(0).getRoleType().equals("1")) {
+                                role = "家长";
+                                interfaceTest.setRole("家长");
+                            } else if (bean.getData().get(0).getRoleType().equals("2")) {
+                                role = "老师";
+                                interfaceTest.setRole("老师");
+                            } else if (bean.getData().get(0).getRoleType().equals("4")) {
+                                role = "校长";
+                                interfaceTest.setRole("校长");
+                            }
+
 
                             if (role.equals("学生")) {
                                 interfaceTest.setStudentId(bean.getData().get(0).getUser_id());
@@ -186,25 +225,56 @@ public class AccountActivity extends Activity {
                                 usuallyData.setCheckDate(bean.getData().get(0).getCheckDate());
                                 usuallyData.setSignOutDate(bean.getData().get(0).getSignOutDate());
                             }
-                            interfaceTest.setToken(token);
-                            interfaceTest.setRole(role);
+
                             String user_id = bean.getData().get(0).getUser_id();
                             interfaceTest.setUser_id(user_id);
                             usuallyData.setFullname(bean.getData().get(0).getFullname());
                             usuallyData.setSex(bean.getData().get(0).getSex());
-                            usuallyData.setOrganizationName(bean.getData().get(0).getOrganizationName());
+                            usuallyData.setOrganizationName(bean.getData().get(0)
+                                    .getOrganizationName());
                             usuallyData.setMobile(bean.getData().get(0).getMobile());
                             usuallyData.setEmail(bean.getData().get(0).getEmail());
                             usuallyData.setAutograph(bean.getData().get(0).getAutograph());
-                            //bean.getData().get(0).getGrade().get(0).getGrade_id();
-                            Log.e("gradename", bean.getData().get(0).getGrade().get(0)
-                                    .getGrade_name());
+                            ArrayList<String> arrgradeid = new ArrayList<>();
+                            ArrayList<String> arrgradename = new ArrayList<>();
+                            for (int j = 0; j < bean.getData().get(0).getGrade().size(); j++) {
+                                arrgradename.add(bean.getData().get(0).getGrade().get(j)
+                                        .getGrade_name());
+                                arrgradeid.add(bean.getData().get(0).getGrade().get(j)
+                                        .getGrade_id());
+                            }
+                            usuallyData.setGradename(arrgradename);
+                            usuallyData.setGradeid(arrgradeid);
+                            ArrayList<String> arrclazzid = new ArrayList<>();
+                            ArrayList<String> arrclazzname = new ArrayList<>();
+                            for (int j = 0; j < bean.getData().get(0).getClazz().size(); j++) {
+                                arrclazzname.add(bean.getData().get(0).getClazz().get(j)
+                                        .getClazz_name());
+                                arrclazzid.add(bean.getData().get(0).getClazz().get(j)
+                                        .getClazz_id());
+                            }
+                            usuallyData.setClazzname(arrclazzname);
+                            usuallyData.setClazzid(arrclazzid);
                             startActivity(mIntent);
                             interfaceTest.setPicture(bean.getData().get(0).getPicture());
-                        } else
-                            Toast.makeText(AccountActivity.this, bean.getMessage(), Toast
+                        } else {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(AccountActivity.this, bean.getMessage(), Toast
+                                            .LENGTH_SHORT).show();
+                                    dialog.dismiss();
+                                }
+                            });
+                        }
+                    } else runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(AccountActivity.this, "登陆错误", Toast
                                     .LENGTH_SHORT).show();
-                    }
+                            dialog.dismiss();
+                        }
+                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -237,4 +307,12 @@ public class AccountActivity extends Activity {
             }
         }).start();
     }
+
+    private void preferenceAccount() {
+        SharedPreferences sp=getSharedPreferences(space,Context.MODE_PRIVATE);
+        String user=sp.getString("account","1");
+        String pass=sp.getString("password",null);
+        if (!user.equals("1")) loginurl(user,pass);
+    }
+
 }

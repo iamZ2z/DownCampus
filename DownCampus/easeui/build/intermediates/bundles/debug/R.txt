@@ -13,8 +13,6 @@ int anim slide_in_from_left 0x7f05000b
 int anim slide_in_from_right 0x7f05000c
 int anim slide_out_to_left 0x7f05000d
 int anim slide_out_to_right 0x7f05000e
-int anim voice_from_icon 0x7f05000f
-int anim voice_to_icon 0x7f050010
 int attr bigEmojiconRows 0x7f010010
 int attr ctsListInitialLetterBg 0x7f010008
 int attr ctsListInitialLetterColor 0x7f010009
@@ -296,6 +294,8 @@ int drawable ee_7 0x7f0200a4
 int drawable ee_8 0x7f0200a5
 int drawable ee_9 0x7f0200a6
 int drawable ic_launcher 0x7f0200a7
+int drawable voice_from_icon 0x7f0200a8
+int drawable voice_to_icon 0x7f0200a9
 int id alert_message 0x7f0a000d
 int id avatar 0x7f0a0026
 int id avatar_container 0x7f0a0025

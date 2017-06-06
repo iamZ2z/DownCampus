@@ -3,6 +3,7 @@ package com.logan.acthome.studentteacher;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -15,7 +16,7 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.acthome.more.RateContentActivity;
 import com.logan.bean.TeacherRateBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -41,8 +42,8 @@ public class TeacherRateActivity extends Activity {
     @ViewInject(R.id.sp)
     private Spinner sp;
     String[] str = {"老师a", "老师b", "老师c"};
-    @ViewInject(R.id.btn)
-    private Button btn;
+    @ViewInject(R.id.cardview)
+    private CardView cardview;
 
     private String[] strname;
     private String[] strteacherid;
@@ -132,7 +133,7 @@ public class TeacherRateActivity extends Activity {
                             @Override
                             public void run() {
                                 sp_Year();
-                                btn.setOnClickListener(new View.OnClickListener() {
+                                cardview.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
                                         Intent intent = new Intent(TeacherRateActivity.this,

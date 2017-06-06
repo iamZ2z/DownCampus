@@ -21,9 +21,9 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.acthome.more.LeaveRecordActivity;
 import com.logan.bean.LeaveBean;
-import com.logan.bean.LeaveRecordStudentBean;
-import com.logan.constant.InterfaceTest;
-import com.util.title.TitleBar;
+import com.logan.net.InterfaceTest;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.util.title.TitleBars;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -57,7 +57,7 @@ public class LeaveActivity extends Activity {
             (ca.get(Calendar.HOUR_OF_DAY) + 2), hour_minute2 = ca.get(Calendar.MINUTE);
     private String begin_time, end_time;
     @ViewInject(R.id.title_bar)
-    private TitleBar titlebar;
+    private TitleBars titlebar;
     @ViewInject(R.id.tv_begindate)
     private TextView tv_begindate;
     private int i;
@@ -72,7 +72,6 @@ public class LeaveActivity extends Activity {
     private EditText reason;
     @ViewInject(R.id.btn_send)
     private Button btn_send;
-
     private long time1, time2=0;
     private String leavetype="1";
 
@@ -96,7 +95,7 @@ public class LeaveActivity extends Activity {
             }
         });
         titlebar.setActionTextColor(Color.WHITE);
-        titlebar.addAction(new TitleBar.TextAction("请假记录") {
+        titlebar.addAction(new TitleBars.TextAction("请假记录") {
             @Override
             public void performAction(View view) {
                 mIntent = new Intent();
@@ -107,6 +106,14 @@ public class LeaveActivity extends Activity {
                 startActivity(mIntent);
             }
         });
+
+        //输入法弹出
+        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        // enable status bar tint
+        tintManager.setStatusBarTintEnabled(true);
+        // enable navigation bar tint
+        tintManager.setNavigationBarTintEnabled(true);
+        tintManager.setStatusBarTintResource(R.color.blue_55x176x233);
     }
 
     private void fillleavetime() {
@@ -165,7 +172,7 @@ public class LeaveActivity extends Activity {
         // 建立Adapter并且绑定数据源
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon,
                 mItems);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         // 绑定 Adapter到控件
         mSpinner.setAdapter(adapter);
         mSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {

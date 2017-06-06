@@ -76,9 +76,7 @@ public class CampusNewsAdapter extends BaseAdapter {
                     (viewHolderBig.img);
             viewHolderBig.title.setText(arrayList.get(position).get("title").toString());
             viewHolderBig.type.setText("综合实践");
-            Log.e("type",viewHolderBig.type.getText().toString());
             viewHolderBig.date.setText(arrayList.get(position).get("date").toString());
-            Log.e("date",viewHolderBig.date.getText().toString());
         } else {
             DrawableRequestBuilder<Integer> thumbnailRequest = Glide.with(context).load(R.drawable
                     .upload);

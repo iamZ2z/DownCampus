@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+              xmlns:stv="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="20dp"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@mipmap/my_img_bg"
+        android:layout_marginTop="-1dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/head"
@@ -30,15 +32,15 @@
             android:layout_height="wrap_content"
             android:text="刘波"
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="18dp"/>
 
         <TextView
-            android:visibility="invisible"
+            android:id="@+id/autograph"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="空谈误国，实干兴邦"
             android:textColor="@color/white"
-            android:textSize="13dp" />
+            android:textSize="13dp"/>
 
         <TextView
             android:id="@+id/btn_edit"
@@ -49,14 +51,8 @@
             android:gravity="right"
             android:text="编辑资料>>"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="15dp"/>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginTop="30dp"
-        android:background="@color/gray_204x3" />
 
     <LinearLayout
         android:id="@+id/text_dynamic"
@@ -71,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="13dp"
-            android:src="@mipmap/my_icon_dry" />
+            android:src="@mipmap/my_icon_dry"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,77 +79,26 @@
 
     </LinearLayout>
 
-    <TextView
+    <com.allen.library.SuperTextView
+        android:id="@+id/supertv"
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:background="@color/gray_204x3"
-        android:visibility="gone"/>
+        android:layout_marginTop="40dp"
+        android:layout_height="60dp"
+        stv:sLeftIconRes="@mipmap/my_icon_password"
+        stv:sLeftTextSize="17dp"
+        stv:sLeftTextString="更改密码"
+        stv:sLineShow="bottom"
+        stv:sUseRipple="true"/>
 
-    <LinearLayout
-        android:id="@+id/tv_changepass"
+    <com.allen.library.SuperTextView
+        android:id="@+id/supertv2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="13dp"
-        android:paddingTop="13dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:src="@mipmap/my_icon_password" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:text="更改密码"
-            android:textColor="#000000"
-            android:textSize="17dp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/gray_204x3" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginTop="30dp"
-        android:background="@color/gray_204x3" />
-
-    <LinearLayout
-        android:id="@+id/text_options"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="13dp"
-        android:paddingTop="13dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:src="@mipmap/my_icon_install" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:text="设置"
-            android:textColor="#000000"
-            android:textSize="17dp" />/>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/gray_204x3" />
+        android:layout_height="60dp"
+        stv:sLeftIconRes="@mipmap/my_icon_install"
+        stv:sLeftTextSize="17dp"
+        stv:sLeftTextString="设置"
+        stv:sLineShow="bottom"
+        stv:sUseRipple="true"/>
 
     <Button
         android:id="@+id/btn_changerole"
@@ -166,6 +111,6 @@
         android:text="角色切换"
         android:textColor="@color/white"
         android:textSize="14dp"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
 </LinearLayout>

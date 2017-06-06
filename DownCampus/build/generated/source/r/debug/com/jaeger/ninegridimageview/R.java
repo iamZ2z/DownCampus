@@ -8,20 +8,20 @@ package com.jaeger.ninegridimageview;
 
 public final class R {
     public static final class attr {
-        public static final int imgGap = 0x7f01015a;
-        public static final int maxSize = 0x7f01015b;
-        public static final int showStyle = 0x7f01015c;
-        public static final int singleImgSize = 0x7f010159;
+        public static final int imgGap = 0x7f0101c1;
+        public static final int maxSize = 0x7f0101c2;
+        public static final int showStyle = 0x7f0101c3;
+        public static final int singleImgSize = 0x7f0101c0;
     }
     public static final class id {
-        public static final int fill = 0x7f0e002c;
-        public static final int grid = 0x7f0e004a;
+        public static final int fill = 0x7f0e0041;
+        public static final int grid = 0x7f0e0062;
     }
     public static final class string {
         public static final int app_name = 0x7f08016b;
     }
     public static final class styleable {
-        public static final int[] NineGridImageView = { 0x7f010159, 0x7f01015a, 0x7f01015b, 0x7f01015c };
+        public static final int[] NineGridImageView = { 0x7f0101c0, 0x7f0101c1, 0x7f0101c2, 0x7f0101c3 };
         public static final int NineGridImageView_imgGap = 1;
         public static final int NineGridImageView_maxSize = 2;
         public static final int NineGridImageView_showStyle = 3;

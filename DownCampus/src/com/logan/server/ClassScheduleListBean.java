@@ -7,10 +7,23 @@ import java.util.List;
  */
 public class ClassScheduleListBean {
     private List<List<ClassScheduleBean>> data;
-    public List<List<ClassScheduleBean>> getList() {
+
+
+    public List<List<ClassScheduleBean>> getData() {
         return data;
     }
-    public void setList(List<List<ClassScheduleBean>> list) {
-        this.data = list;
+
+    public void setData(List<List<ClassScheduleBean>> data) {
+        this.data = data;
+    }
+
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

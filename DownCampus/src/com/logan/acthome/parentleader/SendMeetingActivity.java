@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.SaveMeetingBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -117,9 +117,6 @@ public class SendMeetingActivity extends Activity {
                     }
                 }
             }).start();
-        /*mIntent = new Intent();
-        mIntent.setClass(SendMeetingActivity.this, MeetingManage.class);
-        startActivity(mIntent);*/
         }
     }
 

@@ -1,152 +1,50 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/rl_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="64dp"
+        android:background="@color/blue_55x176x233">
 
         <TextView
             android:id="@+id/top_item"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:background="@color/blue_55x176x233"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:fitsSystemWindows="true"
-            android:gravity="center"
             android:text="首页"
             android:textColor="@color/white"
             android:textSize="18sp"/>
-        <!-- 底部tab -->
 
-        <LinearLayout
-            android:id="@+id/ll_bottom_tab"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:baselineAligned="true"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/nav_btn_address"
+            android:visibility="invisible"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/gray_189x3"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            <RelativeLayout
-                android:id="@+id/rl_news"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.0">
-
-                <ImageView
-                    android:id="@+id/iv_home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/y3"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/tag_icon_home_default"/>
-
-                <TextView
-                    android:id="@+id/tv_home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/iv_home"
-                    android:layout_centerInParent="true"
-                    android:text="首页"
-                    android:textColor="@color/gray_162x3"
-                    android:textSize="11dp"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_location"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.0">
-
-                <ImageView
-                    android:id="@+id/iv_news"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/y3"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/tag_icon_news_default"/>
-
-                <TextView
-                    android:id="@+id/tv_news"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/iv_news"
-                    android:layout_centerInParent="true"
-                    android:text="消息"
-                    android:textColor="@color/gray_162x3"
-                    android:textSize="11dp"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_me"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.0">
-
-                <ImageView
-                    android:id="@+id/iv_find"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/y3"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/tag_icon_find_default"/>
-
-                <TextView
-                    android:id="@+id/tv_find"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/iv_find"
-                    android:layout_centerInParent="true"
-                    android:text="发现"
-                    android:textColor="@color/gray_162x3"
-                    android:textSize="11dp"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_step"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.0">
-
-                <ImageView
-                    android:id="@+id/iv_me"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/y3"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/tag_icon_my_default"/>
-
-                <TextView
-                    android:id="@+id/tv_me"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/iv_me"
-                    android:layout_centerInParent="true"
-                    android:text="我的"
-                    android:textColor="@color/gray_162x3"
-                    android:textSize="11dp"/>
-            </RelativeLayout>
-        </LinearLayout></LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/content_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"/>
     </RelativeLayout>
 
-</FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"/>
+
+    <include layout="@layout/menu_bottom"/>
+</LinearLayout>

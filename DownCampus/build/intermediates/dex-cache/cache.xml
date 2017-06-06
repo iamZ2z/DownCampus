@@ -30,11 +30,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\68fd0066f3d9afe73364a4fb7d7da1ba7fd3b103\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3f265bb9f876c967bfcfd980bd73e51d130ad876\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="0491643c84e7ceb31a2ed90b437e6b7d1511eda0">
+        sha1="ffbf8054ce1a850ff643d6f738dcfc6e352afc26">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8886b3de08ef6064cc5bcb6ea793d641b01eeed9\classes.dex" />
     </item>
     <item
@@ -108,6 +117,15 @@
         revision="25.0.0"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\picasso-2.5.2_9cdf53084fbeb6040163dce6dd2be3856fda6069\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.android\build-cache\73210fb78c77b24fa7c265f05f154e886197a4f0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5f05b5c8b2d324bd0d484b2914d0027470f4fab">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\classes_372d922ae42ad06995be631ec21fdd32a08200fa\classes.dex" />
     </item>
 
 </items>

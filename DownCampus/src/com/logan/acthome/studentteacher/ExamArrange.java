@@ -14,7 +14,6 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
@@ -23,7 +22,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.ExamArrangeBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import java.io.IOException;
@@ -163,7 +162,6 @@ public class ExamArrange extends Activity {
                 .content(R.string.loading)
                 .progress(true, 0)
                 .show();
-
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getExamquery();
         String token = interfaceTest.getToken();

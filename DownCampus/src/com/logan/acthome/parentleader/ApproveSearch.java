@@ -31,7 +31,7 @@ public class ApproveSearch extends Activity{
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
-        titlebar.setTitle("我的审批");
+        titlebar.setTitle("审批搜索");
         titlebar.setLeftClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

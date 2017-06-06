@@ -101,7 +101,6 @@ public class RateContentAdapter extends BaseAdapter {
         if(!TextUtils.isEmpty(list.get(position).getSetscore()+""))
             viewHolder.editscore.setText(list.get(position).getSetscore());
         else viewHolder.editscore.setText("");
-
         return convertView;
     }
 
@@ -115,12 +114,10 @@ public class RateContentAdapter extends BaseAdapter {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-
         }
 
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
         }
 
         @Override
@@ -130,4 +127,5 @@ public class RateContentAdapter extends BaseAdapter {
             else list.get(mPosition).setSetscore(s.toString());*/
         }
     }
+
 }

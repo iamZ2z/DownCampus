@@ -57,10 +57,20 @@ public class WorkRestAdapter extends BaseAdapter {
         viewHolder.time.setText(arr.get(position).get("time").toString());
         viewHolder.leng.setText(arr.get(position).get("leng").toString());
 
-        if (position % 2 == 0) {
-            viewHolder.act.setBackgroundColor(Color.rgb(255, 255, 255));
-            viewHolder.time.setBackgroundColor(Color.rgb(255, 255, 255));
-            viewHolder.leng.setBackgroundColor(Color.rgb(255, 255, 255));
+        if (position == 0) {
+            viewHolder.act.setBackgroundColor(Color.rgb(56, 194, 232));
+            viewHolder.time.setBackgroundColor(Color.rgb(56, 194, 232));
+            viewHolder.leng.setBackgroundColor(Color.rgb(56, 194, 232));
+            viewHolder.act.setTextColor(mContext.getResources().getColor(android.R.color.white));
+            viewHolder.time.setTextColor(mContext.getResources().getColor(android.R.color.white));
+            viewHolder.leng.setTextColor(mContext.getResources().getColor(android.R.color.white));
+        } else if ((position % 2 == 0) && (position != 0)) {
+            viewHolder.act.setBackgroundColor(mContext.getResources().getColor(android.R.color
+                    .white));
+            viewHolder.time.setBackgroundColor(mContext.getResources().getColor(android.R.color
+                    .white));
+            viewHolder.leng.setBackgroundColor(mContext.getResources().getColor(android.R.color
+                    .white));
         } else {
             viewHolder.act.setBackgroundColor(Color.rgb(223, 236, 255));
             viewHolder.time.setBackgroundColor(Color.rgb(223, 236, 255));

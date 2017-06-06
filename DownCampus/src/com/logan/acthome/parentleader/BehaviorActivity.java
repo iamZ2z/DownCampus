@@ -19,8 +19,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.BehaviorBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
+import com.logan.net.InterfaceTest;
+import com.logan.net.UsuallyData;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -45,7 +45,7 @@ public class BehaviorActivity extends Activity {
     private TitleBar titlebar;
     @ViewInject(R.id.sp_year)
     private Spinner sp_year;
-    String[] str_year = {"2017-02-15", "2017-02-01", "2017-03-01"};
+    String[] str_year = {"2016-2017学年"};
     @ViewInject(R.id.sp_term)
     private Spinner sp_term;
     String[] str_term = {"春季(上学期)"};
@@ -55,13 +55,12 @@ public class BehaviorActivity extends Activity {
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
     private List<? extends Map<String, ?>> data;
-
     @ViewInject(R.id.head)
     private CircleImageView head;
     @ViewInject(R.id.name)
     private TextView name;
     private InterfaceTest interfaceTest = new InterfaceTest();
-    private UsuallyData usuallyData=new UsuallyData();
+    private UsuallyData usuallyData = new UsuallyData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +81,7 @@ public class BehaviorActivity extends Activity {
         spinneryear();
         spinnerterm();
         dourl();
+        list.setEmptyView(findViewById(R.id.nulldata));
     }
 
     private void initData() {
@@ -97,7 +97,7 @@ public class BehaviorActivity extends Activity {
     private void spinneryear() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_bluebord_icon,
                 str_year);
-        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdownitem_behavior);
         // 绑定 Adapter到控件
         sp_year.setAdapter(adapter);
         sp_year.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -156,6 +156,37 @@ public class BehaviorActivity extends Activity {
         return mHashmap;
     }
 
+    private List<? extends Map<String, ?>> getData2(BehaviorBean accountListBean) {
+        mHashmap = new ArrayList<>();
+        for (int j = 0; j < accountListBean.getData().size(); j++) {
+            mMap = new HashMap<>();
+            mMap.put("title", "评价老师：" + accountListBean.getData().get(j).getAppraiserName());
+            switch (accountListBean.getData().get(j).getJudge()) {
+                case "1":
+                    mMap.put("rank", "评价：优秀");
+                    break;
+                case "2":
+                    mMap.put("rank", "评价：良好");
+                    break;
+                case "3":
+                    mMap.put("rank", "评价：中等");
+                    break;
+                case "4":
+                    mMap.put("rank", "评价：及格");
+                    break;
+                case "5":
+                    mMap.put("rank", "评价：不及格");
+                    break;
+                default:
+                    break;
+            }
+            mMap.put("content", accountListBean.getData().get(j).getRemark());
+            mMap.put("time", accountListBean.getData().get(j).getJudgeDate());
+            mHashmap.add(mMap);
+        }
+        return mHashmap;
+    }
+
     private void dourl() {
         String url = interfaceTest.getServerurl() + interfaceTest.getParentsperformance();
         String token = interfaceTest.getToken();
@@ -172,12 +203,12 @@ public class BehaviorActivity extends Activity {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("BehaviorBean的result", "请求数据:" + str);
-                        BehaviorBean accountListBean = new Gson().fromJson(str,
+                        final BehaviorBean bean = new Gson().fromJson(str,
                                 BehaviorBean.class);
-                        data = getData2(accountListBean);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                data = getData2(bean);
                                 mAdapter = new SimpleAdapter(BehaviorActivity.this, data, R
                                         .layout.home_behavior_list, new String[]{"title", "rank",
                                         "content", "time"}, new int[]{R.id.title, R.id.rank, R.id
@@ -190,37 +221,7 @@ public class BehaviorActivity extends Activity {
                     e.printStackTrace();
                 }
             }
-
-            private List<? extends Map<String, ?>> getData2(BehaviorBean accountListBean) {
-                mHashmap = new ArrayList<>();
-                for (int j = 0; j < accountListBean.getData().size(); j++) {
-                    mMap = new HashMap<>();
-                    mMap.put("title", "评价老师：" + accountListBean.getData().get(j).getAppraiserName());
-                    switch (accountListBean.getData().get(j).getJudge()) {
-                        case "1":
-                            mMap.put("rank", "评价：优秀");
-                            break;
-                        case "2":
-                            mMap.put("rank", "评价：良好");
-                            break;
-                        case "3":
-                            mMap.put("rank", "评价：中等");
-                            break;
-                        case "4":
-                            mMap.put("rank", "评价：及格");
-                            break;
-                        case "5":
-                            mMap.put("rank", "评价：不及格");
-                            break;
-                        default:
-                            break;
-                    }
-                    mMap.put("content", accountListBean.getData().get(j).getRemark());
-                    mMap.put("time", accountListBean.getData().get(j).getJudgeDate());
-                    mHashmap.add(mMap);
-                }
-                return mHashmap;
-            }
         }).start();
     }
+
 }

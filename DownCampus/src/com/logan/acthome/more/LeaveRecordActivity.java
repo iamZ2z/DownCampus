@@ -14,7 +14,7 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.LeaveRecordBean;
 import com.logan.bean.LeaveRecordStudentBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -34,7 +34,6 @@ import okhttp3.Response;
 
 @ContentView(R.layout.home_leaverecord)
 public class LeaveRecordActivity extends Activity {
-    // 列表
     private SimpleAdapter mAdapter;
     @ViewInject(R.id.leaverecord_list)
     private ListView mListView;
@@ -45,7 +44,6 @@ public class LeaveRecordActivity extends Activity {
     private TitleBar titlebar;
     InterfaceTest interfaceTest = new InterfaceTest();
     private List<? extends Map<String, ?>> data;
-
     @ViewInject(R.id.swiperefresh)
     private SwipeRefreshLayout swiperefresh;
 
@@ -63,11 +61,6 @@ public class LeaveRecordActivity extends Activity {
         });
         receiveTime();
 
-        mAdapter = new SimpleAdapter(this, getData(), R.layout.home_leaverecord_list,
-                new String[]{"iv", "name", "submit", "leavetime", "or"}, new int[]
-                {R.id.iv, R.id.name, R.id.submit, R.id.leavetime, R.id.or});
-        mListView.setAdapter(mAdapter);
-
         if (interfaceTest.getRole().equals("学生")) urlstudentleave();
         else urlleave();
 
@@ -76,19 +69,8 @@ public class LeaveRecordActivity extends Activity {
 
     private void receiveTime() {
         Intent mIntent = getIntent();
-        benginend_time = mIntent.getStringExtra("begin_time") + "——" + mIntent.getStringExtra("end_time");
-    }
-
-    private List<? extends Map<String, ?>> getData() {
-        mHashmap = new ArrayList<>();
-        mMap = new HashMap<>();
-        mMap.put("iv", R.drawable.touxiang);
-        mMap.put("name", "刘波");
-        mMap.put("submit", "申请时间：");
-        mMap.put("leavetime", benginend_time);
-        mMap.put("or", "待审核");
-        mHashmap.add(mMap);
-        return mHashmap;
+        benginend_time = mIntent.getStringExtra("begin_time") + "——" + mIntent.getStringExtra
+                ("end_time");
     }
 
     private void urlstudentleave() {

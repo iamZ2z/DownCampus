@@ -11,11 +11,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.allen.library.SuperTextView;
 import com.bumptech.glide.DrawableRequestBuilder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -25,11 +24,9 @@ import com.logan.actme.ChangePassActivity;
 import com.logan.actme.DynamicActivity;
 import com.logan.actme.EditDataActivity;
 import com.logan.actme.OptionActivity;
-import com.logan.actmobilecampus.AccountActivity;
 import com.logan.bean.MeFragmentBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
-import com.util.CircleImageView;
+import com.logan.net.InterfaceTest;
+import com.logan.net.UsuallyData;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -46,12 +43,12 @@ import okhttp3.Response;
 public class MeFragment extends Fragment implements OnClickListener {
     @ViewInject(R.id.btn_edit)
     private TextView btn_edit;
-    @ViewInject(R.id.tv_changepass)
-    private LinearLayout tv_changepass;
+    @ViewInject(R.id.supertv)
+    private SuperTextView tv_changepass;
     @ViewInject(R.id.text_dynamic)
     private LinearLayout text_dynamic;
-    @ViewInject(R.id.text_options)
-    private LinearLayout text_options;
+    @ViewInject(R.id.supertv2)
+    private SuperTextView text_options;
     private Intent mIntent;
     @ViewInject(R.id.btn_changerole)
     private Button btn_changerole;
@@ -59,6 +56,8 @@ public class MeFragment extends Fragment implements OnClickListener {
     private UsuallyData usuallyData=new UsuallyData();
     @ViewInject(R.id.name)
     private TextView name;
+    @ViewInject(R.id.autograph)
+    private TextView autograph;
     @ViewInject(R.id.head)
     private de.hdodenhof.circleimageview.CircleImageView head;
 
@@ -83,6 +82,7 @@ public class MeFragment extends Fragment implements OnClickListener {
 
         if (interfaceTest.getRole().equals("家长")) urlchange();
         name.setText(usuallyData.getFullname());
+        autograph.setText(usuallyData.getAutograph());
     }
 
     @Override
@@ -165,7 +165,7 @@ public class MeFragment extends Fragment implements OnClickListener {
                 mIntent = new Intent(getActivity(), EditDataActivity.class);
                 startActivity(mIntent);
                 break;
-            case R.id.tv_changepass:
+            case R.id.supertv:
                 mIntent = new Intent(getActivity(), ChangePassActivity.class);
                 startActivity(mIntent);
                 break;
@@ -173,7 +173,7 @@ public class MeFragment extends Fragment implements OnClickListener {
                 mIntent = new Intent(getActivity(), DynamicActivity.class);
                 startActivity(mIntent);
                 break;
-            case R.id.text_options:
+            case R.id.supertv2:
                 mIntent = new Intent(getActivity(), OptionActivity.class);
                 startActivity(mIntent);
                 break;

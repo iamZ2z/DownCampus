@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -27,10 +26,10 @@ import com.amap.api.location.AMapLocationListener;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.SaveSignBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.logan.acthome.more.FootPrintActivity;
 import com.logan.acthome.more.SignActivity;
-import com.logan.constant.UsuallyData;
+import com.logan.net.UsuallyData;
 import com.logan.server.MySignBean;
 import com.util.title.TitleBar;
 
@@ -77,16 +76,19 @@ public class MySignActivity extends Activity {
     private TextView upcomplain;
     @ViewInject(R.id.downcomplain)
     private TextView downcomplain;
-
     private InterfaceTest interfaceTest = new InterfaceTest();
     private UsuallyData usuallyData = new UsuallyData();
     private String mylocation = "";
-    private String gettime1="";
-    private String gettime2="";
+    private String gettime1 = "";
+    private String gettime2 = "";
     private String state1;
     private String state2;
     private String type = "check";
-
+    private boolean tempsign = false;
+    @ViewInject(R.id.updanger)
+    private ImageView updanger;
+    @ViewInject(R.id.downdanger)
+    private ImageView downdanger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,12 @@ public class MySignActivity extends Activity {
         initTime();//获取上班时间
         urlloadsign();//加载签到时间
         initLocate();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mLocationClient.isStarted()) mLocationClient.onDestroy();//销毁定位客户端，同时销毁本地定位服务。
     }
 
     private void initView() {
@@ -187,12 +195,6 @@ public class MySignActivity extends Activity {
         };
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mLocationClient.isStarted()) mLocationClient.onDestroy();//销毁定位客户端，同时销毁本地定位服务。
-    }
-
     private void initTime() {
         tv_uptime.setText("上班：" + usuallyData.getCheckDate());
         tv_downtime.setText("下班：" + usuallyData.getSignOutDate());
@@ -251,15 +253,15 @@ public class MySignActivity extends Activity {
         }).start();
     }
 
-
-
     private void loadsignData(MySignBean mySignBean) {
         if (mySignBean.getCode().equals("0")) {
             gettime1 = mySignBean.getData().getTime1();
             gettime2 = mySignBean.getData().getTime2();
             state1 = mySignBean.getData().getState1();
             state2 = mySignBean.getData().getState2();
-            if (!gettime1.equals("") || !gettime1.equals("null")) {
+            if ((tempsign == false) && (!gettime1.equals("null")))
+                mysign_sign.setImageResource(R.mipmap.sign_btn_out);
+            if ((!gettime1.equals("")) || (!gettime1.equals("null"))) {
                 tv_upsign.setVisibility(View.VISIBLE);
                 tv_upsign.setText(gettime1 + " " + state1);
                 Drawable drawable;
@@ -276,21 +278,28 @@ public class MySignActivity extends Activity {
                         .getMinimumHeight());
                 tv_upsign.setCompoundDrawables(drawable, null, null, null);
                 type = "sign";
-                if (!gettime2.equals("") || !gettime2.equals("null")) {
-                    tv_downsign.setVisibility(View.VISIBLE);
-                    tv_downsign.setText(gettime2 + " " + state2);
-                    Drawable drawable2;
-                    if (state1.equals("正常")) {
-                        tv_downsign.setTextColor(getResources().getColor(R.color.blue_download));
-                        drawable2 = getResources().getDrawable(R.mipmap.sign_icon_yes);
-                    } else {
-                        tv_downsign.setTextColor(getResources().getColor(R.color.orange_242x137x12));
-                        drawable2 = getResources().getDrawable(R.mipmap.sign_icon_no);
-                    }
-                    drawable2.setBounds(0, 0, drawable2.getMinimumWidth(), drawable2.getMinimumHeight());
-                    tv_downsign.setCompoundDrawables(drawable2, null, null, null);
-                } else tv_downsign.setVisibility(View.INVISIBLE);
+                //mysign_sign.setImageResource(R.mipmap.sign_btn_out);
             } else type = "check";
+
+            if ((!gettime2.equals("")) || (!gettime2.equals("null"))) {
+                tv_downsign.setVisibility(View.VISIBLE);
+                tv_downsign.setText(gettime2 + " " + state2);
+                Drawable drawable2;
+                if (state1.equals("正常")) {
+                    tv_downsign.setTextColor(getResources().getColor(R.color.blue_download));
+                    drawable2 = getResources().getDrawable(R.mipmap.sign_icon_yes);
+                } else {
+                    tv_downsign.setTextColor(getResources().getColor(R.color.orange_242x137x12));
+                    drawable2 = getResources().getDrawable(R.mipmap.sign_icon_no);
+                }
+                drawable2.setBounds(0, 0, drawable2.getMinimumWidth(), drawable2.getMinimumHeight
+                        ());
+                tv_downsign.setCompoundDrawables(drawable2, null, null, null);
+            } //else tv_downsign.setVisibility(View.INVISIBLE);
+
+            if (gettime2.equals("") || gettime2.equals("null"))
+                tv_downsign.setVisibility(View.INVISIBLE);
+
         } else {
             Toast.makeText(MySignActivity.this, "当天签到信息为空", Toast.LENGTH_SHORT).show();
             tv_upsign.setVisibility(View.INVISIBLE);
@@ -314,11 +323,11 @@ public class MySignActivity extends Activity {
         int signh = Integer.parseInt(signtime[0]);
         int signm = Integer.parseInt(signtime[1]);
 
-        if (h < checkh || (h == checkh && m <= checkm)) state = "正常";
-        else if (!gettime2.equals("null")||!gettime2.equals("")) {
-            if ((h > checkh && h < signh) || (h == signh && m <= signm)) state = "早退";
-        } else if (gettime1.equals("null")||!gettime1.equals("")) {
+        if ((h < checkh) || (h == checkh && m <= checkm)) state = "正常";
+        else if (gettime1.equals("null") || gettime1.equals("")) {
             if ((h > checkh && h < signh) || (h == checkh && m > checkm)) state = "迟到";
+        } else if ((gettime2.equals("null") || gettime2.equals("")) && (!gettime1.equals("null"))) {
+            if ((h > checkh && h < signh) || (h == signh && m <= signm)) state = "早退";
         }
         String address = mylocation;
 
@@ -361,24 +370,18 @@ public class MySignActivity extends Activity {
     }
 
     private void urlsignData(String finalState) {
-        /*if (finalState.equals("正常")) {
-            mysign_sign.setImageResource(R.mipmap.sign_btn_in);
-            tv_upsign.setTextColor(Color.rgb(99, 180, 255));
-            Drawable drawable = getResources().getDrawable(R.mipmap.sign_icon_yes);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            tv_upsign.setCompoundDrawables(drawable, null, null, null);
-        } else {
-            mysign_sign.setImageResource(R.mipmap.sign_btn_none);
-            tv_upsign.setTextColor(Color.rgb(242, 137, 12));
-            Drawable drawable = getResources().getDrawable(R.mipmap.sign_icon_no);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            tv_upsign.setCompoundDrawables(drawable, null, null, null);
-            if (finalState.equals("迟到")) upcomplain.setVisibility(View.VISIBLE);
-            else if (finalState.equals("早退")) downcomplain.setVisibility(View.VISIBLE);
-        }*/
+        if (finalState.equals("迟到")) {
+            upcomplain.setVisibility(View.VISIBLE);
+            updanger.setVisibility(View.VISIBLE);
+        } else if (finalState.equals("早退")) {
+            downcomplain.setVisibility(View.VISIBLE);
+            downdanger.setVisibility(View.VISIBLE);
+        }
 
-        if (finalState.equals("迟到")) upcomplain.setVisibility(View.VISIBLE);
-        else if (finalState.equals("早退")) downcomplain.setVisibility(View.VISIBLE);
+        if (finalState.equals("正常")) {
+            mysign_sign.setImageResource(R.mipmap.sign_btn_in);
+        } else mysign_sign.setImageResource(R.mipmap.sign_btn_none);
+        tempsign = true;
     }
 
 }

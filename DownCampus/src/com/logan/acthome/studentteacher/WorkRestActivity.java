@@ -3,21 +3,20 @@ package com.logan.acthome.studentteacher;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.adapter.WorkRestAdapter;
 import com.logan.bean.WorkRestBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
+import com.logan.net.InterfaceTest;
+import com.logan.net.UsuallyData;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -28,7 +27,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -55,10 +53,8 @@ public class WorkRestActivity extends Activity {
     private ArrayList<HashMap<String, Object>> mArrayList;
     private HashMap<String, Object> mHashMap;
     private WorkRestAdapter mWorkRestAdapter;
-
     private InterfaceTest interfaceTest = new InterfaceTest();
     private UsuallyData usuallyData = new UsuallyData();
-    private List<? extends Map<String, ?>> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +72,7 @@ public class WorkRestActivity extends Activity {
         spinner_term();
 
         // 禁止滑动
-        mListView.setOnTouchListener(new OnTouchListener() {
+        /*mListView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
@@ -87,16 +83,18 @@ public class WorkRestActivity extends Activity {
                 }
                 return true;
             }
-        });
-        workRestAdapter();
+        });*/
 
         urlworkrest();
     }
 
     private void spinner_year() {
         // 添加下拉list
-        list.add("2016-2017");
-        list.add("2017-2018");
+        //list.add("2016-2017");
+        ArrayList<String> arrayList = usuallyData.getSemesteryearname();
+        for (int i = 0; i < arrayList.size(); i++) {
+            list.add(arrayList.get(i));
+        }
         adapter = new ArrayAdapter<>(this, R.layout.spinner_workrest, list);
         adapter.setDropDownViewResource(R.layout.spinnerdropdownitem);
         mSpinner.setAdapter(adapter);
@@ -114,8 +112,10 @@ public class WorkRestActivity extends Activity {
 
     private void spinner_term() {
         // 添加下拉list
-        list2.add("春季学期");
-        list2.add("冬季学期");
+        ArrayList<String> arrayList = usuallyData.getSemestername();
+        for (int i = 0; i < arrayList.size(); i++) {
+            list2.add(arrayList.get(i));
+        }
         adapter2 = new ArrayAdapter<>(this, R.layout.spinner_workrest, list2);
         adapter2.setDropDownViewResource(R.layout.spinnerdropdownitem);
         mSpinner2.setAdapter(adapter2);
@@ -131,50 +131,34 @@ public class WorkRestActivity extends Activity {
         });
     }
 
-    private void workRestAdapter() {
-        getData();
-        mWorkRestAdapter = new WorkRestAdapter(this, mArrayList);
-        mListView.setAdapter(mWorkRestAdapter);
-    }
-
-    private List<? extends Map<String, ?>> getData() {
-        mArrayList = new ArrayList<>();
-        mHashMap = new HashMap<>();
-        mHashMap.put("act", "师生活动");
-        mHashMap.put("time", "时间");
-        mHashMap.put("leng", "时长");
-        mArrayList.add(mHashMap);
-
-        mHashMap = new HashMap<>();
-        mHashMap.put("act", "起床");
-        mHashMap.put("time", "6:00-7:00");
-        mHashMap.put("leng", "1hour");
-        mArrayList.add(mHashMap);
-        return mArrayList;
-    }
-
     private void urlworkrest() {
+        final MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         String url = interfaceTest.getServerurl() + interfaceTest.getSchedulequery();
         String token = interfaceTest.getToken();
-        final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Response response = client.newCall(request).execute();
+                    Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlworkrest的result", "请求数据:" + str);
-                        WorkRestBean accountListBean = new Gson().fromJson(str, WorkRestBean.class);
-                        data = getData2(accountListBean);
+                        final WorkRestBean bean = new Gson().fromJson(str, WorkRestBean.class);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                getData2(bean);
                                 mWorkRestAdapter = new WorkRestAdapter(WorkRestActivity.this,
                                         mArrayList);
                                 mListView.setAdapter(mWorkRestAdapter);
+
+                                dialog.dismiss();
+                                mWorkRestAdapter.notifyDataSetChanged();
                             }
                         });
                     }
@@ -183,7 +167,7 @@ public class WorkRestActivity extends Activity {
                 }
             }
 
-            private List<? extends Map<String, ?>> getData2(WorkRestBean accountListBean) {
+            private void getData2(WorkRestBean accountListBean) {
                 mArrayList = new ArrayList<>();
                 mHashMap = new HashMap<>();
                 mHashMap.put("act", "师生活动");
@@ -196,10 +180,9 @@ public class WorkRestActivity extends Activity {
                     mHashMap.put("act", accountListBean.getData().get(j).getName());
                     mHashMap.put("time", accountListBean.getData().get(j).getStartstr() + "-" +
                             accountListBean.getData().get(j).getEndstr());
-                    mHashMap.put("leng",0 );
+                    mHashMap.put("leng", 0);
                     mArrayList.add(mHashMap);
                 }
-                return mArrayList;
             }
         }).start();
     }

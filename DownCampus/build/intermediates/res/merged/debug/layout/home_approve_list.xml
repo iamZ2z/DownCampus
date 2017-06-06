@@ -6,9 +6,10 @@
               android:layout_marginBottom="10dp"
               android:layout_marginRight="15dp"
               android:background="@drawable/bord_campusact"
+              android:backgroundTint="@android:color/white"
               android:orientation="horizontal">
 
-    <com.util.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/head"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="8.5dp"

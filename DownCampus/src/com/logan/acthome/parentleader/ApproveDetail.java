@@ -13,7 +13,7 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.MyApproveAuditBean;
 import com.logan.bean.MyApproveBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;

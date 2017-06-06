@@ -95,10 +95,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="com.logan.actmobilecampus.GuideActivity">
+        </activity>
         <activity android:name="com.logan.actmobilecampus.AccountActivity">
         </activity>
-        <activity android:name="com.logan.actmobilecampus.MainActivity">
-        </activity>
+        <activity android:name="com.logan.actmobilecampus.MainActivity"/>
         <activity android:name="com.logan.actmobilecampus.FindPassActivity">
         </activity>
         <activity android:name="com.logan.actmobilecampus.CampusCooperationActivity">
@@ -109,7 +110,8 @@
             android:name="com.logan.actdynamic.CampusActActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
-        <activity android:name="com.logan.actdynamic.CampusActDetailActivity">
+        <activity android:name="com.logan.actdynamic.CampusActDetailActivity"
+            android:theme="@style/NoTitleTheme">
         </activity>
         <activity android:name="com.logan.actdynamic.EnrollActivity">
         </activity>
@@ -162,7 +164,8 @@
         </activity>
         <activity android:name="com.logan.acthome.more.FootPrintActivity">
         </activity>
-        <activity android:name="com.logan.acthome.studentteacher.LeaveActivity">
+        <activity android:name="com.logan.acthome.studentteacher.LeaveActivity"
+                  android:windowSoftInputMode="adjustUnspecified|stateHidden">
         </activity>
         <activity android:name="com.logan.acthome.more.LeaveRecordActivity">
         </activity>

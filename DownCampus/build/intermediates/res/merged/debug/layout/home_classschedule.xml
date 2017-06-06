@@ -8,17 +8,17 @@
     <com.util.title.TitleBar style="@style/bar_title"/>
 
     <LinearLayout
-        android:layout_margin="15dp"
         android:layout_width="match_parent"
-        android:layout_height="63dp">
+        android:layout_height="63dp"
+        android:layout_margin="15dp">
 
         <TextView
-            android:textSize="15dp"
-            android:gravity="center"
             android:layout_width="0dp"
-            android:text="班级选择"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="班级选择"
+            android:textSize="15dp"/>
 
         <Spinner
             android:id="@+id/schedule_sp"
@@ -29,10 +29,22 @@
             android:background="@drawable/bordblueround"/>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/schedule_list"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </ListView>
 
+        <ListView
+            android:id="@+id/schedule_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/nulldata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/nulldata"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
 </LinearLayout>

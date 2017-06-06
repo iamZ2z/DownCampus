@@ -24,8 +24,8 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.UploadEmailBean;
 import com.logan.bean.UploadiconBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
+import com.logan.net.InterfaceTest;
+import com.logan.net.UsuallyData;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.util.title.TitleBars;
 import com.util.view.CropViewActivity;
@@ -343,23 +343,27 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     }
 
     @Event(value = {R.id.btn_email, R.id.btn_autograph})
-    private void onbtnemailClick(View v) {
+    private void onbtnuploadClick(View v) {
         String url="";
         FormBody formBody =null;
         if (v.getId() == R.id.btn_email) {
-            String st = email.getText().toString();
+            String stremail = email.getText().toString();
             String token = interfaceTest.getToken();
             String userid = interfaceTest.getUser_id();
             url = interfaceTest.getServerurl() + interfaceTest.getUploademail();
             formBody = new FormBody.Builder().add("token", token).add("user_id", userid)
-                    .add("email", st).build();
+                    .add("email", stremail).build();
+            //修改data的邮箱
+            usuallyData.setEmail(stremail);
         } else if (v.getId() == R.id.btn_autograph) {
-            String st = autograph.getText().toString();
+            String strautograph = autograph.getText().toString();
             String token = interfaceTest.getToken();
             String userid = interfaceTest.getUser_id();
             url = interfaceTest.getServerurl() + interfaceTest.getUploadautograph();
             formBody = new FormBody.Builder().add("token", token).add("user_id", userid).add
-                    ("autograph", st).build();
+                    ("autograph", strautograph).build();
+            //修改data的个性签名
+            usuallyData.setAutograph(strautograph);
         }
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {

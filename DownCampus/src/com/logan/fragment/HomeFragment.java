@@ -32,10 +32,10 @@ import com.logan.acthome.parentleader.BehaviorActivity;
 import com.logan.acthome.parentleader.MeetingManage;
 import com.logan.acthome.parentleader.MyApproveActivity;
 import com.logan.adapter.HomeGridAdapter;
-import com.logan.bean.GradeClassBean;
 import com.logan.bean.MeFragmentBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
+import com.logan.net.InterfaceTest;
+import com.logan.net.UsuallyData;
+import com.logan.server.CurrentSemesterListBean;
 import com.util.viewflow.CircleFlowIndicator;
 import com.util.viewflow.ImagePagerAdapter;
 import com.util.viewflow.ViewFlow;
@@ -69,7 +69,6 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     private String token;
     private InterfaceTest interfaceTest = new InterfaceTest();
     private UsuallyData usuallyData = new UsuallyData();
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -123,6 +122,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        imageUrlList.clear();
         imageUrlList.add("https://timgsa.baidu" +
                 ".com/timg?image&quality=80&size=b9999_10000&sec=1486362762241&di" +
                 "=1b34f906327e853290a43eb6372dced8&imgtype=0&src=http%3A%2F%2Fp9.qhimg" +
@@ -156,8 +156,8 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
         mGridView.setAdapter(new HomeGridAdapter(getActivity(), data_list));
         mGridView.setOnItemClickListener(this);
 
-        if (role.equals("家长")) kidurl();
-        else if (role.equals("学生")) gradeclass();
+        if (role.equals("家长")) urlkid();
+        urlCurrentSemester();
     }
 
     private void initBanner(ArrayList<String> imageUrlList) {
@@ -178,8 +178,6 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             startActivity(mIntent);
         } else if (str.equals("班级课表")) {
             mIntent = new Intent(getActivity(), ClassScheduleActivity.class);
-            mIntent.putExtra("token", token);
-            Log.e("HomeFragment里的token", token);
             startActivity(mIntent);
         } else if (str.equals("作息安排")) {
             mIntent = new Intent(getActivity(), WorkRestActivity.class);
@@ -229,48 +227,13 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
         }
     }
 
-    private void kidurl() {
+    private void urlkid() {
         //if (interfaceTest.getStudentId().equals(null)) {
-            String url = interfaceTest.getServerurl() + interfaceTest.getParentschild();
-            String userid = interfaceTest.getUser_id();
-            String token = interfaceTest.getToken();
-
-            FormBody formBody = new FormBody.Builder().add("token", token).add("parentId", userid)
-                    .build();
-            final Request request = new Request.Builder().url(url).post(formBody).build();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Response response = new OkHttpClient().newCall(request).execute();
-                        if (response.isSuccessful()) {
-                            String str = response.body().string();
-                            Log.e("url家长所有孩子的result", "请求数据:" + str);
-                            final MeFragmentBean bean = new Gson().fromJson(str, MeFragmentBean.class);
-                            if (bean.getData().size() != 0 || bean.getData().size() != 1) {
-                                getActivity().runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        String st = bean.getData().get(0).getStudentId();
-                                        interfaceTest.setStudentId(st);
-                                    }
-                                });
-                            }
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }).start();
-        }
-    //}
-
-    private void gradeclass() {
-        String url = interfaceTest.getServerurl() + interfaceTest.getQuerygrade();
+        String url = interfaceTest.getServerurl() + interfaceTest.getParentschild();
         String userid = interfaceTest.getUser_id();
         String token = interfaceTest.getToken();
 
-        FormBody formBody = new FormBody.Builder().add("token", token).add("user_id", userid)
+        FormBody formBody = new FormBody.Builder().add("token", token).add("parentId", userid)
                 .build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
@@ -280,23 +243,58 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
                     Response response = new OkHttpClient().newCall(request).execute();
                     if (response.isSuccessful()) {
                         String str = response.body().string();
-                        Log.e("学生年班级的result", "请求数据:" + str);
-                        final GradeClassBean bean = new Gson().fromJson(str, GradeClassBean.class);
-                        if (bean.getCode().equals("0")) {
+                        Log.e("url家长所有孩子的result", "请求数据:" + str);
+                        final MeFragmentBean bean = new Gson().fromJson(str, MeFragmentBean.class);
+                        if (bean.getData().size() != 0 || bean.getData().size() != 1) {
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    usuallyData.setGradeid(bean.getData().get(0).getGrade().get
-                                            (0).getGrade_id());
-                                    usuallyData.setGradeid(bean.getData().get(0).getGrade().get
-                                            (0).getGrade_name());
-                                    usuallyData.setClazzid(bean.getData().get(0).getClazz().get
-                                            (0).getClazz_id());
-                                    usuallyData.setClazzid(bean.getData().get(0).getClazz().get
-                                            (0).getClazz_name());
+                                    String st = bean.getData().get(0).getStudentId();
+                                    interfaceTest.setStudentId(st);
                                 }
                             });
                         }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+    //}
+
+    private void urlCurrentSemester() {
+        String url = interfaceTest.getServerurl() + interfaceTest.getCurrentterm();
+        final OkHttpClient client = new OkHttpClient();
+        FormBody formBody = new FormBody.Builder().add("token", token).build();
+        final Request request = new Request.Builder().url(url).post(formBody).build();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Response response = client.newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        String str = response.body().string();
+                        Log.e("result", "请求数据:" + str);
+                        CurrentSemesterListBean bean = new Gson().fromJson(str,
+                                CurrentSemesterListBean.class);
+                        Log.e("id:", bean.getList().get(0).getSemester_id());
+                        //roleItem[i] = accountListBean.getList().get(i).getName();
+
+                        ArrayList<String> arrsemesterid = new ArrayList<>();
+                        ArrayList<String> arrsemestername = new ArrayList<>();
+                        ArrayList<String> arrsemesteryearid = new ArrayList<>();
+                        ArrayList<String> arrsemesteryearname = new ArrayList<>();
+                        for (int j = 0; j < bean.getList().size(); j++) {
+                            arrsemesterid.add(bean.getList().get(j).getSemester_id());
+                            arrsemestername.add(bean.getList().get(j).getSemester_name());
+                            arrsemesteryearid.add(bean.getList().get(j).getSemester_yearId());
+                            arrsemesteryearname.add(bean.getList().get(j).getSemester_yearName());
+                        }
+                        usuallyData.setSemesterid(arrsemesterid);
+                        usuallyData.setSemestername(arrsemestername);
+                        usuallyData.setSemesteryearid(arrsemesteryearid);
+                        usuallyData.setSemesteryearname(arrsemesteryearname);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

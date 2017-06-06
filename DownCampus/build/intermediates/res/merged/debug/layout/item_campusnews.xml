@@ -1,62 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="66dp"
-    android:background="#ffffff"
-    android:orientation="horizontal" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="8dp">
 
     <ImageView
         android:id="@+id/img2"
         android:layout_width="75dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="8dp" />
+        android:scaleType="fitXY"
+        android:src="@drawable/upload"/>
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/img2"
+        android:lines="2"
+        android:text="title"
+        android:textColor="#000000"
+        android:textSize="15sp"/>
 
-        <TextView
-            android:id="@+id/title2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="8dp"
-            android:lines="2"
-            android:textColor="#000000"
-            android:textSize="15sp" />
+    <TextView
+        android:id="@+id/type2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title2"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/img2"
+        android:text="综合实践上"
+        android:textColor="@color/gray_type"
+        android:textSize="11sp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="8dp"
-            android:gravity="bottom"
-            android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/date2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/type2"
+        android:layout_alignParentRight="true"
+        android:gravity="right|bottom"
+        android:text="05-23"
+        android:textColor="@color/gray_type"
+        android:textSize="11sp"/>
 
-            <TextView
-                android:id="@+id/type2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:gravity="bottom"
-                android:textColor="@color/gray_type"
-                android:text="综合实践上"
-                android:textSize="11sp" />
-
-            <TextView
-                android:id="@+id/date2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="05-23"
-                android:layout_marginRight="15dp"
-                android:gravity="right|bottom"
-                android:textColor="@color/gray_type"
-                android:textSize="11sp" />
-        </LinearLayout>
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

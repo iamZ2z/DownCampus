@@ -9,7 +9,6 @@
         <item name="android:colorPrimaryDark">@color/white_247x3</item>
         <item name="android:colorAccent">#cccccc</item>
         <item name="android:windowTranslucentStatus">true</item>
-
     </style>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance.Material"/>
     <style name="Base.TextAppearance.AppCompat.Body1" parent="android:TextAppearance.Material.Body1"/>
@@ -252,6 +251,12 @@
     <item name="md_btn_neutral_selector">@drawable/md_btn_selector_ripple</item>
     <item name="md_btn_negative_selector">@drawable/md_btn_selector_ripple</item>
   </style>
+    <style name="NoTitleTheme" parent="AppBaseTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:statusBarColor">@color/blue_55x176x233</item>
+    </style>
     <style name="Platform.AppCompat" parent="Platform.V21.AppCompat"/>
     <style name="Platform.AppCompat.Light" parent="Platform.V21.AppCompat.Light"/>
     <style name="Platform.ThemeOverlay.AppCompat" parent="">

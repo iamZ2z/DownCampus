@@ -1,8 +1,9 @@
 package com.logan.actme;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Path;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -16,7 +17,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.hyphenate.easeui.controller.EaseUI;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.logan.actme.option.AboutActivity;
 import com.logan.actme.option.CommentActivity;
 import com.logan.actme.option.HelpActivity;
@@ -54,6 +55,7 @@ public class OptionActivity extends Activity implements OnClickListener {
     private String url = "";
     private String token = "";
     private InterfaceTest interfaceTest = new InterfaceTest();
+    private static final String space="data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +71,6 @@ public class OptionActivity extends Activity implements OnClickListener {
         url = interfaceTest.getServerurl() + interfaceTest.getLoginout();
         token = interfaceTest.getToken();
         Log.e("exit的token", token);
-        Log.e("exit的url", url);
 
         EaseUI easeUI = EaseUI.getInstance();
         easeUI.getNotifier();
@@ -150,9 +151,11 @@ public class OptionActivity extends Activity implements OnClickListener {
             public void run() {
                 try {
                     Response response = new OkHttpClient().newCall(request).execute();
-                    if (response.isSuccessful()) {
+                    /*if (response.isSuccessful()) {*/
                         String str = response.body().string();
                         Log.e("OptionsAcitivity的登出数据", "数据=" + str);
+                        SharedPreferences sp = getSharedPreferences(space, Context.MODE_PRIVATE);
+                        sp.edit().putString("account", "1").putString("password", null).commit();
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -162,7 +165,7 @@ public class OptionActivity extends Activity implements OnClickListener {
                                 startActivity(mIntent);
                             }
                         });
-                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

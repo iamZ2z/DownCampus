@@ -27,6 +27,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.github.zcweng:switch-button:0.0.3@aar'
     compile 'com.android.support:percent:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
     //输入法遮盖
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     //选择dialog
@@ -39,9 +40,8 @@ dependencies {
     //compile 'com.google.android.gms:play-services-gcm:9.4.0'
     //compile 'com.hyphenate:hyphenate-sdk:3.3.0'
     compile project(path: ':easeui')
-    //极光
-    //compile 'cn.jiguang.sdk:jpush:3.0.5'  // 此处以JPush 3.0.5 版本为例。
-    //compile 'cn.jiguang.sdk:jcore:1.1.2'  // 此处以JCore 1.1.2 版本为例。
+    //TextView日常布局
+    compile 'com.github.lygttpod:SuperTextView:1.1.2'
 }
 
 android {
@@ -51,22 +51,16 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+
     defaultConfig {
         multiDexEnabled true
-        //以下是极光推送
-        /*applicationId "com.example.mobilecampus" //JPush上注册的包名.
-        *//*ndk {
-            //选择要添加的对应cpu类型的.so库。
-            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86'
-            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
-        }*//*
-        manifestPlaceholders = [
-                JPUSH_PKGNAME : applicationId,
-                JPUSH_APPKEY : "24719142f6857d08d93e7389", //JPush上注册的包名对应的appkey.
-                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
-        ]*/
     }
 
+    lintOptions {
+        disable 'InvalidPackage'
+        //只要添加下面这一句就可以了
+        disable 'MissingTranslation'
+    }
 
     aaptOptions {
         cruncherEnabled = false
@@ -91,13 +85,14 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
-    //环信
-    //useLibrary 'org.apache.http.legacy'
+//环信
+//useLibrary 'org.apache.http.legacy'
 
 }
 
 allprojects {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }

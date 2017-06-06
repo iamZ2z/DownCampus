@@ -25,7 +25,7 @@
                     android:layout_height="200dp"
                     android:background="@drawable/upload">
 
-                    <com.util.CircleImageView
+                    <com.util.view.CircleImageView
                         android:id="@+id/head"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
@@ -81,7 +81,7 @@
                     android:background="@color/gray_134x159x169"
                     android:orientation="horizontal">
 
-                    <com.util.CircleImageView
+                    <com.util.view.CircleImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"

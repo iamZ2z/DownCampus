@@ -11,7 +11,6 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
@@ -21,8 +20,9 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.bigkoo.pickerview.TimePickerView;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.logan.bean.MeetingManagerBean;
+import com.logan.net.OkHttpUtils;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -38,9 +38,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.Response;
 
 import static cn.finalteam.toolsfinal.DateUtils.getDate;
@@ -51,7 +50,7 @@ public class MeetingManage extends Activity {
     private TitleBar titlebar;
     @ViewInject(R.id.sp_subject)
     private Spinner sp_subject;
-    String[] str_subject = {"科目", "语文", "数学", "英语"};
+    String[] str_subject = {"所有科目"};
     @ViewInject(R.id.timepicker)
     private TimePickerView mTimePicker;
     @ViewInject(R.id.tv_date_begin)
@@ -113,7 +112,6 @@ public class MeetingManage extends Activity {
                 "")
                 //设置空字符串以隐藏单位提示   hide label
                 .setDividerColor(Color.BLUE).setContentSize(20).setDate(selectedDate).build();
-
     }
 
     private void initView() {
@@ -133,10 +131,6 @@ public class MeetingManage extends Activity {
                 startActivity(mIntent);
             }
         });
-        mAdapter = new SimpleAdapter(this, getData(), R.layout.home_meetingmanage_list, new
-                String[]{"title", "content", "time"}, new int[]{R.id.title,
-                R.id.content, R.id.leavetime});
-        list.setAdapter(mAdapter);
     }
 
     private void spinner_subject() {
@@ -159,16 +153,6 @@ public class MeetingManage extends Activity {
         });
     }
 
-    private List<? extends Map<String, ?>> getData() {
-        mHashmap = new ArrayList<>();
-        mMap = new HashMap<>();
-        mMap.put("title", "学习习近平讲话精神");
-        mMap.put("content", "今天请各位回家预习《论语》，明天老师进行抽查。今天请各位回家预习《论语》，明天老师进行抽查。");
-        mMap.put("time", "2017-02-01 16:00");
-        mHashmap.add(mMap);
-        return mHashmap;
-    }
-
     private void urlmeeting() {
         final MaterialDialog dialog=new MaterialDialog.Builder(this)
                 .content(R.string.loading)
@@ -177,56 +161,55 @@ public class MeetingManage extends Activity {
         InterfaceTest interfaceTest=new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getMeetingquery();
         String token = interfaceTest.getToken();
-        FormBody formBody = new FormBody.Builder().add("token", token).build();
-        final Request request = new Request.Builder().url(url).post(formBody).build();
-        new Thread(new Runnable() {
+
+        Map<String,String> map=new HashMap<>();
+        map.put("token",token);
+        OkHttpUtils.post(url, map, new Callback() {
             @Override
-            public void run() {
-                try {
-                    Response response = new OkHttpClient().newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        String str = response.body().string();
-                        Log.e("urlmeeting的result", "请求数据:" + str);
+            public void onFailure(Call call, IOException e) {
 
-                        final MeetingManagerBean accountListBean = new Gson().fromJson(str,
-                                MeetingManagerBean.class);
-                        for (int i = 0; i < accountListBean.getList().size(); i++) {
-                            Log.e("title:", accountListBean.getList().get(i).getName());
-                            Log.e("content:", accountListBean.getList().get(i).getContent());
-                            Log.e("time:", accountListBean.getList().get(i).getCreateTime());
-                        }
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                mAdapter = new SimpleAdapter(MeetingManage.this, getData2
-                                        (accountListBean), R.layout.home_meetingmanage_list, new
-                                        String[]{"title", "content", "time"}, new int[]{R.id.title,
-                                        R.id.content, R.id.leavetime});
-                                list.setAdapter(mAdapter);
-                                dialog.dismiss();
+            }
 
-                                mAdapter.notifyDataSetChanged();
-                                swiperefresh.setRefreshing(false);
-                            }
-                        });
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String str = response.body().string();
+                Log.e("urlmeeting的result", "请求数据:" + str);
+
+                final MeetingManagerBean accountListBean = new Gson().fromJson(str,
+                        MeetingManagerBean.class);
+                for (int i = 0; i < accountListBean.getList().size(); i++) {
+                    Log.e("title:", accountListBean.getList().get(i).getName());
+                    Log.e("content:", accountListBean.getList().get(i).getContent());
+                    Log.e("time:", accountListBean.getList().get(i).getCreateTime());
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter = new SimpleAdapter(MeetingManage.this, getData2
+                                (accountListBean), R.layout.home_meetingmanage_list, new
+                                String[]{"title", "content", "time"}, new int[]{R.id.title,
+                                R.id.content, R.id.leavetime});
+                        list.setAdapter(mAdapter);
+                        dialog.dismiss();
+
+                        mAdapter.notifyDataSetChanged();
+                        swiperefresh.setRefreshing(false);
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                });
             }
+        });
+    }
 
-            private List<? extends Map<String, ?>> getData2(MeetingManagerBean accountListBean) {
-                mHashmap = new ArrayList<>();
-                for (int j = 0; j < accountListBean.getList().size(); j++) {
-                    mMap = new HashMap<>();
-                    mMap.put("title", accountListBean.getList().get(j).getName());
-                    mMap.put("content", accountListBean.getList().get(j).getContent());
-                    mMap.put("time", accountListBean.getList().get(j).getCreateTime());
-                    mHashmap.add(mMap);
-                }
-                return mHashmap;
-            }
-        }).start();
+    private List<? extends Map<String, ?>> getData2(MeetingManagerBean accountListBean) {
+        mHashmap = new ArrayList<>();
+        for (int j = 0; j < accountListBean.getList().size(); j++) {
+            mMap = new HashMap<>();
+            mMap.put("title", accountListBean.getList().get(j).getName());
+            mMap.put("content", accountListBean.getList().get(j).getContent());
+            mMap.put("time", accountListBean.getList().get(j).getCreateTime());
+            mHashmap.add(mMap);
+        }
+        return mHashmap;
     }
 
     private void swipe() {

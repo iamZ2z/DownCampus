@@ -15,6 +15,7 @@ import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMValueCallBack;
@@ -57,8 +58,7 @@ public class AddressActivity extends Activity {
     private List<String> listString;
     private List<GroupMemberBean> tempOne;
     private ArrayList<String> mArrayListresult = new ArrayList<>();
-    @ViewInject(R.id.loadingimg)
-    private ImageView loadingimg;
+    private MaterialDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +84,10 @@ public class AddressActivity extends Activity {
         initView();
         initEaseList();
         myExpandLv.setOnItemLongClickListener(new LongListener());
+        dialog= new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
     }
 
     @Override
@@ -163,6 +167,7 @@ public class AddressActivity extends Activity {
                     public void run() {
                         myExpandLv.expandGroup(0);
                         myAdapter.notifyDataSetChanged();
+                        dialog.dismiss();
                     }
                 });
             }
@@ -174,7 +179,6 @@ public class AddressActivity extends Activity {
         });
         //初始化时需要传入联系人list
         //mEaseContactlist.init(contactList);
-        loadingimg.setVisibility(View.GONE);
     }
 
     public void initEaseListRestart(String movelist) {

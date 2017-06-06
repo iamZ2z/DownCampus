@@ -15,12 +15,13 @@ import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bigkoo.pickerview.TimePickerView;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.HomeworkBean;
 import com.logan.bean.HomeworkSubjectBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -49,7 +50,7 @@ public class HomeworkActivity extends Activity {
     private TitleBar titlebar;
     @ViewInject(R.id.sp_subject)
     private Spinner sp_subject;
-    String[] str_subject = {"科目", "语文", "数学", "英语"};
+    String[] str_subject = {"全部科目"};
     @ViewInject(R.id.timepicker)
     private TimePickerView mTimePicker;
     @ViewInject(R.id.tv_date_begin)
@@ -67,15 +68,24 @@ public class HomeworkActivity extends Activity {
 
     @ViewInject(R.id.swiperefresh)
     private SwipeRefreshLayout swiperefresh;
+    private String startTime="2017-01-01";
+    private String endTime="2017-12-30";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
-        initView();
+        titlebar.setTitle("我的作业");
+        titlebar.setLeftClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        urlcheck();
+        urlcheck(startTime,endTime);
         urlsubject();
         swipe();
     }
@@ -103,9 +113,13 @@ public class HomeworkActivity extends Activity {
                 if (i == 1) {
                     String strdate = getDate(date);
                     tv_date_begin.setText(strdate.replaceAll("/", "-"));
+                    startTime=tv_date_begin.getText().toString();
+                    urlcheck(startTime,endTime);
                 } else if (i == 2) {
                     String strdate = getDate(date);
                     tv_date_end.setText(strdate.replaceAll("/", "-"));
+                    endTime=tv_date_end.getText().toString();
+                    urlcheck(startTime,endTime);
                 }
             }
         }).setType(TimePickerView.Type.YEAR_MONTH_DAY).setLabel("年", "月", "日", "", "",
@@ -114,32 +128,11 @@ public class HomeworkActivity extends Activity {
                 .setDividerColor(Color.BLUE).setContentSize(20).setDate(selectedDate).build();
     }
 
-    private void initView() {
-        titlebar.setTitle("我的作业");
-        titlebar.setLeftClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        mAdapter = new SimpleAdapter(this, getData(), R.layout.home_homework_list, new
-                String[]{"subject", "author", "content", "leavetime"}, new int[]{R.id.subject,
-                R.id.author, R.id.content, R.id.leavetime});
-        mListView.setAdapter(mAdapter);
-    }
-
-    private List<? extends Map<String, ?>> getData() {
-        mHashmap = new ArrayList<>();
-        mMap = new HashMap<>();
-        mMap.put("subject", "科目：语文");
-        mMap.put("author", "刘波");
-        mMap.put("content", "今天请各位回家预习《论语》，明天老师进行抽查。今天请各位回家预习《论语》，明天老师进行抽查。");
-        mMap.put("leavetime", "2017-02-01 16:00");
-        mHashmap.add(mMap);
-        return mHashmap;
-    }
-
-    private void urlcheck() {
+    private void urlcheck(String startTime,String endTime) {
+        final MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getStudenthomework();
         String token = interfaceTest.getToken();
@@ -147,7 +140,7 @@ public class HomeworkActivity extends Activity {
 
         final OkHttpClient client = new OkHttpClient();
         FormBody formBody = new FormBody.Builder().add("token", token).add("studentId",
-                studentId).build();
+                studentId).add("startTime",startTime).add("endTime",endTime).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
             @Override
@@ -164,12 +157,12 @@ public class HomeworkActivity extends Activity {
                             @Override
                             public void run() {
                                 mAdapter = new SimpleAdapter(HomeworkActivity.this, data, R
-                                        .layout.home_homework_list, new
-                                        String[]{"subject", "author", "content", "leavetime"},
-                                        new int[]{R.id.subject,
-                                                R.id.author, R.id.content, R.id.leavetime});
+                                        .layout.home_homework_list, new String[]{"subject",
+                                        "author", "content", "leavetime"}, new int[]{R.id.subject,
+                                        R.id.author, R.id.content, R.id.leavetime});
                                 mListView.setAdapter(mAdapter);
 
+                                dialog.dismiss();
                                 mAdapter.notifyDataSetChanged();
                                 swiperefresh.setRefreshing(false);
                             }
@@ -218,13 +211,6 @@ public class HomeworkActivity extends Activity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                /*mAdapter = new SimpleAdapter(HomeworkActivity.this, data, R
-                                .layout.home_homework_list, new
-                                        String[]{"subject",  "author","content","leavetime"}, new
-                                         int[]{R.id.subject,
-                                        R.id.author, R.id.content, R.id.leavetime});
-                                mListView.setAdapter(mAdapter);*/
-
                                 sp_subject(accountListBean);
                             }
                         });
@@ -249,10 +235,6 @@ public class HomeworkActivity extends Activity {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position,
                                                long id) {
-                /*
-                 * Toast.makeText(LeaveActivity.this,"你点击的是" +
-				 * leave_type[position], Toast.LENGTH_SHORT).show();
-				 */
                     }
 
                     @Override
@@ -267,7 +249,8 @@ public class HomeworkActivity extends Activity {
         swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                urlcheck();
+                urlcheck(startTime,endTime);
+
             }
         });
     }

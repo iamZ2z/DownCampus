@@ -33,14 +33,6 @@
                     android:textColor="@color/gray_51x3"
                     android:textSize="18sp"/>
 
-                <!--<ImageView
-                    android:id="@+id/btn_headportrait"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/search_icon_more"/>-->
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_headportrait"
                     android:layout_width="48dp"

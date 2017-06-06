@@ -11,6 +11,7 @@ public class AccountLoginBean {
     private String message;
 
     private String token;
+    private String roleType;
     private String user_id;
     private String username;
     private String fullname;
@@ -40,9 +41,9 @@ public class AccountLoginBean {
 
 
 
-
-
-
+    public String getRoleType() {
+        return roleType;
+    }
 
     public String getAutograph() {
         return autograph;

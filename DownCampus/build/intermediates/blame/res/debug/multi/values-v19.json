@@ -22,6 +22,27 @@
                         "endOffset": 186
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 184,
+                    "endLine": 9,
+                    "endColumn": 12,
+                    "endOffset": 358
+                },
+                "from": {
+                    "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\values-v19\\styles.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 194,
+                        "endLine": 11,
+                        "endColumn": 12,
+                        "endOffset": 371
+                    }
+                }
             }
         ]
     }

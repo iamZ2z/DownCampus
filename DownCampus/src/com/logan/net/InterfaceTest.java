@@ -1,4 +1,4 @@
-package com.logan.constant;
+package com.logan.net;
 
 /**
  * Created by Z2z on 2017-4-20.
@@ -6,8 +6,8 @@ package com.logan.constant;
 
 public class InterfaceTest {
     //服务器
-    final String serverurl="http://192.168.89.173:8080/iccp/api";//东东
-    //final String serverurl="http://lubo.logansoft.com:8080/api";//外网
+    //final String serverurl="http://192.168.89.173:8080/iccp/api";//东东
+    final String serverurl="http://lubo.logansoft.com:8080/api";//外网
     //final String serverurl="http://192.168.89.162:8080/iccp/api";//景喜
     //final String serverurl="http://192.168.89.177:8080/iccp/api";//绵科
     //final String serverurl="http://192.168.89.150:8080/iccp/api";//彦谨
@@ -22,10 +22,9 @@ public class InterfaceTest {
     public static final String attendence ="/loadTeacherAttendance.api";
     public static final String currentterm ="/basic/getCurrentSemester.api";
     public static final String queryschedule ="/edu/querySyllabus.api";
-
     public static final String teacherfootprint ="/loadTeacherAttenByMonth.api";
     public static final String teachersavefootprint ="/saveTeacherAttendance.api";
-    public static final String querygrade ="/getGradeOrClazzByUser.api";
+    public static final String querygrade ="/getGradeOrClazzByUser.api";//暂不用，用户获取年班级
     public static final String uploademail ="/saveUserUpdateEmail.api";
     public static final String uploadautograph ="/saveUserAutograph.api";
     public static final String uploadicon ="/saveUserUpdatePicture.api";//上传头像
@@ -71,6 +70,8 @@ public class InterfaceTest {
     public static final String examquery="/exam/queryExam.api";
     public static final String examachievement="/achievement/queryAchievement.api";
 
+    //图片
+    final String imgurl="http://lubo.logansoft.com:8080";//外网
 
 
 
@@ -78,6 +79,15 @@ public class InterfaceTest {
 
 
 
+
+
+
+
+
+
+    public String getImgurl() {
+        return imgurl;
+    }
 
     public static String getLogmanagesave() {
         return logmanagesave;

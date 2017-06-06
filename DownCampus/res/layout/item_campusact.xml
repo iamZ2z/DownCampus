@@ -12,12 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bord_campusact"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
         android:orientation="vertical" >
 
-        <com.util.RoundImageView
+        <com.util.view.TopRoundImageView
             android:id="@+id/img"
             android:layout_width="match_parent"
             android:layout_height="195dp"
+            android:src="@drawable/upload"
             android:scaleType="centerCrop" />
 
         <LinearLayout

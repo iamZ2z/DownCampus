@@ -30,12 +30,12 @@ import android.widget.Toast;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.bean.MyApproveBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
+import com.logan.net.OkHttpUtils;
 import com.util.title.TitleBar;
 
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.Response;
 
 @ContentView(R.layout.home_myapprove)
@@ -84,10 +84,6 @@ public class MyApproveActivity extends Activity {
     }
 
     private void list_Listener() {
-        mAdapter = new SimpleAdapter(this, getData(),
-                R.layout.home_approve_list, new String[]{"head", "name",
-                "type", "wait", "time"}, new int[]{R.id.head,
-                R.id.name, R.id.type, R.id.wait, R.id.leavetime});
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -98,18 +94,6 @@ public class MyApproveActivity extends Activity {
                 startActivity(mIntent);
             }
         });
-    }
-
-    private List<? extends Map<String, ?>> getData() {
-        mHashmap = new ArrayList<>();
-        mMap = new HashMap<>();
-        mMap.put("head", R.drawable.touxiang);
-        mMap.put("name", "姓名");
-        mMap.put("type", "审批类型");
-        mMap.put("wait", "待审批");
-        mMap.put("time", "2017-03-15");
-        mHashmap.add(mMap);
-        return mHashmap;
     }
 
     @Event(value = R.id.layout_type)
@@ -128,7 +112,7 @@ public class MyApproveActivity extends Activity {
         });
     }
 
-    private void dourl() {
+    /*private void dourl() {
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getLeavequery();
         String token = interfaceTest.getToken();
@@ -159,13 +143,13 @@ public class MyApproveActivity extends Activity {
                                     @Override
                                     public void onItemClick(AdapterView<?> parent, View view,
                                                             int position, long id) {
-                                        Intent mIntent = new Intent(MyApproveActivity.this, ApproveDetail.class);
+                                        Intent mIntent = new Intent(MyApproveActivity.this,
+                                        ApproveDetail.class);
                                         mIntent.putExtra("position",position);
                                         mIntent.putExtra("approvedetail", bean);
                                         startActivity(mIntent);
                                     }
                                 });
-
                                 mAdapter.notifyDataSetChanged();
                                 swiperefresh.setRefreshing(false);
                             }
@@ -175,21 +159,122 @@ public class MyApproveActivity extends Activity {
                     e.printStackTrace();
                 }
             }
-
-            private List<? extends Map<String, ?>> getData2(MyApproveBean accountListBean) {
-                mHashmap = new ArrayList<>();
-                for (int j = 0; j < accountListBean.getData().size(); j++) {
-                    mMap = new HashMap<>();
-                    mMap.put("head", R.drawable.touxiang);
-                    mMap.put("name", "姓名：" + accountListBean.getData().get(j).getUserName());
-                    mMap.put("type", "请假类型：" + accountListBean.getData().get(j).getLeavetypeStr());
-                    mMap.put("wait", accountListBean.getData().get(j).getAuditStr());
-                    mMap.put("time", accountListBean.getData().get(j).getCreateTime());
-                    mHashmap.add(mMap);
-                }
-                return mHashmap;
-            }
         }).start();
+    }*/
+
+    /*private void dourl() {
+        InterfaceTest interfaceTest = new InterfaceTest();
+        String url = interfaceTest.getServerurl() + interfaceTest.getLeavequery();
+        String token = interfaceTest.getToken();
+
+        OkHttpClient client = new OkHttpClient();
+        FormBody formBody = new FormBody.Builder()
+                .add("token", token)
+                .add("pageSize", "10")
+                .build();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(formBody)
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String str = response.body().string();
+                Log.e("Myapprove的result", "请求数据:" + str);
+                final MyApproveBean bean = new Gson().fromJson(str, MyApproveBean.class);
+                data = getData2(bean);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter = new SimpleAdapter(MyApproveActivity.this, data,
+                                R.layout.home_approve_list, new String[]{"head", "name",
+                                "type", "wait", "time"}, new int[]{R.id.head,
+                                R.id.name, R.id.type, R.id.wait, R.id.leavetime});
+                        mListView.setAdapter(mAdapter);
+                        mListView.setOnItemClickListener(new OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view,
+                                                    int position, long id) {
+                                Intent mIntent = new Intent(MyApproveActivity.this, ApproveDetail
+                                        .class);
+                                mIntent.putExtra("position", position);
+                                mIntent.putExtra("approvedetail", bean);
+                                startActivity(mIntent);
+                            }
+                        });
+                        mAdapter.notifyDataSetChanged();
+                        swiperefresh.setRefreshing(false);
+                    }
+                });
+            }
+        });
+    }*/
+
+    private void dourl() {
+        InterfaceTest interfaceTest = new InterfaceTest();
+        String url = interfaceTest.getServerurl() + interfaceTest.getLeavequery();
+        String token = interfaceTest.getToken();
+
+        Map<String, String> map = new HashMap<>();
+        map.put("token", token);
+        map.put("pageSize", "10");
+        OkHttpUtils.post(url, map, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String str = response.body().string();
+                Log.e("Myapprove的result", "请求数据:" + str);
+                final MyApproveBean bean = new Gson().fromJson(str, MyApproveBean.class);
+                data = getData2(bean);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter = new SimpleAdapter(MyApproveActivity.this, data, R.layout
+                                .home_approve_list, new String[]{"head", "name", "type", "wait",
+                                "time"}, new int[]{R.id.head, R.id.name, R.id.type, R.id.wait, R
+                                .id.leavetime});
+                        mListView.setAdapter(mAdapter);
+                        mListView.setOnItemClickListener(new OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view,
+                                                    int position, long id) {
+                                Intent mIntent = new Intent(MyApproveActivity.this, ApproveDetail
+                                        .class);
+                                mIntent.putExtra("position", position);
+                                mIntent.putExtra("approvedetail", bean);
+                                startActivity(mIntent);
+                            }
+                        });
+                        mAdapter.notifyDataSetChanged();
+                        swiperefresh.setRefreshing(false);
+                    }
+                });
+            }
+        });
+    }
+
+    private List<? extends Map<String, ?>> getData2(MyApproveBean accountListBean) {
+        mHashmap = new ArrayList<>();
+        for (int j = 0; j < accountListBean.getData().size(); j++) {
+            mMap = new HashMap<>();
+            mMap.put("head", R.drawable.touxiang);
+            mMap.put("name", "姓名：" + accountListBean.getData().get(j).getUserName());
+            mMap.put("type", "请假类型：" + accountListBean.getData().get(j).getLeavetypeStr());
+            mMap.put("wait", accountListBean.getData().get(j).getAuditStr());
+            mMap.put("time", accountListBean.getData().get(j).getCreateTime());
+            mHashmap.add(mMap);
+        }
+        return mHashmap;
     }
 
     private void swipe() {

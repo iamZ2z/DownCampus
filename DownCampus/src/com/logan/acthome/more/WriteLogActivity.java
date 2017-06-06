@@ -23,11 +23,9 @@ import com.afollestad.materialdialogs.GravityEnum;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
-import com.logan.acthome.parentleader.SendMeetingActivity;
 import com.logan.bean.SaveMeetingBean;
 import com.logan.bean.WriteLogBean;
-import com.logan.constant.InterfaceTest;
-import com.logan.constant.UsuallyData;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 import com.util.Utils;
 

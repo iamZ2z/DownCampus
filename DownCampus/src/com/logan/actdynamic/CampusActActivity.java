@@ -17,7 +17,7 @@ import com.example.mobilecampus.R;
 import com.google.gson.Gson;
 import com.logan.adapter.CampusActAdapter;
 import com.logan.bean.CampusActBean;
-import com.logan.constant.InterfaceTest;
+import com.logan.net.InterfaceTest;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -35,8 +35,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.example.mobilecampus.R.id.img;
-
 @ContentView(R.layout.find_campusact)
 public class CampusActActivity extends Activity implements OnItemClickListener {
     private Intent mIntent;
@@ -50,10 +48,8 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
     private TitleBar titlebar;
     private InterfaceTest interfaceTest = new InterfaceTest();
     private List<? extends Map<String, ?>> data;
-
     @ViewInject(R.id.swiperefresh)
     private SwipeRefreshLayout swiperefresh;
-    private CampusActAdapter campusActAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,18 +72,6 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
                 finish();
             }
         });
-    }
-
-    private List<HashMap<String, Object>> getData() {
-        mHashmap = new ArrayList<>();
-        mMap = new HashMap<>();
-        mMap.put("img", R.drawable.upload);
-        mMap.put("title", "伶仃希望小学帝第七届校运会");
-        mMap.put("type", "活动类型：学校运动场");
-        mMap.put("place", "体育运动场");
-        mMap.put("data", "2017-03-01 12:00");
-        mHashmap.add(mMap);
-        return mHashmap;
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -114,15 +98,14 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
                     if (response.isSuccessful()) {
                         String str = response.body().string();
                         Log.e("urlCampusAct的result", "请求数据:" + str);
-                        Gson gson = new Gson();
-                        final CampusActBean accountListBean = gson.fromJson(str,
+                        final CampusActBean accountListBean = new Gson().fromJson(str,
                                 CampusActBean.class);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 getData2(accountListBean);
-                                campusActAdapter = new CampusActAdapter(CampusActActivity.this,
-                                        mHashmap);
+                                CampusActAdapter campusActAdapter = new CampusActAdapter
+                                        (CampusActActivity.this, mHashmap);
 
                                 mListView.setAdapter(campusActAdapter);
                                 dialog.dismiss();
@@ -140,7 +123,7 @@ public class CampusActActivity extends Activity implements OnItemClickListener {
                 mHashmap = new ArrayList<>();
                 for (int j = 0; j < bean.getData().size(); j++) {
                     mMap = new HashMap<>();
-                    mMap.put("img", bean.getData().get(j).getImage());
+                    mMap.put("img", interfaceTest.getImgurl() + bean.getData().get(j).getImage());
                     mMap.put("title", bean.getData().get(j).getName());
                     mMap.put("type", "活动类型：学校运动场");
                     mMap.put("place", bean.getData().get(j).getAddress());

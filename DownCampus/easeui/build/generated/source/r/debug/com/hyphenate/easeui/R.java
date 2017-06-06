@@ -24,8 +24,6 @@ public final class R {
         public static int slide_in_from_right=0x7f05000c;
         public static int slide_out_to_left=0x7f05000d;
         public static int slide_out_to_right=0x7f05000e;
-        public static int voice_from_icon=0x7f05000f;
-        public static int voice_to_icon=0x7f050010;
     }
     public static final class attr {
         /** <p>Must be an integer value, such as "<code>100</code>".
@@ -530,6 +528,8 @@ containing a value of this type.
         public static int ee_8=0x7f0200a5;
         public static int ee_9=0x7f0200a6;
         public static int ic_launcher=0x7f0200a7;
+        public static int voice_from_icon=0x7f0200a8;
+        public static int voice_to_icon=0x7f0200a9;
     }
     public static final class id {
         public static int alert_message=0x7f0a000d;
@@ -1007,16 +1007,10 @@ containing a value of this type.
         public static int Anim_style=0x7f070009;
         public static int Anim_style2=0x7f070000;
         public static int AppTheme=0x7f07000a;
-        /**  模糊 
-         */
         public static int HeadScale=0x7f07000b;
         public static int MyAlertDialog=0x7f07000c;
         public static int MyDialogStyle=0x7f07000d;
-        /**  模糊 
-         */
         public static int MyDialogStyleBottom=0x7f07000e;
-        /**  模糊 
-         */
         public static int MyDialogStyleTop=0x7f07000f;
         public static int bottom_line_edit_text_style=0x7f070010;
         public static int chat_content_date_style=0x7f070011;
