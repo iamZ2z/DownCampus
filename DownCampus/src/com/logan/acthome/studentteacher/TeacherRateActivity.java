@@ -79,7 +79,7 @@ public class TeacherRateActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 correctid = strteacherid[position];
-                correctname=strname[position];
+                correctname = strname[position];
             }
 
             @Override
@@ -93,7 +93,12 @@ public class TeacherRateActivity extends Activity {
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getStudentquery();
         String token = interfaceTest.getToken();
-        final String studentId = interfaceTest.getUser_id();
+        String studentId = "";
+        String role = interfaceTest.getRole();
+        if (role.equals("学生")) studentId = interfaceTest.getUser_id();
+        else if (role.equals("家长")) studentId = interfaceTest.getStudentId();
+        Log.e("token", token);
+        Log.e("studentId", studentId);
 
         FormBody formBody = new FormBody.Builder().add("token", token).add("studentId",
                 studentId).build();
@@ -108,30 +113,32 @@ public class TeacherRateActivity extends Activity {
                         Log.e("RateContent的result", "请求数据:" + str);
                         bean = new Gson().fromJson(str, TeacherRateBean
                                 .class);
-                        for (int j = 0; j < bean.getData().size(); j++) {
-                            if (bean.getData().get(j).getCode() != null) {
-                                String str1 = bean.getData().get(j).getCode();
-                                Log.e("getCode", str1);
-                            }
-                        }
-                        for (int n = 0; n < bean.getData().size(); n++) {
-                            if (bean.getData().get(n).getFullname() != null) {
-                                String str1 = bean.getData().get(n).getFullname();
-                                String str2 = bean.getData().get(n).getTeacherId();
-                                mArrayList.add(str1);
-                                mArrayList2.add(str2);
-                            }
-                        }
-                        strname = new String[mArrayList.size()];
-                        strteacherid = new String[mArrayList2.size()];
-                        for (int k = 0; k < mArrayList.size(); k++) {
-                            strname[k] = mArrayList.get(k);
-                            strteacherid[k] = mArrayList2.get(k);
-                            Log.e("fullname", strname[k]);
-                        }
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                for (int j = 0; j < bean.getData().size(); j++) {
+                                    if (bean.getData().get(j).getCode() != null) {
+                                        String str1 = bean.getData().get(j).getCode();
+                                        Log.e("getCode", str1);
+                                    }
+                                }
+                                for (int n = 0; n < bean.getData().size(); n++) {
+                                    if (bean.getData().get(n).getFullname() != null) {
+                                        String str1 = bean.getData().get(n).getFullname();
+                                        String str2 = bean.getData().get(n).getTeacherId();
+                                        mArrayList.add(str1);
+                                        mArrayList2.add(str2);
+                                    }
+                                }
+                                strname = new String[mArrayList.size()];
+                                strteacherid = new String[mArrayList2.size()];
+                                for (int k = 0; k < mArrayList.size(); k++) {
+                                    strname[k] = mArrayList.get(k);
+                                    strteacherid[k] = mArrayList2.get(k);
+                                    Log.e("fullname", strname[k]);
+                                }
+
+
                                 sp_Year();
                                 cardview.setOnClickListener(new View.OnClickListener() {
                                     @Override

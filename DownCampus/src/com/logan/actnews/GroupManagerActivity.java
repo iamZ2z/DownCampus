@@ -1,7 +1,9 @@
 package com.logan.actnews;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -30,14 +32,13 @@ public class GroupManagerActivity extends Activity{
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
     private ImageView mCollectView;
-
     @ViewInject(R.id.layout)
     private LinearLayout mLayout;
-
     @ViewInject(R.id.list)
     private ListView mListView;
     private GroupManagerAdapter mGroupManagerAdapter;
     private ArrayList<String> mArrayList;
+    private static final String space="data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,8 @@ public class GroupManagerActivity extends Activity{
         titlebar.addAction(new TitleBar.TextAction("完成") {
             @Override
             public void performAction(View view) {
+                putSharedPreference();
+
                 Intent intent=new Intent();
                 intent.putExtra("result",mArrayList);
                 setResult(0,intent);
@@ -58,6 +61,17 @@ public class GroupManagerActivity extends Activity{
         });
 
         initListView();
+    }
+
+    private void putSharedPreference() {
+        SharedPreferences sp = getSharedPreferences(space, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sp.edit();
+        editor.putInt("addresslist",mArrayList.size());
+        for (int i = 0; i <mArrayList.size() ; i++) {
+            editor.remove("addressarraylist"+i);
+            editor.putString("addressarraylist"+i,mArrayList.get(i));
+        }
+        editor.commit();
     }
 
     private void initListView() {

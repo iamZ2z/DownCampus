@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jun 06 17:58:54 CST 2017
+#Thu Jun 08 10:09:39 CST 2017
 1073.file=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\item_newsdetails.xml
 1007.base=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\resources-debug.ap_
 835.base=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\resources-debug.ap_

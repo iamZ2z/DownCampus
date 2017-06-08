@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -148,7 +150,6 @@ public class AccountActivity extends Activity {
             loginurl(mEditText_account.getText().toString(), mEditText_password.getText()
                     .toString());
         } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
-
     }
 
     @Event(value = R.id.campus)
@@ -313,6 +314,20 @@ public class AccountActivity extends Activity {
         String user=sp.getString("account","1");
         String pass=sp.getString("password",null);
         if (!user.equals("1")) loginurl(user,pass);
+    }
+
+    @Event(value=R.id.et_password,type= View.OnKeyListener.class)
+    private boolean onEtPassword(View v,int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                    .hideSoftInputFromWindow(AccountActivity.this.getCurrentFocus()
+                            .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            if (mEditText_account.getText() != null && mEditText_password.getText() != null) {
+                loginurl(mEditText_account.getText().toString(), mEditText_password.getText()
+                        .toString());
+            } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 
 }

@@ -99,7 +99,8 @@
         </activity>
         <activity android:name="com.logan.actmobilecampus.AccountActivity">
         </activity>
-        <activity android:name="com.logan.actmobilecampus.MainActivity"/>
+        <activity android:name="com.logan.actmobilecampus.MainActivity"
+            android:launchMode="singleTop"/>
         <activity android:name="com.logan.actmobilecampus.FindPassActivity">
         </activity>
         <activity android:name="com.logan.actmobilecampus.CampusCooperationActivity">
@@ -193,7 +194,7 @@
         </activity>
         <activity android:name="com.logan.acthome.studentteacher.TeacherRateActivity"/>
         <activity android:name="com.logan.acthome.more.RateContentActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
+                  android:windowSoftInputMode="adjustPan|stateHidden"/>
         <activity android:name="com.logan.acthome.studentteacher.ClassActivityActivity">
         </activity>
         <activity android:name="com.logan.acthome.parentleader.BehaviorActivity">

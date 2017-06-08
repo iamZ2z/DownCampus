@@ -238,7 +238,7 @@ public class MainActivity extends FragmentActivity {
                 Class<?>[]{HomeFragment.class, NewsFragment.class, FindFragment.class,
                 MeFragment.class,}, new Bundle[]{});
         mViewPager.setAdapter(mBarFragmentAdapter);
-        mViewPager.setOnPageChangeListener(new MyOnPageChangeListener());
+        mViewPager.addOnPageChangeListener(new MyOnPageChangeListener());
         mViewPager.setCurrentItem(0);
 
         mMainBottomBar = (MainBottomBar) findViewById(R.id.bottom_tab_bar);
@@ -258,7 +258,6 @@ public class MainActivity extends FragmentActivity {
 
     //当viewpager切换完成
     public class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
-
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }

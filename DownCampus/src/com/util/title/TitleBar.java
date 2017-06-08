@@ -84,15 +84,13 @@ public class TitleBar extends ViewGroup implements View.OnClickListener {
                 .MATCH_PARENT);
 
         //改
-        if (mLeftText.getText().equals("")||mLeftText.getText().equals(null)||mLeftText.getText().equals("　")) {
+        if (mLeftText.getText().equals("") || mLeftText.getText().equals(null) || mLeftText
+                .getText().equals("　")) {
             img = getResources().getDrawable(R.mipmap.nav_btn_back);
             img.setBounds(0, 32, 80, 120);
             mLeftText.setCompoundDrawables(img, null, null, null);
         }
-        //mLeftText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ret, 0, 0, 0);
         mCenterLayout.setFitsSystemWindows(true);
-        /*if(mSubTitleText.getText().equals("")||mSubTitleText.getText()!=null)
-            mSubTitleText.setTextColor(Color.WHITE);*/
 
         mLeftText.setTextSize(DEFAULT_ACTION_TEXT_SIZE);
         mLeftText.setSingleLine();
@@ -195,7 +193,6 @@ public class TitleBar extends ViewGroup implements View.OnClickListener {
                 mSubTitleText.setVisibility(View.GONE);
             }
         }
-
 
         //改
         mCenterText.setTextColor(Color.WHITE);
@@ -310,9 +307,10 @@ public class TitleBar extends ViewGroup implements View.OnClickListener {
     public View addAction(Action action) {
         final int index = mRightLayout.getChildCount();
         //改
-        if (mLeftText.getText().equals("")||mLeftText.getText().equals(null)||mLeftText.getText().equals("　")) {
+        if (mLeftText.getText().equals("") || mLeftText.getText().equals(null) || mLeftText
+                .getText().equals("　")) {
         }
-        mCenterText.setPadding(0,0,0,0);
+        mCenterText.setPadding(0, 0, 0, 0);
         return addAction(action, index);
     }
 

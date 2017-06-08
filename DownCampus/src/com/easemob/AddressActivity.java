@@ -2,8 +2,10 @@ package com.easemob;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -35,7 +37,9 @@ import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @ContentView(R.layout.me_address)
 public class AddressActivity extends Activity {
@@ -59,6 +63,7 @@ public class AddressActivity extends Activity {
     private List<GroupMemberBean> tempOne;
     private ArrayList<String> mArrayListresult = new ArrayList<>();
     private MaterialDialog dialog;
+    private static final String space="data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +85,16 @@ public class AddressActivity extends Activity {
             }
         });
 
-        mArrayListresult.add("联系人");
+        SharedPreferences sp=getSharedPreferences(space, Context.MODE_PRIVATE);
+        mArrayListresult.clear();
+        int size=sp.getInt("addresslist",0);
+        if (size==0)   mArrayListresult.add("联系人");
+        else {
+            for (int i = 0; i < size; i++) {
+                mArrayListresult.add(sp.getString("addressarraylist"+i,null));
+            }
+        }
+        //mArrayListresult.add("联系人");
         initView();
         initEaseList();
         myExpandLv.setOnItemLongClickListener(new LongListener());

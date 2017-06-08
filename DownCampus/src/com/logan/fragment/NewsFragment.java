@@ -1,6 +1,6 @@
 package com.logan.fragment;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.easemob.AddressActivity;
 import com.easemob.ConversationListFragment;
 import com.example.mobilecampus.R;
 import com.logan.actmobilecampus.MainActivity;
-import com.easemob.AddressActivity;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -25,23 +25,17 @@ public class NewsFragment extends Fragment {
     @ViewInject(R.id.img)
     private ImageView img;
     private ConversationListFragment mConversationListFragment;
-
-    private MainActivity mainActivity;
     public Handler mHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             if (msg.what == 1) mConversationListFragment.refresh();
         }
     };
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mainActivity = (MainActivity) activity;
-        mainActivity.setHandler(mHandler);
-    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.setHandler(mHandler);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -56,15 +50,15 @@ public class NewsFragment extends Fragment {
     }
 
     private void initList() {
-        if (mConversationListFragment == null) {
+        //if (mConversationListFragment == null) {
             mConversationListFragment = new ConversationListFragment();
             mConversationListFragment.hideTitleBar();
-        }
-        if (!mConversationListFragment.isAdded()) {
+        //}
+        //if (!mConversationListFragment.isAdded()) {
             //通过getSupportFragmentManager启动fragment即可
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id
                     .conversationlayout, mConversationListFragment).commit();
-        }
+        //}
     }
 
     @Event(R.id.img)

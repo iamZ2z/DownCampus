@@ -109,7 +109,9 @@
         </activity>
         <activity android:name="com.logan.actmobilecampus.AccountActivity" >
         </activity>
-        <activity android:name="com.logan.actmobilecampus.MainActivity" />
+        <activity
+            android:name="com.logan.actmobilecampus.MainActivity"
+            android:launchMode="singleTop" />
         <activity android:name="com.logan.actmobilecampus.FindPassActivity" >
         </activity>
         <activity android:name="com.logan.actmobilecampus.CampusCooperationActivity" >

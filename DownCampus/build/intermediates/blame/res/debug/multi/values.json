@@ -15221,28 +15221,20 @@
                     "startOffset": 221515,
                     "endLine": 3125,
                     "endColumn": 12,
-                    "endOffset": 221958
+                    "endOffset": 221971
                 },
                 "from": {
-                    "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\values\\styles.xml",
-                    "position": {
-                        "startLine": 71,
-                        "startColumn": 4,
-                        "startOffset": 3047,
-                        "endLine": 79,
-                        "endColumn": 12,
-                        "endOffset": 3498
-                    }
+                    "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\values\\styles.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 3126,
                     "startColumn": 4,
-                    "startOffset": 221963,
+                    "startOffset": 221976,
                     "endLine": 3134,
                     "endColumn": 12,
-                    "endOffset": 222476
+                    "endOffset": 222489
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\values\\values.xml"
@@ -15252,10 +15244,10 @@
                 "to": {
                     "startLine": 3135,
                     "startColumn": 4,
-                    "startOffset": 222481,
+                    "startOffset": 222494,
                     "endLine": 3142,
                     "endColumn": 12,
-                    "endOffset": 222850
+                    "endOffset": 222863
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\values\\values.xml"
@@ -15265,10 +15257,10 @@
                 "to": {
                     "startLine": 3143,
                     "startColumn": 4,
-                    "startOffset": 222855,
+                    "startOffset": 222868,
                     "endLine": 3152,
                     "endColumn": 12,
-                    "endOffset": 223362
+                    "endOffset": 223375
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\values\\values.xml"
@@ -15278,10 +15270,10 @@
                 "to": {
                     "startLine": 3153,
                     "startColumn": 4,
-                    "startOffset": 223367,
+                    "startOffset": 223380,
                     "endLine": 3157,
                     "endColumn": 12,
-                    "endOffset": 223570
+                    "endOffset": 223583
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\values\\values.xml"
@@ -15291,10 +15283,10 @@
                 "to": {
                     "startLine": 3158,
                     "startColumn": 4,
-                    "startOffset": 223575,
+                    "startOffset": 223588,
                     "endLine": 3163,
                     "endColumn": 12,
-                    "endOffset": 223866
+                    "endOffset": 223879
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\values\\styles.xml"
@@ -15304,10 +15296,10 @@
                 "to": {
                     "startLine": 3164,
                     "startColumn": 4,
-                    "startOffset": 223871,
+                    "startOffset": 223884,
                     "endLine": 3179,
                     "endColumn": 12,
-                    "endOffset": 224541
+                    "endOffset": 224554
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\values\\values.xml"
@@ -15317,10 +15309,10 @@
                 "to": {
                     "startLine": 3180,
                     "startColumn": 4,
-                    "startOffset": 224546,
+                    "startOffset": 224559,
                     "endLine": 3184,
                     "endColumn": 12,
-                    "endOffset": 224759
+                    "endOffset": 224772
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\values\\values.xml"
@@ -15330,10 +15322,10 @@
                 "to": {
                     "startLine": 3185,
                     "startColumn": 4,
-                    "startOffset": 224764,
+                    "startOffset": 224777,
                     "endLine": 3187,
                     "endColumn": 12,
-                    "endOffset": 224916
+                    "endOffset": 224929
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\values\\values.xml"
@@ -15343,9 +15335,9 @@
                 "to": {
                     "startLine": 3188,
                     "startColumn": 4,
-                    "startOffset": 224921,
+                    "startOffset": 224934,
                     "endColumn": 66,
-                    "endOffset": 224983
+                    "endOffset": 224996
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\values\\values.xml"
@@ -15355,10 +15347,10 @@
                 "to": {
                     "startLine": 3189,
                     "startColumn": 4,
-                    "startOffset": 224988,
+                    "startOffset": 225001,
                     "endLine": 3192,
                     "endColumn": 12,
-                    "endOffset": 225258
+                    "endOffset": 225271
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\.android\\build-cache\\2d0394f3ee5e9f0a811dac517eeba8de4c174268\\output\\res\\values\\values.xml"
@@ -15368,10 +15360,10 @@
                 "to": {
                     "startLine": 3193,
                     "startColumn": 4,
-                    "startOffset": 225263,
+                    "startOffset": 225276,
                     "endLine": 3203,
                     "endColumn": 12,
-                    "endOffset": 225807
+                    "endOffset": 225820
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\values\\styles.xml"
@@ -15381,10 +15373,10 @@
                 "to": {
                     "startLine": 3204,
                     "startColumn": 4,
-                    "startOffset": 225812,
+                    "startOffset": 225825,
                     "endLine": 3212,
                     "endColumn": 12,
-                    "endOffset": 226236
+                    "endOffset": 226249
                 },
                 "from": {
                     "file": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\values\\styles.xml"

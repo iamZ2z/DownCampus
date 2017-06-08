@@ -1,16 +1,19 @@
 package com.logan.acthome.more;
 
 import android.app.Activity;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +52,8 @@ public class RateContentActivity extends Activity {
     @ViewInject(R.id.teachername)
     private TextView teachername;
     private RateContentAdapter adapter;
+    @ViewInject(R.id.layout)
+    private RelativeLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +73,7 @@ public class RateContentActivity extends Activity {
         loadData();
         hidekeyboard();
         //listViewHeight(mListView);
+        //addLayoutListener(mListView, btn);
     }
 
     private void initTeachername() {
@@ -132,7 +138,7 @@ public class RateContentActivity extends Activity {
 
         String itemScore = strpos;
         String classid = "4028812b5a6a878a015a6a8d04570006";
-        ArrayList<String> arrayList=usuallyData.getClazzid();
+        ArrayList<String> arrayList = usuallyData.getClazzid();
         if (!usuallyData.getClazzid().equals(null)) classid = arrayList.get(0);
 
         String valuatorType = "0";
@@ -215,11 +221,29 @@ public class RateContentActivity extends Activity {
         }
 
         ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         // listView.getDividerHeight()获取子项间分隔符占用的高度
         // params.height最后得到整个ListView完整显示需要的高度
         listView.setLayoutParams(params);
     }
 
+    private void addLayoutListener(final View layout, final View btn) {
+        layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver
+                .OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Rect rect = new Rect();
+                layout.getWindowVisibleDisplayFrame(rect);
+                int layoutInvisibleDisplayFrame = layout.getRootView().getHeight() - rect.bottom;
+                if (layoutInvisibleDisplayFrame > 100) {
+                    int[] location = new int[2];
+                    btn.getLocationInWindow(location);
+                    int btnHeight=(location[1]+btn.getHeight())-rect.bottom;
+                    layout.scrollTo(0,btnHeight);
+                }else
+                    layout.scrollTo(0,100);
+            }
+        });
+    }
 
 }

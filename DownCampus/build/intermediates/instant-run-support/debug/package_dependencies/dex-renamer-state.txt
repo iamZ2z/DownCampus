@@ -1,4 +1,4 @@
-#Fri Jun 02 15:35:06 CST 2017
+#Wed Jun 07 15:01:42 CST 2017
 file.9=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_fac7853b6d8e318e3ff171ce690098f78b5c028f\\classes.dex
 base.10=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_95e8026fb80b09722c4f769b319b4c165d6869ab
 file.8=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_609c114fcd51c66c78c9174cf4c0588e88b450e2\\classes.dex
