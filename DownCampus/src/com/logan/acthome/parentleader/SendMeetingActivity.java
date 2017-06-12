@@ -81,12 +81,14 @@ public class SendMeetingActivity extends Activity {
             String name = ettitle.getText().toString();
             String content = etcontent.getText().toString();
             String userid = interfaceTest.getUser_id();
-
             String url = interfaceTest.getServerurl() + interfaceTest.getMeetingsave();
             String token = interfaceTest.getToken();
             FormBody formBody = new FormBody.Builder().add("token", token).add("name", name).add
                     ("content", content).add("receiverIds", receiverid).add("receivers",
                     receivername).add("user.id", userid).build();
+            Log.e("发送会议的url:","url:"+url+"\ntoken:"+token+"\nname:"+name+"\ncontent:"+content);
+            Log.e("发送会议url:","receiverIds:"+receiverid+"\nreceivers:"+receivername+"\nuser.id:"+userid);
+
             final Request request = new Request.Builder().url(url).post(formBody).build();
             new Thread(new Runnable() {
                 @Override

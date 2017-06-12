@@ -1,12 +1,12 @@
 package com.logan.actme;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,7 +51,8 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 @ContentView(R.layout.me_editdata)
-public class EditDataActivity extends Activity implements OnClickListener, OnMenuItemClickListener {
+public class EditDataActivity extends AppCompatActivity implements OnClickListener,
+        OnMenuItemClickListener {
     /*@ViewInject(R.id.btn_headportrait)
     private ImageView btn_headportrait;*/
     @ViewInject(R.id.iv_headportrait)
@@ -103,7 +104,6 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
         initData();
         iv_headportrait.setOnClickListener(this);
         //uploadtest.setOnClickListener(this);
-
     }
 
     private void initView() {
@@ -255,12 +255,6 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
     }
 
     //自设圆形裁剪
-    /*private void cropImage(Uri uri) {
-        Intent mIntent = new Intent(this, CropActivity.class);
-        mIntent.putExtra("uri", uri.toString());
-        Log.v("debug uri", uri.toString());
-        startActivityForResult(mIntent, SDCARD_DISPLAY);
-    }*/
 
     private void setPicToView(Bitmap mBitmap) {
         String sdStatus = Environment.getExternalStorageState();
@@ -344,8 +338,8 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
 
     @Event(value = {R.id.btn_email, R.id.btn_autograph})
     private void onbtnuploadClick(View v) {
-        String url="";
-        FormBody formBody =null;
+        String url = "";
+        FormBody formBody = null;
         if (v.getId() == R.id.btn_email) {
             String stremail = email.getText().toString();
             String token = interfaceTest.getToken();
@@ -395,4 +389,40 @@ public class EditDataActivity extends Activity implements OnClickListener, OnMen
             }
         }).start();
     }
+
+    /*@NeedsPermission(android.Manifest.permission_group.CAMERA)
+    void receiverPermission() {
+        getSupportFragmentManager().beginTransaction();
+
+    }
+
+    @OnShowRationale(android.Manifest.permission_group.CAMERA)
+    void showpermissionDialogForCamera(final PermissionRequest request){
+        new AlertDialog.Builder(this)
+                .setMessage("请求摄像头")
+                .setPositiveButton("允许", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        request.proceed();
+                    }
+                })
+                .setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        request.cancel();
+                    }
+                })
+                .show();
+    }
+
+    @OnPermissionDenied(android.Manifest.permission_group.CAMERA)
+    void showDeniedForCamera(){
+        Toast.makeText(this,"denied",Toast.LENGTH_SHORT).show();
+    }
+
+    @OnNeverAskAgain(android.Manifest.permission_group.CAMERA)
+    void showNeverAskForCamera(){
+        Toast.makeText(this,"never ask",Toast.LENGTH_SHORT).show();
+    }
+*/
 }

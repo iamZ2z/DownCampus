@@ -496,6 +496,10 @@
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\acad5a9c129f63443120daeea3c7ee64fea66d2e\\output\\res\\layout\\md_dialog_custom.xml"
     },
     {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\find_campusnewsdetail.xml",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\find_campusnewsdetail.xml"
+    },
+    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tab1_grid.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\layout\\fragment_tab1_grid.xml"
     },

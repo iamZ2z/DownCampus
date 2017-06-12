@@ -72,8 +72,8 @@ public class LeaveActivity extends Activity {
     private EditText reason;
     @ViewInject(R.id.btn_send)
     private Button btn_send;
-    private long time1, time2=0;
-    private String leavetype="1";
+    private long time1, time2 = 0;
+    private String leavetype = "1";
 
 
     @Override
@@ -124,13 +124,13 @@ public class LeaveActivity extends Activity {
             public void onTimeSelect(Date date, View v) {//选中事件回调
                 // 这里回调过来的v,就是show()方法里面所添加的 View 参数，如果show的时候没有添加参数，v则为null
                 if (i == 1) {
-                    String strdate=getDate(date) + " " + getTime(date);
-                    tv_begindate.setText(strdate.replaceAll("/","-"));
+                    String strdate = getDate(date) + " " + getTime(date);
+                    tv_begindate.setText(strdate.replaceAll("/", "-"));
                     time1 = date.getTime();
                     timedifference();
                 } else if (i == 2) {
-                    String strdate=getDate(date) + " " + getTime(date);
-                    tv_enddate.setText(strdate.replaceAll("/","-"));
+                    String strdate = getDate(date) + " " + getTime(date);
+                    tv_enddate.setText(strdate.replaceAll("/", "-"));
                     time2 = date.getTime();
                     timedifference();
                 }
@@ -181,7 +181,7 @@ public class LeaveActivity extends Activity {
                 /*String[] leave_type = getResources().getStringArray(R.array.leave_type);
                 Toast.makeText(LeaveActivity.this, "你点击的是" + leave_type[position], Toast
                         .LENGTH_SHORT).show();*/
-                leavetype=(position+1)+"";
+                leavetype = (position + 1) + "";
             }
 
             @Override
@@ -202,7 +202,7 @@ public class LeaveActivity extends Activity {
         String start = tv_begindate.getText().toString();
         String end = tv_enddate.getText().toString();
         if (role.equals("老师")) {
-            url=interfaceTest.getServerurl()+interfaceTest.getLeavesave();
+            url = interfaceTest.getServerurl() + interfaceTest.getLeavesave();
             String name = "name";
             String toid = "leaderid";
             String userid = interfaceTest.getUser_id();
@@ -216,36 +216,41 @@ public class LeaveActivity extends Activity {
                             ("leaveLen", leave_time.getText().toString()).add("reason", content)
                     .build();
         }
-        final Request request = new Request.Builder().url(url).post(formBody).build();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Response response = new OkHttpClient().newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        String str = response.body().string();
-                        Log.e("LeaveAcitivity的数据", str);
-                        final LeaveBean bean = new Gson().fromJson(str, LeaveBean.class);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (bean.getCode().equals("0")) {
-                                    Toast.makeText(LeaveActivity.this, "发送成功", Toast.LENGTH_SHORT)
-                                            .show();
-                                    mIntent = new Intent(LeaveActivity.this, LeaveRecordActivity
-                                            .class);
-                                    mIntent.putExtra("submit_time", "申请时间");
-                                    mIntent.putExtra("begin_time", begin_time);
-                                    mIntent.putExtra("end_time", end_time);
-                                    startActivity(mIntent);
+        if (leave_time.getText().toString().equals(null) || content.equals(null))
+            Toast.makeText(LeaveActivity.this, "信息未填写完整", Toast.LENGTH_SHORT).show();
+        else {
+            final Request request = new Request.Builder().url(url).post(formBody).build();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Response response = new OkHttpClient().newCall(request).execute();
+                        if (response.isSuccessful()) {
+                            String str = response.body().string();
+                            Log.e("LeaveAcitivity的数据", str);
+                            final LeaveBean bean = new Gson().fromJson(str, LeaveBean.class);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (bean.getCode().equals("0")) {
+                                        Toast.makeText(LeaveActivity.this, "发送成功", Toast
+                                                .LENGTH_SHORT)
+                                                .show();
+                                        mIntent = new Intent(LeaveActivity.this, LeaveRecordActivity
+                                                .class);
+                                        mIntent.putExtra("submit_time", "申请时间");
+                                        mIntent.putExtra("begin_time", begin_time);
+                                        mIntent.putExtra("end_time", end_time);
+                                        startActivity(mIntent);
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
-            }
-        }).start();
+            }).start();
+        }
     }
 }

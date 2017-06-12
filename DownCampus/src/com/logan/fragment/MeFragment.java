@@ -53,7 +53,7 @@ public class MeFragment extends Fragment implements OnClickListener {
     @ViewInject(R.id.btn_changerole)
     private Button btn_changerole;
     private InterfaceTest interfaceTest = new InterfaceTest();
-    private UsuallyData usuallyData=new UsuallyData();
+    private UsuallyData usuallyData = new UsuallyData();
     @ViewInject(R.id.name)
     private TextView name;
     @ViewInject(R.id.autograph)
@@ -81,8 +81,10 @@ public class MeFragment extends Fragment implements OnClickListener {
         text_options.setOnClickListener(this);
 
         if (interfaceTest.getRole().equals("家长")) urlchange();
+
         name.setText(usuallyData.getFullname());
-        autograph.setText(usuallyData.getAutograph());
+        if (usuallyData.getAutograph().equals("null")) autograph.setText("未设置个性签名");
+        else autograph.setText(usuallyData.getAutograph());
     }
 
     @Override

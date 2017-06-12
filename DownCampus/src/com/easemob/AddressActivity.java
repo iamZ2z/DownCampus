@@ -63,7 +63,7 @@ public class AddressActivity extends Activity {
     private List<GroupMemberBean> tempOne;
     private ArrayList<String> mArrayListresult = new ArrayList<>();
     private MaterialDialog dialog;
-    private static final String space="data";
+    private static final String space = "data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,20 +85,20 @@ public class AddressActivity extends Activity {
             }
         });
 
-        SharedPreferences sp=getSharedPreferences(space, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(space, Context.MODE_PRIVATE);
         mArrayListresult.clear();
-        int size=sp.getInt("addresslist",0);
-        if (size==0)   mArrayListresult.add("联系人");
+        int size = sp.getInt("addresslist", 0);
+        if (size == 0) mArrayListresult.add("联系人");
         else {
             for (int i = 0; i < size; i++) {
-                mArrayListresult.add(sp.getString("addressarraylist"+i,null));
+                mArrayListresult.add(sp.getString("addressarraylist" + i, null));
             }
         }
         //mArrayListresult.add("联系人");
         initView();
         initEaseList();
         myExpandLv.setOnItemLongClickListener(new LongListener());
-        dialog= new MaterialDialog.Builder(this)
+        dialog = new MaterialDialog.Builder(this)
                 .content(R.string.loading)
                 .progress(true, 0)
                 .show();
@@ -133,7 +133,6 @@ public class AddressActivity extends Activity {
         myClearEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
             }
 
             @Override
@@ -152,17 +151,14 @@ public class AddressActivity extends Activity {
         EMClient.getInstance().login("zzzjh", "123456", new EMCallBack() {
             @Override
             public void onSuccess() {
-
             }
 
             @Override
             public void onError(int i, String s) {
-
             }
 
             @Override
             public void onProgress(int i, String s) {
-
             }
         });
         EMClient.getInstance().contactManager().aysncGetAllContactsFromServer(new EMValueCallBack<List<String>>() {
@@ -188,7 +184,6 @@ public class AddressActivity extends Activity {
 
             @Override
             public void onError(int i, String s) {
-
             }
         });
         //初始化时需要传入联系人list
@@ -216,7 +211,6 @@ public class AddressActivity extends Activity {
             // 汉字转换成拼音
             String pinyin = characterParser.getSelling(date.get(i));
             String sortString = pinyin.substring(0, 1).toUpperCase();
-
             // 正则表达式，判断首字母是否是英文字母
             if (sortString.matches("[A-Z]")) sortModel.setSortLetters(sortString.toUpperCase());
             else sortModel.setSortLetters("#");

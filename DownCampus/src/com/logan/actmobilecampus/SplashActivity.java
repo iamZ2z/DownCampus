@@ -1,8 +1,21 @@
 package com.logan.actmobilecampus;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.widget.Toast;
+
+import com.yanzhenjie.alertdialog.AlertDialog;
+import com.yanzhenjie.permission.AndPermission;
+import com.yanzhenjie.permission.PermissionNo;
+import com.yanzhenjie.permission.PermissionYes;
+import com.yanzhenjie.permission.Rationale;
+import com.yanzhenjie.permission.RationaleListener;
+
+import java.util.List;
 
 public class SplashActivity extends Activity {
     @Override
@@ -23,7 +36,10 @@ public class SplashActivity extends Activity {
 			}
 		}, 1);*/
 
+
         startActivity(new Intent(this, GuideActivity.class));
         finish();
     }
+
+
 }

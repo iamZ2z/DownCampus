@@ -38,10 +38,8 @@ import okhttp3.Response;
 @ContentView(R.layout.find_campusact)
 public class CampusActActivity extends Activity implements OnItemClickListener {
     private Intent mIntent;
-    // 列表
     @ViewInject(R.id.list)
     private ListView mListView;
-    private SimpleAdapter mAdapter;
     private List<HashMap<String, Object>> mHashmap;
     private HashMap<String, Object> mMap;
     @ViewInject(R.id.title_bar)

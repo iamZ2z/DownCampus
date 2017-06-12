@@ -20,6 +20,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.bigkoo.pickerview.TimePickerView;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
+import com.logan.bean.MeetingManagerBean2;
 import com.logan.net.InterfaceTest;
 import com.logan.bean.MeetingManagerBean;
 import com.logan.net.OkHttpUtils;
@@ -41,6 +42,7 @@ import java.util.Map;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+import retrofit2.Retrofit;
 
 import static cn.finalteam.toolsfinal.DateUtils.getDate;
 
@@ -153,6 +155,40 @@ public class MeetingManage extends Activity {
         });
     }
 
+    private void urlmeeting2() {
+        final MaterialDialog dialog=new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
+        InterfaceTest interfaceTest=new InterfaceTest();
+        String token = interfaceTest.getToken();
+
+        retrofit2.Call<MeetingManagerBean> call= MeetingManagerBean2.meetingManagerService
+                .meetingManagerBean(token);
+        call.enqueue(new retrofit2.Callback<MeetingManagerBean>() {
+            @Override
+            public void onResponse(retrofit2.Call<MeetingManagerBean> call,
+                                   retrofit2.Response<MeetingManagerBean> response) {
+                MeetingManagerBean body=response.body();
+
+                mAdapter = new SimpleAdapter(MeetingManage.this, getData2
+                        (body), R.layout.home_meetingmanage_list, new
+                        String[]{"title", "content", "time"}, new int[]{R.id.title,
+                        R.id.content, R.id.leavetime});
+                list.setAdapter(mAdapter);
+                dialog.dismiss();
+
+                mAdapter.notifyDataSetChanged();
+                swiperefresh.setRefreshing(false);
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<MeetingManagerBean> call, Throwable t) {
+
+            }
+        });
+    }
+
     private void urlmeeting() {
         final MaterialDialog dialog=new MaterialDialog.Builder(this)
                 .content(R.string.loading)
@@ -174,7 +210,6 @@ public class MeetingManage extends Activity {
             public void onResponse(Call call, Response response) throws IOException {
                 String str = response.body().string();
                 Log.e("urlmeeting的result", "请求数据:" + str);
-
                 final MeetingManagerBean accountListBean = new Gson().fromJson(str,
                         MeetingManagerBean.class);
                 for (int i = 0; i < accountListBean.getList().size(); i++) {

@@ -10,8 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@mipmap/my_img_bg"
         android:layout_marginTop="-1dp"
+        android:background="@mipmap/my_img_bg"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -82,8 +82,9 @@
     <com.allen.library.SuperTextView
         android:id="@+id/supertv"
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
         android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
         stv:sLeftIconRes="@mipmap/my_icon_password"
         stv:sLeftTextSize="17dp"
         stv:sLeftTextString="更改密码"
@@ -94,6 +95,7 @@
         android:id="@+id/supertv2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="10dp"
         stv:sLeftIconRes="@mipmap/my_icon_install"
         stv:sLeftTextSize="17dp"
         stv:sLeftTextString="设置"

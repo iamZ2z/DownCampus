@@ -10,11 +10,13 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.mobilecampus.R;
@@ -30,8 +32,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 @ContentView(R.layout.find_campusnews)
-public class CampusNewsActivity extends Activity {
-    // 列表
+public class CampusNewsActivity extends Activity implements AdapterView.OnItemClickListener {
     @ViewInject(R.id.list)
     private ListView mListView;
     @ViewInject(R.id.title_bar)
@@ -86,6 +87,7 @@ public class CampusNewsActivity extends Activity {
                                 campusNewsAdapter = new CampusNewsAdapter(CampusNewsActivity
                                         .this, campuslist);
                                 mListView.setAdapter(campusNewsAdapter);
+                                mListView.setOnItemClickListener(CampusNewsActivity.this);
 
                                 campusNewsAdapter.notifyDataSetChanged();
                                 swiperefresh.setRefreshing(false);
@@ -122,4 +124,13 @@ public class CampusNewsActivity extends Activity {
             }
         });
     }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, CampusNewsDetailActivity.class);
+        String str=campuslist.get(position).get("showPage").toString();
+        intent.putExtra("campusnews", str);
+        startActivity(intent);
+    }
+
 }

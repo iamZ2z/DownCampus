@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -45,31 +45,15 @@
 
     <!-- 环信权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/> -->
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- bugly -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
-    <!-- 极光权限 -->
-    <permission
-        android:name="com.example.mobilecampus.permission.JPUSH_MESSAGE"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="com.example.mobilecampus.permission.JPUSH_MESSAGE" />
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <!-- 拨打电话 -->
+    <!-- 从SDCard读取数据权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 拨打电话 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <meta-data
@@ -116,8 +100,8 @@
         </activity>
         <activity android:name="com.logan.actmobilecampus.CampusCooperationActivity" >
         </activity>
-        <activity android:name="com.logan.actdynamic.CampusNewsActivity" >
-        </activity>
+        <activity android:name="com.logan.actdynamic.CampusNewsActivity" />
+        <activity android:name="com.logan.actdynamic.CampusNewsDetailActivity" />
         <activity
             android:name="com.logan.actdynamic.CampusActActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" >
@@ -144,8 +128,9 @@
         <activity android:name="com.easemob.VerificationActivity" />
         <activity android:name="com.logan.acthome.studentteacher.LogManageActivity" >
         </activity>
-        <activity android:name="com.logan.actme.EditDataActivity" >
-        </activity>
+        <activity
+            android:name="com.logan.actme.EditDataActivity"
+            android:theme="@style/NoTitleTheme" />
         <activity
             android:name="com.easemob.AddressActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
@@ -265,6 +250,11 @@
             android:name="cn.finalteam.galleryfinal.PhotoPreviewActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yanzhenjie.permission.PermissionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
 
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"

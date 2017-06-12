@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.Iterator;
 import java.util.List;
@@ -32,6 +33,9 @@ public class ECApplication extends Application {
         //applicationContext=this;
         //instance=this;
         //DemoHelper.getInstance().init(applicationContext);
+
+        //bugly初始化
+        CrashReport.initCrashReport(getApplicationContext(), "cce7e8c57a", false);
     }
 
     public void initEasemob() {

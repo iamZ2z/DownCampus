@@ -28,7 +28,7 @@ public class FindFragment extends Fragment implements OnClickListener {
     private SuperTextView text_campusact;
 
     @ViewInject(R.id.text_classact)
-    private TextView text_classact;
+    private SuperTextView text_classact;
     private Intent mIntent;
 
     @Override
