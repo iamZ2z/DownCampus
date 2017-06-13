@@ -40,6 +40,8 @@ dependencies {
     compile 'com.github.lygttpod:SuperTextView:1.1.2'//TextView日常布局
     compile 'com.yanzhenjie:permission:1.0.8'//6.0权限
     compile 'com.tencent.bugly:crashreport:latest.release'//bugly
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'com.squareup.okio:okio:1.13.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'com.squareup.retrofit2:converter-scalars:2.3.0'

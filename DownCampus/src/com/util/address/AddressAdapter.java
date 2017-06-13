@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.easemob.NewsChat2Activity;
+import com.easemob.NewsChatActivity;
 import com.example.mobilecampus.R;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.EaseConstant;
@@ -101,10 +101,8 @@ public class AddressAdapter extends BaseExpandableListAdapter {
         } else {
             groupHolderView = (GroupHolderView) convertView.getTag();
         }
-
         if (isExpanded) groupHolderView.groupIcon.setBackgroundResource(R.mipmap.search_icon_down);
         else groupHolderView.groupIcon.setBackgroundResource(R.mipmap.search_icon_right);
-
         groupHolderView.groupTv.setText(mGroup.get(groupPosition).getName());
         return convertView;
     }
@@ -139,7 +137,7 @@ public class AddressAdapter extends BaseExpandableListAdapter {
         childHolderView.childLl.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, NewsChat2Activity.class);
+                Intent intent = new Intent(mContext, NewsChatActivity.class);
                 intent.putExtra(EaseConstant.EXTRA_USER_ID, childHolderView.remark.getText()
                         .toString()
                 );

@@ -12,9 +12,8 @@ import com.hyphenate.easeui.ui.EaseChatFragment;
  * Created by Z2z on 2017/3/29.
  */
 
-public class NewsChat2Activity extends EaseBaseActivity {
+public class NewsChatActivity extends EaseBaseActivity {
     private EaseChatFragment mEaseChatFragment;
-
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
@@ -32,7 +31,5 @@ public class NewsChat2Activity extends EaseBaseActivity {
 
         mEaseChatFragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().add(R.id.layout_container,mEaseChatFragment).commit();
-
     }
-
 }

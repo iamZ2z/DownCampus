@@ -125,7 +125,6 @@ public class AddressActivity extends Activity {
         characterParser = CharacterParser.getInstance();
         pinyinComparator = new PinyinComparator();
         groupBeanList = fillData(mArrayListresult);
-
         // 用于生成列表信息
         myAdapter = new AddressAdapter(this, groupBeanList, childBeanList);
         myExpandLv.setAdapter(myAdapter);

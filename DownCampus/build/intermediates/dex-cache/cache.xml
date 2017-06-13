@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\okhttp-3.6.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\okhttp-3.6.0_7bf9a7046395d25968c629ba38f26af273d8a8ac\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\glide-3.7.0.jar"
         jumboMode="true"
         optimize="true"
@@ -34,53 +25,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f86df0a4f2847cda91ada5de8846564c026d80d8">
+        sha1="f4e9d28da562bc138090972d2d70a6fa2fb2468b">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8886b3de08ef6064cc5bcb6ea793d641b01eeed9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Z2z\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9e09011e9767bb76b5e27c9b8223476b93b14631">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.3.0_4ee4be33133bb081e2edc52adfcbf888554f0cbf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c791dfbf18191e004e32d7b06e2eae56d045fcc6">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\classes_ad460b448c5f63ba5f1d12007d72da10720f35e5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\hyphenatechat_3.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="557556ab85103eecf86cb89380d808e18de146e6">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\hyphenatechat_3.3.0_74b891d0139d8d99b2f75914de503860b63ee2b5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\AMap_Location_V3.3.0_20170118.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="299ccce875c1bbd5eb2802923ae89946e22b7ee6">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\AMap_Location_V3.3.0_20170118_bc6704fb910d209ebd011dd17e253722260b9250\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\okio-1.11.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
-        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\okio-1.11.0_3fce540844bf4fc613b0a7cf594377063964c509\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -90,6 +36,15 @@
         revision="25.0.0"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_03ee87860a263a4d375ea531362d1486a91a3114\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e09011e9767bb76b5e27c9b8223476b93b14631">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.3.0_4ee4be33133bb081e2edc52adfcbf888554f0cbf\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -117,6 +72,33 @@
         revision="25.0.0"
         sha1="1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6">
         <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\10\converter-scalars-2.3.0_1614d7aa089fb4ef98dae5c62ebb4402ced03848\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c791dfbf18191e004e32d7b06e2eae56d045fcc6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\classes_ad460b448c5f63ba5f1d12007d72da10720f35e5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\hyphenatechat_3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="557556ab85103eecf86cb89380d808e18de146e6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\hyphenatechat_3.3.0_74b891d0139d8d99b2f75914de503860b63ee2b5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Z2z\Desktop\DownSpace\DownCampus\libs\AMap_Location_V3.3.0_20170118.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="299ccce875c1bbd5eb2802923ae89946e22b7ee6">
+        <dex dex="C:\Users\Z2z\Desktop\DownSpace\DownCampus\build\intermediates\transforms\dex\debug\folders\1000\2\AMap_Location_V3.3.0_20170118_bc6704fb910d209ebd011dd17e253722260b9250\classes.dex" />
     </item>
 
 </items>

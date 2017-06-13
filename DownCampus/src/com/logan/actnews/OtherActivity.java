@@ -20,7 +20,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.easemob.NewsChat2Activity;
 import com.example.mobilecampus.R;
 import com.util.title.TitleBar;
 
@@ -66,12 +65,12 @@ public class OtherActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.other_send:
 			saveNameChat();
-			/*mIntent = new Intent(this, NewsChat2Activity.class);
+			/*mIntent = new Intent(this, NewsChatActivity.class);
 			Bundle mBundle = new Bundle();
 			mBundle.putString("other_name", address_name);
 			mIntent.putExtras(mBundle);
 			startActivity(mIntent);*/
-			startActivity(new Intent(this,NewsChat2Activity.class).putExtra("userId",address_name));
+			startActivity(new Intent(this, com.easemob.NewsChatActivity.class).putExtra("userId",address_name));
 			break;
 		default:
 			break;

@@ -4,6 +4,7 @@
     android:id="@+id/layout_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blue_55x176x233">
+    android:background="@color/blue_55x176x233"
+    android:paddingTop="20dp">
 
 </RelativeLayout>

@@ -20,10 +20,10 @@ import com.util.title.TitleBar;
 public class SignActivity extends Activity {
     @ViewInject(R.id.sign_time)
     private TextView sign_time;
-
+    @ViewInject(R.id.state)
+    private TextView state;
     @ViewInject(R.id.sign_location)
     private TextView sign_location;
-
     @ViewInject(R.id.title_bar)
     private TitleBar titlebar;
 
@@ -33,18 +33,15 @@ public class SignActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         x.view().inject(this);
-
         initView();
-
         Calendar cal = Calendar.getInstance();
         sign_time.setText("签到时间：" + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
 
         Intent mIntent = getIntent();
         if (mIntent.getStringExtra("signlocation") != null && mIntent.getStringExtra
-                ("signlocation") != " ")
-            sign_location.setText("签到地点：" + mIntent.getStringExtra("signlocation"));
-        else
-            sign_location.setText("签到地点：");
+                ("signlocation") != " ") sign_location.setText("签到地点：" + mIntent.getStringExtra("signlocation"));
+        else sign_location.setText("签到地点：");
+        state.setText(mIntent.getStringExtra("state"));
     }
 
     private void initView() {

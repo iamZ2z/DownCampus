@@ -40,7 +40,7 @@ public class ConversationListFragment extends EaseConversationListFragment {
                     Toast.makeText(getActivity(), "cannot chat with yourself", Toast
                             .LENGTH_SHORT).show();
                 else {
-                    Intent mIntent = new Intent(getActivity(), NewsChat2Activity.class);
+                    Intent mIntent = new Intent(getActivity(), NewsChatActivity.class);
                     mIntent.putExtra(EaseConstant.EXTRA_USER_ID, username);
                     startActivity(mIntent);
                 }

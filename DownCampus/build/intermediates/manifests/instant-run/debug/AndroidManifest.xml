@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobilecampus"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.01" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -120,9 +120,7 @@
         </activity>
         <activity android:name="com.logan.actnews.NewsDetailsActivity" >
         </activity>
-        <activity
-            android:name="com.easemob.NewsChat2Activity"
-            android:theme="@style/AppBaseTheme" />
+        <activity android:name="com.easemob.NewsChatActivity" />
         <activity android:name="com.logan.actnews.OtherActivity" >
         </activity>
         <activity android:name="com.easemob.VerificationActivity" />

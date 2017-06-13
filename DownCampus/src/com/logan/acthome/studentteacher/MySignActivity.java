@@ -214,6 +214,8 @@ public class MySignActivity extends Activity {
     private void onComplainClick(View v) {
         mIntent = new Intent(this, SignActivity.class);
         mIntent.putExtra("signlocation", mylocation);
+        if (state1.equals("正常")) mIntent.putExtra("state", "早退");
+        else mIntent.putExtra("state", "迟到");
         startActivity(mIntent);
     }
 
