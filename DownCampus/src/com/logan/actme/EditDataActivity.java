@@ -28,7 +28,7 @@ import com.logan.net.InterfaceTest;
 import com.logan.net.UsuallyData;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.util.title.TitleBars;
-import com.util.view.CropViewActivity;
+import com.logan.widgets.CropViewActivity;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;

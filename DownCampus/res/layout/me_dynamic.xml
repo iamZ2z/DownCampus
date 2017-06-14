@@ -12,7 +12,7 @@
         android:background="@mipmap/dynamic_bg_user"
         android:orientation="horizontal">
 
-        <com.util.view.CircleImageView
+        <com.logan.widgets.CircleImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"

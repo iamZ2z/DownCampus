@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -27,6 +29,8 @@ import com.logan.net.InterfaceTest;
 import com.logan.net.UsuallyData;
 import com.logan.server.AccountLoginBean;
 import com.logan.widgets.AccountroleDialog;
+import com.logan.widgets.ClearEditText;
+import com.logan.widgets.PasswordEditText;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -54,15 +58,21 @@ public class AccountActivity extends Activity {
     private Intent mIntent;
     private String role = "";
     @ViewInject(R.id.et_account)
-    private EditText mEditText_account;
+    private ClearEditText mEditText_account;
     @ViewInject(R.id.et_password)
-    private EditText mEditText_password;
+    private PasswordEditText mEditText_password;
+
     private String[] roleItem = new String[4];
     private String token = "";
     private InterfaceTest interfaceTest = new InterfaceTest();
     private UsuallyData usuallyData = new UsuallyData();
     private EMPushConfigs emPushConfigs;
-    private static final String space="data";
+    private static final String space = "data";
+
+    @ViewInject(R.id.sp_line2)
+    private TextView sp_line2;
+    @ViewInject(R.id.sp_line3)
+    private TextView sp_line3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -310,14 +320,14 @@ public class AccountActivity extends Activity {
     }
 
     private void preferenceAccount() {
-        SharedPreferences sp=getSharedPreferences(space,Context.MODE_PRIVATE);
-        String user=sp.getString("account","1");
-        String pass=sp.getString("password",null);
-        if (!user.equals("1")) loginurl(user,pass);
+        SharedPreferences sp = getSharedPreferences(space, Context.MODE_PRIVATE);
+        String user = sp.getString("account", "1");
+        String pass = sp.getString("password", null);
+        if (!user.equals("1")) loginurl(user, pass);
     }
 
-    @Event(value=R.id.et_password,type= View.OnKeyListener.class)
-    private boolean onEtPassword(View v,int keyCode, KeyEvent event) {
+    @Event(value = R.id.et_password, type = View.OnKeyListener.class)
+    private boolean onEtPassword(View v, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
             ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
                     .hideSoftInputFromWindow(AccountActivity.this.getCurrentFocus()
@@ -328,6 +338,18 @@ public class AccountActivity extends Activity {
             } else Toast.makeText(AccountActivity.this, "登录信息未填写完整", Toast.LENGTH_SHORT).show();
         }
         return false;
+    }
+
+    @Event(value = R.id.et_account, type = View.OnFocusChangeListener.class)
+    private void onAccountFocus(View v, Boolean hasFocus) {
+        if (hasFocus) sp_line2.setBackgroundColor(Color.rgb(55, 176, 233));
+        else sp_line2.setBackgroundColor(Color.rgb(162, 162, 162));
+    }
+
+    @Event(value = R.id.et_password, type = View.OnFocusChangeListener.class)
+    private void onPasswordFocus(View v, Boolean hasFocus) {
+        if (hasFocus) sp_line3.setBackgroundColor(Color.rgb(55, 176, 233));
+        else sp_line3.setBackgroundColor(Color.rgb(162, 162, 162));
     }
 
 }

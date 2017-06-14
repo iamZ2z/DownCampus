@@ -50,7 +50,7 @@
             android:background="@drawable/bordblueround"/>
     </LinearLayout>
 
-    <com.util.view.TopRoundListView
+    <com.logan.widgets.TopRoundListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

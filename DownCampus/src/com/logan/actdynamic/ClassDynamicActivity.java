@@ -20,7 +20,7 @@ import com.example.mobilecampus.R;
 import com.logan.adapter.ClassDynamicAdapter;
 import com.logan.bean.ClassDynamicBean;
 import com.util.title.TitleBar;
-import com.util.view.FloatImageButton;
+import com.logan.widgets.FloatImageButton;
 
 @ContentView(R.layout.find_classact)
 public class ClassDynamicActivity extends Activity {

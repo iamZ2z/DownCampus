@@ -16,7 +16,7 @@
         android:paddingLeft="15dp"
         android:orientation="vertical" >
 
-        <com.util.view.TopRoundImageView
+        <com.logan.widgets.TopRoundImageView
             android:id="@+id/img"
             android:layout_width="match_parent"
             android:layout_height="195dp"

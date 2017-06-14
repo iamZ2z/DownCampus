@@ -47,14 +47,14 @@
             android:visibility="gone"
             app:layout_widthPercent="70%"/>
 
-        <EditText
+        <com.logan.widgets.ClearEditText
             android:id="@+id/et_account"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:background="@null"
-            android:drawableLeft="@mipmap/login_icon_account_pressed"
+            android:drawableLeft="@drawable/activity_account_iconcolor"
             android:hint="请输入帐号或手机号"
             android:imeOptions="actionNext"
             android:singleLine="true"
@@ -73,7 +73,7 @@
             android:background="@color/blue_55x176x233"
             app:layout_widthPercent="70%"/>
 
-        <EditText
+        <com.logan.widgets.PasswordEditText
             android:id="@+id/et_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:background="@null"
-            android:drawableLeft="@mipmap/login_icon_password_pressed"
+            android:drawableLeft="@drawable/activity_account_passcolor"
             android:hint="请输入密码"
             android:imeOptions="actionSend"
             android:singleLine="true"
@@ -98,30 +98,21 @@
             android:layout_height="1dp"
             android:layout_below="@id/et_password"
             android:layout_centerHorizontal="true"
-            android:background="@color/blue_55x176x233"
+            android:background="@color/gray_162x3"
             app:layout_widthPercent="70%"/>
-
-        <TextView
-            android:id="@+id/nomatch"
-            android:layout_below="@id/sp_line3"
-            android:text="选择的角色与帐号绑定角色不符"
-            android:textColor="@color/red_242x70x70"
-            android:textSize="12sp"
-            android:visibility="invisible"
-            app:layout_marginTopPercent="5%"/>
 
         <Button
             android:id="@+id/btn_loginmain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nomatch"
+            android:layout_below="@id/sp_line3"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:background="@mipmap/login_btn_login_default"
             android:gravity="center"
             android:text="登录"
             android:textColor="@color/white"
-            app:layout_marginTopPercent="6%"
+            app:layout_marginTopPercent="10%"
             app:layout_widthPercent="70%"/>
 
         <TextView

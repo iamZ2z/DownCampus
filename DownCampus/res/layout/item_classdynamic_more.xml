@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.util.view.CircleImageView
+        <com.logan.widgets.CircleImageView
             android:id="@+id/head"
             android:layout_width="30dp"
             android:layout_height="30dp"

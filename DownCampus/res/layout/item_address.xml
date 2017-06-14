@@ -4,7 +4,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <com.util.view.CircleImageView
+    <com.logan.widgets.CircleImageView
         android:id="@+id/exlist_itemimg"
         android:layout_width="50dp"
         android:layout_height="50dp"

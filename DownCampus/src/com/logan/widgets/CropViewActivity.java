@@ -1,4 +1,4 @@
-package com.util.view;
+package com.logan.widgets;
 
 import android.app.Activity;
 import android.content.Intent;

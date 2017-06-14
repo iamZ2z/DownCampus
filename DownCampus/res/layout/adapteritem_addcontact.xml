@@ -10,7 +10,7 @@
         android:layout_height="63dp"
         android:padding="15dp">
 
-        <com.util.view.CircleImageView
+        <com.logan.widgets.CircleImageView
             android:id="@+id/icon"
             android:layout_width="50dp"
             android:layout_height="50dp"
