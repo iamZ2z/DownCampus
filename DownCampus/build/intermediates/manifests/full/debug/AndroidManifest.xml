@@ -204,7 +204,7 @@
         <activity android:name="com.logan.acthome.parentleader.ChooseObjectActivity" />
         <activity android:name="com.util.circlecrop.CropActivity" >
         </activity>
-        <activity android:name="com.util.view.CropViewActivity" />
+        <activity android:name="com.logan.widgets.CropViewActivity" />
         <!-- <activity android:name="com.easemob.ContactListActivity"></activity> -->
         <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
 

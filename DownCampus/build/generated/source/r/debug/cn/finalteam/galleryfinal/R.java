@@ -28,19 +28,19 @@ public final class R {
     }
     public static final class drawable {
         public static final int bg_gf_crop_texture = 0x7f020057;
-        public static final int gf_ic_preview = 0x7f020121;
-        public static final int ic_delete_photo = 0x7f020123;
-        public static final int ic_folder_check = 0x7f020124;
-        public static final int ic_gf_back = 0x7f020125;
-        public static final int ic_gf_camera = 0x7f020126;
-        public static final int ic_gf_clear = 0x7f020127;
-        public static final int ic_gf_crop = 0x7f020128;
-        public static final int ic_gf_crop_tile = 0x7f020129;
-        public static final int ic_gf_default_photo = 0x7f02012a;
-        public static final int ic_gf_done = 0x7f02012b;
-        public static final int ic_gf_preview = 0x7f02012c;
-        public static final int ic_gf_rotate = 0x7f02012d;
-        public static final int ic_gf_triangle_arrow = 0x7f02012e;
+        public static final int gf_ic_preview = 0x7f02011a;
+        public static final int ic_delete_photo = 0x7f02011c;
+        public static final int ic_folder_check = 0x7f02011d;
+        public static final int ic_gf_back = 0x7f02011e;
+        public static final int ic_gf_camera = 0x7f02011f;
+        public static final int ic_gf_clear = 0x7f020120;
+        public static final int ic_gf_crop = 0x7f020121;
+        public static final int ic_gf_crop_tile = 0x7f020122;
+        public static final int ic_gf_default_photo = 0x7f020123;
+        public static final int ic_gf_done = 0x7f020124;
+        public static final int ic_gf_preview = 0x7f020125;
+        public static final int ic_gf_rotate = 0x7f020126;
+        public static final int ic_gf_triangle_arrow = 0x7f020127;
     }
     public static final class id {
         public static final int fab_crop = 0x7f0e0173;

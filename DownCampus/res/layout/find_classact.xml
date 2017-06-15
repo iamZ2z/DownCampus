@@ -44,7 +44,7 @@
                         android:layout_marginEnd="34dp"
                         android:layout_marginRight="25dp"
                         android:background="@drawable/bluebutton"
-                        android:drawableLeft="@drawable/dynamic_icon_cover"
+                        android:drawableLeft="@mipmap/dynamic_icon_cover"
                         android:text="封面"
                         android:textColor="#ffffff"
                         android:textSize="11dp"/>

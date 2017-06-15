@@ -1,4 +1,4 @@
-#Wed Jun 14 14:23:40 CST 2017
+#Thu Jun 15 14:59:58 CST 2017
 base.0=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2
 renamed.0=classes.dex
 file.0=C\:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2\\classes.dex

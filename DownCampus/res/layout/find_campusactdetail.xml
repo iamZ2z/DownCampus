@@ -54,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/dynamic_icon_place"/>
+                        android:src="@mipmap/dynamic_icon_place"/>
 
                     <TextView
                         android:id="@+id/place"
@@ -75,7 +75,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="centerInside"
-                        android:src="@drawable/dynamic_icon_time"/>
+                        android:src="@mipmap/dynamic_icon_time"/>
 
                     <TextView
                         android:id="@+id/data"

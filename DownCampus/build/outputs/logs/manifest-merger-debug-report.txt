@@ -448,10 +448,10 @@ activity#com.util.circlecrop.CropActivity
 ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:191:9-192:20
 	android:name
 		ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:191:19-66
-activity#com.util.view.CropViewActivity
-ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:193:9-76
+activity#com.logan.widgets.CropViewActivity
+ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:193:9-80
 	android:name
-		ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:193:19-64
+		ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:193:19-68
 activity#com.hyphenate.easeui.ui.EaseShowBigImageActivity
 ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:195:9-94
 	android:name

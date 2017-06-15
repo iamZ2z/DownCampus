@@ -88,7 +88,7 @@
             android:id="@+id/check_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/getmima"/>
+            android:src="@mipmap/login_btn_pressed"/>
 
     </LinearLayout>
 

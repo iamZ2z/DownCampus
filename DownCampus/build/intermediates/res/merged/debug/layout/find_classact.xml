@@ -25,7 +25,7 @@
                     android:layout_height="200dp"
                     android:background="@drawable/upload">
 
-                    <com.util.view.CircleImageView
+                    <com.logan.widgets.CircleImageView
                         android:id="@+id/head"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
@@ -44,7 +44,7 @@
                         android:layout_marginEnd="34dp"
                         android:layout_marginRight="25dp"
                         android:background="@drawable/bluebutton"
-                        android:drawableLeft="@drawable/dynamic_icon_cover"
+                        android:drawableLeft="@mipmap/dynamic_icon_cover"
                         android:text="封面"
                         android:textColor="#ffffff"
                         android:textSize="11dp"/>
@@ -81,7 +81,7 @@
                     android:background="@color/gray_134x159x169"
                     android:orientation="horizontal">
 
-                    <com.util.view.CircleImageView
+                    <com.logan.widgets.CircleImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
@@ -99,7 +99,7 @@
                         android:textSize="12dp"/>
                 </LinearLayout>
 
-                <com.util.view.ScrollListView
+                <com.logan.widgets.ScrollListView
                     android:id="@+id/list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -115,7 +115,7 @@
 
     </ScrollView>
 
-    <com.util.view.FloatImageButton
+    <com.logan.widgets.FloatImageButton
         android:id="@+id/btn_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
