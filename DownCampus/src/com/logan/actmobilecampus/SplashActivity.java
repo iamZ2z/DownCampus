@@ -2,8 +2,10 @@ package com.logan.actmobilecampus;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
@@ -18,28 +20,18 @@ import com.yanzhenjie.permission.RationaleListener;
 import java.util.List;
 
 public class SplashActivity extends Activity {
+    private static final String space = "data";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_advertisement);
 
-		Handler handler = new Handler();
-		// Integer time = 2000;
-		handler.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				startActivity(new Intent(SplashActivity.this,
-						AccountActivity.class));
-				SplashActivity.this.finish();
-			}
-		}, 1);*/
+        SharedPreferences sp = getSharedPreferences(space, Context.MODE_PRIVATE);
+        Boolean isFirstin = sp.getBoolean("isFirst", true);
+        if (!isFirstin) startActivity(new Intent(this, AccountActivity.class));
+        else startActivity(new Intent(this, GuideActivity.class));
 
-
-        startActivity(new Intent(this, GuideActivity.class));
         finish();
     }
-
 
 }

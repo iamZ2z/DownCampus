@@ -229,7 +229,6 @@ public class AccountActivity extends Activity {
                                 interfaceTest.setRole("校长");
                             }
 
-
                             if (role.equals("学生")) {
                                 interfaceTest.setStudentId(bean.getData().get(0).getUser_id());
                             } else if (role.equals("老师")) {
@@ -249,10 +248,8 @@ public class AccountActivity extends Activity {
                             ArrayList<String> arrgradeid = new ArrayList<>();
                             ArrayList<String> arrgradename = new ArrayList<>();
                             for (int j = 0; j < bean.getData().get(0).getGrade().size(); j++) {
-                                arrgradename.add(bean.getData().get(0).getGrade().get(j)
-                                        .getGrade_name());
-                                arrgradeid.add(bean.getData().get(0).getGrade().get(j)
-                                        .getGrade_id());
+                                arrgradename.add(bean.getData().get(0).getGrade().get(j).getGrade_name());
+                                arrgradeid.add(bean.getData().get(0).getGrade().get(j).getGrade_id());
                             }
                             usuallyData.setGradename(arrgradename);
                             usuallyData.setGradeid(arrgradeid);
@@ -266,8 +263,9 @@ public class AccountActivity extends Activity {
                             }
                             usuallyData.setClazzname(arrclazzname);
                             usuallyData.setClazzid(arrclazzid);
-                            startActivity(mIntent);
                             interfaceTest.setPicture(bean.getData().get(0).getPicture());
+                            startActivity(mIntent);
+                            finish();
                         } else {
                             runOnUiThread(new Runnable() {
                                 @Override
