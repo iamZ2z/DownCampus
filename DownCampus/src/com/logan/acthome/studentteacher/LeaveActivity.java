@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bigkoo.pickerview.TimePickerView;
 import com.example.mobilecampus.R;
 import com.google.gson.Gson;
@@ -192,6 +193,10 @@ public class LeaveActivity extends Activity {
 
     @Event(value = R.id.btn_send)
     private void onleavebtn_sendClick(View v) {
+        final MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         InterfaceTest interfaceTest = new InterfaceTest();
         String url = interfaceTest.getServerurl() + interfaceTest.getStudentleave();
         String token = interfaceTest.getToken();
@@ -233,6 +238,7 @@ public class LeaveActivity extends Activity {
                                 @Override
                                 public void run() {
                                     if (bean.getCode().equals("0")) {
+                                        dialog.dismiss();
                                         Toast.makeText(LeaveActivity.this, "发送成功", Toast
                                                 .LENGTH_SHORT)
                                                 .show();

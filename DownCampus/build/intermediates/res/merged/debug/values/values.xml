@@ -570,6 +570,7 @@
     <declare-styleable name="GFFloatingActionButton"><attr format="color" name="fabColorPressed"/><attr format="color" name="fabColorNormal"/><attr format="reference" name="fabIcon"/><attr format="string" name="fabTitle"/></declare-styleable>
     <declare-styleable name="GroupButtonView"><attr format="string" name="groupBtnNameText"/></declare-styleable>
     <declare-styleable name="HorizontalListView"><attr format="dimension" name="dividerWidth"/><attr name="android:divider"/><attr name="android:requiresFadingEdge"/><attr name="android:fadingEdgeLength"/></declare-styleable>
+    <declare-styleable name="KPSwitchPanelLayout"><attr format="boolean" name="ignore_recommend_height"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers">
             <flag name="none" value="0"/>
             <flag name="beginning" value="1"/>
@@ -880,6 +881,7 @@
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
     <dimen name="label_text_size">12sp</dimen>
     <dimen name="margin_chat_activity">5dp</dimen>
+    <dimen name="max_panel_height">380dp</dimen>
     <dimen name="md_action_corner_radius">2dp</dimen>
     <dimen name="md_bg_corner_radius">2dp</dimen>
     <dimen name="md_button_frame_vertical_padding">8dp</dimen>
@@ -917,6 +919,8 @@
     <dimen name="md_title_frame_margin_bottom_less">6dp</dimen>
     <dimen name="md_title_textsize">20sp</dimen>
     <dimen name="min_content_height">20dp</dimen>
+    <dimen name="min_keyboard_height">80dp</dimen>
+    <dimen name="min_panel_height">220dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>

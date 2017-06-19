@@ -94,7 +94,6 @@ public class AddressActivity extends Activity {
                 mArrayListresult.add(sp.getString("addressarraylist" + i, null));
             }
         }
-        //mArrayListresult.add("联系人");
         initView();
         initEaseList();
         myExpandLv.setOnItemLongClickListener(new LongListener());

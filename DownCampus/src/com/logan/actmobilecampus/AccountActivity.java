@@ -188,8 +188,7 @@ public class AccountActivity extends Activity {
                     .add("loginId", "sah").add("password", "123456").build();
         }*/
 
-        formBody = new FormBody.Builder()
-                .add("loginId", user).add("password", pass).build();
+        formBody = new FormBody.Builder().add("loginId", user).add("password", pass).build();
         final Request request = new Request.Builder().url(urllogin).post(formBody).build();
         new Thread(new Runnable() {
             @Override

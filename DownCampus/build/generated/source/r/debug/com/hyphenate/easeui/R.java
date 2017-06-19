@@ -139,9 +139,9 @@ public final class R {
         public static final int image_thumbnail_size = 0x7f07082d;
         public static final int image_thumbnail_spacing = 0x7f07082e;
         public static final int margin_chat_activity = 0x7f0708bd;
-        public static final int padding_search_bar = 0x7f0708ed;
-        public static final int sidebar_text_size = 0x7f0708f4;
-        public static final int size_avatar = 0x7f0708f5;
+        public static final int padding_search_bar = 0x7f0708f0;
+        public static final int sidebar_text_size = 0x7f0708f7;
+        public static final int size_avatar = 0x7f0708f8;
     }
     public static final class drawable {
         public static final int bordgray = 0x7f020062;

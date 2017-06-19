@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\dynamic_bg_comment.9.png",
-        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\dynamic_bg_comment.9.png"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_btn_cancel_bj.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\easeui\\build\\intermediates\\bundles\\default\\res\\drawable\\ease_btn_cancel_bj.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\dynamic_bg_comment.9.png",
+        "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\dynamic_bg_comment.9.png"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\bordgray.xml",
@@ -56,12 +56,12 @@
         "source": "C:\\Users\\Z2z\\.android\\build-cache\\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\\output\\res\\drawable\\navigation_empty_icon.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable\\abc_btn_check_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_item_me.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\menu_item_me.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\ease_btn_blue_pressed_shape.xml",
@@ -88,12 +88,12 @@
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\menu_item_news.xml"
     },
     {
-        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\spinner_account.xml",
         "source": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\res\\drawable\\spinner_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\Z2z\\.android\\build-cache\\89275c7da2455671c7ee2787e18b95ea4d62b83e\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "C:\\Users\\Z2z\\Desktop\\DownSpace\\DownCampus\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",

@@ -14,12 +14,12 @@ public final class R {
         public static final int pickerview_slide_out_bottom = 0x7f05001b;
     }
     public static final class attr {
-        public static final int pickerview_dividerColor = 0x7f010279;
-        public static final int pickerview_gravity = 0x7f010275;
-        public static final int pickerview_lineSpacingMultiplier = 0x7f01027a;
-        public static final int pickerview_textColorCenter = 0x7f010278;
-        public static final int pickerview_textColorOut = 0x7f010277;
-        public static final int pickerview_textSize = 0x7f010276;
+        public static final int pickerview_dividerColor = 0x7f01027a;
+        public static final int pickerview_gravity = 0x7f010276;
+        public static final int pickerview_lineSpacingMultiplier = 0x7f01027b;
+        public static final int pickerview_textColorCenter = 0x7f010279;
+        public static final int pickerview_textColorOut = 0x7f010278;
+        public static final int pickerview_textSize = 0x7f010277;
     }
     public static final class color {
         public static final int pickerview_bgColor_default = 0x7f0c0080;
@@ -33,11 +33,11 @@ public final class R {
         public static final int pickerview_wheelview_textcolor_out = 0x7f0c0088;
     }
     public static final class dimen {
-        public static final int pickerview_textsize = 0x7f0708ee;
-        public static final int pickerview_topbar_btn_textsize = 0x7f0708ef;
-        public static final int pickerview_topbar_height = 0x7f0708f0;
-        public static final int pickerview_topbar_padding = 0x7f0708f1;
-        public static final int pickerview_topbar_title_textsize = 0x7f0708f2;
+        public static final int pickerview_textsize = 0x7f0708f1;
+        public static final int pickerview_topbar_btn_textsize = 0x7f0708f2;
+        public static final int pickerview_topbar_height = 0x7f0708f3;
+        public static final int pickerview_topbar_padding = 0x7f0708f4;
+        public static final int pickerview_topbar_title_textsize = 0x7f0708f5;
     }
     public static final class drawable {
         public static final int selector_pickerview_btn = 0x7f02014e;
@@ -88,7 +88,7 @@ public final class R {
         public static final int pickerview_dialogAnim = 0x7f0901a8;
     }
     public static final class styleable {
-        public static final int[] pickerview = { 0x7f010275, 0x7f010276, 0x7f010277, 0x7f010278, 0x7f010279, 0x7f01027a };
+        public static final int[] pickerview = { 0x7f010276, 0x7f010277, 0x7f010278, 0x7f010279, 0x7f01027a, 0x7f01027b };
         public static final int pickerview_pickerview_dividerColor = 4;
         public static final int pickerview_pickerview_gravity = 0;
         public static final int pickerview_pickerview_lineSpacingMultiplier = 5;

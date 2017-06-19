@@ -69,6 +69,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     private String token;
     private InterfaceTest interfaceTest = new InterfaceTest();
     private UsuallyData usuallyData = new UsuallyData();
+    private View view;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,7 +113,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tab1, container, false);
+        if (view==null) view = inflater.inflate(R.layout.fragment_tab1, container, false);
         mViewFlow = (ViewFlow) view.findViewById(R.id.viewflow);
         mFlowIndicator = (CircleFlowIndicator) view.findViewById(R.id.viewflowindic);
         mGridView = (GridView) view.findViewById(R.id.grid);
