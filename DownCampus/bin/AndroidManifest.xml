@@ -152,7 +152,7 @@
         </activity>
         <activity android:name="com.logan.acthome.parentleader.ApproveDetail" >
         </activity>
-        <activity android:name="com.logan.acthome.parentleader.MeetingManage" >
+        <activity android:name="com.logan.acthome.parentleader.MeetingManageActivity" >
         </activity>
         <activity android:name="com.util.circlecrop.CropActivity" >
         </activity>

@@ -185,7 +185,7 @@
         <activity android:name="com.logan.acthome.parentleader.MyApproveActivity"/>
         <activity android:name="com.logan.acthome.parentleader.ApproveDetail"/>
         <activity android:name="com.logan.acthome.parentleader.ApproveSearch"/>
-        <activity android:name="com.logan.acthome.parentleader.MeetingManage"/>
+        <activity android:name="com.logan.acthome.parentleader.MeetingManageActivity"/>
         <activity android:name="com.logan.acthome.parentleader.SendMeetingActivity"/>
         <activity android:name="com.logan.acthome.parentleader.ChooseObjectActivity"/>
 

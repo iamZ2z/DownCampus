@@ -29,7 +29,7 @@ import com.logan.acthome.studentteacher.StudentAttendanceActivity;
 import com.logan.acthome.studentteacher.TeacherRateActivity;
 import com.logan.acthome.studentteacher.WorkRestActivity;
 import com.logan.acthome.parentleader.BehaviorActivity;
-import com.logan.acthome.parentleader.MeetingManage;
+import com.logan.acthome.parentleader.MeetingManageActivity;
 import com.logan.acthome.parentleader.MyApproveActivity;
 import com.logan.adapter.HomeGridAdapter;
 import com.logan.bean.MeFragmentBean;
@@ -223,7 +223,7 @@ public class HomeFragment extends Fragment implements OnItemClickListener {
             mIntent = new Intent(getActivity(), MyApproveActivity.class);
             startActivity(mIntent);
         } else if (str.equals("会议管理")) {
-            mIntent = new Intent(getActivity(), MeetingManage.class);
+            mIntent = new Intent(getActivity(), MeetingManageActivity.class);
             startActivity(mIntent);
         }
     }

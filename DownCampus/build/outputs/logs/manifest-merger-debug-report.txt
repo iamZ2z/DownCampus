@@ -47,6 +47,7 @@ MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Z2z\.
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Z2z\.android\build-cache\e437d0df062460fcaa4a88943e93e7dacd5c40c4\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Z2z\.android\build-cache\5d808c74fc10bf3637605d29931fef6e56bec35c\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.tencent.bugly:crashreport:2.6.5] C:\Users\Z2z\.android\build-cache\1048aa2e46c57564010f35cd45071a8f1c6cdfea\output\AndroidManifest.xml:5:5-7:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\Z2z\.android\build-cache\6847fdaefa9315d38ec31a2698c88457aedd525b\output\AndroidManifest.xml:19:5-43
 MERGED from [cn.dreamtobe.kpswitch:library:1.6.0] C:\Users\Z2z\.android\build-cache\257c8b97be138399e28ddc779f45dc6824664e42\output\AndroidManifest.xml:8:5-10:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] C:\Users\Z2z\.android\build-cache\f836becd6bcbd6e89cc767beeb8a883ca27ac7be\output\AndroidManifest.xml:23:9-59
@@ -429,10 +430,10 @@ activity#com.logan.acthome.parentleader.ApproveSearch
 ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:187:9-80
 	android:name
 		ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:187:19-78
-activity#com.logan.acthome.parentleader.MeetingManage
-ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:188:9-80
+activity#com.logan.acthome.parentleader.MeetingManageActivity
+ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:188:9-88
 	android:name
-		ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:188:19-78
+		ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:188:19-86
 activity#com.logan.acthome.parentleader.SendMeetingActivity
 ADDED from C:\Users\Z2z\Desktop\DownSpace\DownCampus\AndroidManifest.xml:189:9-86
 	android:name

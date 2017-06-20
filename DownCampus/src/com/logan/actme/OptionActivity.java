@@ -144,6 +144,10 @@ public class OptionActivity extends Activity implements OnClickListener {
 
     @Event(value = R.id.btn_exit)
     private void onbtn_exitClick(View v) {
+        final MaterialDialog dialog=new MaterialDialog.Builder(this)
+                .content(R.string.loading)
+                .progress(true, 0)
+                .show();
         FormBody formBody = new FormBody.Builder().add("token", token).build();
         final Request request = new Request.Builder().url(url).post(formBody).build();
         new Thread(new Runnable() {
@@ -159,6 +163,7 @@ public class OptionActivity extends Activity implements OnClickListener {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                dialog.dismiss();
                                 mIntent = new Intent(OptionActivity.this, AccountActivity.class);
                                 mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent
                                         .FLAG_ACTIVITY_NEW_TASK);
