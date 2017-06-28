@@ -47,6 +47,8 @@ import okhttp3.Response;
 
 @ContentView(R.layout.activity_account)
 public class AccountActivity extends Activity {
+
+    private static final String TAG = "test";
     @ViewInject(R.id.sp_role)
     private TextView sp_role;
     @ViewInject(R.id.findpassword)
@@ -285,6 +287,7 @@ public class AccountActivity extends Activity {
                     });
                 } catch (IOException e) {
                     e.printStackTrace();
+                    Log.d(TAG, "run() called");
                 }
             }
         }).start();

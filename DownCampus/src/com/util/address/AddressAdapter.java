@@ -33,13 +33,11 @@ public class AddressAdapter extends BaseExpandableListAdapter {
     private LayoutInflater mInflater;
     private SharedPreferences sp;
 
-    public AddressAdapter(Context mContext, List<GroupMemberBean> mGroup,
-                          List<List<GroupMemberBean>> mChild) {
+    public AddressAdapter(Context mContext, List<GroupMemberBean> mGroup, List<List<GroupMemberBean>> mChild) {
         this.mContext = mContext;
         this.mGroup = mGroup;
         this.mChild = mChild;
-        this.mInflater = (LayoutInflater) mContext
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     /**
@@ -224,7 +222,6 @@ public class AddressAdapter extends BaseExpandableListAdapter {
                 return true;
             }
         });
-
         return convertView;
     }
 

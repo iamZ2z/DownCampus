@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.Button;
@@ -24,6 +25,7 @@ import com.logan.bean.RateContentBean;
 import com.logan.bean.TeacherRateBean;
 import com.logan.net.InterfaceTest;
 import com.logan.net.UsuallyData;
+import com.util.SystemBarTintManager;
 import com.util.title.TitleBar;
 
 import org.xutils.view.annotation.ContentView;
@@ -69,6 +71,7 @@ public class RateContentActivity extends Activity {
             }
         });
 
+        processingNoticationbar();
         initTeachername();
         loadData();
         hidekeyboard();
@@ -244,6 +247,24 @@ public class RateContentActivity extends Activity {
                     layout.scrollTo(0,100);
             }
         });
+    }
+
+    public void processingNoticationbar() {
+        setTranslucentStatus(true);
+        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        tintManager.setStatusBarTintEnabled(true);
+        tintManager.setStatusBarTintResource(R.color.blue_55x176x233);//通知栏所需颜色
+    }
+    private void setTranslucentStatus(boolean on) {
+        Window win = getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
     }
 
 }

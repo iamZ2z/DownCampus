@@ -3,7 +3,8 @@
                 android:id="@+id/layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white_247x3">
+                android:fitsSystemWindows="true"
+                >
 
     <com.util.title.TitleBar style="@style/bar_title"/>
 
