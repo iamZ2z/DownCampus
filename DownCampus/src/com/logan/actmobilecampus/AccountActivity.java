@@ -287,7 +287,7 @@ public class AccountActivity extends Activity {
                     });
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Log.d(TAG, "run() called");
+                    Log.d(TAG, "run() called"+e.getMessage());
                 }
             }
         }).start();
